@@ -1,0 +1,3768 @@
+{
+  "modules": [
+    {
+      "id": 1,
+      "name": "account",
+      "shortdesc": "Invoicing",
+      "application": true
+    },
+    {
+      "id": 3,
+      "name": "account_check_printing",
+      "shortdesc": "Check Printing Base",
+      "application": false
+    },
+    {
+      "id": 7,
+      "name": "account_edi_ubl_cii",
+      "shortdesc": "Import/Export electronic invoices with UBL/CII",
+      "application": false
+    },
+    {
+      "id": 9,
+      "name": "account_fleet",
+      "shortdesc": "Accounting/Fleet bridge",
+      "application": false
+    },
+    {
+      "id": 11,
+      "name": "account_payment",
+      "shortdesc": "Payment - Account",
+      "application": false
+    },
+    {
+      "id": 12,
+      "name": "account_payment_term",
+      "shortdesc": "Payment Term - Days end of month on the",
+      "application": false
+    },
+    {
+      "id": 16,
+      "name": "account_tax_python",
+      "shortdesc": "Define Taxes as Python Code",
+      "application": false
+    },
+    {
+      "id": 669,
+      "name": "agriculture_management_odoo",
+      "shortdesc": "Agriculture Management",
+      "application": true
+    },
+    {
+      "id": 1382,
+      "name": "amc_mfx",
+      "shortdesc": "AMC",
+      "application": true
+    },
+    {
+      "id": 1409,
+      "name": "amc_sale_link_mfx",
+      "shortdesc": "AMC Sale Link",
+      "application": true
+    },
+    {
+      "id": 19,
+      "name": "analytic",
+      "shortdesc": "Analytic Accounting",
+      "application": false
+    },
+    {
+      "id": 26,
+      "name": "auth_signup",
+      "shortdesc": "Signup",
+      "application": false
+    },
+    {
+      "id": 27,
+      "name": "auth_totp",
+      "shortdesc": "Two-Factor Authentication (TOTP)",
+      "application": false
+    },
+    {
+      "id": 28,
+      "name": "auth_totp_mail",
+      "shortdesc": "2FA Invite mail",
+      "application": false
+    },
+    {
+      "id": 30,
+      "name": "auth_totp_portal",
+      "shortdesc": "TOTPortal",
+      "application": false
+    },
+    {
+      "id": 632,
+      "name": "automatic_payroll",
+      "shortdesc": "Automatic Payroll",
+      "application": false
+    },
+    {
+      "id": 31,
+      "name": "barcodes",
+      "shortdesc": "Barcode",
+      "application": false
+    },
+    {
+      "id": 32,
+      "name": "barcodes_gs1_nomenclature",
+      "shortdesc": "Barcode - GS1 Nomenclature",
+      "application": false
+    },
+    {
+      "id": 33,
+      "name": "base",
+      "shortdesc": "Base",
+      "application": false
+    },
+    {
+      "id": 614,
+      "name": "base_account_budget",
+      "shortdesc": "Odoo 17 Budget Management",
+      "application": false
+    },
+    {
+      "id": 615,
+      "name": "base_accounting_kit",
+      "shortdesc": "Odoo 17 Full Accounting Kit for Community",
+      "application": true
+    },
+    {
+      "id": 35,
+      "name": "base_automation",
+      "shortdesc": "Automation Rules",
+      "application": false
+    },
+    {
+      "id": 39,
+      "name": "base_import_module",
+      "shortdesc": "Base import module",
+      "application": false
+    },
+    {
+      "id": 40,
+      "name": "base_install_request",
+      "shortdesc": "Base - Module Install Request",
+      "application": false
+    },
+    {
+      "id": 41,
+      "name": "base_setup",
+      "shortdesc": "Initial Setup Tools",
+      "application": false
+    },
+    {
+      "id": 43,
+      "name": "base_vat",
+      "shortdesc": "VAT Number Validation",
+      "application": false
+    },
+    {
+      "id": 45,
+      "name": "bus",
+      "shortdesc": "IM Bus",
+      "application": false
+    },
+    {
+      "id": 46,
+      "name": "calendar",
+      "shortdesc": "Calendar",
+      "application": true
+    },
+    {
+      "id": 47,
+      "name": "calendar_sms",
+      "shortdesc": "Calendar - SMS",
+      "application": false
+    },
+    {
+      "id": 48,
+      "name": "contacts",
+      "shortdesc": "Contacts",
+      "application": true
+    },
+    {
+      "id": 49,
+      "name": "crm",
+      "shortdesc": "CRM",
+      "application": true
+    },
+    {
+      "id": 53,
+      "name": "crm_mail_plugin",
+      "shortdesc": "CRM Mail Plugin",
+      "application": false
+    },
+    {
+      "id": 54,
+      "name": "crm_sms",
+      "shortdesc": "SMS in CRM",
+      "application": false
+    },
+    {
+      "id": 626,
+      "name": "custom_crm_mfx",
+      "shortdesc": "Savi_Vision-Macrofix Customizations",
+      "application": true
+    },
+    {
+      "id": 56,
+      "name": "delivery",
+      "shortdesc": "Delivery Costs",
+      "application": false
+    },
+    {
+      "id": 59,
+      "name": "digest",
+      "shortdesc": "KPI Digests",
+      "application": false
+    },
+    {
+      "id": 617,
+      "name": "dynamic_accounts_report",
+      "shortdesc": "Odoo17 Dynamic Accounting Reports",
+      "application": false
+    },
+    {
+      "id": 67,
+      "name": "fleet",
+      "shortdesc": "Fleet",
+      "application": true
+    },
+    {
+      "id": 618,
+      "name": "general_template",
+      "shortdesc": "Clever All In One Report Templates",
+      "application": false
+    },
+    {
+      "id": 72,
+      "name": "google_gmail",
+      "shortdesc": "Google Gmail",
+      "application": false
+    },
+    {
+      "id": 1411,
+      "name": "helpdesk_amc_service_mfx",
+      "shortdesc": "Helpdesk - AMC - Service Order",
+      "application": false
+    },
+    {
+      "id": 1384,
+      "name": "helpdesk_mgmt",
+      "shortdesc": "Helpdesk Management",
+      "application": true
+    },
+    {
+      "id": 1387,
+      "name": "helpdesk_mgmt_project",
+      "shortdesc": "Helpdesk Project",
+      "application": false
+    },
+    {
+      "id": 1388,
+      "name": "helpdesk_mgmt_sale",
+      "shortdesc": "Helpdesk Sale Order",
+      "application": false
+    },
+    {
+      "id": 1389,
+      "name": "helpdesk_mgmt_service",
+      "shortdesc": "Helpdesk Service Order",
+      "application": false
+    },
+    {
+      "id": 74,
+      "name": "hr",
+      "shortdesc": "Employees",
+      "application": true
+    },
+    {
+      "id": 75,
+      "name": "hr_attendance",
+      "shortdesc": "Attendances",
+      "application": true
+    },
+    {
+      "id": 76,
+      "name": "hr_contract",
+      "shortdesc": "Employee Contracts",
+      "application": true
+    },
+    {
+      "id": 77,
+      "name": "hr_expense",
+      "shortdesc": "Expenses",
+      "application": true
+    },
+    {
+      "id": 80,
+      "name": "hr_holidays",
+      "shortdesc": "Time Off",
+      "application": true
+    },
+    {
+      "id": 81,
+      "name": "hr_holidays_attendance",
+      "shortdesc": "HR Attendance Holidays",
+      "application": false
+    },
+    {
+      "id": 83,
+      "name": "hr_hourly_cost",
+      "shortdesc": "Employee Hourly Wage",
+      "application": false
+    },
+    {
+      "id": 86,
+      "name": "hr_org_chart",
+      "shortdesc": "HR Org Chart",
+      "application": false
+    },
+    {
+      "id": 633,
+      "name": "hr_payroll_account_community",
+      "shortdesc": "Odoo17 Payroll Accounting",
+      "application": false
+    },
+    {
+      "id": 634,
+      "name": "hr_payroll_community",
+      "shortdesc": "Odoo 17 HR Payroll",
+      "application": true
+    },
+    {
+      "id": 635,
+      "name": "hr_payroll_dashboard",
+      "shortdesc": "HR Payroll Dashboard",
+      "application": true
+    },
+    {
+      "id": 636,
+      "name": "hr_payslip_monthly_report",
+      "shortdesc": "Payroll Advanced Features",
+      "application": false
+    },
+    {
+      "id": 91,
+      "name": "hr_skills",
+      "shortdesc": "Skills Management",
+      "application": true
+    },
+    {
+      "id": 94,
+      "name": "hr_timesheet",
+      "shortdesc": "Task Logs",
+      "application": false
+    },
+    {
+      "id": 95,
+      "name": "hr_timesheet_attendance",
+      "shortdesc": "Timesheets/attendances reporting",
+      "application": false
+    },
+    {
+      "id": 99,
+      "name": "http_routing",
+      "shortdesc": "Web Routing",
+      "application": false
+    },
+    {
+      "id": 103,
+      "name": "iap",
+      "shortdesc": "In-App Purchases",
+      "application": false
+    },
+    {
+      "id": 104,
+      "name": "iap_crm",
+      "shortdesc": "IAP / CRM",
+      "application": false
+    },
+    {
+      "id": 105,
+      "name": "iap_mail",
+      "shortdesc": "IAP / Mail",
+      "application": false
+    },
+    {
+      "id": 205,
+      "name": "l10n_in",
+      "shortdesc": "Indian - Accounting",
+      "application": false
+    },
+    {
+      "id": 210,
+      "name": "l10n_in_purchase",
+      "shortdesc": "Indian - Purchase Report(GST)",
+      "application": false
+    },
+    {
+      "id": 211,
+      "name": "l10n_in_purchase_stock",
+      "shortdesc": "India Purchase and Warehouse Management",
+      "application": false
+    },
+    {
+      "id": 212,
+      "name": "l10n_in_sale",
+      "shortdesc": "Indian - Sale Report(GST)",
+      "application": false
+    },
+    {
+      "id": 213,
+      "name": "l10n_in_sale_stock",
+      "shortdesc": "India Sales and Warehouse Management",
+      "application": false
+    },
+    {
+      "id": 214,
+      "name": "l10n_in_stock",
+      "shortdesc": "Indian - Stock Report(GST)",
+      "application": false
+    },
+    {
+      "id": 215,
+      "name": "l10n_in_withholding",
+      "shortdesc": "Indian - TDS",
+      "application": false
+    },
+    {
+      "id": 309,
+      "name": "mail",
+      "shortdesc": "Discuss",
+      "application": true
+    },
+    {
+      "id": 310,
+      "name": "mail_bot",
+      "shortdesc": "OdooBot",
+      "application": false
+    },
+    {
+      "id": 311,
+      "name": "mail_bot_hr",
+      "shortdesc": "OdooBot - HR",
+      "application": false
+    },
+    {
+      "id": 313,
+      "name": "mail_plugin",
+      "shortdesc": "Mail Plugin",
+      "application": false
+    },
+    {
+      "id": 1423,
+      "name": "mfx_hr_performance_review",
+      "shortdesc": "HR Performance Review",
+      "application": true
+    },
+    {
+      "id": 1399,
+      "name": "mfx_project_amc_conversion",
+      "shortdesc": "MFX Project AMC Conversion",
+      "application": true
+    },
+    {
+      "id": 1400,
+      "name": "mfx_projects_management",
+      "shortdesc": "MFX Project Management",
+      "application": true
+    },
+    {
+      "id": 627,
+      "name": "mk_user_hide_menu",
+      "shortdesc": "User Hide Menu",
+      "application": true
+    },
+    {
+      "id": 619,
+      "name": "muk_web_appsbar",
+      "shortdesc": "MuK AppsBar",
+      "application": false
+    },
+    {
+      "id": 620,
+      "name": "muk_web_chatter",
+      "shortdesc": "MuK Chatter",
+      "application": false
+    },
+    {
+      "id": 621,
+      "name": "muk_web_colors",
+      "shortdesc": "MuK Colors",
+      "application": false
+    },
+    {
+      "id": 622,
+      "name": "muk_web_dialog",
+      "shortdesc": "MuK Dialog",
+      "application": false
+    },
+    {
+      "id": 623,
+      "name": "muk_web_theme",
+      "shortdesc": "MuK Backend Theme",
+      "application": false
+    },
+    {
+      "id": 342,
+      "name": "onboarding",
+      "shortdesc": "Onboarding Toolbox",
+      "application": false
+    },
+    {
+      "id": 343,
+      "name": "partner_autocomplete",
+      "shortdesc": "Partner Autocomplete",
+      "application": false
+    },
+    {
+      "id": 344,
+      "name": "payment",
+      "shortdesc": "Payment Engine",
+      "application": false
+    },
+    {
+      "id": 629,
+      "name": "payroll_customizations",
+      "shortdesc": "Savi_Vision-Macrofix Payroll Customizations",
+      "application": true
+    },
+    {
+      "id": 365,
+      "name": "phone_validation",
+      "shortdesc": "Phone Numbers Validation",
+      "application": false
+    },
+    {
+      "id": 367,
+      "name": "portal",
+      "shortdesc": "Customer Portal",
+      "application": false
+    },
+    {
+      "id": 368,
+      "name": "portal_rating",
+      "shortdesc": "Portal Rating",
+      "application": false
+    },
+    {
+      "id": 398,
+      "name": "privacy_lookup",
+      "shortdesc": "Privacy",
+      "application": false
+    },
+    {
+      "id": 399,
+      "name": "product",
+      "shortdesc": "Products & Pricelists",
+      "application": false
+    },
+    {
+      "id": 405,
+      "name": "project",
+      "shortdesc": "Project",
+      "application": true
+    },
+    {
+      "id": 406,
+      "name": "project_account",
+      "shortdesc": "Project - Account",
+      "application": false
+    },
+    {
+      "id": 407,
+      "name": "project_hr_expense",
+      "shortdesc": "Project Expenses",
+      "application": false
+    },
+    {
+      "id": 408,
+      "name": "project_mail_plugin",
+      "shortdesc": "Project Mail Plugin",
+      "application": false
+    },
+    {
+      "id": 410,
+      "name": "project_purchase",
+      "shortdesc": "Project Purchase",
+      "application": false
+    },
+    {
+      "id": 411,
+      "name": "project_sale_expense",
+      "shortdesc": "Project - Sale - Expense",
+      "application": false
+    },
+    {
+      "id": 412,
+      "name": "project_sms",
+      "shortdesc": "Project - SMS",
+      "application": false
+    },
+    {
+      "id": 414,
+      "name": "project_todo",
+      "shortdesc": "To-Do",
+      "application": true
+    },
+    {
+      "id": 415,
+      "name": "purchase",
+      "shortdesc": "Purchase",
+      "application": true
+    },
+    {
+      "id": 624,
+      "name": "purchase_approval",
+      "shortdesc": "PO Dynamic Approval",
+      "application": true
+    },
+    {
+      "id": 421,
+      "name": "purchase_stock",
+      "shortdesc": "Purchase Stock",
+      "application": false
+    },
+    {
+      "id": 422,
+      "name": "rating",
+      "shortdesc": "Customer Rating",
+      "application": false
+    },
+    {
+      "id": 424,
+      "name": "resource",
+      "shortdesc": "Resource",
+      "application": false
+    },
+    {
+      "id": 425,
+      "name": "sale",
+      "shortdesc": "Sales",
+      "application": false
+    },
+    {
+      "id": 426,
+      "name": "sale_async_emails",
+      "shortdesc": "Sales - Async Emails",
+      "application": false
+    },
+    {
+      "id": 427,
+      "name": "sale_crm",
+      "shortdesc": "Opportunity to Quotation",
+      "application": false
+    },
+    {
+      "id": 428,
+      "name": "sale_expense",
+      "shortdesc": "Sales Expense",
+      "application": false
+    },
+    {
+      "id": 429,
+      "name": "sale_expense_margin",
+      "shortdesc": "Sales Expense Margin",
+      "application": false
+    },
+    {
+      "id": 432,
+      "name": "sale_management",
+      "shortdesc": "Sales",
+      "application": true
+    },
+    {
+      "id": 433,
+      "name": "sale_margin",
+      "shortdesc": "Margins in Sales Orders",
+      "application": false
+    },
+    {
+      "id": 436,
+      "name": "sale_pdf_quote_builder",
+      "shortdesc": "Sales PDF Quotation Builder",
+      "application": false
+    },
+    {
+      "id": 437,
+      "name": "sale_product_configurator",
+      "shortdesc": "Sale Product Configurator",
+      "application": false
+    },
+    {
+      "id": 439,
+      "name": "sale_project",
+      "shortdesc": "Sales - Project",
+      "application": false
+    },
+    {
+      "id": 440,
+      "name": "sale_project_stock",
+      "shortdesc": "Sale Project - Sale Stock",
+      "application": false
+    },
+    {
+      "id": 441,
+      "name": "sale_purchase",
+      "shortdesc": "Sale Purchase",
+      "application": false
+    },
+    {
+      "id": 442,
+      "name": "sale_purchase_stock",
+      "shortdesc": "MTO Sale <-> Purchase",
+      "application": false
+    },
+    {
+      "id": 443,
+      "name": "sale_service",
+      "shortdesc": "Sales - Service",
+      "application": false
+    },
+    {
+      "id": 444,
+      "name": "sale_sms",
+      "shortdesc": "Sale - SMS",
+      "application": false
+    },
+    {
+      "id": 445,
+      "name": "sale_stock",
+      "shortdesc": "Sales and Warehouse Management",
+      "application": false
+    },
+    {
+      "id": 446,
+      "name": "sale_stock_margin",
+      "shortdesc": "Sale Stock Margin",
+      "application": false
+    },
+    {
+      "id": 447,
+      "name": "sale_timesheet",
+      "shortdesc": "Sales Timesheet",
+      "application": false
+    },
+    {
+      "id": 448,
+      "name": "sale_timesheet_margin",
+      "shortdesc": "Service Margins in Sales Orders",
+      "application": false
+    },
+    {
+      "id": 449,
+      "name": "sales_team",
+      "shortdesc": "Sales Teams",
+      "application": false
+    },
+    {
+      "id": 1401,
+      "name": "service_order_mfx",
+      "shortdesc": "Service Order",
+      "application": true
+    },
+    {
+      "id": 630,
+      "name": "sh_activities_management",
+      "shortdesc": "Activities Management-Advance",
+      "application": false
+    },
+    {
+      "id": 631,
+      "name": "sh_activity_base",
+      "shortdesc": "Activity Base",
+      "application": true
+    },
+    {
+      "id": 450,
+      "name": "sms",
+      "shortdesc": "SMS gateway",
+      "application": false
+    },
+    {
+      "id": 451,
+      "name": "snailmail",
+      "shortdesc": "Snail Mail",
+      "application": false
+    },
+    {
+      "id": 452,
+      "name": "snailmail_account",
+      "shortdesc": "Snail Mail - Account",
+      "application": false
+    },
+    {
+      "id": 454,
+      "name": "spreadsheet",
+      "shortdesc": "Spreadsheet",
+      "application": false
+    },
+    {
+      "id": 455,
+      "name": "spreadsheet_account",
+      "shortdesc": "Spreadsheet Accounting Formulas",
+      "application": false
+    },
+    {
+      "id": 456,
+      "name": "spreadsheet_dashboard",
+      "shortdesc": "Spreadsheet dashboard",
+      "application": false
+    },
+    {
+      "id": 457,
+      "name": "spreadsheet_dashboard_account",
+      "shortdesc": "Spreadsheet dashboard for accounting",
+      "application": false
+    },
+    {
+      "id": 459,
+      "name": "spreadsheet_dashboard_hr_expense",
+      "shortdesc": "Spreadsheet dashboard for expenses",
+      "application": false
+    },
+    {
+      "id": 460,
+      "name": "spreadsheet_dashboard_hr_timesheet",
+      "shortdesc": "Spreadsheet dashboard for time sheets",
+      "application": false
+    },
+    {
+      "id": 463,
+      "name": "spreadsheet_dashboard_purchase",
+      "shortdesc": "Spreadsheet dashboard for purchases",
+      "application": false
+    },
+    {
+      "id": 464,
+      "name": "spreadsheet_dashboard_purchase_stock",
+      "shortdesc": "Spreadsheet dashboard for purchases",
+      "application": false
+    },
+    {
+      "id": 465,
+      "name": "spreadsheet_dashboard_sale",
+      "shortdesc": "Spreadsheet dashboard for sales",
+      "application": false
+    },
+    {
+      "id": 466,
+      "name": "spreadsheet_dashboard_sale_timesheet",
+      "shortdesc": "Spreadsheet dashboard for time sheets",
+      "application": false
+    },
+    {
+      "id": 467,
+      "name": "spreadsheet_dashboard_stock_account",
+      "shortdesc": "Spreadsheet dashboard for stock",
+      "application": false
+    },
+    {
+      "id": 470,
+      "name": "stock",
+      "shortdesc": "Inventory",
+      "application": true
+    },
+    {
+      "id": 471,
+      "name": "stock_account",
+      "shortdesc": "WMS Accounting",
+      "application": false
+    },
+    {
+      "id": 472,
+      "name": "stock_delivery",
+      "shortdesc": "Delivery - Stock",
+      "application": false
+    },
+    {
+      "id": 473,
+      "name": "stock_dropshipping",
+      "shortdesc": "Drop Shipping",
+      "application": false
+    },
+    {
+      "id": 474,
+      "name": "stock_landed_costs",
+      "shortdesc": "WMS Landed Costs",
+      "application": false
+    },
+    {
+      "id": 475,
+      "name": "stock_landed_costs_company",
+      "shortdesc": "Landed Costs for company's branches",
+      "application": false
+    },
+    {
+      "id": 477,
+      "name": "stock_sms",
+      "shortdesc": "Stock - SMS",
+      "application": false
+    },
+    {
+      "id": 527,
+      "name": "uom",
+      "shortdesc": "Units of measure",
+      "application": false
+    },
+    {
+      "id": 528,
+      "name": "utm",
+      "shortdesc": "UTM Trackers",
+      "application": false
+    },
+    {
+      "id": 529,
+      "name": "web",
+      "shortdesc": "Web",
+      "application": false
+    },
+    {
+      "id": 530,
+      "name": "web_editor",
+      "shortdesc": "Web Editor",
+      "application": false
+    },
+    {
+      "id": 531,
+      "name": "web_hierarchy",
+      "shortdesc": "Web Hierarchy",
+      "application": false
+    },
+    {
+      "id": 532,
+      "name": "web_tour",
+      "shortdesc": "Tours",
+      "application": false
+    },
+    {
+      "id": 1374,
+      "name": "whatsapp_redirect",
+      "shortdesc": "Send Whatsapp Message from Odoo",
+      "application": true
+    },
+    {
+      "id": 1381,
+      "name": "whatsapp_redirect_sales",
+      "shortdesc": "Send Whatsapp Message from Odoo Sales Order",
+      "application": true
+    }
+  ],
+  "menus": [
+    {
+      "id": 60,
+      "name": "Users",
+      "complete_name": "Settings/Users & Companies/Users",
+      "active": true
+    },
+    {
+      "id": 66,
+      "name": "General Settings",
+      "complete_name": "Settings/General Settings",
+      "active": true
+    },
+    {
+      "id": 144,
+      "name": "Settings",
+      "complete_name": "Accounting/Configuration/Settings",
+      "active": true
+    },
+    {
+      "id": 204,
+      "name": "Settings",
+      "complete_name": "Employees/Configuration/Settings",
+      "active": true
+    },
+    {
+      "id": 220,
+      "name": "Settings",
+      "complete_name": "Project/Configuration/Settings",
+      "active": true
+    },
+    {
+      "id": 258,
+      "name": "Overview",
+      "complete_name": "Inventory/Overview",
+      "active": true
+    },
+    {
+      "id": 269,
+      "name": "Settings",
+      "complete_name": "Inventory/Configuration/Settings",
+      "active": true
+    },
+    {
+      "id": 299,
+      "name": "Requests for Quotation",
+      "complete_name": "Purchase/Orders/Requests for Quotation",
+      "active": true
+    },
+    {
+      "id": 301,
+      "name": "Settings",
+      "complete_name": "Purchase/Configuration/Settings",
+      "active": true
+    },
+    {
+      "id": 482,
+      "name": "Settings",
+      "complete_name": "CRM/Configuration/Settings",
+      "active": true
+    },
+    {
+      "id": 545,
+      "name": "Expenses Analysis",
+      "complete_name": "Expenses/Reporting/Expenses Analysis",
+      "active": true
+    },
+    {
+      "id": 550,
+      "name": "Settings",
+      "complete_name": "Expenses/Configuration/Settings",
+      "active": true
+    },
+    {
+      "id": 587,
+      "name": "Settings",
+      "complete_name": "Fleet/Configuration/Settings",
+      "active": true
+    },
+    {
+      "id": 3,
+      "name": "Users & Companies",
+      "complete_name": "Settings/Users & Companies",
+      "active": true
+    },
+    {
+      "id": 42,
+      "name": "Menu Items",
+      "complete_name": "Settings/Technical/User Interface/Menu Items",
+      "active": true
+    },
+    {
+      "id": 58,
+      "name": "Languages",
+      "complete_name": "Settings/Translations/Languages",
+      "active": true
+    },
+    {
+      "id": 70,
+      "name": "Onboardings",
+      "complete_name": "Settings/Technical/User Interface/Onboardings",
+      "active": true
+    },
+    {
+      "id": 71,
+      "name": "Onboardings Steps",
+      "complete_name": "Settings/Technical/User Interface/Onboardings Steps",
+      "active": true
+    },
+    {
+      "id": 73,
+      "name": "Working Schedules",
+      "complete_name": "Settings/Technical/Resource/Working Schedules",
+      "active": true
+    },
+    {
+      "id": 77,
+      "name": "Emails",
+      "complete_name": "Settings/Technical/Email/Emails",
+      "active": true
+    },
+    {
+      "id": 85,
+      "name": "Discuss",
+      "complete_name": "Settings/Technical/Discuss",
+      "active": true
+    },
+    {
+      "id": 86,
+      "name": "Messages",
+      "complete_name": "Settings/Technical/Discuss/Messages",
+      "active": true
+    },
+    {
+      "id": 107,
+      "name": "Privacy Logs",
+      "complete_name": "Settings/Technical/Privacy/Privacy Logs",
+      "active": true
+    },
+    {
+      "id": 108,
+      "name": "SMS",
+      "complete_name": "Settings/Technical/Phone / SMS/SMS",
+      "active": true
+    },
+    {
+      "id": 114,
+      "name": "Dashboard",
+      "complete_name": "Accounting/Dashboard",
+      "active": true
+    },
+    {
+      "id": 116,
+      "name": "Invoices",
+      "complete_name": "Accounting/Customers/Invoices",
+      "active": true
+    },
+    {
+      "id": 123,
+      "name": "Bills",
+      "complete_name": "Accounting/Vendors/Bills",
+      "active": true
+    },
+    {
+      "id": 131,
+      "name": "Journals",
+      "complete_name": "Accounting/Accounting/Journals",
+      "active": true
+    },
+    {
+      "id": 132,
+      "name": "Journal Entries",
+      "complete_name": "Accounting/Accounting/Journals/Journal Entries",
+      "active": true
+    },
+    {
+      "id": 140,
+      "name": "Invoice Analysis",
+      "complete_name": "Accounting/Reporting/Management/Invoice Analysis",
+      "active": true
+    },
+    {
+      "id": 145,
+      "name": "Invoicing",
+      "complete_name": "Accounting/Configuration/Invoicing",
+      "active": true
+    },
+    {
+      "id": 146,
+      "name": "Payment Terms",
+      "complete_name": "Accounting/Configuration/Invoicing/Payment Terms",
+      "active": true
+    },
+    {
+      "id": 149,
+      "name": "Add a Bank Account",
+      "complete_name": "Accounting/Configuration/Banks/Add a Bank Account",
+      "active": true
+    },
+    {
+      "id": 152,
+      "name": "Chart of Accounts",
+      "complete_name": "Accounting/Configuration/Accounting/Chart of Accounts",
+      "active": true
+    },
+    {
+      "id": 169,
+      "name": "Dashboards",
+      "complete_name": "Dashboards/Dashboards",
+      "active": true
+    },
+    {
+      "id": 187,
+      "name": "Employees",
+      "complete_name": "Employees/Employees/Employees",
+      "active": true
+    },
+    {
+      "id": 200,
+      "name": "Job Positions",
+      "complete_name": "Employees/Configuration/Recruitment/Job Positions",
+      "active": true
+    },
+    {
+      "id": 211,
+      "name": "Projects",
+      "complete_name": "Project/Projects",
+      "active": true
+    },
+    {
+      "id": 212,
+      "name": "Projects",
+      "complete_name": "Project/Projects",
+      "active": true
+    },
+    {
+      "id": 214,
+      "name": "My Tasks",
+      "complete_name": "Project/Tasks/My Tasks",
+      "active": true
+    },
+    {
+      "id": 230,
+      "name": "Transfers",
+      "complete_name": "Inventory/Operations/Transfers",
+      "active": true
+    },
+    {
+      "id": 234,
+      "name": "Warehouse Management",
+      "complete_name": "Inventory/Configuration/Warehouse Management",
+      "active": true
+    },
+    {
+      "id": 252,
+      "name": "Warehouses",
+      "complete_name": "Inventory/Configuration/Warehouse Management/Warehouses",
+      "active": true
+    },
+    {
+      "id": 260,
+      "name": "Products",
+      "complete_name": "Inventory/Products/Products",
+      "active": true
+    },
+    {
+      "id": 286,
+      "name": "Orders",
+      "complete_name": "Purchase/Orders",
+      "active": true
+    },
+    {
+      "id": 289,
+      "name": "Vendor Pricelists",
+      "complete_name": "Purchase/Configuration/Vendor Pricelists",
+      "active": true
+    },
+    {
+      "id": 407,
+      "name": "Generic Statements",
+      "complete_name": "Accounting/Reporting/Generic Statements",
+      "active": true
+    },
+    {
+      "id": 418,
+      "name": "Profit and Loss",
+      "complete_name": "Accounting/Reporting/Generic Statements/Profit and Loss",
+      "active": true
+    },
+    {
+      "id": 421,
+      "name": "Partner Ledger",
+      "complete_name": "Accounting/Reporting/Partner Reports/Partner Ledger",
+      "active": true
+    },
+    {
+      "id": 441,
+      "name": "Profit and Loss",
+      "complete_name": "Accounting/Reporting/Dynamic Financial Reports/Profit and Loss",
+      "active": true
+    },
+    {
+      "id": 446,
+      "name": "Shipping Methods",
+      "complete_name": "Inventory/Configuration/Delivery/Shipping Methods",
+      "active": true
+    },
+    {
+      "id": 451,
+      "name": "Contact Tags",
+      "complete_name": "Contacts/Configuration/Contact Tags",
+      "active": true
+    },
+    {
+      "id": 455,
+      "name": "Countries",
+      "complete_name": "Contacts/Configuration/Localization/Countries",
+      "active": true
+    },
+    {
+      "id": 459,
+      "name": "Banks",
+      "complete_name": "Contacts/Configuration/Bank Accounts/Banks",
+      "active": true
+    },
+    {
+      "id": 462,
+      "name": "Calendar",
+      "complete_name": "Calendar/Calendar",
+      "active": true
+    },
+    {
+      "id": 470,
+      "name": "Sales",
+      "complete_name": "CRM/Sales",
+      "active": true
+    },
+    {
+      "id": 471,
+      "name": "My Pipeline",
+      "complete_name": "CRM/Sales/My Pipeline",
+      "active": true
+    },
+    {
+      "id": 477,
+      "name": "Forecast",
+      "complete_name": "CRM/Reporting/Forecast",
+      "active": true
+    },
+    {
+      "id": 491,
+      "name": "Tags",
+      "complete_name": "CRM/Configuration/Pipeline/Tags",
+      "active": true
+    },
+    {
+      "id": 501,
+      "name": "Products",
+      "complete_name": "CRM/Products/Products",
+      "active": true
+    },
+    {
+      "id": 506,
+      "name": "My Time",
+      "complete_name": "Time Off/My Time",
+      "active": true
+    },
+    {
+      "id": 507,
+      "name": "Dashboard",
+      "complete_name": "Time Off/My Time/Dashboard",
+      "active": true
+    },
+    {
+      "id": 512,
+      "name": "Time Off",
+      "complete_name": "Time Off/Management/Time Off",
+      "active": true
+    },
+    {
+      "id": 515,
+      "name": "by Employee",
+      "complete_name": "Time Off/Reporting/by Employee",
+      "active": true
+    },
+    {
+      "id": 518,
+      "name": "Time Off Types",
+      "complete_name": "Time Off/Configuration/Time Off Types",
+      "active": true
+    },
+    {
+      "id": 540,
+      "name": "My Expenses",
+      "complete_name": "Expenses/My Expenses",
+      "active": true
+    },
+    {
+      "id": 541,
+      "name": "My Expenses",
+      "complete_name": "Expenses/My Expenses/My Expenses",
+      "active": true
+    },
+    {
+      "id": 551,
+      "name": "Dashboard",
+      "complete_name": "Payroll/Dashboard",
+      "active": true
+    },
+    {
+      "id": 563,
+      "name": "Activity Tags",
+      "complete_name": "Activity Dashboard/Configuration/Activity Tags",
+      "active": true
+    },
+    {
+      "id": 565,
+      "name": "Dashboard",
+      "complete_name": "Activity Dashboard/Dashboard",
+      "active": true
+    },
+    {
+      "id": 566,
+      "name": "Automation Rules",
+      "complete_name": "Settings/Technical/Automation/Automation Rules",
+      "active": true
+    },
+    {
+      "id": 611,
+      "name": "Orders",
+      "complete_name": "Service Orders/Orders",
+      "active": true
+    },
+    {
+      "id": 612,
+      "name": "Service Quotation",
+      "complete_name": "Service Orders/Orders/Service Quotation",
+      "active": true
+    },
+    {
+      "id": 615,
+      "name": "Products",
+      "complete_name": "Service Orders/Products/Products",
+      "active": true
+    },
+    {
+      "id": 617,
+      "name": "Pending SRN's",
+      "complete_name": "Service Orders/SRN/Pending SRN's",
+      "active": true
+    },
+    {
+      "id": 620,
+      "name": "Orders",
+      "complete_name": "AMC Management/Orders",
+      "active": true
+    },
+    {
+      "id": 621,
+      "name": "Orders",
+      "complete_name": "AMC Management/Orders/Orders",
+      "active": true
+    },
+    {
+      "id": 623,
+      "name": "Services",
+      "complete_name": "AMC Management/Services/Services",
+      "active": true
+    },
+    {
+      "id": 625,
+      "name": "Pending",
+      "complete_name": "AMC Management/Visits/Pending",
+      "active": true
+    },
+    {
+      "id": 628,
+      "name": "Dashboard",
+      "complete_name": "Helpdesk/Dashboard",
+      "active": true
+    },
+    {
+      "id": 633,
+      "name": "Settings",
+      "complete_name": "Helpdesk/Configuration/Settings",
+      "active": true
+    },
+    {
+      "id": 698,
+      "name": "Lot/Serial Details",
+      "complete_name": "AMC Management/Orders/Lot/Serial Details",
+      "active": true
+    },
+    {
+      "id": 27,
+      "name": "Scheduled Actions",
+      "complete_name": "Settings/Technical/Automation/Scheduled Actions",
+      "active": true
+    },
+    {
+      "id": 43,
+      "name": "Views",
+      "complete_name": "Settings/Technical/User Interface/Views",
+      "active": true
+    },
+    {
+      "id": 74,
+      "name": "Resource Time Off",
+      "complete_name": "Settings/Technical/Resource/Resource Time Off",
+      "active": true
+    },
+    {
+      "id": 87,
+      "name": "Scheduled Messages",
+      "complete_name": "Settings/Technical/Discuss/Scheduled Messages",
+      "active": true
+    },
+    {
+      "id": 109,
+      "name": "SMS Templates",
+      "complete_name": "Settings/Technical/Phone / SMS/SMS Templates",
+      "active": true
+    },
+    {
+      "id": 115,
+      "name": "Customers",
+      "complete_name": "Accounting/Customers",
+      "active": true
+    },
+    {
+      "id": 117,
+      "name": "Credit Notes",
+      "complete_name": "Accounting/Customers/Credit Notes",
+      "active": true
+    },
+    {
+      "id": 124,
+      "name": "Refunds",
+      "complete_name": "Accounting/Vendors/Refunds",
+      "active": true
+    },
+    {
+      "id": 148,
+      "name": "Banks",
+      "complete_name": "Accounting/Configuration/Banks",
+      "active": true
+    },
+    {
+      "id": 153,
+      "name": "Taxes",
+      "complete_name": "Accounting/Configuration/Accounting/Taxes",
+      "active": true
+    },
+    {
+      "id": 177,
+      "name": "Audit trail",
+      "complete_name": "Accounting/Reporting/India/Audit trail",
+      "active": true
+    },
+    {
+      "id": 201,
+      "name": "Employment Types",
+      "complete_name": "Employees/Configuration/Recruitment/Employment Types",
+      "active": true
+    },
+    {
+      "id": 213,
+      "name": "Tasks",
+      "complete_name": "Project/Tasks",
+      "active": true
+    },
+    {
+      "id": 215,
+      "name": "All Tasks",
+      "complete_name": "Project/Tasks/All Tasks",
+      "active": true
+    },
+    {
+      "id": 229,
+      "name": "Operations",
+      "complete_name": "Inventory/Operations",
+      "active": true
+    },
+    {
+      "id": 231,
+      "name": "Adjustments",
+      "complete_name": "Inventory/Operations/Adjustments",
+      "active": true
+    },
+    {
+      "id": 238,
+      "name": "Product Categories",
+      "complete_name": "Inventory/Configuration/Products/Product Categories",
+      "active": true
+    },
+    {
+      "id": 264,
+      "name": "Locations",
+      "complete_name": "Inventory/Configuration/Warehouse Management/Locations",
+      "active": true
+    },
+    {
+      "id": 408,
+      "name": "Daily Reports",
+      "complete_name": "Accounting/Reporting/Daily Reports",
+      "active": true
+    },
+    {
+      "id": 412,
+      "name": "Follow-up Levels",
+      "complete_name": "Accounting/Configuration/Management/Follow-up Levels",
+      "active": true
+    },
+    {
+      "id": 419,
+      "name": "Balance Sheet",
+      "complete_name": "Accounting/Reporting/Generic Statements/Balance Sheet",
+      "active": true
+    },
+    {
+      "id": 424,
+      "name": "Aged Partner Balance",
+      "complete_name": "Accounting/Reporting/Aged Partner Balance",
+      "active": true
+    },
+    {
+      "id": 440,
+      "name": "Balance Sheet",
+      "complete_name": "Accounting/Reporting/Dynamic Financial Reports/Balance Sheet",
+      "active": true
+    },
+    {
+      "id": 449,
+      "name": "Contacts",
+      "complete_name": "Contacts/Contacts",
+      "active": true
+    },
+    {
+      "id": 450,
+      "name": "Configuration",
+      "complete_name": "Contacts/Configuration",
+      "active": true
+    },
+    {
+      "id": 457,
+      "name": "Fed. States",
+      "complete_name": "Contacts/Configuration/Localization/Fed. States",
+      "active": true
+    },
+    {
+      "id": 460,
+      "name": "Bank Accounts",
+      "complete_name": "Contacts/Configuration/Bank Accounts/Bank Accounts",
+      "active": true
+    },
+    {
+      "id": 472,
+      "name": "My Activities",
+      "complete_name": "CRM/Sales/My Activities",
+      "active": true
+    },
+    {
+      "id": 478,
+      "name": "Pipeline",
+      "complete_name": "CRM/Reporting/Pipeline",
+      "active": true
+    },
+    {
+      "id": 496,
+      "name": "My Quotations",
+      "complete_name": "CRM/Sales/My Quotations",
+      "active": true
+    },
+    {
+      "id": 500,
+      "name": "Products",
+      "complete_name": "CRM/Products",
+      "active": true
+    },
+    {
+      "id": 502,
+      "name": "Supplier Info",
+      "complete_name": "CRM/Products/Supplier Info",
+      "active": true
+    },
+    {
+      "id": 508,
+      "name": "My Time Off",
+      "complete_name": "Time Off/My Time/My Time Off",
+      "active": true
+    },
+    {
+      "id": 510,
+      "name": "Overview",
+      "complete_name": "Time Off/Overview",
+      "active": true
+    },
+    {
+      "id": 513,
+      "name": "Allocations",
+      "complete_name": "Time Off/Management/Allocations",
+      "active": true
+    },
+    {
+      "id": 519,
+      "name": "Accrual Plans",
+      "complete_name": "Time Off/Configuration/Accrual Plans",
+      "active": true
+    },
+    {
+      "id": 528,
+      "name": "Salary Structures",
+      "complete_name": "Payroll/Configuration/Salary Structures",
+      "active": true
+    },
+    {
+      "id": 542,
+      "name": "My Reports",
+      "complete_name": "Expenses/My Expenses/My Reports",
+      "active": true
+    },
+    {
+      "id": 543,
+      "name": "Expense Reports",
+      "complete_name": "Expenses/Expense Reports",
+      "active": true
+    },
+    {
+      "id": 556,
+      "name": "Activity Alarm",
+      "complete_name": "Activity Dashboard/Configuration/Activity Alarm",
+      "active": true
+    },
+    {
+      "id": 559,
+      "name": "Activity",
+      "complete_name": "Activity Dashboard/Activity",
+      "active": true
+    },
+    {
+      "id": 613,
+      "name": "Service Orders",
+      "complete_name": "Service Orders/Orders/Service Orders",
+      "active": true
+    },
+    {
+      "id": 614,
+      "name": "Products",
+      "complete_name": "Service Orders/Products",
+      "active": true
+    },
+    {
+      "id": 618,
+      "name": "Done SRN's",
+      "complete_name": "Service Orders/SRN/Done SRN's",
+      "active": true
+    },
+    {
+      "id": 624,
+      "name": "Visits",
+      "complete_name": "AMC Management/Visits",
+      "active": true
+    },
+    {
+      "id": 626,
+      "name": "Completed",
+      "complete_name": "AMC Management/Visits/Completed",
+      "active": true
+    },
+    {
+      "id": 10,
+      "name": "Email",
+      "complete_name": "Settings/Technical/Email",
+      "active": true
+    },
+    {
+      "id": 28,
+      "name": "Scheduled Actions Triggers",
+      "complete_name": "Settings/Technical/Automation/Scheduled Actions Triggers",
+      "active": true
+    },
+    {
+      "id": 40,
+      "name": "Record Rules",
+      "complete_name": "Settings/Technical/Security/Record Rules",
+      "active": true
+    },
+    {
+      "id": 44,
+      "name": "Customized Views",
+      "complete_name": "Settings/Technical/User Interface/Customized Views",
+      "active": true
+    },
+    {
+      "id": 75,
+      "name": "Resources",
+      "complete_name": "Settings/Technical/Resource/Resources",
+      "active": true
+    },
+    {
+      "id": 104,
+      "name": "Phone / SMS",
+      "complete_name": "Settings/Technical/Phone / SMS",
+      "active": true
+    },
+    {
+      "id": 105,
+      "name": "Phone Blacklist",
+      "complete_name": "Settings/Technical/Phone / SMS/Phone Blacklist",
+      "active": true
+    },
+    {
+      "id": 122,
+      "name": "Vendors",
+      "complete_name": "Accounting/Vendors",
+      "active": true
+    },
+    {
+      "id": 147,
+      "name": "Incoterms",
+      "complete_name": "Accounting/Configuration/Invoicing/Incoterms",
+      "active": true
+    },
+    {
+      "id": 150,
+      "name": "Reconciliation Models",
+      "complete_name": "Accounting/Configuration/Banks/Reconciliation Models",
+      "active": true
+    },
+    {
+      "id": 151,
+      "name": "Accounting",
+      "complete_name": "Accounting/Configuration/Accounting",
+      "active": true
+    },
+    {
+      "id": 154,
+      "name": "Journals",
+      "complete_name": "Accounting/Configuration/Accounting/Journals",
+      "active": true
+    },
+    {
+      "id": 162,
+      "name": "Product Categories",
+      "complete_name": "Accounting/Configuration/Management/Product Categories",
+      "active": true
+    },
+    {
+      "id": 186,
+      "name": "Employees",
+      "complete_name": "Employees/Employees",
+      "active": true
+    },
+    {
+      "id": 232,
+      "name": "Procurement",
+      "complete_name": "Inventory/Operations/Procurement",
+      "active": true
+    },
+    {
+      "id": 265,
+      "name": "Routes",
+      "complete_name": "Inventory/Configuration/Warehouse Management/Routes",
+      "active": true
+    },
+    {
+      "id": 292,
+      "name": "Product Categories",
+      "complete_name": "Purchase/Configuration/Products/Product Categories",
+      "active": true
+    },
+    {
+      "id": 409,
+      "name": "Partner Reports",
+      "complete_name": "Accounting/Reporting/Partner Reports",
+      "active": true
+    },
+    {
+      "id": 420,
+      "name": "General Ledger",
+      "complete_name": "Accounting/Reporting/Audit Reports/General Ledger",
+      "active": true
+    },
+    {
+      "id": 438,
+      "name": "Partner Ledger",
+      "complete_name": "Accounting/Reporting/Dynamic Financial Reports/Partner Ledger",
+      "active": true
+    },
+    {
+      "id": 452,
+      "name": "Contact Titles",
+      "complete_name": "Contacts/Configuration/Contact Titles",
+      "active": true
+    },
+    {
+      "id": 456,
+      "name": "Country Group",
+      "complete_name": "Contacts/Configuration/Localization/Country Group",
+      "active": true
+    },
+    {
+      "id": 479,
+      "name": "Leads",
+      "complete_name": "CRM/Reporting/Leads",
+      "active": true
+    },
+    {
+      "id": 509,
+      "name": "My Allocations",
+      "complete_name": "Time Off/My Time/My Allocations",
+      "active": true
+    },
+    {
+      "id": 511,
+      "name": "Management",
+      "complete_name": "Time Off/Management",
+      "active": true
+    },
+    {
+      "id": 516,
+      "name": "by Type",
+      "complete_name": "Time Off/Reporting/by Type",
+      "active": true
+    },
+    {
+      "id": 520,
+      "name": "Public Holidays",
+      "complete_name": "Time Off/Configuration/Public Holidays",
+      "active": true
+    },
+    {
+      "id": 557,
+      "name": "Settings",
+      "complete_name": "Activity Dashboard/Configuration/Settings",
+      "active": true
+    },
+    {
+      "id": 564,
+      "name": "Reporting",
+      "complete_name": "Activity Dashboard/Reporting",
+      "active": true
+    },
+    {
+      "id": 616,
+      "name": "SRN",
+      "complete_name": "Service Orders/SRN",
+      "active": true
+    },
+    {
+      "id": 622,
+      "name": "Services",
+      "complete_name": "AMC Management/Services",
+      "active": true
+    },
+    {
+      "id": 711,
+      "name": "Replacements",
+      "complete_name": "AMC Management/Replacements",
+      "active": true
+    },
+    {
+      "id": 88,
+      "name": "Subtypes",
+      "complete_name": "Settings/Technical/Discuss/Subtypes",
+      "active": true
+    },
+    {
+      "id": 130,
+      "name": "Accounting",
+      "complete_name": "Accounting/Accounting",
+      "active": true
+    },
+    {
+      "id": 139,
+      "name": "Management",
+      "complete_name": "Accounting/Reporting/Management",
+      "active": true
+    },
+    {
+      "id": 156,
+      "name": "Currencies",
+      "complete_name": "Accounting/Configuration/Accounting/Currencies",
+      "active": true
+    },
+    {
+      "id": 160,
+      "name": "Online Payments",
+      "complete_name": "Accounting/Configuration/Online Payments",
+      "active": true
+    },
+    {
+      "id": 188,
+      "name": "Directory",
+      "complete_name": "Employees/Directory",
+      "active": true
+    },
+    {
+      "id": 193,
+      "name": "Departments",
+      "complete_name": "Employees/Configuration/Employee/Departments",
+      "active": true
+    },
+    {
+      "id": 235,
+      "name": "Products",
+      "complete_name": "Inventory/Configuration/Products",
+      "active": true
+    },
+    {
+      "id": 243,
+      "name": "Products",
+      "complete_name": "Inventory/Products",
+      "active": true
+    },
+    {
+      "id": 270,
+      "name": "Rules",
+      "complete_name": "Inventory/Configuration/Warehouse Management/Rules",
+      "active": true
+    },
+    {
+      "id": 410,
+      "name": "Audit Reports",
+      "complete_name": "Accounting/Reporting/Audit Reports",
+      "active": true
+    },
+    {
+      "id": 435,
+      "name": "Aged Receivable",
+      "complete_name": "Accounting/Reporting/Dynamic Financial Reports/Aged Receivable",
+      "active": true
+    },
+    {
+      "id": 445,
+      "name": "Shipping Methods",
+      "complete_name": "Sales/Configuration/Sales Orders/Shipping Methods",
+      "active": true
+    },
+    {
+      "id": 453,
+      "name": "Industries",
+      "complete_name": "Contacts/Configuration/Industries",
+      "active": true
+    },
+    {
+      "id": 473,
+      "name": "Teams",
+      "complete_name": "CRM/Sales/Teams",
+      "active": true
+    },
+    {
+      "id": 480,
+      "name": "Activities",
+      "complete_name": "CRM/Reporting/Activities",
+      "active": true
+    },
+    {
+      "id": 514,
+      "name": "Reporting",
+      "complete_name": "Time Off/Reporting",
+      "active": true
+    },
+    {
+      "id": 521,
+      "name": "Mandatory Days",
+      "complete_name": "Time Off/Configuration/Mandatory Days",
+      "active": true
+    },
+    {
+      "id": 544,
+      "name": "Reporting",
+      "complete_name": "Expenses/Reporting",
+      "active": true
+    },
+    {
+      "id": 555,
+      "name": "Configuration",
+      "complete_name": "Activity Dashboard/Configuration",
+      "active": true
+    },
+    {
+      "id": 712,
+      "name": "Expenses",
+      "complete_name": "AMC Management/Expenses",
+      "active": true
+    },
+    {
+      "id": 18,
+      "name": "Actions",
+      "complete_name": "Settings/Technical/Actions",
+      "active": true
+    },
+    {
+      "id": 29,
+      "name": "User-defined Filters",
+      "complete_name": "Settings/Technical/User Interface/User-defined Filters",
+      "active": true
+    },
+    {
+      "id": 47,
+      "name": "Apps",
+      "complete_name": "Apps/Apps",
+      "active": true
+    },
+    {
+      "id": 48,
+      "name": "Main Apps",
+      "complete_name": "Apps/Apps/Main Apps",
+      "active": true
+    },
+    {
+      "id": 67,
+      "name": "Tours",
+      "complete_name": "Settings/Technical/User Interface/Tours",
+      "active": true
+    },
+    {
+      "id": 68,
+      "name": "IAP",
+      "complete_name": "Settings/Technical/IAP",
+      "active": true
+    },
+    {
+      "id": 76,
+      "name": "Discuss",
+      "complete_name": "Discuss",
+      "active": true
+    },
+    {
+      "id": 89,
+      "name": "Tracking Values",
+      "complete_name": "Settings/Technical/Discuss/Tracking Values",
+      "active": true
+    },
+    {
+      "id": 157,
+      "name": "Fiscal Positions",
+      "complete_name": "Accounting/Configuration/Accounting/Fiscal Positions",
+      "active": true
+    },
+    {
+      "id": 161,
+      "name": "Management",
+      "complete_name": "Accounting/Configuration/Management",
+      "active": true
+    },
+    {
+      "id": 176,
+      "name": "India",
+      "complete_name": "Accounting/Reporting/India",
+      "active": true
+    },
+    {
+      "id": 195,
+      "name": "Work Locations",
+      "complete_name": "Employees/Configuration/Employee/Work Locations",
+      "active": true
+    },
+    {
+      "id": 205,
+      "name": "Org Chart",
+      "complete_name": "Employees/Employees/Org Chart",
+      "active": true
+    },
+    {
+      "id": 221,
+      "name": "Projects",
+      "complete_name": "Project/Configuration/Projects",
+      "active": true
+    },
+    {
+      "id": 222,
+      "name": "Projects",
+      "complete_name": "Project/Configuration/Projects",
+      "active": true
+    },
+    {
+      "id": 237,
+      "name": "Units of Measures",
+      "complete_name": "Inventory/Configuration/Units of Measures",
+      "active": true
+    },
+    {
+      "id": 240,
+      "name": "UoM Categories",
+      "complete_name": "Inventory/Configuration/Units of Measures/UoM Categories",
+      "active": true
+    },
+    {
+      "id": 257,
+      "name": "Operations Types",
+      "complete_name": "Inventory/Configuration/Warehouse Management/Operations Types",
+      "active": true
+    },
+    {
+      "id": 263,
+      "name": "Stock",
+      "complete_name": "Inventory/Reporting/Stock",
+      "active": true
+    },
+    {
+      "id": 266,
+      "name": "Replenishment",
+      "complete_name": "Inventory/Operations/Procurement/Replenishment",
+      "active": true
+    },
+    {
+      "id": 275,
+      "name": "Timesheets",
+      "complete_name": "Timesheets/Timesheets",
+      "active": true
+    },
+    {
+      "id": 296,
+      "name": "Products",
+      "complete_name": "Purchase/Products",
+      "active": true
+    },
+    {
+      "id": 403,
+      "name": "Budgetary Positions",
+      "complete_name": "Accounting/Configuration/Management/Budgetary Positions",
+      "active": true
+    },
+    {
+      "id": 426,
+      "name": "Cash Flow Statement",
+      "complete_name": "Accounting/Reporting/Generic Statements/Cash Flow Statement",
+      "active": true
+    },
+    {
+      "id": 434,
+      "name": "Cash Book",
+      "complete_name": "Accounting/Reporting/Dynamic Financial Reports/Cash Book",
+      "active": true
+    },
+    {
+      "id": 454,
+      "name": "Localization",
+      "complete_name": "Contacts/Configuration/Localization",
+      "active": true
+    },
+    {
+      "id": 474,
+      "name": "Customers",
+      "complete_name": "CRM/Sales/Customers",
+      "active": true
+    },
+    {
+      "id": 475,
+      "name": "Leads",
+      "complete_name": "CRM/Leads",
+      "active": true
+    },
+    {
+      "id": 484,
+      "name": "Sales Teams",
+      "complete_name": "CRM/Configuration/Sales Teams",
+      "active": true
+    },
+    {
+      "id": 517,
+      "name": "Configuration",
+      "complete_name": "Time Off/Configuration",
+      "active": true
+    },
+    {
+      "id": 537,
+      "name": "Overview",
+      "complete_name": "Attendances/Overview",
+      "active": true
+    },
+    {
+      "id": 631,
+      "name": "Tickets",
+      "complete_name": "Helpdesk/Reporting/Tickets",
+      "active": true
+    },
+    {
+      "id": 634,
+      "name": "Channels",
+      "complete_name": "Helpdesk/Configuration/Channels",
+      "active": true
+    },
+    {
+      "id": 196,
+      "name": "Working Schedules",
+      "complete_name": "Employees/Configuration/Contracts/Working Schedules",
+      "active": true
+    },
+    {
+      "id": 268,
+      "name": "Storage Categories",
+      "complete_name": "Inventory/Configuration/Warehouse Management/Storage Categories",
+      "active": true
+    },
+    {
+      "id": 300,
+      "name": "Purchase Orders",
+      "complete_name": "Purchase/Orders/Purchase Orders",
+      "active": true
+    },
+    {
+      "id": 417,
+      "name": "Asset Types",
+      "complete_name": "Accounting/Configuration/Management/Asset Types",
+      "active": true
+    },
+    {
+      "id": 439,
+      "name": "Bank Book",
+      "complete_name": "Accounting/Reporting/Dynamic Financial Reports/Bank Book",
+      "active": true
+    },
+    {
+      "id": 458,
+      "name": "Bank Accounts",
+      "complete_name": "Contacts/Configuration/Bank Accounts",
+      "active": true
+    },
+    {
+      "id": 492,
+      "name": "Lost Reasons",
+      "complete_name": "CRM/Configuration/Pipeline/Lost Reasons",
+      "active": true
+    },
+    {
+      "id": 504,
+      "name": "Contracts",
+      "complete_name": "Employees/Employees/Contracts",
+      "active": true
+    },
+    {
+      "id": 158,
+      "name": "Journal Groups",
+      "complete_name": "Accounting/Configuration/Accounting/Journal Groups",
+      "active": true
+    },
+    {
+      "id": 197,
+      "name": "Departure Reasons",
+      "complete_name": "Employees/Configuration/Employee/Departure Reasons",
+      "active": true
+    },
+    {
+      "id": 208,
+      "name": "Skill Types",
+      "complete_name": "Employees/Configuration/Employee/Skill Types",
+      "active": true
+    },
+    {
+      "id": 423,
+      "name": "Trial Balance",
+      "complete_name": "Accounting/Reporting/Audit Reports/Trial Balance",
+      "active": true
+    },
+    {
+      "id": 437,
+      "name": "Trial Balance",
+      "complete_name": "Accounting/Reporting/Dynamic Financial Reports/Trial Balance",
+      "active": true
+    },
+    {
+      "id": 246,
+      "name": "Putaway Rules",
+      "complete_name": "Inventory/Configuration/Warehouse Management/Putaway Rules",
+      "active": true
+    },
+    {
+      "id": 422,
+      "name": "Tax Report",
+      "complete_name": "Accounting/Reporting/Audit Reports/Tax Report",
+      "active": true
+    },
+    {
+      "id": 223,
+      "name": "Project Stages",
+      "complete_name": "Project/Configuration/Project Stages",
+      "active": true
+    },
+    {
+      "id": 425,
+      "name": "Journals Audit",
+      "complete_name": "Accounting/Reporting/Audit Reports/Journals Audit",
+      "active": true
+    },
+    {
+      "id": 442,
+      "name": "Aged Payable",
+      "complete_name": "Accounting/Reporting/Dynamic Financial Reports/Aged Payable",
+      "active": true
+    },
+    {
+      "id": 9,
+      "name": "User Interface",
+      "complete_name": "Settings/Technical/User Interface",
+      "active": true
+    },
+    {
+      "id": 11,
+      "name": "Database Structure",
+      "complete_name": "Settings/Technical/Database Structure",
+      "active": true
+    },
+    {
+      "id": 12,
+      "name": "Automation",
+      "complete_name": "Settings/Technical/Automation",
+      "active": true
+    },
+    {
+      "id": 17,
+      "name": "Decimal Accuracy",
+      "complete_name": "Settings/Technical/Database Structure/Decimal Accuracy",
+      "active": true
+    },
+    {
+      "id": 19,
+      "name": "Actions",
+      "complete_name": "Settings/Technical/Actions/Actions",
+      "active": true
+    },
+    {
+      "id": 20,
+      "name": "Reports",
+      "complete_name": "Settings/Technical/Actions/Reports",
+      "active": true
+    },
+    {
+      "id": 21,
+      "name": "Window Actions",
+      "complete_name": "Settings/Technical/Actions/Window Actions",
+      "active": true
+    },
+    {
+      "id": 22,
+      "name": "Client Actions",
+      "complete_name": "Settings/Technical/Actions/Client Actions",
+      "active": true
+    },
+    {
+      "id": 23,
+      "name": "Server Actions",
+      "complete_name": "Settings/Technical/Actions/Server Actions",
+      "active": true
+    },
+    {
+      "id": 24,
+      "name": "Configuration Wizards",
+      "complete_name": "Settings/Technical/Actions/Configuration Wizards",
+      "active": true
+    },
+    {
+      "id": 25,
+      "name": "Assets",
+      "complete_name": "Settings/Technical/Database Structure/Assets",
+      "active": true
+    },
+    {
+      "id": 26,
+      "name": "System Parameters",
+      "complete_name": "Settings/Technical/Parameters/System Parameters",
+      "active": true
+    },
+    {
+      "id": 31,
+      "name": "Models",
+      "complete_name": "Settings/Technical/Database Structure/Models",
+      "active": true
+    },
+    {
+      "id": 32,
+      "name": "Fields",
+      "complete_name": "Settings/Technical/Database Structure/Fields",
+      "active": true
+    },
+    {
+      "id": 33,
+      "name": "Fields Selection",
+      "complete_name": "Settings/Technical/Database Structure/Fields Selection",
+      "active": true
+    },
+    {
+      "id": 38,
+      "name": "Access Rights",
+      "complete_name": "Settings/Technical/Security/Access Rights",
+      "active": true
+    },
+    {
+      "id": 39,
+      "name": "Attachments",
+      "complete_name": "Settings/Technical/Database Structure/Attachments",
+      "active": true
+    },
+    {
+      "id": 41,
+      "name": "Sequences",
+      "complete_name": "Settings/Technical/Sequences & Identifiers/Sequences",
+      "active": true
+    },
+    {
+      "id": 45,
+      "name": "User-defined Defaults",
+      "complete_name": "Settings/Technical/Actions/User-defined Defaults",
+      "active": true
+    },
+    {
+      "id": 46,
+      "name": "Logging",
+      "complete_name": "Settings/Technical/Database Structure/Logging",
+      "active": true
+    },
+    {
+      "id": 51,
+      "name": "Theme Store",
+      "complete_name": "Apps/Apps/Theme Store",
+      "active": true
+    },
+    {
+      "id": 53,
+      "name": "Import Translation",
+      "complete_name": "Settings/Translations/Import / Export/Import Translation",
+      "active": true
+    },
+    {
+      "id": 55,
+      "name": "Export Translation",
+      "complete_name": "Settings/Translations/Import / Export/Export Translation",
+      "active": true
+    },
+    {
+      "id": 56,
+      "name": "Profiling",
+      "complete_name": "Settings/Technical/Database Structure/Profiling",
+      "active": true
+    },
+    {
+      "id": 57,
+      "name": "Companies",
+      "complete_name": "Settings/Users & Companies/Companies",
+      "active": true
+    },
+    {
+      "id": 61,
+      "name": "Company Properties",
+      "complete_name": "Settings/Technical/Parameters/Company Properties",
+      "active": true
+    },
+    {
+      "id": 69,
+      "name": "IAP Accounts",
+      "complete_name": "Settings/Technical/IAP/IAP Accounts",
+      "active": true
+    },
+    {
+      "id": 81,
+      "name": "Email Templates",
+      "complete_name": "Settings/Technical/Email/Email Templates",
+      "active": true
+    },
+    {
+      "id": 90,
+      "name": "Activity Types",
+      "complete_name": "Settings/Technical/Discuss/Activity Types",
+      "active": true
+    },
+    {
+      "id": 133,
+      "name": "Journal Items",
+      "complete_name": "Accounting/Accounting/Journals/Journal Items",
+      "active": true
+    },
+    {
+      "id": 134,
+      "name": "Management",
+      "complete_name": "Accounting/Accounting/Management",
+      "active": true
+    },
+    {
+      "id": 171,
+      "name": "Dashboards",
+      "complete_name": "Dashboards/Configuration/Dashboards",
+      "active": true
+    },
+    {
+      "id": 172,
+      "name": "Payment Providers",
+      "complete_name": "Accounting/Configuration/Online Payments/Payment Providers",
+      "active": true
+    },
+    {
+      "id": 192,
+      "name": "Employee",
+      "complete_name": "Employees/Configuration/Employee",
+      "active": true
+    },
+    {
+      "id": 194,
+      "name": "Departments",
+      "complete_name": "Employees/Departments",
+      "active": true
+    },
+    {
+      "id": 217,
+      "name": "Tasks Analysis",
+      "complete_name": "Project/Reporting/Tasks Analysis",
+      "active": true
+    },
+    {
+      "id": 225,
+      "name": "Tags",
+      "complete_name": "Project/Configuration/Tags",
+      "active": true
+    },
+    {
+      "id": 226,
+      "name": "Activity Types",
+      "complete_name": "Project/Configuration/Activity Types",
+      "active": true
+    },
+    {
+      "id": 227,
+      "name": "Activity Plans",
+      "complete_name": "Project/Configuration/Activity Plans",
+      "active": true
+    },
+    {
+      "id": 249,
+      "name": "Physical Inventory",
+      "complete_name": "Inventory/Operations/Adjustments/Physical Inventory",
+      "active": true
+    },
+    {
+      "id": 262,
+      "name": "Product Packagings",
+      "complete_name": "Inventory/Configuration/Products/Product Packagings",
+      "active": true
+    },
+    {
+      "id": 267,
+      "name": "Reordering Rules",
+      "complete_name": "Inventory/Configuration/Products/Reordering Rules",
+      "active": true
+    },
+    {
+      "id": 274,
+      "name": "My Timesheets",
+      "complete_name": "Timesheets/My Timesheets",
+      "active": true
+    },
+    {
+      "id": 276,
+      "name": "My Timesheets",
+      "complete_name": "Timesheets/Timesheets/My Timesheets",
+      "active": true
+    },
+    {
+      "id": 277,
+      "name": "All Timesheets",
+      "complete_name": "Timesheets/Timesheets/All Timesheets",
+      "active": true
+    },
+    {
+      "id": 279,
+      "name": "Timesheets",
+      "complete_name": "Timesheets/Reporting/Timesheets",
+      "active": true
+    },
+    {
+      "id": 280,
+      "name": "By Employee",
+      "complete_name": "Timesheets/Reporting/Timesheets/By Employee",
+      "active": true
+    },
+    {
+      "id": 284,
+      "name": "To-do",
+      "complete_name": "To-do",
+      "active": true
+    },
+    {
+      "id": 295,
+      "name": "Units of Measure Categories",
+      "complete_name": "Purchase/Configuration/Units of Measures/Units of Measure Categories",
+      "active": true
+    },
+    {
+      "id": 307,
+      "name": "Orders",
+      "complete_name": "Sales/Orders",
+      "active": true
+    },
+    {
+      "id": 308,
+      "name": "Quotations",
+      "complete_name": "Sales/Orders/Quotations",
+      "active": true
+    },
+    {
+      "id": 313,
+      "name": "Orders to Invoice",
+      "complete_name": "Sales/To Invoice/Orders to Invoice",
+      "active": true
+    },
+    {
+      "id": 316,
+      "name": "Products",
+      "complete_name": "Sales/Products/Products",
+      "active": true
+    },
+    {
+      "id": 320,
+      "name": "Sales",
+      "complete_name": "Sales/Reporting/Sales",
+      "active": true
+    },
+    {
+      "id": 325,
+      "name": "Settings",
+      "complete_name": "Sales/Configuration/Settings",
+      "active": true
+    },
+    {
+      "id": 328,
+      "name": "Tags",
+      "complete_name": "Sales/Configuration/Sales Orders/Tags",
+      "active": true
+    },
+    {
+      "id": 333,
+      "name": "Payment Providers",
+      "complete_name": "Sales/Configuration/Online Payments/Payment Providers",
+      "active": true
+    },
+    {
+      "id": 406,
+      "name": "Account Reports",
+      "complete_name": "Accounting/Configuration/Accounting/Account Reports",
+      "active": true
+    },
+    {
+      "id": 411,
+      "name": "Account Groups",
+      "complete_name": "Accounting/Configuration/Accounting/Account Groups",
+      "active": true
+    },
+    {
+      "id": 427,
+      "name": "Bank Book",
+      "complete_name": "Accounting/Reporting/Daily Reports/Bank Book",
+      "active": true
+    },
+    {
+      "id": 428,
+      "name": "Cash Book",
+      "complete_name": "Accounting/Reporting/Daily Reports/Cash Book",
+      "active": true
+    },
+    {
+      "id": 429,
+      "name": "Day Book",
+      "complete_name": "Accounting/Reporting/Daily Reports/Day Book",
+      "active": true
+    },
+    {
+      "id": 431,
+      "name": "Recurring Templates",
+      "complete_name": "Accounting/Configuration/Online Payments/Recurring Templates",
+      "active": true
+    },
+    {
+      "id": 432,
+      "name": "Lock Dates",
+      "complete_name": "Accounting/Accounting/Actions/Lock Dates",
+      "active": true
+    },
+    {
+      "id": 436,
+      "name": "General Ledger",
+      "complete_name": "Accounting/Reporting/Dynamic Financial Reports/General Ledger",
+      "active": true
+    },
+    {
+      "id": 443,
+      "name": "Tax Report",
+      "complete_name": "Accounting/Reporting/Dynamic Financial Reports/Tax Report",
+      "active": true
+    },
+    {
+      "id": 461,
+      "name": "Calendar",
+      "complete_name": "Calendar",
+      "active": true
+    },
+    {
+      "id": 486,
+      "name": "Activity Types",
+      "complete_name": "CRM/Configuration/Activity Types",
+      "active": true
+    },
+    {
+      "id": 529,
+      "name": "Employee Payslips",
+      "complete_name": "Payroll/Employee Payslips",
+      "active": true
+    },
+    {
+      "id": 530,
+      "name": "Payslips Batches",
+      "complete_name": "Payroll/Payslips Batches",
+      "active": true
+    },
+    {
+      "id": 531,
+      "name": "Settings",
+      "complete_name": "Payroll/Configuration/Settings",
+      "active": true
+    },
+    {
+      "id": 533,
+      "name": "Payslip Report",
+      "complete_name": "Payroll/Reports/Payslip Report",
+      "active": true
+    },
+    {
+      "id": 535,
+      "name": "Kiosk Mode",
+      "complete_name": "Attendances/Kiosk Mode",
+      "active": true
+    },
+    {
+      "id": 547,
+      "name": "Expense Categories",
+      "complete_name": "Expenses/Configuration/Expense Categories",
+      "active": true
+    },
+    {
+      "id": 552,
+      "name": "Timesheets / Attendance Analysis",
+      "complete_name": "Timesheets/Reporting/Timesheets / Attendance Analysis",
+      "active": true
+    },
+    {
+      "id": 553,
+      "name": "Salary Computation",
+      "complete_name": "Payroll/Reports/Salary Computation",
+      "active": true
+    },
+    {
+      "id": 554,
+      "name": "Activity Dashboard",
+      "complete_name": "Activity Dashboard",
+      "active": true
+    },
+    {
+      "id": 560,
+      "name": "All Activities",
+      "complete_name": "Activity Dashboard/Activity/All Activities",
+      "active": true
+    },
+    {
+      "id": 561,
+      "name": "Supervisor Activities",
+      "complete_name": "Activity Dashboard/Activity/Supervisor Activities",
+      "active": true
+    },
+    {
+      "id": 562,
+      "name": "My Activities",
+      "complete_name": "Activity Dashboard/Activity/My Activities",
+      "active": true
+    },
+    {
+      "id": 567,
+      "name": "Terms and Conditions",
+      "complete_name": "Sales/Configuration/Terms and Conditions",
+      "active": true
+    },
+    {
+      "id": 608,
+      "name": "Sale Order Lines",
+      "complete_name": "Sales/Orders/Sale Order Lines",
+      "active": true
+    },
+    {
+      "id": 629,
+      "name": "Tickets",
+      "complete_name": "Helpdesk/Tickets",
+      "active": true
+    },
+    {
+      "id": 708,
+      "name": "Terms and Conditions",
+      "complete_name": "Purchase/Configuration/Terms and Conditions",
+      "active": true
+    },
+    {
+      "id": 714,
+      "name": "My",
+      "complete_name": "Performance/My",
+      "active": true
+    },
+    {
+      "id": 715,
+      "name": "My Reviews",
+      "complete_name": "Performance/My/My Reviews",
+      "active": true
+    },
+    {
+      "id": 718,
+      "name": "Team Reviews",
+      "complete_name": "Performance/Team/Team Reviews",
+      "active": true
+    },
+    {
+      "id": 720,
+      "name": "All Reviews",
+      "complete_name": "Performance/Reviews/All Reviews",
+      "active": true
+    },
+    {
+      "id": 724,
+      "name": "Review Templates",
+      "complete_name": "Performance/Configuration/Review Templates",
+      "active": true
+    },
+    {
+      "id": 91,
+      "name": "Activities",
+      "complete_name": "Settings/Technical/Discuss/Activities",
+      "active": true
+    },
+    {
+      "id": 137,
+      "name": "Actions",
+      "complete_name": "Accounting/Accounting/Actions",
+      "active": true
+    },
+    {
+      "id": 487,
+      "name": "Activity Plans",
+      "complete_name": "CRM/Configuration/Activity Plans",
+      "active": true
+    },
+    {
+      "id": 92,
+      "name": "Activity Plans",
+      "complete_name": "Settings/Technical/Discuss/Activity Plans",
+      "active": true
+    },
+    {
+      "id": 488,
+      "name": "Recurring Plans",
+      "complete_name": "CRM/Configuration/Recurring Plans",
+      "active": true
+    },
+    {
+      "id": 525,
+      "name": "Salary Rules",
+      "complete_name": "Payroll/Configuration/Salary Rules",
+      "active": true
+    },
+    {
+      "id": 527,
+      "name": "Contribution Registers",
+      "complete_name": "Payroll/Configuration/Contribution Registers",
+      "active": true
+    },
+    {
+      "id": 119,
+      "name": "Payments",
+      "complete_name": "Accounting/Customers/Payments",
+      "active": true
+    },
+    {
+      "id": 173,
+      "name": "Payment Methods",
+      "complete_name": "Accounting/Configuration/Online Payments/Payment Methods",
+      "active": true
+    },
+    {
+      "id": 209,
+      "name": "Skills",
+      "complete_name": "Employees/Reporting/Skills",
+      "active": true
+    },
+    {
+      "id": 281,
+      "name": "By Project",
+      "complete_name": "Timesheets/Reporting/Timesheets/By Project",
+      "active": true
+    },
+    {
+      "id": 287,
+      "name": "Vendors",
+      "complete_name": "Purchase/Orders/Vendors",
+      "active": true
+    },
+    {
+      "id": 489,
+      "name": "Pipeline",
+      "complete_name": "CRM/Configuration/Pipeline",
+      "active": true
+    },
+    {
+      "id": 536,
+      "name": "Reporting",
+      "complete_name": "Attendances/Reporting",
+      "active": true
+    },
+    {
+      "id": 558,
+      "name": "Mass Activities Dynamic Action",
+      "complete_name": "Mass Activities Dynamic Action",
+      "active": true
+    },
+    {
+      "id": 635,
+      "name": "Categories",
+      "complete_name": "Helpdesk/Configuration/Categories",
+      "active": true
+    },
+    {
+      "id": 627,
+      "name": "Helpdesk",
+      "complete_name": "Helpdesk",
+      "active": true
+    },
+    {
+      "id": 433,
+      "name": "Dynamic Financial Reports",
+      "complete_name": "Accounting/Reporting/Dynamic Financial Reports",
+      "active": true
+    },
+    {
+      "id": 50,
+      "name": "Third-Party Apps",
+      "complete_name": "Apps/Apps/Third-Party Apps",
+      "active": true
+    },
+    {
+      "id": 126,
+      "name": "Payments",
+      "complete_name": "Accounting/Vendors/Payments",
+      "active": true
+    },
+    {
+      "id": 138,
+      "name": "Reporting",
+      "complete_name": "Accounting/Reporting",
+      "active": true
+    },
+    {
+      "id": 199,
+      "name": "Recruitment",
+      "complete_name": "Employees/Configuration/Recruitment",
+      "active": true
+    },
+    {
+      "id": 254,
+      "name": "Receipts",
+      "complete_name": "Inventory/Operations/Transfers/Receipts",
+      "active": true
+    },
+    {
+      "id": 282,
+      "name": "By Task",
+      "complete_name": "Timesheets/Reporting/Timesheets/By Task",
+      "active": true
+    },
+    {
+      "id": 297,
+      "name": "Products",
+      "complete_name": "Purchase/Products/Products",
+      "active": true
+    },
+    {
+      "id": 309,
+      "name": "Orders",
+      "complete_name": "Sales/Orders/Orders",
+      "active": true
+    },
+    {
+      "id": 312,
+      "name": "To Invoice",
+      "complete_name": "Sales/To Invoice",
+      "active": true
+    },
+    {
+      "id": 314,
+      "name": "Orders to Upsell",
+      "complete_name": "Sales/To Invoice/Orders to Upsell",
+      "active": true
+    },
+    {
+      "id": 321,
+      "name": "Salespersons",
+      "complete_name": "Sales/Reporting/Salespersons",
+      "active": true
+    },
+    {
+      "id": 326,
+      "name": "Sales Teams",
+      "complete_name": "Sales/Configuration/Sales Teams",
+      "active": true
+    },
+    {
+      "id": 331,
+      "name": "Product Categories",
+      "complete_name": "Sales/Configuration/Products/Product Categories",
+      "active": true
+    },
+    {
+      "id": 334,
+      "name": "Payment Methods",
+      "complete_name": "Sales/Configuration/Online Payments/Payment Methods",
+      "active": true
+    },
+    {
+      "id": 339,
+      "name": "Units of Measure Categories",
+      "complete_name": "Sales/Configuration/Units of Measure/Units of Measure Categories",
+      "active": true
+    },
+    {
+      "id": 405,
+      "name": "Budgets",
+      "complete_name": "Accounting/Reporting/Management/Budgets",
+      "active": true
+    },
+    {
+      "id": 413,
+      "name": "Follow-up Reports",
+      "complete_name": "Accounting/Customers/Follow-up Reports",
+      "active": true
+    },
+    {
+      "id": 448,
+      "name": "Contacts",
+      "complete_name": "Contacts",
+      "active": true
+    },
+    {
+      "id": 476,
+      "name": "Reporting",
+      "complete_name": "CRM/Reporting",
+      "active": true
+    },
+    {
+      "id": 498,
+      "name": "Supplier Info",
+      "complete_name": "Inventory/Products/Supplier Info",
+      "active": true
+    },
+    {
+      "id": 716,
+      "name": "My Goals",
+      "complete_name": "Performance/My/My Goals",
+      "active": true
+    },
+    {
+      "id": 717,
+      "name": "Team",
+      "complete_name": "Performance/Team",
+      "active": true
+    },
+    {
+      "id": 721,
+      "name": "All Goals",
+      "complete_name": "Performance/Reviews/All Goals",
+      "active": true
+    },
+    {
+      "id": 255,
+      "name": "Deliveries",
+      "complete_name": "Inventory/Operations/Transfers/Deliveries",
+      "active": true
+    },
+    {
+      "id": 430,
+      "name": "Assets",
+      "complete_name": "Accounting/Reporting/Management/Assets",
+      "active": true
+    },
+    {
+      "id": 95,
+      "name": "Email Blacklist",
+      "complete_name": "Settings/Technical/Discuss/Email Blacklist",
+      "active": true
+    },
+    {
+      "id": 256,
+      "name": "Internal",
+      "complete_name": "Inventory/Operations/Transfers/Internal",
+      "active": true
+    },
+    {
+      "id": 548,
+      "name": "Employee Expenses",
+      "complete_name": "Accounting/Vendors/Employee Expenses",
+      "active": true
+    },
+    {
+      "id": 14,
+      "name": "Parameters",
+      "complete_name": "Settings/Technical/Parameters",
+      "active": true
+    },
+    {
+      "id": 13,
+      "name": "Security",
+      "complete_name": "Settings/Technical/Security",
+      "active": true
+    },
+    {
+      "id": 469,
+      "name": "CRM",
+      "complete_name": "CRM",
+      "active": true
+    },
+    {
+      "id": 481,
+      "name": "Configuration",
+      "complete_name": "CRM/Configuration",
+      "active": true
+    },
+    {
+      "id": 503,
+      "name": "Contracts",
+      "complete_name": "Employees/Configuration/Contracts",
+      "active": true
+    },
+    {
+      "id": 630,
+      "name": "Reporting",
+      "complete_name": "Helpdesk/Reporting",
+      "active": true
+    },
+    {
+      "id": 636,
+      "name": "Stages",
+      "complete_name": "Helpdesk/Configuration/Stages",
+      "active": true
+    },
+    {
+      "id": 713,
+      "name": "Performance",
+      "complete_name": "Performance",
+      "active": true
+    },
+    {
+      "id": 106,
+      "name": "Privacy",
+      "complete_name": "Settings/Technical/Privacy",
+      "active": true
+    },
+    {
+      "id": 72,
+      "name": "Resource",
+      "complete_name": "Settings/Technical/Resource",
+      "active": true
+    },
+    {
+      "id": 183,
+      "name": "Ratings",
+      "complete_name": "Settings/Technical/Discuss/Ratings",
+      "active": true
+    },
+    {
+      "id": 290,
+      "name": "Products",
+      "complete_name": "Purchase/Configuration/Products",
+      "active": true
+    },
+    {
+      "id": 306,
+      "name": "Sales",
+      "complete_name": "Sales",
+      "active": true
+    },
+    {
+      "id": 310,
+      "name": "Sales Teams",
+      "complete_name": "Sales/Orders/Sales Teams",
+      "active": true
+    },
+    {
+      "id": 315,
+      "name": "Products",
+      "complete_name": "Sales/Products",
+      "active": true
+    },
+    {
+      "id": 318,
+      "name": "Pricelists",
+      "complete_name": "Sales/Products/Pricelists",
+      "active": true
+    },
+    {
+      "id": 322,
+      "name": "Products",
+      "complete_name": "Sales/Reporting/Products",
+      "active": true
+    },
+    {
+      "id": 327,
+      "name": "Sales Orders",
+      "complete_name": "Sales/Configuration/Sales Orders",
+      "active": true
+    },
+    {
+      "id": 706,
+      "name": "Dropships",
+      "complete_name": "Inventory/Operations/Transfers/Dropships",
+      "active": true
+    },
+    {
+      "id": 719,
+      "name": "Reviews",
+      "complete_name": "Performance/Reviews",
+      "active": true
+    },
+    {
+      "id": 722,
+      "name": "Review Cycles",
+      "complete_name": "Performance/Reviews/Review Cycles",
+      "active": true
+    },
+    {
+      "id": 143,
+      "name": "Configuration",
+      "complete_name": "Accounting/Configuration",
+      "active": true
+    },
+    {
+      "id": 632,
+      "name": "Configuration",
+      "complete_name": "Helpdesk/Configuration",
+      "active": true
+    },
+    {
+      "id": 637,
+      "name": "Teams",
+      "complete_name": "Helpdesk/Configuration/Teams",
+      "active": true
+    },
+    {
+      "id": 168,
+      "name": "Dashboards",
+      "complete_name": "Dashboards",
+      "active": true
+    },
+    {
+      "id": 293,
+      "name": "Units of Measures",
+      "complete_name": "Purchase/Configuration/Units of Measures",
+      "active": true
+    },
+    {
+      "id": 311,
+      "name": "Customers",
+      "complete_name": "Sales/Orders/Customers",
+      "active": true
+    },
+    {
+      "id": 319,
+      "name": "Reporting",
+      "complete_name": "Sales/Reporting",
+      "active": true
+    },
+    {
+      "id": 323,
+      "name": "Customers",
+      "complete_name": "Sales/Reporting/Customers",
+      "active": true
+    },
+    {
+      "id": 329,
+      "name": "Products",
+      "complete_name": "Sales/Configuration/Products",
+      "active": true
+    },
+    {
+      "id": 402,
+      "name": "By Billing Type",
+      "complete_name": "Timesheets/Reporting/Timesheets/By Billing Type",
+      "active": true
+    },
+    {
+      "id": 463,
+      "name": "Configuration",
+      "complete_name": "Calendar/Configuration",
+      "active": true
+    },
+    {
+      "id": 332,
+      "name": "Online Payments",
+      "complete_name": "Sales/Configuration/Online Payments",
+      "active": true
+    },
+    {
+      "id": 464,
+      "name": "Settings",
+      "complete_name": "Calendar/Configuration/Settings",
+      "active": true
+    },
+    {
+      "id": 523,
+      "name": "Payroll",
+      "complete_name": "Payroll",
+      "active": true
+    },
+    {
+      "id": 532,
+      "name": "Reports",
+      "complete_name": "Payroll/Reports",
+      "active": true
+    },
+    {
+      "id": 638,
+      "name": "Ticket Tags",
+      "complete_name": "Helpdesk/Configuration/Ticket Tags",
+      "active": true
+    },
+    {
+      "id": 96,
+      "name": "User Settings",
+      "complete_name": "Settings/Technical/Discuss/User Settings",
+      "active": true
+    },
+    {
+      "id": 110,
+      "name": "Snailmail Letters",
+      "complete_name": "Settings/Technical/Email/Snailmail Letters",
+      "active": true
+    },
+    {
+      "id": 271,
+      "name": "Delivery",
+      "complete_name": "Inventory/Configuration/Delivery",
+      "active": true
+    },
+    {
+      "id": 324,
+      "name": "Configuration",
+      "complete_name": "Sales/Configuration",
+      "active": true
+    },
+    {
+      "id": 337,
+      "name": "Units of Measure",
+      "complete_name": "Sales/Configuration/Units of Measure",
+      "active": true
+    },
+    {
+      "id": 444,
+      "name": "Purchase Type",
+      "complete_name": "Purchase/Configuration/Purchase Type",
+      "active": true
+    },
+    {
+      "id": 710,
+      "name": "IAP Partners",
+      "complete_name": "Settings/Technical/IAP/IAP Partners",
+      "active": true
+    },
+    {
+      "id": 97,
+      "name": "Guests",
+      "complete_name": "Settings/Technical/Discuss/Guests",
+      "active": true
+    },
+    {
+      "id": 218,
+      "name": "Customer Ratings",
+      "complete_name": "Project/Reporting/Customer Ratings",
+      "active": true
+    },
+    {
+      "id": 98,
+      "name": "RTC sessions",
+      "complete_name": "Settings/Technical/Discuss/RTC sessions",
+      "active": true
+    },
+    {
+      "id": 99,
+      "name": "ICE servers",
+      "complete_name": "Settings/Technical/Discuss/ICE servers",
+      "active": true
+    },
+    {
+      "id": 100,
+      "name": "Message Reactions",
+      "complete_name": "Settings/Technical/Discuss/Message Reactions",
+      "active": true
+    },
+    {
+      "id": 101,
+      "name": "Link Previews",
+      "complete_name": "Settings/Technical/Discuss/Link Previews",
+      "active": true
+    },
+    {
+      "id": 113,
+      "name": "Accounting",
+      "complete_name": "Accounting",
+      "active": true
+    },
+    {
+      "id": 102,
+      "name": "GIF favorite",
+      "complete_name": "Settings/Technical/Discuss/GIF favorite",
+      "active": true
+    },
+    {
+      "id": 404,
+      "name": "Budgets",
+      "complete_name": "Accounting/Accounting/Management/Budgets",
+      "active": true
+    },
+    {
+      "id": 210,
+      "name": "Project",
+      "complete_name": "Project",
+      "active": true
+    },
+    {
+      "id": 341,
+      "name": "Activity Plans",
+      "complete_name": "Sales/Configuration/Activity Plans",
+      "active": true
+    },
+    {
+      "id": 273,
+      "name": "Timesheets",
+      "complete_name": "Timesheets",
+      "active": true
+    },
+    {
+      "id": 111,
+      "name": "Digest Emails",
+      "complete_name": "Settings/Technical/Email/Digest Emails",
+      "active": true
+    },
+    {
+      "id": 127,
+      "name": "Bank Accounts",
+      "complete_name": "Accounting/Vendors/Bank Accounts",
+      "active": true
+    },
+    {
+      "id": 112,
+      "name": "Digest Tips",
+      "complete_name": "Settings/Technical/Email/Digest Tips",
+      "active": true
+    },
+    {
+      "id": 723,
+      "name": "Configuration",
+      "complete_name": "Performance/Configuration",
+      "active": true
+    },
+    {
+      "id": 189,
+      "name": "Reporting",
+      "complete_name": "Employees/Reporting",
+      "active": true
+    },
+    {
+      "id": 216,
+      "name": "Reporting",
+      "complete_name": "Project/Reporting",
+      "active": true
+    },
+    {
+      "id": 244,
+      "name": "Reporting",
+      "complete_name": "Inventory/Reporting",
+      "active": true
+    },
+    {
+      "id": 248,
+      "name": "Scrap",
+      "complete_name": "Inventory/Operations/Adjustments/Scrap",
+      "active": true
+    },
+    {
+      "id": 278,
+      "name": "Reporting",
+      "complete_name": "Timesheets/Reporting",
+      "active": true
+    },
+    {
+      "id": 302,
+      "name": "Reporting",
+      "complete_name": "Purchase/Reporting",
+      "active": true
+    },
+    {
+      "id": 303,
+      "name": "Purchase",
+      "complete_name": "Purchase/Reporting/Purchase",
+      "active": true
+    },
+    {
+      "id": 538,
+      "name": "Configuration",
+      "complete_name": "Attendances/Configuration",
+      "active": true
+    },
+    {
+      "id": 707,
+      "name": "User Manual",
+      "complete_name": "Payroll/User Manual",
+      "active": true
+    },
+    {
+      "id": 120,
+      "name": "Products",
+      "complete_name": "Accounting/Customers/Products",
+      "active": true
+    },
+    {
+      "id": 128,
+      "name": "Products",
+      "complete_name": "Accounting/Vendors/Products",
+      "active": true
+    },
+    {
+      "id": 191,
+      "name": "Configuration",
+      "complete_name": "Employees/Configuration",
+      "active": true
+    },
+    {
+      "id": 202,
+      "name": "Activity Planning",
+      "complete_name": "Employees/Configuration/Activity Planning",
+      "active": true
+    },
+    {
+      "id": 203,
+      "name": "On/Offboarding Plans",
+      "complete_name": "Employees/Configuration/Activity Planning/On/Offboarding Plans",
+      "active": true
+    },
+    {
+      "id": 219,
+      "name": "Configuration",
+      "complete_name": "Project/Configuration",
+      "active": true
+    },
+    {
+      "id": 233,
+      "name": "Configuration",
+      "complete_name": "Inventory/Configuration",
+      "active": true
+    },
+    {
+      "id": 283,
+      "name": "Configuration",
+      "complete_name": "Timesheets/Configuration",
+      "active": true
+    },
+    {
+      "id": 288,
+      "name": "Configuration",
+      "complete_name": "Purchase/Configuration",
+      "active": true
+    },
+    {
+      "id": 524,
+      "name": "Configuration",
+      "complete_name": "Payroll/Configuration",
+      "active": true
+    },
+    {
+      "id": 546,
+      "name": "Configuration",
+      "complete_name": "Expenses/Configuration",
+      "active": true
+    },
+    {
+      "id": 725,
+      "name": "User Manual",
+      "complete_name": "Performance/User Manual",
+      "active": true
+    },
+    {
+      "id": 247,
+      "name": "Lots/Serial Numbers",
+      "complete_name": "Inventory/Products/Lots/Serial Numbers",
+      "active": true
+    },
+    {
+      "id": 415,
+      "name": "Assets",
+      "complete_name": "Accounting/Accounting/Management/Assets",
+      "active": true
+    },
+    {
+      "id": 121,
+      "name": "Customers",
+      "complete_name": "Accounting/Customers/Customers",
+      "active": true
+    },
+    {
+      "id": 705,
+      "name": "Landed Costs",
+      "complete_name": "Inventory/Operations/Adjustments/Landed Costs",
+      "active": true
+    },
+    {
+      "id": 285,
+      "name": "Purchase",
+      "complete_name": "Purchase",
+      "active": true
+    },
+    {
+      "id": 610,
+      "name": "Service Orders",
+      "complete_name": "Service Orders",
+      "active": true
+    },
+    {
+      "id": 619,
+      "name": "AMC Management",
+      "complete_name": "AMC Management",
+      "active": true
+    },
+    {
+      "id": 228,
+      "name": "Inventory",
+      "complete_name": "Inventory",
+      "active": true
+    },
+    {
+      "id": 170,
+      "name": "Configuration",
+      "complete_name": "Dashboards/Configuration",
+      "active": true
+    },
+    {
+      "id": 251,
+      "name": "Locations",
+      "complete_name": "Inventory/Reporting/Locations",
+      "active": true
+    },
+    {
+      "id": 184,
+      "name": "Employees",
+      "complete_name": "Employees",
+      "active": true
+    },
+    {
+      "id": 129,
+      "name": "Vendors",
+      "complete_name": "Accounting/Vendors/Vendors",
+      "active": true
+    },
+    {
+      "id": 253,
+      "name": "Moves History",
+      "complete_name": "Inventory/Reporting/Moves History",
+      "active": true
+    },
+    {
+      "id": 534,
+      "name": "Attendances",
+      "complete_name": "Attendances",
+      "active": true
+    },
+    {
+      "id": 505,
+      "name": "Time Off",
+      "complete_name": "Time Off",
+      "active": true
+    },
+    {
+      "id": 259,
+      "name": "Move Analysis",
+      "complete_name": "Inventory/Reporting/Move Analysis",
+      "active": true
+    },
+    {
+      "id": 539,
+      "name": "Expenses",
+      "complete_name": "Expenses",
+      "active": true
+    },
+    {
+      "id": 304,
+      "name": "Valuation",
+      "complete_name": "Inventory/Reporting/Valuation",
+      "active": true
+    },
+    {
+      "id": 305,
+      "name": "Inventory Aging",
+      "complete_name": "Inventory/Reporting/Inventory Aging",
+      "active": true
+    },
+    {
+      "id": 15,
+      "name": "Apps",
+      "complete_name": "Apps",
+      "active": true
+    },
+    {
+      "id": 1,
+      "name": "Settings",
+      "complete_name": "Settings",
+      "active": true
+    }
+  ]
+}

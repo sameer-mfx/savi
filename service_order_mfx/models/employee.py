@@ -6,6 +6,13 @@ class Employee(models.Model):
     performance_rating = fields.Float(string="Performance Rating", compute='_compute_performance_rating')
 
     def _compute_performance_rating(self):
-        srns = self.env['srn'].search([('user_id', '=', self.user_id.id), ('state', '=', 'done')])
-        average_srn_rating = sum(int(srn.performance_rating) for srn in srns) / len(srns) if srns else 0
-        self.performance_rating = average_srn_rating
+        Srn = self.env['srn']
+        for employee in self:
+            if not employee.user_id:
+                employee.performance_rating = 0
+                continue
+            srns = Srn.search([('user_id', '=', employee.user_id.id), ('state', '=', 'done')])
+            employee.performance_rating = (
+                sum(int(srn.performance_rating or 0) for srn in srns) / len(srns)
+                if srns else 0
+            )

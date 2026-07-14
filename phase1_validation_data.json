@@ -1,0 +1,2379 @@
+{
+  "server": "https://staging-savi-odoo.macrofix.com",
+  "db": "staging-savi-odoo.macrofix.com",
+  "uid": 2,
+  "version": {
+    "server_version": "17.0",
+    "server_version_info": [
+      17,
+      0,
+      0,
+      "final",
+      0,
+      ""
+    ],
+    "server_serie": "17.0",
+    "protocol_version": 1
+  },
+  "notes": [],
+  "crm": {
+    "lead_count": 717,
+    "opportunity_count": 444,
+    "lead_only_count": 273,
+    "won_count": 8,
+    "stages": [
+      {
+        "id": 6,
+        "name": "MOST IMP TO DO",
+        "sequence": 0,
+        "is_won": false,
+        "fold": false,
+        "team_id": false
+      },
+      {
+        "id": 1,
+        "name": "New",
+        "sequence": 1,
+        "is_won": false,
+        "fold": false,
+        "team_id": false
+      },
+      {
+        "id": 2,
+        "name": "Qualified",
+        "sequence": 2,
+        "is_won": false,
+        "fold": false,
+        "team_id": false
+      },
+      {
+        "id": 3,
+        "name": "Proposition",
+        "sequence": 3,
+        "is_won": false,
+        "fold": false,
+        "team_id": false
+      },
+      {
+        "id": 5,
+        "name": "Negotiation",
+        "sequence": 4,
+        "is_won": false,
+        "fold": false,
+        "team_id": false
+      },
+      {
+        "id": 4,
+        "name": "Won",
+        "sequence": 5,
+        "is_won": true,
+        "fold": false,
+        "team_id": false
+      }
+    ],
+    "sources": [
+      {
+        "id": 9,
+        "name": "Craigslist"
+      },
+      {
+        "id": 12,
+        "name": "Direct"
+      },
+      {
+        "id": 4,
+        "name": "Facebook"
+      },
+      {
+        "id": 8,
+        "name": "Glassdoor"
+      },
+      {
+        "id": 2,
+        "name": "Lead Recall"
+      },
+      {
+        "id": 6,
+        "name": "LinkedIn"
+      },
+      {
+        "id": 7,
+        "name": "Monster"
+      },
+      {
+        "id": 3,
+        "name": "Newsletter"
+      },
+      {
+        "id": 13,
+        "name": "Reference"
+      },
+      {
+        "id": 1,
+        "name": "Search engine"
+      },
+      {
+        "id": 5,
+        "name": "Twitter"
+      },
+      {
+        "id": 11,
+        "name": "email"
+      },
+      {
+        "id": 10,
+        "name": "existing"
+      }
+    ],
+    "lost_reasons": [
+      {
+        "id": 3,
+        "name": "Not enough stock"
+      },
+      {
+        "id": 1,
+        "name": "Too expensive"
+      },
+      {
+        "id": 2,
+        "name": "We don't have people/skills"
+      },
+      {
+        "id": 4,
+        "name": "he is not respodning"
+      }
+    ],
+    "activities_by_model": [
+      {
+        "res_model": "crm.lead",
+        "__count": 2,
+        "__domain": [
+          "&",
+          [
+            "res_model",
+            "in",
+            [
+              "crm.lead",
+              "sale.order"
+            ]
+          ],
+          [
+            "res_model",
+            "=",
+            "crm.lead"
+          ]
+        ]
+      },
+      {
+        "res_model": "sale.order",
+        "__count": 82,
+        "__domain": [
+          "&",
+          [
+            "res_model",
+            "in",
+            [
+              "crm.lead",
+              "sale.order"
+            ]
+          ],
+          [
+            "res_model",
+            "=",
+            "sale.order"
+          ]
+        ]
+      }
+    ],
+    "sample_leads": [
+      {
+        "id": 958,
+        "name": "Vir Bahadur singh's opportunity",
+        "type": "opportunity",
+        "stage_id": [
+          6,
+          "MOST IMP TO DO"
+        ],
+        "source_id": false,
+        "user_id": [
+          7,
+          "Dev Ratra"
+        ],
+        "partner_id": [
+          7964,
+          "The Energy and Resources Institute, Vir Bahadur singh"
+        ],
+        "expected_revenue": 2000000.0,
+        "date_deadline": false,
+        "visit_form_ids": []
+      },
+      {
+        "id": 13,
+        "name": "Bharti Reality Limited's opportunity",
+        "type": "opportunity",
+        "stage_id": [
+          1,
+          "New"
+        ],
+        "source_id": false,
+        "user_id": [
+          11,
+          "Karina"
+        ],
+        "partner_id": [
+          5192,
+          "Bharti Reality Limited"
+        ],
+        "expected_revenue": 0.0,
+        "date_deadline": false,
+        "visit_form_ids": []
+      },
+      {
+        "id": 953,
+        "name": "Abhishek Tiwari's opportunity",
+        "type": "opportunity",
+        "stage_id": [
+          2,
+          "Qualified"
+        ],
+        "source_id": false,
+        "user_id": [
+          21,
+          "Sanjeev Ratra"
+        ],
+        "partner_id": [
+          7307,
+          "PI industries Ltd, Abhishek Tiwari"
+        ],
+        "expected_revenue": 0.0,
+        "date_deadline": false,
+        "visit_form_ids": []
+      },
+      {
+        "id": 39,
+        "name": "Uttam Suryavanshi's opportunity",
+        "type": "opportunity",
+        "stage_id": [
+          1,
+          "New"
+        ],
+        "source_id": false,
+        "user_id": [
+          17,
+          "Ritika"
+        ],
+        "partner_id": [
+          5307,
+          "JK PAPER LIMITED, Uttam Suryavanshi"
+        ],
+        "expected_revenue": 0.0,
+        "date_deadline": false,
+        "visit_form_ids": []
+      },
+      {
+        "id": 104,
+        "name": "26 inches LED Monitor opportunity",
+        "type": "opportunity",
+        "stage_id": [
+          1,
+          "New"
+        ],
+        "source_id": false,
+        "user_id": [
+          17,
+          "Ritika"
+        ],
+        "partner_id": [
+          5307,
+          "JK PAPER LIMITED, Uttam Suryavanshi"
+        ],
+        "expected_revenue": 0.0,
+        "date_deadline": false,
+        "visit_form_ids": []
+      },
+      {
+        "id": 551,
+        "name": "Samaresh Chattopadhya's opportunity",
+        "type": "opportunity",
+        "stage_id": [
+          1,
+          "New"
+        ],
+        "source_id": false,
+        "user_id": [
+          11,
+          "Karina"
+        ],
+        "partner_id": [
+          5434,
+          "GODFREY PHILLIPS INDIA LIMITED, Samaresh Chattopadhya"
+        ],
+        "expected_revenue": 0.0,
+        "date_deadline": false,
+        "visit_form_ids": []
+      },
+      {
+        "id": 400,
+        "name": "Samaresh Chattopadhya's opportunity",
+        "type": "opportunity",
+        "stage_id": [
+          1,
+          "New"
+        ],
+        "source_id": false,
+        "user_id": [
+          11,
+          "Karina"
+        ],
+        "partner_id": [
+          5434,
+          "GODFREY PHILLIPS INDIA LIMITED, Samaresh Chattopadhya"
+        ],
+        "expected_revenue": 3000.0,
+        "date_deadline": false,
+        "visit_form_ids": []
+      },
+      {
+        "id": 91,
+        "name": "Samaresh Chattopadhya's opportunity",
+        "type": "opportunity",
+        "stage_id": [
+          1,
+          "New"
+        ],
+        "source_id": false,
+        "user_id": [
+          11,
+          "Karina"
+        ],
+        "partner_id": [
+          5434,
+          "GODFREY PHILLIPS INDIA LIMITED, Samaresh Chattopadhya"
+        ],
+        "expected_revenue": 0.0,
+        "date_deadline": false,
+        "visit_form_ids": []
+      },
+      {
+        "id": 404,
+        "name": "Samaresh Chattopadhya's opportunity",
+        "type": "opportunity",
+        "stage_id": [
+          2,
+          "Qualified"
+        ],
+        "source_id": false,
+        "user_id": [
+          21,
+          "Sanjeev Ratra"
+        ],
+        "partner_id": [
+          5434,
+          "GODFREY PHILLIPS INDIA LIMITED, Samaresh Chattopadhya"
+        ],
+        "expected_revenue": 300000.0,
+        "date_deadline": "2025-07-12",
+        "visit_form_ids": [
+          2
+        ]
+      },
+      {
+        "id": 616,
+        "name": "Samaresh Chattopadhya's opportunity",
+        "type": "opportunity",
+        "stage_id": [
+          1,
+          "New"
+        ],
+        "source_id": false,
+        "user_id": [
+          67,
+          "Anjali Karn"
+        ],
+        "partner_id": [
+          5434,
+          "GODFREY PHILLIPS INDIA LIMITED, Samaresh Chattopadhya"
+        ],
+        "expected_revenue": 10892.0,
+        "date_deadline": false,
+        "visit_form_ids": []
+      }
+    ]
+  },
+  "sales": {
+    "sale_order_count": 1463,
+    "by_state": [
+      {
+        "state": "cancel",
+        "__count": 1181,
+        "__domain": [
+          [
+            "state",
+            "=",
+            "cancel"
+          ]
+        ]
+      },
+      {
+        "state": "draft",
+        "__count": 44,
+        "__domain": [
+          [
+            "state",
+            "=",
+            "draft"
+          ]
+        ]
+      },
+      {
+        "state": "sale",
+        "__count": 167,
+        "__domain": [
+          [
+            "state",
+            "=",
+            "sale"
+          ]
+        ]
+      },
+      {
+        "state": "sent",
+        "__count": 71,
+        "__domain": [
+          [
+            "state",
+            "=",
+            "sent"
+          ]
+        ]
+      }
+    ],
+    "sent_with_reminder_config": 0,
+    "sent_without_reminder_config": 71,
+    "quotation_templates": [
+      {
+        "id": 19,
+        "name": "Sales: Order Cancellation",
+        "model_id": [
+          597,
+          "Sales Order"
+        ]
+      },
+      {
+        "id": 17,
+        "name": "Sales: Order Confirmation",
+        "model_id": [
+          597,
+          "Sales Order"
+        ]
+      },
+      {
+        "id": 18,
+        "name": "Sales: Payment Done",
+        "model_id": [
+          597,
+          "Sales Order"
+        ]
+      },
+      {
+        "id": 34,
+        "name": "Sales: Quotation (Any State)",
+        "model_id": [
+          597,
+          "Sales Order"
+        ]
+      },
+      {
+        "id": 29,
+        "name": "Sales: Quotation Reminder",
+        "model_id": [
+          597,
+          "Sales Order"
+        ]
+      },
+      {
+        "id": 16,
+        "name": "Sales: Send Quotation",
+        "model_id": [
+          597,
+          "Sales Order"
+        ]
+      }
+    ],
+    "recent_sale_orders": [
+      {
+        "id": 1552,
+        "name": "S01550",
+        "state": "sale",
+        "partner_id": [
+          5849,
+          "DATA FLOW, LAXMI SONI"
+        ],
+        "user_id": [
+          124,
+          "Namita Thapliyal"
+        ],
+        "amount_total": 7026900.96,
+        "margin": 2388791.8,
+        "margin_percent": 0.40114046668138154,
+        "remind_every": 0,
+        "last_reminder_date": false,
+        "next_reminder_date": false,
+        "delivery_count": 2,
+        "invoice_status": "to invoice"
+      },
+      {
+        "id": 1571,
+        "name": "S01569",
+        "state": "draft",
+        "partner_id": [
+          7616,
+          "PI Industries, Abhishek Tiwari"
+        ],
+        "user_id": [
+          124,
+          "Namita Thapliyal"
+        ],
+        "amount_total": 2214190.7,
+        "margin": 488176.8,
+        "margin_percent": 0.26016215448802643,
+        "remind_every": 0,
+        "last_reminder_date": false,
+        "next_reminder_date": false,
+        "delivery_count": 0,
+        "invoice_status": "no"
+      },
+      {
+        "id": 1566,
+        "name": "S01564",
+        "state": "sent",
+        "partner_id": [
+          7988,
+          "The Grey Cell, Devesh Agarwal"
+        ],
+        "user_id": [
+          124,
+          "Namita Thapliyal"
+        ],
+        "amount_total": 1824599.2,
+        "margin": 908516.5,
+        "margin_percent": 0.5875534067292884,
+        "remind_every": 0,
+        "last_reminder_date": false,
+        "next_reminder_date": false,
+        "delivery_count": 0,
+        "invoice_status": "no"
+      },
+      {
+        "id": 1569,
+        "name": "S01567",
+        "state": "sent",
+        "partner_id": [
+          7988,
+          "The Grey Cell, Devesh Agarwal"
+        ],
+        "user_id": [
+          124,
+          "Namita Thapliyal"
+        ],
+        "amount_total": 1088703.4,
+        "margin": 469330.0,
+        "margin_percent": 0.5086871226818985,
+        "remind_every": 0,
+        "last_reminder_date": false,
+        "next_reminder_date": false,
+        "delivery_count": 0,
+        "invoice_status": "no"
+      },
+      {
+        "id": 1282,
+        "name": "S01280",
+        "state": "sale",
+        "partner_id": [
+          7632,
+          "CSS AUTOMATION PVT LTD, KUASHIK BHATTACHARJEE"
+        ],
+        "user_id": [
+          124,
+          "Namita Thapliyal"
+        ],
+        "amount_total": 241900.0,
+        "margin": 21000.0,
+        "margin_percent": 0.1024390243902439,
+        "remind_every": 0,
+        "last_reminder_date": false,
+        "next_reminder_date": false,
+        "delivery_count": 2,
+        "invoice_status": "to invoice"
+      },
+      {
+        "id": 1530,
+        "name": "S01528",
+        "state": "sent",
+        "partner_id": [
+          7766,
+          "IMPERIA ESFERA, HARSH"
+        ],
+        "user_id": [
+          124,
+          "Namita Thapliyal"
+        ],
+        "amount_total": 857470.6,
+        "margin": 121970.0,
+        "margin_percent": 0.16784785390892704,
+        "remind_every": 0,
+        "last_reminder_date": false,
+        "next_reminder_date": false,
+        "delivery_count": 0,
+        "invoice_status": "no"
+      },
+      {
+        "id": 1545,
+        "name": "S01543",
+        "state": "sent",
+        "partner_id": [
+          7766,
+          "IMPERIA ESFERA, HARSH"
+        ],
+        "user_id": [
+          124,
+          "Namita Thapliyal"
+        ],
+        "amount_total": 167477.4,
+        "margin": 29830.0,
+        "margin_percent": 0.2101740294511379,
+        "remind_every": 0,
+        "last_reminder_date": false,
+        "next_reminder_date": false,
+        "delivery_count": 0,
+        "invoice_status": "no"
+      },
+      {
+        "id": 1546,
+        "name": "S01544",
+        "state": "draft",
+        "partner_id": [
+          7766,
+          "IMPERIA ESFERA, HARSH"
+        ],
+        "user_id": [
+          124,
+          "Namita Thapliyal"
+        ],
+        "amount_total": 361798.62,
+        "margin": 40919.0,
+        "margin_percent": 0.13345661738566056,
+        "remind_every": 0,
+        "last_reminder_date": false,
+        "next_reminder_date": false,
+        "delivery_count": 0,
+        "invoice_status": "no"
+      },
+      {
+        "id": 1439,
+        "name": "S01437",
+        "state": "cancel",
+        "partner_id": [
+          7616,
+          "PI Industries, Abhishek Tiwari"
+        ],
+        "user_id": [
+          124,
+          "Namita Thapliyal"
+        ],
+        "amount_total": 78081.49,
+        "margin": 20535.75,
+        "margin_percent": 0.3103448275862069,
+        "remind_every": 0,
+        "last_reminder_date": false,
+        "next_reminder_date": false,
+        "delivery_count": 0,
+        "invoice_status": "no"
+      },
+      {
+        "id": 1568,
+        "name": "S01566",
+        "state": "sent",
+        "partner_id": [
+          5638,
+          "PI Industries, Vishal more"
+        ],
+        "user_id": [
+          24,
+          "Shweta Chouhan"
+        ],
+        "amount_total": 210040.0,
+        "margin": 178000.0,
+        "margin_percent": 1.0,
+        "remind_every": 0,
+        "last_reminder_date": false,
+        "next_reminder_date": false,
+        "delivery_count": 0,
+        "invoice_status": "no"
+      }
+    ]
+  },
+  "amc": {
+    "amc_order_count": 49,
+    "amc_order_states": [
+      {
+        "state": "approved",
+        "__count": 26,
+        "__domain": [
+          [
+            "state",
+            "=",
+            "approved"
+          ]
+        ]
+      },
+      {
+        "state": "cancel",
+        "__count": 4,
+        "__domain": [
+          [
+            "state",
+            "=",
+            "cancel"
+          ]
+        ]
+      },
+      {
+        "state": "draft",
+        "__count": 8,
+        "__domain": [
+          [
+            "state",
+            "=",
+            "draft"
+          ]
+        ]
+      },
+      {
+        "state": "expired",
+        "__count": 11,
+        "__domain": [
+          [
+            "state",
+            "=",
+            "expired"
+          ]
+        ]
+      }
+    ],
+    "amc_site_visit_count": 12,
+    "amc_site_visit_states": [
+      {
+        "state": "cancel",
+        "__count": 1,
+        "__domain": [
+          [
+            "state",
+            "=",
+            "cancel"
+          ]
+        ]
+      },
+      {
+        "state": "done",
+        "__count": 6,
+        "__domain": [
+          [
+            "state",
+            "=",
+            "done"
+          ]
+        ]
+      },
+      {
+        "state": "draft",
+        "__count": 5,
+        "__domain": [
+          [
+            "state",
+            "=",
+            "draft"
+          ]
+        ]
+      }
+    ],
+    "amc_expense_count": 0,
+    "amc_expense_states": [],
+    "amc_replacement_count": 0,
+    "amc_replacement_states": [],
+    "amc_lot_details_count": 410,
+    "amc_lot_details_states": "no state field",
+    "templates": [
+      {
+        "id": 35,
+        "name": "AMC Order - Proposal to Customer",
+        "model_id": [
+          1579,
+          "AMC"
+        ]
+      },
+      {
+        "id": 33,
+        "name": "AMC Order - Send to Customer",
+        "model_id": [
+          1579,
+          "AMC"
+        ]
+      },
+      {
+        "id": 36,
+        "name": "AMC Site Visit - Customer Satisfaction Survey",
+        "model_id": [
+          1582,
+          "AMC Site Visit"
+        ]
+      }
+    ],
+    "recent_orders": [
+      {
+        "id": 4,
+        "name": "AMC/2025/00004",
+        "partner_id": [
+          5208,
+          "AVIVA LIFE INSURANCE COMPANY INDIA LIMITED, Inderjit"
+        ],
+        "state": "approved",
+        "amc_start_date": "2025-08-01",
+        "amc_end_date": "2026-07-31",
+        "amc_duration": 12,
+        "amc_duration_unit": "month",
+        "amc_visit_count": 1,
+        "total_revenue": 1137037.51,
+        "total_expense_cost": 0.0,
+        "profit_amount": 1137037.51,
+        "profit_margin": 100.0,
+        "is_amc_expired": false
+      },
+      {
+        "id": 38,
+        "name": "AMC/2026/00038",
+        "partner_id": [
+          5434,
+          "GODFREY PHILLIPS INDIA LIMITED, Samaresh Chattopadhya"
+        ],
+        "state": "approved",
+        "amc_start_date": "2026-04-01",
+        "amc_end_date": "2027-03-31",
+        "amc_duration": 1,
+        "amc_duration_unit": "year",
+        "amc_visit_count": 1,
+        "total_revenue": 1049760.0,
+        "total_expense_cost": 0.0,
+        "profit_amount": 1049760.0,
+        "profit_margin": 100.0,
+        "is_amc_expired": false
+      },
+      {
+        "id": 55,
+        "name": "AMC/2026/00055",
+        "partner_id": [
+          6766,
+          "NHPC Limited, Purshtom Rathor"
+        ],
+        "state": "approved",
+        "amc_start_date": "2026-05-24",
+        "amc_end_date": "2027-02-23",
+        "amc_duration": 9,
+        "amc_duration_unit": "month",
+        "amc_visit_count": 0,
+        "total_revenue": 1459118.7,
+        "total_expense_cost": 0.0,
+        "profit_amount": 1459118.7,
+        "profit_margin": 100.0,
+        "is_amc_expired": false
+      },
+      {
+        "id": 17,
+        "name": "AMC/2025/00017",
+        "partner_id": [
+          5939,
+          "NIIT UNIVERSITY, Puneet"
+        ],
+        "state": "expired",
+        "amc_start_date": "2025-07-01",
+        "amc_end_date": "2026-06-30",
+        "amc_duration": 1,
+        "amc_duration_unit": "year",
+        "amc_visit_count": 0,
+        "total_revenue": 229390.0,
+        "total_expense_cost": 0.0,
+        "profit_amount": 229390.0,
+        "profit_margin": 100.0,
+        "is_amc_expired": false
+      },
+      {
+        "id": 12,
+        "name": "AMC/2025/00012",
+        "partner_id": [
+          5212,
+          "Optum Hydrabad"
+        ],
+        "state": "expired",
+        "amc_start_date": "2026-01-01",
+        "amc_end_date": "2026-06-30",
+        "amc_duration": 6,
+        "amc_duration_unit": "month",
+        "amc_visit_count": 1,
+        "total_revenue": 498213.0,
+        "total_expense_cost": 0.0,
+        "profit_amount": 498213.0,
+        "profit_margin": 100.0,
+        "is_amc_expired": false
+      },
+      {
+        "id": 39,
+        "name": "AMC/2026/00039",
+        "partner_id": [
+          6157,
+          "Optum GlobalSolutions India Pvt. Ltd.(Chennai), Ram Anand"
+        ],
+        "state": "expired",
+        "amc_start_date": "2026-04-01",
+        "amc_end_date": "2026-06-30",
+        "amc_duration": 3,
+        "amc_duration_unit": "month",
+        "amc_visit_count": 0,
+        "total_revenue": 138459.0,
+        "total_expense_cost": 0.0,
+        "profit_amount": 138459.0,
+        "profit_margin": 100.0,
+        "is_amc_expired": false
+      },
+      {
+        "id": 56,
+        "name": "AMC/2026/00056",
+        "partner_id": [
+          5196,
+          "KRISHNA MARUTI LIMITED, Santosh Prasad"
+        ],
+        "state": "draft",
+        "amc_start_date": "2026-07-15",
+        "amc_end_date": "2027-07-14",
+        "amc_duration": 1,
+        "amc_duration_unit": "year",
+        "amc_visit_count": 0,
+        "total_revenue": 137800.0,
+        "total_expense_cost": 0.0,
+        "profit_amount": 137800.0,
+        "profit_margin": 100.0,
+        "is_amc_expired": false
+      },
+      {
+        "id": 40,
+        "name": "AMC/2026/00040",
+        "partner_id": [
+          5538,
+          "OPTUM GLOBAL SOLUTIONS (INDIA) PRIVATE LIMITED, Shantanu kumar"
+        ],
+        "state": "approved",
+        "amc_start_date": "2026-07-01",
+        "amc_end_date": "2026-09-30",
+        "amc_duration": 3,
+        "amc_duration_unit": "month",
+        "amc_visit_count": 1,
+        "total_revenue": 835263.5,
+        "total_expense_cost": 0.0,
+        "profit_amount": 835263.5,
+        "profit_margin": 100.0,
+        "is_amc_expired": false
+      },
+      {
+        "id": 44,
+        "name": "AMC/2026/00044",
+        "partner_id": [
+          6088,
+          "Bacardi India Private Limited, Anoop Pandey"
+        ],
+        "state": "approved",
+        "amc_start_date": "2026-01-01",
+        "amc_end_date": "2026-12-31",
+        "amc_duration": 1,
+        "amc_duration_unit": "year",
+        "amc_visit_count": 0,
+        "total_revenue": 84746.0,
+        "total_expense_cost": 0.0,
+        "profit_amount": 84746.0,
+        "profit_margin": 100.0,
+        "is_amc_expired": false
+      },
+      {
+        "id": 47,
+        "name": "AMC/2026/00047",
+        "partner_id": [
+          5271,
+          "MB Power (Madhya Pradesh) Limited, Faiz Jaffar"
+        ],
+        "state": "approved",
+        "amc_start_date": "2026-05-01",
+        "amc_end_date": "2027-04-30",
+        "amc_duration": 1,
+        "amc_duration_unit": "year",
+        "amc_visit_count": 0,
+        "total_revenue": 93600.0,
+        "total_expense_cost": 0.0,
+        "profit_amount": 93600.0,
+        "profit_margin": 100.0,
+        "is_amc_expired": false
+      }
+    ]
+  },
+  "service": {
+    "helpdesk_ticket_count": 226,
+    "helpdesk_ticket_states": "no state field",
+    "service_order_count": 277,
+    "service_order_states": [
+      {
+        "state": "approved",
+        "__count": 102,
+        "__domain": [
+          [
+            "state",
+            "=",
+            "approved"
+          ]
+        ]
+      },
+      {
+        "state": "cancel",
+        "__count": 14,
+        "__domain": [
+          [
+            "state",
+            "=",
+            "cancel"
+          ]
+        ]
+      },
+      {
+        "state": "draft",
+        "__count": 7,
+        "__domain": [
+          [
+            "state",
+            "=",
+            "draft"
+          ]
+        ]
+      },
+      {
+        "state": "to_approve",
+        "__count": 154,
+        "__domain": [
+          [
+            "state",
+            "=",
+            "to_approve"
+          ]
+        ]
+      }
+    ],
+    "srn_count": 108,
+    "srn_states": [
+      {
+        "state": "done",
+        "__count": 1,
+        "__domain": [
+          [
+            "state",
+            "=",
+            "done"
+          ]
+        ]
+      },
+      {
+        "state": "draft",
+        "__count": 107,
+        "__domain": [
+          [
+            "state",
+            "=",
+            "draft"
+          ]
+        ]
+      }
+    ],
+    "helpdesk_stages": [],
+    "service_templates": [
+      {
+        "id": 32,
+        "name": "Helpdesk Changed Stage notification Email",
+        "model_id": [
+          1592,
+          "Helpdesk Ticket"
+        ]
+      },
+      {
+        "id": 31,
+        "name": "Helpdesk Closed Ticket Notification Email",
+        "model_id": [
+          1592,
+          "Helpdesk Ticket"
+        ]
+      },
+      {
+        "id": 37,
+        "name": "SRN - Customer Satisfaction Survey",
+        "model_id": [
+          1574,
+          "SRN"
+        ]
+      },
+      {
+        "id": 30,
+        "name": "Ticket Assignment",
+        "model_id": [
+          1592,
+          "Helpdesk Ticket"
+        ]
+      }
+    ],
+    "recent_service_orders": [
+      {
+        "id": 292,
+        "name": "SSO/2026/00266",
+        "state": "approved",
+        "customer_id": [
+          5849,
+          "DATA FLOW, LAXMI SONI"
+        ],
+        "assigned_to": [
+          23,
+          "Shiv Kumar"
+        ],
+        "visit_date": false,
+        "is_amc": false,
+        "check_in_time": "2026-07-13 11:52:55",
+        "check_out_time": "2026-07-13 13:24:53",
+        "customer_rating": false,
+        "srn_count": 9
+      },
+      {
+        "id": 293,
+        "name": "SSO/2026/00267",
+        "state": "approved",
+        "customer_id": [
+          5849,
+          "DATA FLOW, LAXMI SONI"
+        ],
+        "assigned_to": [
+          9,
+          "Aman Kudia"
+        ],
+        "visit_date": false,
+        "is_amc": false,
+        "check_in_time": "2026-07-13 11:52:44",
+        "check_out_time": "2026-07-13 13:24:58",
+        "customer_rating": false,
+        "srn_count": 9
+      },
+      {
+        "id": 291,
+        "name": "SSO/2026/00265",
+        "state": "approved",
+        "customer_id": [
+          5994,
+          "USHA INTERNATIONAL LIMITED, Manik Dhir"
+        ],
+        "assigned_to": [
+          9,
+          "Aman Kudia"
+        ],
+        "visit_date": false,
+        "is_amc": false,
+        "check_in_time": false,
+        "check_out_time": false,
+        "customer_rating": false,
+        "srn_count": 9
+      },
+      {
+        "id": 290,
+        "name": "SSO/2026/00264",
+        "state": "approved",
+        "customer_id": [
+          5307,
+          "JK PAPER LIMITED, Uttam Suryavanshi"
+        ],
+        "assigned_to": [
+          9,
+          "Aman Kudia"
+        ],
+        "visit_date": false,
+        "is_amc": false,
+        "check_in_time": "2026-07-11 09:55:46",
+        "check_out_time": "2026-07-11 11:40:37",
+        "customer_rating": "5",
+        "srn_count": 9
+      },
+      {
+        "id": 289,
+        "name": "SSO/2026/00263",
+        "state": "approved",
+        "customer_id": [
+          6976,
+          "Bharti Reality Limited, Virender Arya"
+        ],
+        "assigned_to": [
+          9,
+          "Aman Kudia"
+        ],
+        "visit_date": false,
+        "is_amc": false,
+        "check_in_time": "2026-07-10 12:11:22",
+        "check_out_time": "2026-07-10 13:38:11",
+        "customer_rating": "5",
+        "srn_count": 9
+      },
+      {
+        "id": 288,
+        "name": "SSO/2026/00262",
+        "state": "approved",
+        "customer_id": [
+          6342,
+          "Institute of Social Sciences, Vidya Nair"
+        ],
+        "assigned_to": [
+          9,
+          "Aman Kudia"
+        ],
+        "visit_date": false,
+        "is_amc": false,
+        "check_in_time": false,
+        "check_out_time": false,
+        "customer_rating": false,
+        "srn_count": 9
+      },
+      {
+        "id": 287,
+        "name": "SSO/2026/00261",
+        "state": "approved",
+        "customer_id": [
+          5804,
+          "Maxfort School"
+        ],
+        "assigned_to": [
+          16,
+          "Ranjeet Thakur"
+        ],
+        "visit_date": false,
+        "is_amc": false,
+        "check_in_time": false,
+        "check_out_time": false,
+        "customer_rating": false,
+        "srn_count": 9
+      },
+      {
+        "id": 284,
+        "name": "SSO/2026/00259",
+        "state": "approved",
+        "customer_id": [
+          5544,
+          "OPTUM GLOBAL SOLUTIONS (INDIA) PRIVATE LIMITED, Suhail Ahmed"
+        ],
+        "assigned_to": [
+          16,
+          "Ranjeet Thakur"
+        ],
+        "visit_date": false,
+        "is_amc": false,
+        "check_in_time": "2026-07-08 06:44:51",
+        "check_out_time": "2026-07-09 05:51:45",
+        "customer_rating": false,
+        "srn_count": 9
+      },
+      {
+        "id": 286,
+        "name": "SSO/2026/00260",
+        "state": "approved",
+        "customer_id": [
+          5544,
+          "OPTUM GLOBAL SOLUTIONS (INDIA) PRIVATE LIMITED, Suhail Ahmed"
+        ],
+        "assigned_to": [
+          23,
+          "Shiv Kumar"
+        ],
+        "visit_date": false,
+        "is_amc": false,
+        "check_in_time": "2026-07-08 06:46:25",
+        "check_out_time": false,
+        "customer_rating": false,
+        "srn_count": 9
+      },
+      {
+        "id": 285,
+        "name": "SSQ/2026/00285",
+        "state": "cancel",
+        "customer_id": [
+          5544,
+          "OPTUM GLOBAL SOLUTIONS (INDIA) PRIVATE LIMITED, Suhail Ahmed"
+        ],
+        "assigned_to": false,
+        "visit_date": false,
+        "is_amc": false,
+        "check_in_time": false,
+        "check_out_time": false,
+        "customer_rating": false,
+        "srn_count": 9
+      }
+    ],
+    "recent_srns": [
+      {
+        "id": 108,
+        "name": "SRN/2026/00108",
+        "state": "draft",
+        "customer_id": [
+          5849,
+          "DATA FLOW, LAXMI SONI"
+        ],
+        "user_id": [
+          9,
+          "Aman Kudia"
+        ],
+        "date_order": "2026-07-13 11:08:07",
+        "deadline": false,
+        "satisfaction_email_sent": false,
+        "performance_rating": "0"
+      },
+      {
+        "id": 107,
+        "name": "SRN/2026/00107",
+        "state": "draft",
+        "customer_id": [
+          5849,
+          "DATA FLOW, LAXMI SONI"
+        ],
+        "user_id": [
+          23,
+          "Shiv Kumar"
+        ],
+        "date_order": "2026-07-13 11:06:18",
+        "deadline": false,
+        "satisfaction_email_sent": false,
+        "performance_rating": "0"
+      },
+      {
+        "id": 106,
+        "name": "SRN/2026/00106",
+        "state": "draft",
+        "customer_id": [
+          5994,
+          "USHA INTERNATIONAL LIMITED, Manik Dhir"
+        ],
+        "user_id": [
+          9,
+          "Aman Kudia"
+        ],
+        "date_order": "2026-07-13 04:57:51",
+        "deadline": false,
+        "satisfaction_email_sent": false,
+        "performance_rating": "0"
+      },
+      {
+        "id": 105,
+        "name": "SRN/2026/00105",
+        "state": "draft",
+        "customer_id": [
+          5307,
+          "JK PAPER LIMITED, Uttam Suryavanshi"
+        ],
+        "user_id": [
+          9,
+          "Aman Kudia"
+        ],
+        "date_order": "2026-07-11 08:49:16",
+        "deadline": false,
+        "satisfaction_email_sent": false,
+        "performance_rating": "0"
+      },
+      {
+        "id": 104,
+        "name": "SRN/2026/00104",
+        "state": "draft",
+        "customer_id": [
+          6976,
+          "Bharti Reality Limited, Virender Arya"
+        ],
+        "user_id": [
+          9,
+          "Aman Kudia"
+        ],
+        "date_order": "2026-07-10 11:05:35",
+        "deadline": false,
+        "satisfaction_email_sent": false,
+        "performance_rating": "0"
+      },
+      {
+        "id": 103,
+        "name": "SRN/2026/00103",
+        "state": "draft",
+        "customer_id": [
+          6342,
+          "Institute of Social Sciences, Vidya Nair"
+        ],
+        "user_id": [
+          9,
+          "Aman Kudia"
+        ],
+        "date_order": "2026-07-09 11:34:27",
+        "deadline": false,
+        "satisfaction_email_sent": false,
+        "performance_rating": "0"
+      },
+      {
+        "id": 102,
+        "name": "SRN/2026/00102",
+        "state": "draft",
+        "customer_id": [
+          5804,
+          "Maxfort School"
+        ],
+        "user_id": [
+          16,
+          "Ranjeet Thakur"
+        ],
+        "date_order": "2026-07-09 11:22:50",
+        "deadline": false,
+        "satisfaction_email_sent": false,
+        "performance_rating": "0"
+      },
+      {
+        "id": 101,
+        "name": "SRN/2026/00101",
+        "state": "draft",
+        "customer_id": [
+          5544,
+          "OPTUM GLOBAL SOLUTIONS (INDIA) PRIVATE LIMITED, Suhail Ahmed"
+        ],
+        "user_id": [
+          23,
+          "Shiv Kumar"
+        ],
+        "date_order": "2026-07-08 06:32:56",
+        "deadline": false,
+        "satisfaction_email_sent": false,
+        "performance_rating": "0"
+      },
+      {
+        "id": 100,
+        "name": "SRN/2026/00100",
+        "state": "draft",
+        "customer_id": [
+          5544,
+          "OPTUM GLOBAL SOLUTIONS (INDIA) PRIVATE LIMITED, Suhail Ahmed"
+        ],
+        "user_id": [
+          16,
+          "Ranjeet Thakur"
+        ],
+        "date_order": "2026-07-08 06:28:38",
+        "deadline": false,
+        "satisfaction_email_sent": false,
+        "performance_rating": "0"
+      },
+      {
+        "id": 99,
+        "name": "SRN/2026/00099",
+        "state": "draft",
+        "customer_id": [
+          5434,
+          "GODFREY PHILLIPS INDIA LIMITED, Samaresh Chattopadhya"
+        ],
+        "user_id": [
+          9,
+          "Aman Kudia"
+        ],
+        "date_order": "2026-07-07 09:22:21",
+        "deadline": false,
+        "satisfaction_email_sent": false,
+        "performance_rating": "0"
+      }
+    ]
+  },
+  "operations": {
+    "purchase_count": 451,
+    "purchase_by_state": [
+      {
+        "state": "cancel",
+        "__count": 44,
+        "__domain": [
+          [
+            "state",
+            "=",
+            "cancel"
+          ]
+        ]
+      },
+      {
+        "state": "done",
+        "__count": 155,
+        "__domain": [
+          [
+            "state",
+            "=",
+            "done"
+          ]
+        ]
+      },
+      {
+        "state": "draft",
+        "__count": 49,
+        "__domain": [
+          [
+            "state",
+            "=",
+            "draft"
+          ]
+        ]
+      },
+      {
+        "state": "purchase",
+        "__count": 156,
+        "__domain": [
+          [
+            "state",
+            "=",
+            "purchase"
+          ]
+        ]
+      },
+      {
+        "state": "sent",
+        "__count": 10,
+        "__domain": [
+          [
+            "state",
+            "=",
+            "sent"
+          ]
+        ]
+      },
+      {
+        "state": "to approve",
+        "__count": 37,
+        "__domain": [
+          [
+            "state",
+            "=",
+            "to approve"
+          ]
+        ]
+      }
+    ],
+    "purchase_approval_routes": 451,
+    "stock_picking_count": 346,
+    "stock_picking_by_state": [
+      {
+        "state": "assigned",
+        "__count": 143,
+        "__domain": [
+          [
+            "state",
+            "=",
+            "assigned"
+          ]
+        ]
+      },
+      {
+        "state": "cancel",
+        "__count": 136,
+        "__domain": [
+          [
+            "state",
+            "=",
+            "cancel"
+          ]
+        ]
+      },
+      {
+        "state": "confirmed",
+        "__count": 26,
+        "__domain": [
+          [
+            "state",
+            "=",
+            "confirmed"
+          ]
+        ]
+      },
+      {
+        "state": "done",
+        "__count": 12,
+        "__domain": [
+          [
+            "state",
+            "=",
+            "done"
+          ]
+        ]
+      },
+      {
+        "state": "draft",
+        "__count": 7,
+        "__domain": [
+          [
+            "state",
+            "=",
+            "draft"
+          ]
+        ]
+      },
+      {
+        "state": "waiting",
+        "__count": 22,
+        "__domain": [
+          [
+            "state",
+            "=",
+            "waiting"
+          ]
+        ]
+      }
+    ],
+    "stock_picking_by_type": [
+      {
+        "picking_type_id": [
+          1,
+          "My Company: Receipts"
+        ],
+        "__count": 46,
+        "__domain": [
+          [
+            "picking_type_id",
+            "=",
+            1
+          ]
+        ]
+      },
+      {
+        "picking_type_id": [
+          5,
+          "My Company: Internal Transfers"
+        ],
+        "__count": 3,
+        "__domain": [
+          [
+            "picking_type_id",
+            "=",
+            5
+          ]
+        ]
+      },
+      {
+        "picking_type_id": [
+          2,
+          "My Company: Delivery Orders"
+        ],
+        "__count": 297,
+        "__domain": [
+          [
+            "picking_type_id",
+            "=",
+            2
+          ]
+        ]
+      }
+    ],
+    "invoice_count": 15,
+    "invoice_by_state": [
+      {
+        "state": "cancel",
+        "__count": 2,
+        "__domain": [
+          "&",
+          [
+            "move_type",
+            "in",
+            [
+              "out_invoice",
+              "in_invoice"
+            ]
+          ],
+          [
+            "state",
+            "=",
+            "cancel"
+          ]
+        ]
+      },
+      {
+        "state": "draft",
+        "__count": 12,
+        "__domain": [
+          "&",
+          [
+            "move_type",
+            "in",
+            [
+              "out_invoice",
+              "in_invoice"
+            ]
+          ],
+          [
+            "state",
+            "=",
+            "draft"
+          ]
+        ]
+      },
+      {
+        "state": "posted",
+        "__count": 1,
+        "__domain": [
+          "&",
+          [
+            "move_type",
+            "in",
+            [
+              "out_invoice",
+              "in_invoice"
+            ]
+          ],
+          [
+            "state",
+            "=",
+            "posted"
+          ]
+        ]
+      }
+    ],
+    "payment_count": 3,
+    "recent_purchase_orders": [
+      {
+        "id": 317,
+        "name": "P00315",
+        "state": "done",
+        "partner_id": [
+          5285,
+          "Arihant Infosys, Siddharth"
+        ],
+        "user_id": false,
+        "date_planned": "2026-02-24 08:04:43",
+        "origin": "S00702, S01280, S01550",
+        "amount_total": 45312.0,
+        "receipt_status": false,
+        "invoice_status": "no"
+      },
+      {
+        "id": 454,
+        "name": "P00451",
+        "state": "draft",
+        "partner_id": [
+          5166,
+          "Ritika"
+        ],
+        "user_id": false,
+        "date_planned": "2026-07-13 05:20:59",
+        "origin": "S01550",
+        "amount_total": 774080.0,
+        "receipt_status": false,
+        "invoice_status": "no"
+      },
+      {
+        "id": 453,
+        "name": "P00450",
+        "state": "draft",
+        "partner_id": [
+          5215,
+          "FRUX DIGITAL INC."
+        ],
+        "user_id": false,
+        "date_planned": "2026-07-13 05:20:59",
+        "origin": "S01550",
+        "amount_total": 146320.0,
+        "receipt_status": false,
+        "invoice_status": "no"
+      },
+      {
+        "id": 455,
+        "name": "P00452",
+        "state": "draft",
+        "partner_id": [
+          4516,
+          "Gigatronics Global, SATIN Malik"
+        ],
+        "user_id": false,
+        "date_planned": "2026-07-13 05:20:59",
+        "origin": "S01550",
+        "amount_total": 184080.0,
+        "receipt_status": false,
+        "invoice_status": "no"
+      },
+      {
+        "id": 450,
+        "name": "P00447",
+        "state": "draft",
+        "partner_id": [
+          5415,
+          "TECHSERV INNOVATIONS PRIVATE LIMITED"
+        ],
+        "user_id": false,
+        "date_planned": "2026-07-03 03:56:30",
+        "origin": "S01495, S01550",
+        "amount_total": 1062000.0,
+        "receipt_status": false,
+        "invoice_status": "no"
+      },
+      {
+        "id": 319,
+        "name": "P00317",
+        "state": "draft",
+        "partner_id": [
+          5713,
+          "RRRN IT SOLUTIONS, Raj Mishra"
+        ],
+        "user_id": false,
+        "date_planned": "2026-02-24 08:04:43",
+        "origin": "S00702, S00472, S01550",
+        "amount_total": 18821.0,
+        "receipt_status": false,
+        "invoice_status": "no"
+      },
+      {
+        "id": 376,
+        "name": "P00374",
+        "state": "draft",
+        "partner_id": [
+          5262,
+          "Sun Infonet Pvt Ltd, Ashish Sharma"
+        ],
+        "user_id": false,
+        "date_planned": "2026-04-17 10:09:36",
+        "origin": "S00472, S01550",
+        "amount_total": 0.0,
+        "receipt_status": false,
+        "invoice_status": "no"
+      },
+      {
+        "id": 406,
+        "name": "P00404",
+        "state": "purchase",
+        "partner_id": [
+          7576,
+          "INFLOW TECHNOLOGIES PRIVATE LIMITED, Nitin Madan"
+        ],
+        "user_id": [
+          24,
+          "Shweta Chouhan"
+        ],
+        "date_planned": "2026-05-11 08:03:46",
+        "origin": "AMC for MB",
+        "amount_total": 59885.69,
+        "receipt_status": false,
+        "invoice_status": "no"
+      },
+      {
+        "id": 458,
+        "name": "P00455",
+        "state": "purchase",
+        "partner_id": [
+          6792,
+          "Bharat Skytech Pvt Ltd, Avadhesh Thakur"
+        ],
+        "user_id": [
+          21,
+          "Sanjeev Ratra"
+        ],
+        "date_planned": "2026-07-14 03:57:50",
+        "origin": false,
+        "amount_total": 855500.0,
+        "receipt_status": false,
+        "invoice_status": "no"
+      },
+      {
+        "id": 457,
+        "name": "P00454",
+        "state": "to approve",
+        "partner_id": [
+          6187,
+          "BVM India, Deepak Raghav"
+        ],
+        "user_id": [
+          24,
+          "Shweta Chouhan"
+        ],
+        "date_planned": "2026-07-13 10:10:27",
+        "origin": "JW Marriot",
+        "amount_total": 179950.0,
+        "receipt_status": false,
+        "invoice_status": "no"
+      }
+    ],
+    "recent_pickings": [
+      {
+        "id": 304,
+        "name": "WH/OUT/00259",
+        "state": "confirmed",
+        "picking_type_id": [
+          2,
+          "My Company: Delivery Orders"
+        ],
+        "partner_id": [
+          7632,
+          "CSS AUTOMATION PVT LTD, KUASHIK BHATTACHARJEE"
+        ],
+        "origin": "S01280",
+        "scheduled_date": "2026-04-22 08:51:45",
+        "date_done": false,
+        "carrier_id": false
+      },
+      {
+        "id": 348,
+        "name": "WH/OUT/00299",
+        "state": "assigned",
+        "picking_type_id": [
+          2,
+          "My Company: Delivery Orders"
+        ],
+        "partner_id": [
+          5849,
+          "DATA FLOW, LAXMI SONI"
+        ],
+        "origin": "S01550",
+        "scheduled_date": "2026-07-14 06:17:13",
+        "date_done": false,
+        "carrier_id": false
+      },
+      {
+        "id": 347,
+        "name": "WH/OUT/00298",
+        "state": "cancel",
+        "picking_type_id": [
+          2,
+          "My Company: Delivery Orders"
+        ],
+        "partner_id": [
+          5849,
+          "DATA FLOW, LAXMI SONI"
+        ],
+        "origin": "S01550",
+        "scheduled_date": "2026-07-13 05:20:59",
+        "date_done": false,
+        "carrier_id": false
+      },
+      {
+        "id": 346,
+        "name": "WH/OUT/00297",
+        "state": "assigned",
+        "picking_type_id": [
+          2,
+          "My Company: Delivery Orders"
+        ],
+        "partner_id": [
+          7883,
+          "Ultima Condominium Association, Kuldeep Jangra"
+        ],
+        "origin": "S01474",
+        "scheduled_date": "2026-07-09 12:59:27",
+        "date_done": false,
+        "carrier_id": false
+      },
+      {
+        "id": 345,
+        "name": "WH/OUT/00296",
+        "state": "confirmed",
+        "picking_type_id": [
+          2,
+          "My Company: Delivery Orders"
+        ],
+        "partner_id": [
+          6919,
+          "Tata Projects Ltd, Rajeev Rajan"
+        ],
+        "origin": "S01486",
+        "scheduled_date": "2026-07-06 05:30:46",
+        "date_done": false,
+        "carrier_id": false
+      },
+      {
+        "id": 344,
+        "name": "WH/OUT/00295",
+        "state": "assigned",
+        "picking_type_id": [
+          2,
+          "My Company: Delivery Orders"
+        ],
+        "partner_id": [
+          7144,
+          "GTPL, Jaykrut Sodagar"
+        ],
+        "origin": "S00964",
+        "scheduled_date": "2026-07-03 10:18:28",
+        "date_done": false,
+        "carrier_id": false
+      },
+      {
+        "id": 343,
+        "name": "WH/OUT/00294",
+        "state": "waiting",
+        "picking_type_id": [
+          2,
+          "My Company: Delivery Orders"
+        ],
+        "partner_id": [
+          7025,
+          "SHYAM RETAIL STORE, Vivek Agarwal"
+        ],
+        "origin": "S01495",
+        "scheduled_date": "2026-07-03 03:56:30",
+        "date_done": false,
+        "carrier_id": false
+      },
+      {
+        "id": 342,
+        "name": "WH/OUT/00293",
+        "state": "assigned",
+        "picking_type_id": [
+          2,
+          "My Company: Delivery Orders"
+        ],
+        "partner_id": [
+          7746,
+          "JINDAL SAW LIMITED, KESHAV GUPTA"
+        ],
+        "origin": "S01384",
+        "scheduled_date": "2026-06-30 09:51:56",
+        "date_done": false,
+        "carrier_id": false
+      },
+      {
+        "id": 341,
+        "name": "WH/OUT/00292",
+        "state": "waiting",
+        "picking_type_id": [
+          2,
+          "My Company: Delivery Orders"
+        ],
+        "partner_id": [
+          4191,
+          "Gurusons Communications Pvt Ltd"
+        ],
+        "origin": "S01539",
+        "scheduled_date": "2026-06-30 08:58:16",
+        "date_done": false,
+        "carrier_id": false
+      },
+      {
+        "id": 302,
+        "name": "WH/OUT/00257",
+        "state": "assigned",
+        "picking_type_id": [
+          2,
+          "My Company: Delivery Orders"
+        ],
+        "partner_id": [
+          6342,
+          "Institute of Social Sciences, Vidya Nair"
+        ],
+        "origin": "S00472",
+        "scheduled_date": "2026-04-22 05:40:26",
+        "date_done": false,
+        "carrier_id": false
+      }
+    ]
+  },
+  "hr": {
+    "employee_count": 24,
+    "attendance_count": 3931,
+    "open_attendance_count": 16,
+    "attendance_with_in_location": 3923,
+    "attendance_with_out_location": 1376,
+    "leave_count": 2,
+    "leave_by_state": [
+      {
+        "state": "refuse",
+        "__count": 2,
+        "__domain": [
+          [
+            "state",
+            "=",
+            "refuse"
+          ]
+        ]
+      }
+    ],
+    "payslip_count": 4,
+    "payslip_by_state": [
+      {
+        "state": "draft",
+        "__count": 4,
+        "__domain": [
+          [
+            "state",
+            "=",
+            "draft"
+          ]
+        ]
+      }
+    ],
+    "review_count": "model not found",
+    "employees_sample": [
+      {
+        "id": 123,
+        "name": "Manish Gupta",
+        "department_id": [
+          15,
+          "Accounts"
+        ],
+        "job_id": [
+          42,
+          "Finance Manger"
+        ],
+        "work_location_id": false
+      },
+      {
+        "id": 69,
+        "name": "Shiv Kumar",
+        "department_id": [
+          21,
+          "Technical Support"
+        ],
+        "job_id": [
+          10,
+          "AV Technician"
+        ],
+        "work_location_id": [
+          2,
+          "Office"
+        ]
+      },
+      {
+        "id": 56,
+        "name": "Govind Sharma",
+        "department_id": [
+          21,
+          "Technical Support"
+        ],
+        "job_id": [
+          24,
+          "Service Technician / AV Technician"
+        ],
+        "work_location_id": [
+          2,
+          "Office"
+        ]
+      },
+      {
+        "id": 70,
+        "name": "Shweta Chauhan",
+        "department_id": [
+          13,
+          "Sales Department"
+        ],
+        "job_id": [
+          16,
+          "Sales Coordinator"
+        ],
+        "work_location_id": [
+          2,
+          "Office"
+        ]
+      },
+      {
+        "id": 129,
+        "name": "Sunil Kumar",
+        "department_id": [
+          20,
+          "Service"
+        ],
+        "job_id": [
+          44,
+          "AV Engineer"
+        ],
+        "work_location_id": false
+      },
+      {
+        "id": 55,
+        "name": "Aman Kudia",
+        "department_id": [
+          21,
+          "Technical Support"
+        ],
+        "job_id": [
+          24,
+          "Service Technician / AV Technician"
+        ],
+        "work_location_id": [
+          2,
+          "Office"
+        ]
+      },
+      {
+        "id": 116,
+        "name": "Deepika Biswas",
+        "department_id": [
+          15,
+          "Accounts"
+        ],
+        "job_id": [
+          40,
+          "Assistant"
+        ],
+        "work_location_id": false
+      },
+      {
+        "id": 62,
+        "name": "Ranjeet Thakur",
+        "department_id": [
+          21,
+          "Technical Support"
+        ],
+        "job_id": [
+          10,
+          "AV Technician"
+        ],
+        "work_location_id": [
+          2,
+          "Office"
+        ]
+      },
+      {
+        "id": 113,
+        "name": "Keshav Kumar Sah",
+        "department_id": [
+          21,
+          "Technical Support"
+        ],
+        "job_id": [
+          33,
+          "Service Engineer"
+        ],
+        "work_location_id": false
+      },
+      {
+        "id": 58,
+        "name": "Neeraj Kumar",
+        "department_id": [
+          18,
+          "Store"
+        ],
+        "job_id": [
+          10,
+          "AV Technician"
+        ],
+        "work_location_id": false
+      }
+    ],
+    "employee_rating_read_issue": "Reading computed rating fields on multiple employees raises an existing singleton error; excluded from bulk validation."
+  },
+  "automation": {
+    "mail_templates_count": 40,
+    "server_actions_relevant": [
+      {
+        "id": 1050,
+        "name": "AMC Billing Reminders",
+        "model_id": [
+          1579,
+          "AMC"
+        ],
+        "state": "code"
+      },
+      {
+        "id": 859,
+        "name": "Activity Reminder",
+        "model_id": [
+          959,
+          "Alarm Reminder"
+        ],
+        "state": "code"
+      },
+      {
+        "id": 905,
+        "name": "Automate Employee Attendance",
+        "model_id": [
+          936,
+          "Attendance"
+        ],
+        "state": "code"
+      },
+      {
+        "id": 713,
+        "name": "Calendar: Event Reminder",
+        "model_id": [
+          757,
+          "Event Alarm Manager"
+        ],
+        "state": "code"
+      },
+      {
+        "id": 1053,
+        "name": "Performance Review: Deadline Reminders",
+        "model_id": [
+          3150,
+          "Performance Review Cycle"
+        ],
+        "state": "code"
+      },
+      {
+        "id": 477,
+        "name": "Purchase reminder",
+        "model_id": [
+          589,
+          "Purchase Order"
+        ],
+        "state": "code"
+      },
+      {
+        "id": 902,
+        "name": "Send Anniversary Emails",
+        "model_id": [
+          85,
+          "Contact"
+        ],
+        "state": "code"
+      },
+      {
+        "id": 903,
+        "name": "Send Birthday Emails",
+        "model_id": [
+          85,
+          "Contact"
+        ],
+        "state": "code"
+      },
+      {
+        "id": 486,
+        "name": "Send Reminder",
+        "model_id": [
+          589,
+          "Purchase Order"
+        ],
+        "state": "code"
+      },
+      {
+        "id": 904,
+        "name": "Send Sale Reminder Emails",
+        "model_id": [
+          597,
+          "Sales Order"
+        ],
+        "state": "code"
+      },
+      {
+        "id": 1049,
+        "name": "Update AMC Validity",
+        "model_id": [
+          1579,
+          "AMC"
+        ],
+        "state": "code"
+      }
+    ],
+    "automations": [
+      {
+        "id": 2,
+        "name": "Custom - Auto Fill Reference on New Activity",
+        "model_id": [
+          164,
+          "Activity"
+        ],
+        "active": true
+      }
+    ],
+    "crons_relevant": []
+  }
+}

@@ -1,0 +1,7066 @@
+{
+  "crm.lead": {
+    "count": 717,
+    "fields": {
+      "duration_tracking": {
+        "string": "Status time",
+        "type": "json"
+      },
+      "campaign_id": {
+        "relation": "utm.campaign",
+        "string": "Campaign",
+        "type": "many2one"
+      },
+      "source_id": {
+        "relation": "utm.source",
+        "string": "Source",
+        "type": "many2one"
+      },
+      "medium_id": {
+        "relation": "utm.medium",
+        "string": "Medium",
+        "type": "many2one"
+      },
+      "activity_ids": {
+        "relation": "mail.activity",
+        "string": "Activities",
+        "type": "one2many"
+      },
+      "activity_state": {
+        "string": "Activity State",
+        "type": "selection"
+      },
+      "activity_user_id": {
+        "relation": "res.users",
+        "string": "Responsible User",
+        "type": "many2one"
+      },
+      "activity_type_id": {
+        "relation": "mail.activity.type",
+        "string": "Next Activity Type",
+        "type": "many2one"
+      },
+      "activity_type_icon": {
+        "string": "Activity Type Icon",
+        "type": "char"
+      },
+      "activity_date_deadline": {
+        "string": "Next Activity Deadline",
+        "type": "date"
+      },
+      "my_activity_date_deadline": {
+        "string": "My Activity Deadline",
+        "type": "date"
+      },
+      "activity_summary": {
+        "string": "Next Activity Summary",
+        "type": "char"
+      },
+      "activity_exception_decoration": {
+        "string": "Activity Exception Decoration",
+        "type": "selection"
+      },
+      "activity_exception_icon": {
+        "string": "Icon",
+        "type": "char"
+      },
+      "activity_calendar_event_id": {
+        "relation": "calendar.event",
+        "string": "Next Activity Calendar Event",
+        "type": "many2one"
+      },
+      "message_is_follower": {
+        "string": "Is Follower",
+        "type": "boolean"
+      },
+      "message_follower_ids": {
+        "relation": "mail.followers",
+        "string": "Followers",
+        "type": "one2many"
+      },
+      "message_partner_ids": {
+        "relation": "res.partner",
+        "string": "Followers (Partners)",
+        "type": "many2many"
+      },
+      "message_ids": {
+        "relation": "mail.message",
+        "string": "Messages",
+        "type": "one2many"
+      },
+      "has_message": {
+        "string": "Has Message",
+        "type": "boolean"
+      },
+      "message_needaction": {
+        "string": "Action Needed",
+        "type": "boolean"
+      },
+      "message_needaction_counter": {
+        "string": "Number of Actions",
+        "type": "integer"
+      },
+      "message_has_error": {
+        "string": "Message Delivery error",
+        "type": "boolean"
+      },
+      "message_has_error_counter": {
+        "string": "Number of errors",
+        "type": "integer"
+      },
+      "message_attachment_count": {
+        "string": "Attachment Count",
+        "type": "integer"
+      },
+      "rating_ids": {
+        "relation": "rating.rating",
+        "string": "Ratings",
+        "type": "one2many"
+      },
+      "website_message_ids": {
+        "relation": "mail.message",
+        "string": "Website Messages",
+        "type": "one2many"
+      },
+      "message_has_sms_error": {
+        "string": "SMS Delivery error",
+        "type": "boolean"
+      },
+      "phone_sanitized": {
+        "string": "Sanitized Number",
+        "type": "char"
+      },
+      "phone_sanitized_blacklisted": {
+        "string": "Phone Blacklisted",
+        "type": "boolean"
+      },
+      "phone_blacklisted": {
+        "string": "Blacklisted Phone is Phone",
+        "type": "boolean"
+      },
+      "mobile_blacklisted": {
+        "string": "Blacklisted Phone Is Mobile",
+        "type": "boolean"
+      },
+      "phone_mobile_search": {
+        "string": "Phone/Mobile",
+        "type": "char"
+      },
+      "email_normalized": {
+        "string": "Normalized Email",
+        "type": "char"
+      },
+      "is_blacklisted": {
+        "string": "Blacklist",
+        "type": "boolean"
+      },
+      "message_bounce": {
+        "string": "Bounce",
+        "type": "integer"
+      },
+      "email_cc": {
+        "string": "Email cc",
+        "type": "char"
+      },
+      "name": {
+        "string": "Opportunity",
+        "type": "char"
+      },
+      "user_id": {
+        "relation": "res.users",
+        "string": "Salesperson",
+        "type": "many2one"
+      },
+      "user_company_ids": {
+        "relation": "res.company",
+        "string": "User Company",
+        "type": "many2many"
+      },
+      "team_id": {
+        "relation": "crm.team",
+        "string": "Sales Team",
+        "type": "many2one"
+      },
+      "lead_properties": {
+        "string": "Properties",
+        "type": "properties"
+      },
+      "company_id": {
+        "relation": "res.company",
+        "string": "Company",
+        "type": "many2one"
+      },
+      "referred": {
+        "string": "Referred By",
+        "type": "char"
+      },
+      "description": {
+        "string": "Notes",
+        "type": "html"
+      },
+      "active": {
+        "string": "Active",
+        "type": "boolean"
+      },
+      "type": {
+        "string": "Type",
+        "type": "selection"
+      },
+      "priority": {
+        "string": "Priority",
+        "type": "selection"
+      },
+      "stage_id": {
+        "relation": "crm.stage",
+        "string": "Stage",
+        "type": "many2one"
+      },
+      "kanban_state": {
+        "string": "Kanban State",
+        "type": "selection"
+      },
+      "tag_ids": {
+        "relation": "crm.tag",
+        "string": "Tags",
+        "type": "many2many"
+      },
+      "color": {
+        "string": "Color Index",
+        "type": "integer"
+      },
+      "expected_revenue": {
+        "string": "Expected Revenue",
+        "type": "monetary"
+      },
+      "prorated_revenue": {
+        "string": "Prorated Revenue",
+        "type": "monetary"
+      },
+      "recurring_revenue": {
+        "string": "Recurring Revenues",
+        "type": "monetary"
+      },
+      "recurring_plan": {
+        "relation": "crm.recurring.plan",
+        "string": "Recurring Plan",
+        "type": "many2one"
+      },
+      "recurring_revenue_monthly": {
+        "string": "Expected MRR",
+        "type": "monetary"
+      },
+      "recurring_revenue_monthly_prorated": {
+        "string": "Prorated MRR",
+        "type": "monetary"
+      },
+      "recurring_revenue_prorated": {
+        "string": "Prorated Recurring Revenues",
+        "type": "monetary"
+      },
+      "company_currency": {
+        "relation": "res.currency",
+        "string": "Currency",
+        "type": "many2one"
+      },
+      "date_closed": {
+        "string": "Closed Date",
+        "type": "datetime"
+      },
+      "date_automation_last": {
+        "string": "Last Action",
+        "type": "datetime"
+      },
+      "date_open": {
+        "string": "Assignment Date",
+        "type": "datetime"
+      },
+      "day_open": {
+        "string": "Days to Assign",
+        "type": "float"
+      },
+      "day_close": {
+        "string": "Days to Close",
+        "type": "float"
+      },
+      "date_last_stage_update": {
+        "string": "Last Stage Update",
+        "type": "datetime"
+      },
+      "date_conversion": {
+        "string": "Conversion Date",
+        "type": "datetime"
+      },
+      "date_deadline": {
+        "string": "Expected Closing",
+        "type": "date"
+      },
+      "partner_id": {
+        "relation": "res.partner",
+        "string": "Customer",
+        "type": "many2one"
+      },
+      "partner_is_blacklisted": {
+        "string": "Partner is blacklisted",
+        "type": "boolean"
+      },
+      "contact_name": {
+        "string": "Contact Name",
+        "type": "char"
+      },
+      "partner_name": {
+        "string": "Company Name",
+        "type": "char"
+      },
+      "function": {
+        "string": "Job Position",
+        "type": "char"
+      },
+      "title": {
+        "relation": "res.partner.title",
+        "string": "Title",
+        "type": "many2one"
+      },
+      "email_from": {
+        "string": "Email",
+        "type": "char"
+      },
+      "email_domain_criterion": {
+        "string": "Email Domain Criterion",
+        "type": "char"
+      },
+      "phone": {
+        "string": "Phone",
+        "type": "char"
+      },
+      "mobile": {
+        "string": "Mobile",
+        "type": "char"
+      },
+      "phone_state": {
+        "string": "Phone Quality",
+        "type": "selection"
+      },
+      "email_state": {
+        "string": "Email Quality",
+        "type": "selection"
+      },
+      "website": {
+        "string": "Website",
+        "type": "char"
+      },
+      "lang_id": {
+        "relation": "res.lang",
+        "string": "Language",
+        "type": "many2one"
+      },
+      "lang_code": {
+        "string": "Locale Code",
+        "type": "char"
+      },
+      "lang_active_count": {
+        "string": "Lang Active Count",
+        "type": "integer"
+      },
+      "street": {
+        "string": "Street",
+        "type": "char"
+      },
+      "street2": {
+        "string": "Street2",
+        "type": "char"
+      },
+      "zip": {
+        "string": "Zip",
+        "type": "char"
+      },
+      "city": {
+        "string": "City",
+        "type": "char"
+      },
+      "state_id": {
+        "relation": "res.country.state",
+        "string": "State",
+        "type": "many2one"
+      },
+      "country_id": {
+        "relation": "res.country",
+        "string": "Country",
+        "type": "many2one"
+      },
+      "probability": {
+        "string": "Probability",
+        "type": "float"
+      },
+      "automated_probability": {
+        "string": "Automated Probability",
+        "type": "float"
+      },
+      "is_automated_probability": {
+        "string": "Is automated probability?",
+        "type": "boolean"
+      },
+      "lost_reason_id": {
+        "relation": "crm.lost.reason",
+        "string": "Lost Reason",
+        "type": "many2one"
+      },
+      "calendar_event_ids": {
+        "relation": "calendar.event",
+        "string": "Meetings",
+        "type": "one2many"
+      },
+      "duplicate_lead_ids": {
+        "relation": "crm.lead",
+        "string": "Potential Duplicate Lead",
+        "type": "many2many"
+      },
+      "duplicate_lead_count": {
+        "string": "Potential Duplicate Lead Count",
+        "type": "integer"
+      },
+      "meeting_display_date": {
+        "string": "Meeting Display Date",
+        "type": "date"
+      },
+      "meeting_display_label": {
+        "string": "Meeting Display Label",
+        "type": "char"
+      },
+      "partner_email_update": {
+        "string": "Partner Email will Update",
+        "type": "boolean"
+      },
+      "partner_phone_update": {
+        "string": "Partner Phone will Update",
+        "type": "boolean"
+      },
+      "is_partner_visible": {
+        "string": "Is Partner Visible",
+        "type": "boolean"
+      },
+      "id": {
+        "string": "ID",
+        "type": "integer"
+      },
+      "display_name": {
+        "string": "Display Name",
+        "type": "char"
+      },
+      "create_uid": {
+        "relation": "res.users",
+        "string": "Created by",
+        "type": "many2one"
+      },
+      "create_date": {
+        "string": "Created on",
+        "type": "datetime"
+      },
+      "write_uid": {
+        "relation": "res.users",
+        "string": "Last Updated by",
+        "type": "many2one"
+      },
+      "write_date": {
+        "string": "Last Updated on",
+        "type": "datetime"
+      },
+      "reveal_id": {
+        "string": "Reveal ID",
+        "type": "char"
+      },
+      "sale_amount_total": {
+        "string": "Sum of Orders",
+        "type": "monetary"
+      },
+      "quotation_count": {
+        "string": "Number of Quotations",
+        "type": "integer"
+      },
+      "sale_order_count": {
+        "string": "Number of Sale Orders",
+        "type": "integer"
+      },
+      "order_ids": {
+        "relation": "sale.order",
+        "string": "Orders",
+        "type": "one2many"
+      },
+      "visit_form_ids": {
+        "relation": "crm.visit.form",
+        "string": "Visit Form",
+        "type": "one2many"
+      },
+      "lead_owner": {
+        "relation": "res.users",
+        "string": "Lead Owner",
+        "type": "many2one"
+      },
+      "sales_coordinator": {
+        "relation": "res.users",
+        "string": "Sales Coordinator",
+        "type": "many2one"
+      }
+    }
+  },
+  "sale.order": {
+    "count": 1463,
+    "fields": {
+      "campaign_id": {
+        "relation": "utm.campaign",
+        "string": "Campaign",
+        "type": "many2one"
+      },
+      "source_id": {
+        "relation": "utm.source",
+        "string": "Source",
+        "type": "many2one"
+      },
+      "medium_id": {
+        "relation": "utm.medium",
+        "string": "Medium",
+        "type": "many2one"
+      },
+      "activity_ids": {
+        "relation": "mail.activity",
+        "string": "Activities",
+        "type": "one2many"
+      },
+      "activity_state": {
+        "string": "Activity State",
+        "type": "selection"
+      },
+      "activity_user_id": {
+        "relation": "res.users",
+        "string": "Responsible User",
+        "type": "many2one"
+      },
+      "activity_type_id": {
+        "relation": "mail.activity.type",
+        "string": "Next Activity Type",
+        "type": "many2one"
+      },
+      "activity_type_icon": {
+        "string": "Activity Type Icon",
+        "type": "char"
+      },
+      "activity_date_deadline": {
+        "string": "Next Activity Deadline",
+        "type": "date"
+      },
+      "my_activity_date_deadline": {
+        "string": "My Activity Deadline",
+        "type": "date"
+      },
+      "activity_summary": {
+        "string": "Next Activity Summary",
+        "type": "char"
+      },
+      "activity_exception_decoration": {
+        "string": "Activity Exception Decoration",
+        "type": "selection"
+      },
+      "activity_exception_icon": {
+        "string": "Icon",
+        "type": "char"
+      },
+      "activity_calendar_event_id": {
+        "relation": "calendar.event",
+        "string": "Next Activity Calendar Event",
+        "type": "many2one"
+      },
+      "message_is_follower": {
+        "string": "Is Follower",
+        "type": "boolean"
+      },
+      "message_follower_ids": {
+        "relation": "mail.followers",
+        "string": "Followers",
+        "type": "one2many"
+      },
+      "message_partner_ids": {
+        "relation": "res.partner",
+        "string": "Followers (Partners)",
+        "type": "many2many"
+      },
+      "message_ids": {
+        "relation": "mail.message",
+        "string": "Messages",
+        "type": "one2many"
+      },
+      "has_message": {
+        "string": "Has Message",
+        "type": "boolean"
+      },
+      "message_needaction": {
+        "string": "Action Needed",
+        "type": "boolean"
+      },
+      "message_needaction_counter": {
+        "string": "Number of Actions",
+        "type": "integer"
+      },
+      "message_has_error": {
+        "string": "Message Delivery error",
+        "type": "boolean"
+      },
+      "message_has_error_counter": {
+        "string": "Number of errors",
+        "type": "integer"
+      },
+      "message_attachment_count": {
+        "string": "Attachment Count",
+        "type": "integer"
+      },
+      "rating_ids": {
+        "relation": "rating.rating",
+        "string": "Ratings",
+        "type": "one2many"
+      },
+      "website_message_ids": {
+        "relation": "mail.message",
+        "string": "Website Messages",
+        "type": "one2many"
+      },
+      "message_has_sms_error": {
+        "string": "SMS Delivery error",
+        "type": "boolean"
+      },
+      "access_url": {
+        "string": "Portal Access URL",
+        "type": "char"
+      },
+      "access_token": {
+        "string": "Security Token",
+        "type": "char"
+      },
+      "access_warning": {
+        "string": "Access warning",
+        "type": "text"
+      },
+      "name": {
+        "string": "Order Reference",
+        "type": "char"
+      },
+      "company_id": {
+        "relation": "res.company",
+        "string": "Company",
+        "type": "many2one"
+      },
+      "partner_id": {
+        "relation": "res.partner",
+        "string": "Customer",
+        "type": "many2one"
+      },
+      "state": {
+        "string": "Status",
+        "type": "selection"
+      },
+      "locked": {
+        "string": "Locked",
+        "type": "boolean"
+      },
+      "client_order_ref": {
+        "string": "Customer Reference",
+        "type": "char"
+      },
+      "create_date": {
+        "string": "Creation Date",
+        "type": "datetime"
+      },
+      "commitment_date": {
+        "string": "Delivery Date",
+        "type": "datetime"
+      },
+      "date_order": {
+        "string": "Order Date",
+        "type": "datetime"
+      },
+      "origin": {
+        "string": "Source Document",
+        "type": "char"
+      },
+      "reference": {
+        "string": "Payment Ref.",
+        "type": "char"
+      },
+      "require_signature": {
+        "string": "Online signature",
+        "type": "boolean"
+      },
+      "require_payment": {
+        "string": "Online payment",
+        "type": "boolean"
+      },
+      "prepayment_percent": {
+        "string": "Prepayment percentage",
+        "type": "float"
+      },
+      "signature": {
+        "string": "Signature",
+        "type": "binary"
+      },
+      "signed_by": {
+        "string": "Signed By",
+        "type": "char"
+      },
+      "signed_on": {
+        "string": "Signed On",
+        "type": "datetime"
+      },
+      "validity_date": {
+        "string": "Expiration",
+        "type": "date"
+      },
+      "journal_id": {
+        "relation": "account.journal",
+        "string": "Invoicing Journal",
+        "type": "many2one"
+      },
+      "note": {
+        "string": "Terms and conditions",
+        "type": "html"
+      },
+      "partner_invoice_id": {
+        "relation": "res.partner",
+        "string": "Invoice Address",
+        "type": "many2one"
+      },
+      "partner_shipping_id": {
+        "relation": "res.partner",
+        "string": "Delivery Address",
+        "type": "many2one"
+      },
+      "fiscal_position_id": {
+        "relation": "account.fiscal.position",
+        "string": "Fiscal Position",
+        "type": "many2one"
+      },
+      "payment_term_id": {
+        "relation": "account.payment.term",
+        "string": "Payment Terms",
+        "type": "many2one"
+      },
+      "pricelist_id": {
+        "relation": "product.pricelist",
+        "string": "Pricelist",
+        "type": "many2one"
+      },
+      "currency_id": {
+        "relation": "res.currency",
+        "string": "Currency",
+        "type": "many2one"
+      },
+      "currency_rate": {
+        "string": "Currency Rate",
+        "type": "float"
+      },
+      "user_id": {
+        "relation": "res.users",
+        "string": "Salesperson",
+        "type": "many2one"
+      },
+      "team_id": {
+        "relation": "crm.team",
+        "string": "Sales Team",
+        "type": "many2one"
+      },
+      "order_line": {
+        "relation": "sale.order.line",
+        "string": "Order Lines",
+        "type": "one2many"
+      },
+      "amount_untaxed": {
+        "string": "Untaxed Amount",
+        "type": "monetary"
+      },
+      "amount_tax": {
+        "string": "Taxes",
+        "type": "monetary"
+      },
+      "amount_total": {
+        "string": "Total",
+        "type": "monetary"
+      },
+      "amount_to_invoice": {
+        "string": "Amount to invoice",
+        "type": "monetary"
+      },
+      "amount_invoiced": {
+        "string": "Already invoiced",
+        "type": "monetary"
+      },
+      "invoice_count": {
+        "string": "Invoice Count",
+        "type": "integer"
+      },
+      "invoice_ids": {
+        "relation": "account.move",
+        "string": "Invoices",
+        "type": "many2many"
+      },
+      "invoice_status": {
+        "string": "Invoice Status",
+        "type": "selection"
+      },
+      "transaction_ids": {
+        "relation": "payment.transaction",
+        "string": "Transactions",
+        "type": "many2many"
+      },
+      "authorized_transaction_ids": {
+        "relation": "payment.transaction",
+        "string": "Authorized Transactions",
+        "type": "many2many"
+      },
+      "amount_paid": {
+        "string": "Amount Paid",
+        "type": "float"
+      },
+      "analytic_account_id": {
+        "relation": "account.analytic.account",
+        "string": "Analytic Account",
+        "type": "many2one"
+      },
+      "tag_ids": {
+        "relation": "crm.tag",
+        "string": "Tags",
+        "type": "many2many"
+      },
+      "amount_undiscounted": {
+        "string": "Amount Before Discount",
+        "type": "float"
+      },
+      "country_code": {
+        "string": "Country code",
+        "type": "char"
+      },
+      "expected_date": {
+        "string": "Expected Date",
+        "type": "datetime"
+      },
+      "is_expired": {
+        "string": "Is Expired",
+        "type": "boolean"
+      },
+      "partner_credit_warning": {
+        "string": "Partner Credit Warning",
+        "type": "text"
+      },
+      "tax_calculation_rounding_method": {
+        "string": "Tax Calculation Rounding Method",
+        "type": "selection"
+      },
+      "tax_country_id": {
+        "relation": "res.country",
+        "string": "Tax Country",
+        "type": "many2one"
+      },
+      "tax_totals": {
+        "string": "Tax Totals",
+        "type": "binary"
+      },
+      "terms_type": {
+        "string": "Terms & Conditions format",
+        "type": "selection"
+      },
+      "type_name": {
+        "string": "Type Name",
+        "type": "char"
+      },
+      "show_update_fpos": {
+        "string": "Has Fiscal Position Changed",
+        "type": "boolean"
+      },
+      "has_active_pricelist": {
+        "string": "Has Active Pricelist",
+        "type": "boolean"
+      },
+      "show_update_pricelist": {
+        "string": "Has Pricelist Changed",
+        "type": "boolean"
+      },
+      "id": {
+        "string": "ID",
+        "type": "integer"
+      },
+      "display_name": {
+        "string": "Display Name",
+        "type": "char"
+      },
+      "create_uid": {
+        "relation": "res.users",
+        "string": "Created by",
+        "type": "many2one"
+      },
+      "write_uid": {
+        "relation": "res.users",
+        "string": "Last Updated by",
+        "type": "many2one"
+      },
+      "write_date": {
+        "string": "Last Updated on",
+        "type": "datetime"
+      },
+      "has_due": {
+        "string": "Has due",
+        "type": "boolean"
+      },
+      "is_warning": {
+        "string": "Is warning",
+        "type": "boolean"
+      },
+      "due_amount": {
+        "string": "Due Amount",
+        "type": "float"
+      },
+      "carrier_id": {
+        "relation": "delivery.carrier",
+        "string": "Delivery Method",
+        "type": "many2one"
+      },
+      "delivery_message": {
+        "string": "Delivery Message",
+        "type": "char"
+      },
+      "delivery_rating_success": {
+        "string": "Delivery Rating Success",
+        "type": "boolean"
+      },
+      "delivery_set": {
+        "string": "Delivery Set",
+        "type": "boolean"
+      },
+      "recompute_delivery_price": {
+        "string": "Delivery cost should be recomputed",
+        "type": "boolean"
+      },
+      "is_all_service": {
+        "string": "Service Product",
+        "type": "boolean"
+      },
+      "shipping_weight": {
+        "string": "Shipping Weight",
+        "type": "float"
+      },
+      "ticket_ids": {
+        "relation": "helpdesk.ticket",
+        "string": "Ticket",
+        "type": "many2many"
+      },
+      "ticket_count": {
+        "string": "Tickets Count",
+        "type": "integer"
+      },
+      "l10n_in_reseller_partner_id": {
+        "relation": "res.partner",
+        "string": "Reseller",
+        "type": "many2one"
+      },
+      "l10n_in_gst_treatment": {
+        "string": "GST Treatment",
+        "type": "selection"
+      },
+      "pending_email_template_id": {
+        "relation": "mail.template",
+        "string": "Pending Email Template",
+        "type": "many2one"
+      },
+      "opportunity_id": {
+        "relation": "crm.lead",
+        "string": "Opportunity",
+        "type": "many2one"
+      },
+      "sale_order_template_id": {
+        "relation": "sale.order.template",
+        "string": "Quotation Template",
+        "type": "many2one"
+      },
+      "sale_order_option_ids": {
+        "relation": "sale.order.option",
+        "string": "Optional Products Lines",
+        "type": "one2many"
+      },
+      "purchase_order_count": {
+        "string": "Number of Purchase Order Generated",
+        "type": "integer"
+      },
+      "incoterm": {
+        "relation": "account.incoterms",
+        "string": "Incoterm",
+        "type": "many2one"
+      },
+      "incoterm_location": {
+        "string": "Incoterm Location",
+        "type": "char"
+      },
+      "picking_policy": {
+        "string": "Shipping Policy",
+        "type": "selection"
+      },
+      "warehouse_id": {
+        "relation": "stock.warehouse",
+        "string": "Warehouse",
+        "type": "many2one"
+      },
+      "picking_ids": {
+        "relation": "stock.picking",
+        "string": "Transfers",
+        "type": "one2many"
+      },
+      "delivery_count": {
+        "string": "Delivery Orders",
+        "type": "integer"
+      },
+      "delivery_status": {
+        "string": "Delivery Status",
+        "type": "selection"
+      },
+      "procurement_group_id": {
+        "relation": "procurement.group",
+        "string": "Procurement Group",
+        "type": "many2one"
+      },
+      "effective_date": {
+        "string": "Effective Date",
+        "type": "datetime"
+      },
+      "json_popover": {
+        "string": "JSON data for the popover widget",
+        "type": "char"
+      },
+      "show_json_popover": {
+        "string": "Has late picking",
+        "type": "boolean"
+      },
+      "expense_ids": {
+        "relation": "hr.expense",
+        "string": "Expenses",
+        "type": "one2many"
+      },
+      "expense_count": {
+        "string": "# of Expenses",
+        "type": "integer"
+      },
+      "margin": {
+        "string": "Margin",
+        "type": "monetary"
+      },
+      "margin_percent": {
+        "string": "Margin (%)",
+        "type": "float"
+      },
+      "sale_is_show_signature": {
+        "string": "Is Signature Show Sale Report",
+        "type": "boolean"
+      },
+      "report_template_id1": {
+        "relation": "ir.actions.report",
+        "string": "Sale Order Template1",
+        "type": "many2one"
+      },
+      "report_template_id": {
+        "relation": "ir.actions.report",
+        "string": "Sale Order Template",
+        "type": "many2one"
+      },
+      "amount_to_text": {
+        "string": "In Words",
+        "type": "char"
+      },
+      "tasks_ids": {
+        "relation": "project.task",
+        "string": "Tasks associated to this sale",
+        "type": "many2many"
+      },
+      "tasks_count": {
+        "string": "Tasks",
+        "type": "integer"
+      },
+      "visible_project": {
+        "string": "Display project",
+        "type": "boolean"
+      },
+      "project_id": {
+        "relation": "project.project",
+        "string": "Project",
+        "type": "many2one"
+      },
+      "project_ids": {
+        "relation": "project.project",
+        "string": "Projects",
+        "type": "many2many"
+      },
+      "project_count": {
+        "string": "Number of Projects",
+        "type": "integer"
+      },
+      "milestone_count": {
+        "string": "Milestone Count",
+        "type": "integer"
+      },
+      "is_product_milestone": {
+        "string": "Is Product Milestone",
+        "type": "boolean"
+      },
+      "show_create_project_button": {
+        "string": "Show Create Project Button",
+        "type": "boolean"
+      },
+      "show_project_button": {
+        "string": "Show Project Button",
+        "type": "boolean"
+      },
+      "show_task_button": {
+        "string": "Show Task Button",
+        "type": "boolean"
+      },
+      "dropship_picking_count": {
+        "string": "Dropship Count",
+        "type": "integer"
+      },
+      "tandc_id": {
+        "relation": "def.tandc",
+        "string": "Terms & Conditions",
+        "type": "many2one"
+      },
+      "email": {
+        "string": "Email",
+        "type": "char"
+      },
+      "mobile": {
+        "string": "Mobile",
+        "type": "char"
+      },
+      "purchase_order_ids": {
+        "relation": "purchase.order",
+        "string": "Purchase Orders",
+        "type": "many2many"
+      },
+      "reminder_count": {
+        "string": "Reminder Count",
+        "type": "integer"
+      },
+      "remind_every": {
+        "string": "Remind Every (Days)",
+        "type": "integer"
+      },
+      "last_reminder_date": {
+        "string": "Last Reminder Date",
+        "type": "date"
+      },
+      "next_reminder_date": {
+        "string": "Next Reminder Date",
+        "type": "date"
+      },
+      "quotation_sent_date": {
+        "string": "Quotation Sent Date",
+        "type": "date"
+      },
+      "timesheet_count": {
+        "string": "Timesheet activities",
+        "type": "float"
+      },
+      "timesheet_encode_uom_id": {
+        "relation": "uom.uom",
+        "string": "Timesheet Encoding Unit",
+        "type": "many2one"
+      },
+      "timesheet_total_duration": {
+        "string": "Timesheet Total Duration",
+        "type": "integer"
+      },
+      "show_hours_recorded_button": {
+        "string": "Show Hours Recorded Button",
+        "type": "boolean"
+      },
+      "amc_id": {
+        "relation": "amc.order",
+        "string": "AMC Order",
+        "type": "many2one"
+      },
+      "amc_end_date": {
+        "string": "AMC End Date",
+        "type": "date"
+      }
+    }
+  },
+  "purchase.order": {
+    "count": 451,
+    "fields": {
+      "activity_ids": {
+        "relation": "mail.activity",
+        "string": "Activities",
+        "type": "one2many"
+      },
+      "activity_state": {
+        "string": "Activity State",
+        "type": "selection"
+      },
+      "activity_user_id": {
+        "relation": "res.users",
+        "string": "Responsible User",
+        "type": "many2one"
+      },
+      "activity_type_id": {
+        "relation": "mail.activity.type",
+        "string": "Next Activity Type",
+        "type": "many2one"
+      },
+      "activity_type_icon": {
+        "string": "Activity Type Icon",
+        "type": "char"
+      },
+      "activity_date_deadline": {
+        "string": "Next Activity Deadline",
+        "type": "date"
+      },
+      "my_activity_date_deadline": {
+        "string": "My Activity Deadline",
+        "type": "date"
+      },
+      "activity_summary": {
+        "string": "Next Activity Summary",
+        "type": "char"
+      },
+      "activity_exception_decoration": {
+        "string": "Activity Exception Decoration",
+        "type": "selection"
+      },
+      "activity_exception_icon": {
+        "string": "Icon",
+        "type": "char"
+      },
+      "activity_calendar_event_id": {
+        "relation": "calendar.event",
+        "string": "Next Activity Calendar Event",
+        "type": "many2one"
+      },
+      "message_is_follower": {
+        "string": "Is Follower",
+        "type": "boolean"
+      },
+      "message_follower_ids": {
+        "relation": "mail.followers",
+        "string": "Followers",
+        "type": "one2many"
+      },
+      "message_partner_ids": {
+        "relation": "res.partner",
+        "string": "Followers (Partners)",
+        "type": "many2many"
+      },
+      "message_ids": {
+        "relation": "mail.message",
+        "string": "Messages",
+        "type": "one2many"
+      },
+      "has_message": {
+        "string": "Has Message",
+        "type": "boolean"
+      },
+      "message_needaction": {
+        "string": "Action Needed",
+        "type": "boolean"
+      },
+      "message_needaction_counter": {
+        "string": "Number of Actions",
+        "type": "integer"
+      },
+      "message_has_error": {
+        "string": "Message Delivery error",
+        "type": "boolean"
+      },
+      "message_has_error_counter": {
+        "string": "Number of errors",
+        "type": "integer"
+      },
+      "message_attachment_count": {
+        "string": "Attachment Count",
+        "type": "integer"
+      },
+      "rating_ids": {
+        "relation": "rating.rating",
+        "string": "Ratings",
+        "type": "one2many"
+      },
+      "website_message_ids": {
+        "relation": "mail.message",
+        "string": "Website Messages",
+        "type": "one2many"
+      },
+      "message_has_sms_error": {
+        "string": "SMS Delivery error",
+        "type": "boolean"
+      },
+      "access_url": {
+        "string": "Portal Access URL",
+        "type": "char"
+      },
+      "access_token": {
+        "string": "Security Token",
+        "type": "char"
+      },
+      "access_warning": {
+        "string": "Access warning",
+        "type": "text"
+      },
+      "name": {
+        "string": "Order Reference",
+        "type": "char"
+      },
+      "priority": {
+        "string": "Priority",
+        "type": "selection"
+      },
+      "origin": {
+        "string": "Source Document",
+        "type": "char"
+      },
+      "partner_ref": {
+        "string": "Vendor Reference",
+        "type": "char"
+      },
+      "date_order": {
+        "string": "Order Deadline",
+        "type": "datetime"
+      },
+      "date_approve": {
+        "string": "Confirmation Date",
+        "type": "datetime"
+      },
+      "partner_id": {
+        "relation": "res.partner",
+        "string": "Vendor",
+        "type": "many2one"
+      },
+      "dest_address_id": {
+        "relation": "res.partner",
+        "string": "Dropship Address",
+        "type": "many2one"
+      },
+      "currency_id": {
+        "relation": "res.currency",
+        "string": "Currency",
+        "type": "many2one"
+      },
+      "state": {
+        "string": "Status",
+        "type": "selection"
+      },
+      "order_line": {
+        "relation": "purchase.order.line",
+        "string": "Order Lines",
+        "type": "one2many"
+      },
+      "notes": {
+        "string": "Terms and Conditions",
+        "type": "html"
+      },
+      "invoice_count": {
+        "string": "Bill Count",
+        "type": "integer"
+      },
+      "invoice_ids": {
+        "relation": "account.move",
+        "string": "Bills",
+        "type": "many2many"
+      },
+      "invoice_status": {
+        "string": "Billing Status",
+        "type": "selection"
+      },
+      "date_planned": {
+        "string": "Expected Arrival",
+        "type": "datetime"
+      },
+      "date_calendar_start": {
+        "string": "Date Calendar Start",
+        "type": "datetime"
+      },
+      "amount_untaxed": {
+        "string": "Untaxed Amount",
+        "type": "monetary"
+      },
+      "tax_totals": {
+        "string": "Tax Totals",
+        "type": "binary"
+      },
+      "amount_tax": {
+        "string": "Taxes",
+        "type": "monetary"
+      },
+      "amount_total": {
+        "string": "Total",
+        "type": "monetary"
+      },
+      "fiscal_position_id": {
+        "relation": "account.fiscal.position",
+        "string": "Fiscal Position",
+        "type": "many2one"
+      },
+      "tax_country_id": {
+        "relation": "res.country",
+        "string": "Tax Country",
+        "type": "many2one"
+      },
+      "tax_calculation_rounding_method": {
+        "string": "Tax calculation rounding method",
+        "type": "selection"
+      },
+      "payment_term_id": {
+        "relation": "account.payment.term",
+        "string": "Payment Terms",
+        "type": "many2one"
+      },
+      "incoterm_id": {
+        "relation": "account.incoterms",
+        "string": "Incoterm",
+        "type": "many2one"
+      },
+      "product_id": {
+        "relation": "product.product",
+        "string": "Product",
+        "type": "many2one"
+      },
+      "user_id": {
+        "relation": "res.users",
+        "string": "Buyer",
+        "type": "many2one"
+      },
+      "company_id": {
+        "relation": "res.company",
+        "string": "Company",
+        "type": "many2one"
+      },
+      "country_code": {
+        "string": "Country code",
+        "type": "char"
+      },
+      "currency_rate": {
+        "string": "Currency Rate",
+        "type": "float"
+      },
+      "mail_reminder_confirmed": {
+        "string": "Reminder Confirmed",
+        "type": "boolean"
+      },
+      "mail_reception_confirmed": {
+        "string": "Reception Confirmed",
+        "type": "boolean"
+      },
+      "receipt_reminder_email": {
+        "string": "Receipt Reminder Email",
+        "type": "boolean"
+      },
+      "reminder_date_before_receipt": {
+        "string": "Days Before Receipt",
+        "type": "integer"
+      },
+      "id": {
+        "string": "ID",
+        "type": "integer"
+      },
+      "display_name": {
+        "string": "Display Name",
+        "type": "char"
+      },
+      "create_uid": {
+        "relation": "res.users",
+        "string": "Created by",
+        "type": "many2one"
+      },
+      "create_date": {
+        "string": "Created on",
+        "type": "datetime"
+      },
+      "write_uid": {
+        "relation": "res.users",
+        "string": "Last Updated by",
+        "type": "many2one"
+      },
+      "write_date": {
+        "string": "Last Updated on",
+        "type": "datetime"
+      },
+      "po_order_approval_route": {
+        "string": "Use Approval Route",
+        "type": "selection"
+      },
+      "team_id": {
+        "relation": "purchase.team",
+        "string": "Purchase Type",
+        "type": "many2one"
+      },
+      "approver_ids": {
+        "relation": "purchase.order.approver",
+        "string": "Approvers",
+        "type": "one2many"
+      },
+      "current_approver": {
+        "relation": "purchase.order.approver",
+        "string": "Approver",
+        "type": "many2one"
+      },
+      "next_approver": {
+        "relation": "purchase.order.approver",
+        "string": "Next Approver",
+        "type": "many2one"
+      },
+      "is_current_approver": {
+        "string": "Is Current Approver",
+        "type": "boolean"
+      },
+      "lock_amount_total": {
+        "string": "Lock Amount Total",
+        "type": "boolean"
+      },
+      "incoterm_location": {
+        "string": "Incoterm Location",
+        "type": "char"
+      },
+      "incoming_picking_count": {
+        "string": "Incoming Shipment count",
+        "type": "integer"
+      },
+      "picking_ids": {
+        "relation": "stock.picking",
+        "string": "Receptions",
+        "type": "many2many"
+      },
+      "picking_type_id": {
+        "relation": "stock.picking.type",
+        "string": "Deliver To",
+        "type": "many2one"
+      },
+      "default_location_dest_id_usage": {
+        "string": "Destination Location Type",
+        "type": "selection"
+      },
+      "group_id": {
+        "relation": "procurement.group",
+        "string": "Procurement Group",
+        "type": "many2one"
+      },
+      "is_shipped": {
+        "string": "Is Shipped",
+        "type": "boolean"
+      },
+      "effective_date": {
+        "string": "Arrival",
+        "type": "datetime"
+      },
+      "on_time_rate": {
+        "string": "On-Time Delivery Rate",
+        "type": "float"
+      },
+      "receipt_status": {
+        "string": "Receipt Status",
+        "type": "selection"
+      },
+      "l10n_in_gst_treatment": {
+        "string": "GST Treatment",
+        "type": "selection"
+      },
+      "sale_order_count": {
+        "string": "Number of Source Sale",
+        "type": "integer"
+      },
+      "report_template_id1": {
+        "relation": "ir.actions.report",
+        "string": "Purchase Template1",
+        "type": "many2one"
+      },
+      "report_template_id": {
+        "relation": "ir.actions.report",
+        "string": "Purchase Template",
+        "type": "many2one"
+      },
+      "amount_to_text": {
+        "string": "In Words",
+        "type": "char"
+      },
+      "dropship_picking_count": {
+        "string": "Dropship Count",
+        "type": "integer"
+      },
+      "tandc_id": {
+        "relation": "def.tandc",
+        "string": "Terms and Conditions",
+        "type": "many2one"
+      },
+      "sale_order_ids": {
+        "relation": "sale.order",
+        "string": "Sale Orders",
+        "type": "many2many"
+      },
+      "partner_email": {
+        "string": "Email",
+        "type": "char"
+      },
+      "partner_mobile": {
+        "string": "Mobile",
+        "type": "char"
+      }
+    }
+  },
+  "stock.picking": {
+    "count": 346,
+    "fields": {
+      "activity_ids": {
+        "relation": "mail.activity",
+        "string": "Activities",
+        "type": "one2many"
+      },
+      "activity_state": {
+        "string": "Activity State",
+        "type": "selection"
+      },
+      "activity_user_id": {
+        "relation": "res.users",
+        "string": "Responsible User",
+        "type": "many2one"
+      },
+      "activity_type_id": {
+        "relation": "mail.activity.type",
+        "string": "Next Activity Type",
+        "type": "many2one"
+      },
+      "activity_type_icon": {
+        "string": "Activity Type Icon",
+        "type": "char"
+      },
+      "activity_date_deadline": {
+        "string": "Next Activity Deadline",
+        "type": "date"
+      },
+      "my_activity_date_deadline": {
+        "string": "My Activity Deadline",
+        "type": "date"
+      },
+      "activity_summary": {
+        "string": "Next Activity Summary",
+        "type": "char"
+      },
+      "activity_exception_decoration": {
+        "string": "Activity Exception Decoration",
+        "type": "selection"
+      },
+      "activity_exception_icon": {
+        "string": "Icon",
+        "type": "char"
+      },
+      "activity_calendar_event_id": {
+        "relation": "calendar.event",
+        "string": "Next Activity Calendar Event",
+        "type": "many2one"
+      },
+      "message_is_follower": {
+        "string": "Is Follower",
+        "type": "boolean"
+      },
+      "message_follower_ids": {
+        "relation": "mail.followers",
+        "string": "Followers",
+        "type": "one2many"
+      },
+      "message_partner_ids": {
+        "relation": "res.partner",
+        "string": "Followers (Partners)",
+        "type": "many2many"
+      },
+      "message_ids": {
+        "relation": "mail.message",
+        "string": "Messages",
+        "type": "one2many"
+      },
+      "has_message": {
+        "string": "Has Message",
+        "type": "boolean"
+      },
+      "message_needaction": {
+        "string": "Action Needed",
+        "type": "boolean"
+      },
+      "message_needaction_counter": {
+        "string": "Number of Actions",
+        "type": "integer"
+      },
+      "message_has_error": {
+        "string": "Message Delivery error",
+        "type": "boolean"
+      },
+      "message_has_error_counter": {
+        "string": "Number of errors",
+        "type": "integer"
+      },
+      "message_attachment_count": {
+        "string": "Attachment Count",
+        "type": "integer"
+      },
+      "rating_ids": {
+        "relation": "rating.rating",
+        "string": "Ratings",
+        "type": "one2many"
+      },
+      "website_message_ids": {
+        "relation": "mail.message",
+        "string": "Website Messages",
+        "type": "one2many"
+      },
+      "message_has_sms_error": {
+        "string": "SMS Delivery error",
+        "type": "boolean"
+      },
+      "name": {
+        "string": "Reference",
+        "type": "char"
+      },
+      "origin": {
+        "string": "Source Document",
+        "type": "char"
+      },
+      "note": {
+        "string": "Notes",
+        "type": "html"
+      },
+      "backorder_id": {
+        "relation": "stock.picking",
+        "string": "Back Order of",
+        "type": "many2one"
+      },
+      "backorder_ids": {
+        "relation": "stock.picking",
+        "string": "Back Orders",
+        "type": "one2many"
+      },
+      "return_id": {
+        "relation": "stock.picking",
+        "string": "Return of",
+        "type": "many2one"
+      },
+      "return_ids": {
+        "relation": "stock.picking",
+        "string": "Returns",
+        "type": "one2many"
+      },
+      "return_count": {
+        "string": "# Returns",
+        "type": "integer"
+      },
+      "move_type": {
+        "string": "Shipping Policy",
+        "type": "selection"
+      },
+      "state": {
+        "string": "Status",
+        "type": "selection"
+      },
+      "group_id": {
+        "relation": "procurement.group",
+        "string": "Procurement Group",
+        "type": "many2one"
+      },
+      "priority": {
+        "string": "Priority",
+        "type": "selection"
+      },
+      "scheduled_date": {
+        "string": "Scheduled Date",
+        "type": "datetime"
+      },
+      "date_deadline": {
+        "string": "Deadline",
+        "type": "datetime"
+      },
+      "has_deadline_issue": {
+        "string": "Is late",
+        "type": "boolean"
+      },
+      "date": {
+        "string": "Creation Date",
+        "type": "datetime"
+      },
+      "date_done": {
+        "string": "Date of Transfer",
+        "type": "datetime"
+      },
+      "delay_alert_date": {
+        "string": "Delay Alert Date",
+        "type": "datetime"
+      },
+      "json_popover": {
+        "string": "JSON data for the popover widget",
+        "type": "char"
+      },
+      "location_id": {
+        "relation": "stock.location",
+        "string": "Source Location",
+        "type": "many2one"
+      },
+      "location_dest_id": {
+        "relation": "stock.location",
+        "string": "Destination Location",
+        "type": "many2one"
+      },
+      "move_ids": {
+        "relation": "stock.move",
+        "string": "Stock Moves",
+        "type": "one2many"
+      },
+      "move_ids_without_package": {
+        "relation": "stock.move",
+        "string": "Stock move",
+        "type": "one2many"
+      },
+      "has_scrap_move": {
+        "string": "Has Scrap Moves",
+        "type": "boolean"
+      },
+      "picking_type_id": {
+        "relation": "stock.picking.type",
+        "string": "Operation Type",
+        "type": "many2one"
+      },
+      "picking_type_code": {
+        "string": "Type of Operation",
+        "type": "selection"
+      },
+      "picking_type_entire_packs": {
+        "string": "Move Entire Packages",
+        "type": "boolean"
+      },
+      "use_create_lots": {
+        "string": "Create New Lots/Serial Numbers",
+        "type": "boolean"
+      },
+      "use_existing_lots": {
+        "string": "Use Existing Lots/Serial Numbers",
+        "type": "boolean"
+      },
+      "hide_picking_type": {
+        "string": "Hide Picking Type",
+        "type": "boolean"
+      },
+      "partner_id": {
+        "relation": "res.partner",
+        "string": "Contact",
+        "type": "many2one"
+      },
+      "company_id": {
+        "relation": "res.company",
+        "string": "Company",
+        "type": "many2one"
+      },
+      "user_id": {
+        "relation": "res.users",
+        "string": "Responsible",
+        "type": "many2one"
+      },
+      "move_line_ids": {
+        "relation": "stock.move.line",
+        "string": "Operations",
+        "type": "one2many"
+      },
+      "move_line_ids_without_package": {
+        "relation": "stock.move.line",
+        "string": "Operations without package",
+        "type": "one2many"
+      },
+      "move_line_exist": {
+        "string": "Has Pack Operations",
+        "type": "boolean"
+      },
+      "has_packages": {
+        "string": "Has Packages",
+        "type": "boolean"
+      },
+      "show_check_availability": {
+        "string": "Show Check Availability",
+        "type": "boolean"
+      },
+      "show_allocation": {
+        "string": "Show Allocation",
+        "type": "boolean"
+      },
+      "owner_id": {
+        "relation": "res.partner",
+        "string": "Assign Owner",
+        "type": "many2one"
+      },
+      "printed": {
+        "string": "Printed",
+        "type": "boolean"
+      },
+      "signature": {
+        "string": "Signature",
+        "type": "binary"
+      },
+      "is_signed": {
+        "string": "Is Signed",
+        "type": "boolean"
+      },
+      "is_locked": {
+        "string": "Is Locked",
+        "type": "boolean"
+      },
+      "product_id": {
+        "relation": "product.product",
+        "string": "Product",
+        "type": "many2one"
+      },
+      "lot_id": {
+        "relation": "stock.lot",
+        "string": "Lot/Serial Number",
+        "type": "many2one"
+      },
+      "show_operations": {
+        "string": "Show Detailed Operations",
+        "type": "boolean"
+      },
+      "show_reserved": {
+        "string": "Pre-fill Detailed Operations",
+        "type": "boolean"
+      },
+      "show_lots_text": {
+        "string": "Show Lots Text",
+        "type": "boolean"
+      },
+      "has_tracking": {
+        "string": "Has Tracking",
+        "type": "boolean"
+      },
+      "package_level_ids": {
+        "relation": "stock.package_level",
+        "string": "Package Level",
+        "type": "one2many"
+      },
+      "package_level_ids_details": {
+        "relation": "stock.package_level",
+        "string": "Package Level Ids Details",
+        "type": "one2many"
+      },
+      "products_availability": {
+        "string": "Product Availability",
+        "type": "char"
+      },
+      "products_availability_state": {
+        "string": "Products Availability State",
+        "type": "selection"
+      },
+      "show_set_qty_button": {
+        "string": "Show Set Qty Button",
+        "type": "boolean"
+      },
+      "show_clear_qty_button": {
+        "string": "Show Clear Qty Button",
+        "type": "boolean"
+      },
+      "picking_properties": {
+        "string": "Properties",
+        "type": "properties"
+      },
+      "id": {
+        "string": "ID",
+        "type": "integer"
+      },
+      "display_name": {
+        "string": "Display Name",
+        "type": "char"
+      },
+      "create_uid": {
+        "relation": "res.users",
+        "string": "Created by",
+        "type": "many2one"
+      },
+      "create_date": {
+        "string": "Created on",
+        "type": "datetime"
+      },
+      "write_uid": {
+        "relation": "res.users",
+        "string": "Last Updated by",
+        "type": "many2one"
+      },
+      "write_date": {
+        "string": "Last Updated on",
+        "type": "datetime"
+      },
+      "country_code": {
+        "string": "Country Code",
+        "type": "char"
+      },
+      "purchase_id": {
+        "relation": "purchase.order",
+        "string": "Purchase Orders",
+        "type": "many2one"
+      },
+      "sale_id": {
+        "relation": "sale.order",
+        "string": "Sales Order",
+        "type": "many2one"
+      },
+      "carrier_price": {
+        "string": "Shipping Cost",
+        "type": "float"
+      },
+      "delivery_type": {
+        "string": "Provider",
+        "type": "selection"
+      },
+      "carrier_id": {
+        "relation": "delivery.carrier",
+        "string": "Carrier",
+        "type": "many2one"
+      },
+      "weight": {
+        "string": "Weight",
+        "type": "float"
+      },
+      "carrier_tracking_ref": {
+        "string": "Tracking Reference",
+        "type": "char"
+      },
+      "carrier_tracking_url": {
+        "string": "Tracking URL",
+        "type": "char"
+      },
+      "weight_uom_name": {
+        "string": "Weight unit of measure label",
+        "type": "char"
+      },
+      "package_ids": {
+        "relation": "stock.quant.package",
+        "string": "Packages",
+        "type": "many2many"
+      },
+      "weight_bulk": {
+        "string": "Bulk Weight",
+        "type": "float"
+      },
+      "shipping_weight": {
+        "string": "Weight for Shipping",
+        "type": "float"
+      },
+      "is_return_picking": {
+        "string": "Is Return Picking",
+        "type": "boolean"
+      },
+      "return_label_ids": {
+        "relation": "ir.attachment",
+        "string": "Return Label",
+        "type": "one2many"
+      },
+      "destination_country_code": {
+        "string": "Destination Country",
+        "type": "char"
+      },
+      "report_template_id1": {
+        "relation": "ir.actions.report",
+        "string": "Picking Template1",
+        "type": "many2one"
+      },
+      "report_template_id": {
+        "relation": "ir.actions.report",
+        "string": "Picking Template",
+        "type": "many2one"
+      },
+      "is_dropship": {
+        "string": "Is a Dropship",
+        "type": "boolean"
+      }
+    }
+  },
+  "project.project": {
+    "count": 308,
+    "fields": {
+      "activity_ids": {
+        "relation": "mail.activity",
+        "string": "Activities",
+        "type": "one2many"
+      },
+      "activity_state": {
+        "string": "Activity State",
+        "type": "selection"
+      },
+      "activity_user_id": {
+        "relation": "res.users",
+        "string": "Responsible User",
+        "type": "many2one"
+      },
+      "activity_type_id": {
+        "relation": "mail.activity.type",
+        "string": "Next Activity Type",
+        "type": "many2one"
+      },
+      "activity_type_icon": {
+        "string": "Activity Type Icon",
+        "type": "char"
+      },
+      "activity_date_deadline": {
+        "string": "Next Activity Deadline",
+        "type": "date"
+      },
+      "my_activity_date_deadline": {
+        "string": "My Activity Deadline",
+        "type": "date"
+      },
+      "activity_summary": {
+        "string": "Next Activity Summary",
+        "type": "char"
+      },
+      "activity_exception_decoration": {
+        "string": "Activity Exception Decoration",
+        "type": "selection"
+      },
+      "activity_exception_icon": {
+        "string": "Icon",
+        "type": "char"
+      },
+      "activity_calendar_event_id": {
+        "relation": "calendar.event",
+        "string": "Next Activity Calendar Event",
+        "type": "many2one"
+      },
+      "message_is_follower": {
+        "string": "Is Follower",
+        "type": "boolean"
+      },
+      "message_follower_ids": {
+        "relation": "mail.followers",
+        "string": "Followers",
+        "type": "one2many"
+      },
+      "message_partner_ids": {
+        "relation": "res.partner",
+        "string": "Followers (Partners)",
+        "type": "many2many"
+      },
+      "message_ids": {
+        "relation": "mail.message",
+        "string": "Messages",
+        "type": "one2many"
+      },
+      "has_message": {
+        "string": "Has Message",
+        "type": "boolean"
+      },
+      "message_needaction": {
+        "string": "Action Needed",
+        "type": "boolean"
+      },
+      "message_needaction_counter": {
+        "string": "Number of Actions",
+        "type": "integer"
+      },
+      "message_has_error": {
+        "string": "Message Delivery error",
+        "type": "boolean"
+      },
+      "message_has_error_counter": {
+        "string": "Number of errors",
+        "type": "integer"
+      },
+      "message_attachment_count": {
+        "string": "Attachment Count",
+        "type": "integer"
+      },
+      "rating_ids": {
+        "relation": "rating.rating",
+        "string": "Ratings",
+        "type": "one2many"
+      },
+      "website_message_ids": {
+        "relation": "mail.message",
+        "string": "Website Messages",
+        "type": "one2many"
+      },
+      "message_has_sms_error": {
+        "string": "SMS Delivery error",
+        "type": "boolean"
+      },
+      "rating_percentage_satisfaction": {
+        "string": "Rating Satisfaction",
+        "type": "integer"
+      },
+      "rating_count": {
+        "string": "# Ratings",
+        "type": "integer"
+      },
+      "rating_avg": {
+        "string": "Average Rating",
+        "type": "float"
+      },
+      "rating_avg_percentage": {
+        "string": "Average Rating (%)",
+        "type": "float"
+      },
+      "alias_id": {
+        "relation": "mail.alias",
+        "string": "Alias",
+        "type": "many2one"
+      },
+      "alias_name": {
+        "string": "Alias Name",
+        "type": "char"
+      },
+      "alias_domain_id": {
+        "relation": "mail.alias.domain",
+        "string": "Alias Domain",
+        "type": "many2one"
+      },
+      "alias_domain": {
+        "string": "Alias Domain Name",
+        "type": "char"
+      },
+      "alias_defaults": {
+        "string": "Default Values",
+        "type": "text"
+      },
+      "alias_email": {
+        "string": "Email Alias",
+        "type": "char"
+      },
+      "access_url": {
+        "string": "Portal Access URL",
+        "type": "char"
+      },
+      "access_token": {
+        "string": "Security Token",
+        "type": "char"
+      },
+      "access_warning": {
+        "string": "Access warning",
+        "type": "text"
+      },
+      "name": {
+        "string": "Name",
+        "type": "char"
+      },
+      "description": {
+        "string": "Description",
+        "type": "html"
+      },
+      "active": {
+        "string": "Active",
+        "type": "boolean"
+      },
+      "sequence": {
+        "string": "Sequence",
+        "type": "integer"
+      },
+      "partner_id": {
+        "relation": "res.partner",
+        "string": "Customer",
+        "type": "many2one"
+      },
+      "company_id": {
+        "relation": "res.company",
+        "string": "Company",
+        "type": "many2one"
+      },
+      "currency_id": {
+        "relation": "res.currency",
+        "string": "Currency",
+        "type": "many2one"
+      },
+      "analytic_account_id": {
+        "relation": "account.analytic.account",
+        "string": "Analytic Account",
+        "type": "many2one"
+      },
+      "analytic_account_balance": {
+        "string": "Balance",
+        "type": "monetary"
+      },
+      "favorite_user_ids": {
+        "relation": "res.users",
+        "string": "Members",
+        "type": "many2many"
+      },
+      "is_favorite": {
+        "string": "Show Project on Dashboard",
+        "type": "boolean"
+      },
+      "label_tasks": {
+        "string": "Use Tasks as",
+        "type": "char"
+      },
+      "tasks": {
+        "relation": "project.task",
+        "string": "Task Activities",
+        "type": "one2many"
+      },
+      "resource_calendar_id": {
+        "relation": "resource.calendar",
+        "string": "Working Time",
+        "type": "many2one"
+      },
+      "type_ids": {
+        "relation": "project.task.type",
+        "string": "Tasks Stages",
+        "type": "many2many"
+      },
+      "task_count": {
+        "string": "Task Count",
+        "type": "integer"
+      },
+      "open_task_count": {
+        "string": "Open Task Count",
+        "type": "integer"
+      },
+      "closed_task_count": {
+        "string": "Closed Task Count",
+        "type": "integer"
+      },
+      "task_ids": {
+        "relation": "project.task",
+        "string": "Tasks",
+        "type": "one2many"
+      },
+      "color": {
+        "string": "Color Index",
+        "type": "integer"
+      },
+      "user_id": {
+        "relation": "res.users",
+        "string": "Project Manager",
+        "type": "many2one"
+      },
+      "privacy_visibility": {
+        "string": "Visibility",
+        "type": "selection"
+      },
+      "privacy_visibility_warning": {
+        "string": "Privacy Visibility Warning",
+        "type": "char"
+      },
+      "access_instruction_message": {
+        "string": "Access Instruction Message",
+        "type": "char"
+      },
+      "doc_count": {
+        "string": "Number of documents attached",
+        "type": "integer"
+      },
+      "date_start": {
+        "string": "Start Date",
+        "type": "date"
+      },
+      "date": {
+        "string": "Expiration Date",
+        "type": "date"
+      },
+      "allow_task_dependencies": {
+        "string": "Task Dependencies",
+        "type": "boolean"
+      },
+      "allow_milestones": {
+        "string": "Milestones",
+        "type": "boolean"
+      },
+      "tag_ids": {
+        "relation": "project.tags",
+        "string": "Tags",
+        "type": "many2many"
+      },
+      "task_properties_definition": {
+        "string": "Task Properties",
+        "type": "properties_definition"
+      },
+      "collaborator_ids": {
+        "relation": "project.collaborator",
+        "string": "Collaborators",
+        "type": "one2many"
+      },
+      "collaborator_count": {
+        "string": "# Collaborators",
+        "type": "integer"
+      },
+      "rating_request_deadline": {
+        "string": "Rating Request Deadline",
+        "type": "datetime"
+      },
+      "rating_active": {
+        "string": "Customer Ratings",
+        "type": "boolean"
+      },
+      "allow_rating": {
+        "string": "Allow Customer Ratings",
+        "type": "boolean"
+      },
+      "rating_status": {
+        "string": "Customer Ratings Status",
+        "type": "selection"
+      },
+      "rating_status_period": {
+        "string": "Rating Frequency",
+        "type": "selection"
+      },
+      "stage_id": {
+        "relation": "project.project.stage",
+        "string": "Stage",
+        "type": "many2one"
+      },
+      "update_ids": {
+        "relation": "project.update",
+        "string": "Update",
+        "type": "one2many"
+      },
+      "last_update_id": {
+        "relation": "project.update",
+        "string": "Last Update",
+        "type": "many2one"
+      },
+      "last_update_status": {
+        "string": "Last Update Status",
+        "type": "selection"
+      },
+      "last_update_color": {
+        "string": "Last Update Color",
+        "type": "integer"
+      },
+      "milestone_ids": {
+        "relation": "project.milestone",
+        "string": "Milestone",
+        "type": "one2many"
+      },
+      "is_milestone_exceeded": {
+        "string": "Is Milestone Exceeded",
+        "type": "boolean"
+      },
+      "id": {
+        "string": "ID",
+        "type": "integer"
+      },
+      "display_name": {
+        "string": "Display Name",
+        "type": "char"
+      },
+      "create_uid": {
+        "relation": "res.users",
+        "string": "Created by",
+        "type": "many2one"
+      },
+      "create_date": {
+        "string": "Created on",
+        "type": "datetime"
+      },
+      "write_uid": {
+        "relation": "res.users",
+        "string": "Last Updated by",
+        "type": "many2one"
+      },
+      "write_date": {
+        "string": "Last Updated on",
+        "type": "datetime"
+      },
+      "ticket_ids": {
+        "relation": "helpdesk.ticket",
+        "string": "Tickets",
+        "type": "one2many"
+      },
+      "ticket_count": {
+        "string": "Ticket Count",
+        "type": "integer"
+      },
+      "label_tickets": {
+        "string": "Use Tickets as",
+        "type": "char"
+      },
+      "todo_ticket_count": {
+        "string": "Number of tickets",
+        "type": "integer"
+      },
+      "allow_timesheets": {
+        "string": "Timesheets",
+        "type": "boolean"
+      },
+      "timesheet_ids": {
+        "relation": "account.analytic.line",
+        "string": "Associated Timesheets",
+        "type": "one2many"
+      },
+      "timesheet_encode_uom_id": {
+        "relation": "uom.uom",
+        "string": "Timesheet Encode Uom",
+        "type": "many2one"
+      },
+      "total_timesheet_time": {
+        "string": "Total Timesheet Time",
+        "type": "integer"
+      },
+      "encode_uom_in_days": {
+        "string": "Encode Uom In Days",
+        "type": "boolean"
+      },
+      "is_internal_project": {
+        "string": "Is Internal Project",
+        "type": "boolean"
+      },
+      "remaining_hours": {
+        "string": "Remaining Invoiced Time",
+        "type": "float"
+      },
+      "is_project_overtime": {
+        "string": "Project in Overtime",
+        "type": "boolean"
+      },
+      "allocated_hours": {
+        "string": "Allocated Hours",
+        "type": "float"
+      },
+      "expenses_count": {
+        "string": "# Expenses",
+        "type": "integer"
+      },
+      "purchase_orders_count": {
+        "string": "# Purchase Orders",
+        "type": "integer"
+      },
+      "allow_billable": {
+        "string": "Billable",
+        "type": "boolean"
+      },
+      "sale_line_id": {
+        "relation": "sale.order.line",
+        "string": "Sales Order Item",
+        "type": "many2one"
+      },
+      "sale_order_id": {
+        "relation": "sale.order",
+        "string": "Sales Order",
+        "type": "many2one"
+      },
+      "has_any_so_to_invoice": {
+        "string": "Has SO to Invoice",
+        "type": "boolean"
+      },
+      "sale_order_line_count": {
+        "string": "Sale Order Line Count",
+        "type": "integer"
+      },
+      "sale_order_count": {
+        "string": "Sale Order Count",
+        "type": "integer"
+      },
+      "has_any_so_with_nothing_to_invoice": {
+        "string": "Has a SO with an invoice status of No",
+        "type": "boolean"
+      },
+      "invoice_count": {
+        "string": "Invoice Count",
+        "type": "integer"
+      },
+      "vendor_bill_count": {
+        "string": "Vendor Bill Count",
+        "type": "integer"
+      },
+      "display_sales_stat_buttons": {
+        "string": "Display Sales Stat Buttons",
+        "type": "boolean"
+      },
+      "pricing_type": {
+        "string": "Pricing",
+        "type": "selection"
+      },
+      "sale_line_employee_ids": {
+        "relation": "project.sale.line.employee.map",
+        "string": "Sale line/Employee map",
+        "type": "one2many"
+      },
+      "billable_percentage": {
+        "string": "Billable Percentage",
+        "type": "integer"
+      },
+      "timesheet_product_id": {
+        "relation": "product.product",
+        "string": "Timesheet Product",
+        "type": "many2one"
+      },
+      "warning_employee_rate": {
+        "string": "Warning Employee Rate",
+        "type": "boolean"
+      },
+      "billing_type": {
+        "string": "Billing Type",
+        "type": "selection"
+      },
+      "is_project_done": {
+        "string": "Final Stage of Project",
+        "type": "boolean"
+      },
+      "amc_id": {
+        "relation": "amc.order",
+        "string": "AMC",
+        "type": "many2one"
+      },
+      "alias_full_name": {
+        "string": "Alias Email",
+        "type": "char"
+      },
+      "alias_model_id": {
+        "relation": "ir.model",
+        "string": "Aliased Model",
+        "type": "many2one"
+      },
+      "alias_force_thread_id": {
+        "string": "Record Thread ID",
+        "type": "integer"
+      },
+      "alias_parent_model_id": {
+        "relation": "ir.model",
+        "string": "Parent Model",
+        "type": "many2one"
+      },
+      "alias_parent_thread_id": {
+        "string": "Parent Record Thread ID",
+        "type": "integer"
+      },
+      "alias_contact": {
+        "string": "Alias Contact Security",
+        "type": "selection"
+      },
+      "alias_incoming_local": {
+        "string": "Local-part based incoming detection",
+        "type": "boolean"
+      },
+      "alias_bounced_content": {
+        "string": "Custom Bounced Message",
+        "type": "html"
+      },
+      "alias_status": {
+        "string": "Alias Status",
+        "type": "selection"
+      }
+    }
+  },
+  "project.task": {
+    "count": 526,
+    "fields": {
+      "duration_tracking": {
+        "string": "Status time",
+        "type": "json"
+      },
+      "message_is_follower": {
+        "string": "Is Follower",
+        "type": "boolean"
+      },
+      "message_follower_ids": {
+        "relation": "mail.followers",
+        "string": "Followers",
+        "type": "one2many"
+      },
+      "message_partner_ids": {
+        "relation": "res.partner",
+        "string": "Followers (Partners)",
+        "type": "many2many"
+      },
+      "message_ids": {
+        "relation": "mail.message",
+        "string": "Messages",
+        "type": "one2many"
+      },
+      "has_message": {
+        "string": "Has Message",
+        "type": "boolean"
+      },
+      "message_needaction": {
+        "string": "Action Needed",
+        "type": "boolean"
+      },
+      "message_needaction_counter": {
+        "string": "Number of Actions",
+        "type": "integer"
+      },
+      "message_has_error": {
+        "string": "Message Delivery error",
+        "type": "boolean"
+      },
+      "message_has_error_counter": {
+        "string": "Number of errors",
+        "type": "integer"
+      },
+      "message_attachment_count": {
+        "string": "Attachment Count",
+        "type": "integer"
+      },
+      "rating_ids": {
+        "relation": "rating.rating",
+        "string": "Ratings",
+        "type": "one2many"
+      },
+      "website_message_ids": {
+        "relation": "mail.message",
+        "string": "Website Messages",
+        "type": "one2many"
+      },
+      "message_has_sms_error": {
+        "string": "SMS Delivery error",
+        "type": "boolean"
+      },
+      "rating_last_value": {
+        "string": "Rating Last Value",
+        "type": "float"
+      },
+      "rating_last_feedback": {
+        "string": "Rating Last Feedback",
+        "type": "text"
+      },
+      "rating_last_image": {
+        "string": "Rating Last Image",
+        "type": "binary"
+      },
+      "rating_count": {
+        "string": "Rating count",
+        "type": "integer"
+      },
+      "rating_avg": {
+        "string": "Average Rating",
+        "type": "float"
+      },
+      "rating_avg_text": {
+        "string": "Rating Avg Text",
+        "type": "selection"
+      },
+      "rating_percentage_satisfaction": {
+        "string": "Rating Satisfaction",
+        "type": "float"
+      },
+      "rating_last_text": {
+        "string": "Rating Text",
+        "type": "selection"
+      },
+      "activity_ids": {
+        "relation": "mail.activity",
+        "string": "Activities",
+        "type": "one2many"
+      },
+      "activity_state": {
+        "string": "Activity State",
+        "type": "selection"
+      },
+      "activity_user_id": {
+        "relation": "res.users",
+        "string": "Responsible User",
+        "type": "many2one"
+      },
+      "activity_type_id": {
+        "relation": "mail.activity.type",
+        "string": "Next Activity Type",
+        "type": "many2one"
+      },
+      "activity_type_icon": {
+        "string": "Activity Type Icon",
+        "type": "char"
+      },
+      "activity_date_deadline": {
+        "string": "Next Activity Deadline",
+        "type": "date"
+      },
+      "my_activity_date_deadline": {
+        "string": "My Activity Deadline",
+        "type": "date"
+      },
+      "activity_summary": {
+        "string": "Next Activity Summary",
+        "type": "char"
+      },
+      "activity_exception_decoration": {
+        "string": "Activity Exception Decoration",
+        "type": "selection"
+      },
+      "activity_exception_icon": {
+        "string": "Icon",
+        "type": "char"
+      },
+      "activity_calendar_event_id": {
+        "relation": "calendar.event",
+        "string": "Next Activity Calendar Event",
+        "type": "many2one"
+      },
+      "email_cc": {
+        "string": "Email cc",
+        "type": "char"
+      },
+      "access_url": {
+        "string": "Portal Access URL",
+        "type": "char"
+      },
+      "access_token": {
+        "string": "Security Token",
+        "type": "char"
+      },
+      "access_warning": {
+        "string": "Access warning",
+        "type": "text"
+      },
+      "active": {
+        "string": "Active",
+        "type": "boolean"
+      },
+      "name": {
+        "string": "Title",
+        "type": "char"
+      },
+      "description": {
+        "string": "Description",
+        "type": "html"
+      },
+      "priority": {
+        "string": "Priority",
+        "type": "selection"
+      },
+      "sequence": {
+        "string": "Sequence",
+        "type": "integer"
+      },
+      "stage_id": {
+        "relation": "project.task.type",
+        "string": "Stage",
+        "type": "many2one"
+      },
+      "tag_ids": {
+        "relation": "project.tags",
+        "string": "Tags",
+        "type": "many2many"
+      },
+      "state": {
+        "string": "State",
+        "type": "selection"
+      },
+      "create_date": {
+        "string": "Created On",
+        "type": "datetime"
+      },
+      "write_date": {
+        "string": "Last Updated On",
+        "type": "datetime"
+      },
+      "date_end": {
+        "string": "Ending Date",
+        "type": "datetime"
+      },
+      "date_assign": {
+        "string": "Assigning Date",
+        "type": "datetime"
+      },
+      "date_deadline": {
+        "string": "Deadline",
+        "type": "datetime"
+      },
+      "date_last_stage_update": {
+        "string": "Last Stage Update",
+        "type": "datetime"
+      },
+      "project_id": {
+        "relation": "project.project",
+        "string": "Project",
+        "type": "many2one"
+      },
+      "display_in_project": {
+        "string": "Display In Project",
+        "type": "boolean"
+      },
+      "task_properties": {
+        "string": "Properties",
+        "type": "properties"
+      },
+      "allocated_hours": {
+        "string": "Allocated Time",
+        "type": "float"
+      },
+      "subtask_allocated_hours": {
+        "string": "Sub-tasks Allocated Time",
+        "type": "float"
+      },
+      "user_ids": {
+        "relation": "res.users",
+        "string": "Assignees",
+        "type": "many2many"
+      },
+      "portal_user_names": {
+        "string": "Portal User Names",
+        "type": "char"
+      },
+      "personal_stage_type_ids": {
+        "relation": "project.task.type",
+        "string": "Personal Stages",
+        "type": "many2many"
+      },
+      "personal_stage_id": {
+        "relation": "project.task.stage.personal",
+        "string": "Personal Stage State",
+        "type": "many2one"
+      },
+      "personal_stage_type_id": {
+        "relation": "project.task.type",
+        "string": "Personal Stage",
+        "type": "many2one"
+      },
+      "partner_id": {
+        "relation": "res.partner",
+        "string": "Customer",
+        "type": "many2one"
+      },
+      "company_id": {
+        "relation": "res.company",
+        "string": "Company",
+        "type": "many2one"
+      },
+      "color": {
+        "string": "Color Index",
+        "type": "integer"
+      },
+      "rating_active": {
+        "string": "Project Rating Status",
+        "type": "boolean"
+      },
+      "attachment_ids": {
+        "relation": "ir.attachment",
+        "string": "Main Attachments",
+        "type": "one2many"
+      },
+      "displayed_image_id": {
+        "relation": "ir.attachment",
+        "string": "Cover Image",
+        "type": "many2one"
+      },
+      "parent_id": {
+        "relation": "project.task",
+        "string": "Parent Task",
+        "type": "many2one"
+      },
+      "child_ids": {
+        "relation": "project.task",
+        "string": "Sub-tasks",
+        "type": "one2many"
+      },
+      "subtask_count": {
+        "string": "Sub-task Count",
+        "type": "integer"
+      },
+      "closed_subtask_count": {
+        "string": "Closed Sub-tasks Count",
+        "type": "integer"
+      },
+      "project_privacy_visibility": {
+        "string": "Project Visibility",
+        "type": "selection"
+      },
+      "working_hours_open": {
+        "string": "Working Hours to Assign",
+        "type": "float"
+      },
+      "working_hours_close": {
+        "string": "Working Hours to Close",
+        "type": "float"
+      },
+      "working_days_open": {
+        "string": "Working Days to Assign",
+        "type": "float"
+      },
+      "working_days_close": {
+        "string": "Working Days to Close",
+        "type": "float"
+      },
+      "allow_milestones": {
+        "string": "Milestones",
+        "type": "boolean"
+      },
+      "milestone_id": {
+        "relation": "project.milestone",
+        "string": "Milestone",
+        "type": "many2one"
+      },
+      "has_late_and_unreached_milestone": {
+        "string": "Has Late And Unreached Milestone",
+        "type": "boolean"
+      },
+      "allow_task_dependencies": {
+        "string": "Task Dependencies",
+        "type": "boolean"
+      },
+      "depend_on_ids": {
+        "relation": "project.task",
+        "string": "Blocked By",
+        "type": "many2many"
+      },
+      "dependent_ids": {
+        "relation": "project.task",
+        "string": "Block",
+        "type": "many2many"
+      },
+      "dependent_tasks_count": {
+        "string": "Dependent Tasks",
+        "type": "integer"
+      },
+      "display_parent_task_button": {
+        "string": "Display Parent Task Button",
+        "type": "boolean"
+      },
+      "recurring_task": {
+        "string": "Recurrent",
+        "type": "boolean"
+      },
+      "recurring_count": {
+        "string": "Tasks in Recurrence",
+        "type": "integer"
+      },
+      "recurrence_id": {
+        "relation": "project.task.recurrence",
+        "string": "Recurrence",
+        "type": "many2one"
+      },
+      "repeat_interval": {
+        "string": "Repeat Every",
+        "type": "integer"
+      },
+      "repeat_unit": {
+        "string": "Repeat Unit",
+        "type": "selection"
+      },
+      "repeat_type": {
+        "string": "Until",
+        "type": "selection"
+      },
+      "repeat_until": {
+        "string": "End Date",
+        "type": "date"
+      },
+      "analytic_account_id": {
+        "relation": "account.analytic.account",
+        "string": "Analytic Account",
+        "type": "many2one"
+      },
+      "display_name": {
+        "string": "Display Name",
+        "type": "char"
+      },
+      "id": {
+        "string": "ID",
+        "type": "integer"
+      },
+      "create_uid": {
+        "relation": "res.users",
+        "string": "Created by",
+        "type": "many2one"
+      },
+      "write_uid": {
+        "relation": "res.users",
+        "string": "Last Updated by",
+        "type": "many2one"
+      },
+      "ticket_ids": {
+        "relation": "helpdesk.ticket",
+        "string": "Tickets",
+        "type": "one2many"
+      },
+      "ticket_count": {
+        "string": "Ticket Count",
+        "type": "integer"
+      },
+      "label_tickets": {
+        "string": "Use Tickets as",
+        "type": "char"
+      },
+      "todo_ticket_count": {
+        "string": "Number of tickets",
+        "type": "integer"
+      },
+      "analytic_account_active": {
+        "string": "Active Analytic Account",
+        "type": "boolean"
+      },
+      "allow_timesheets": {
+        "string": "Allow timesheets",
+        "type": "boolean"
+      },
+      "remaining_hours": {
+        "string": "Remaining Hours",
+        "type": "float"
+      },
+      "remaining_hours_percentage": {
+        "string": "Remaining Hours Percentage",
+        "type": "float"
+      },
+      "effective_hours": {
+        "string": "Hours Spent",
+        "type": "float"
+      },
+      "total_hours_spent": {
+        "string": "Total Hours",
+        "type": "float"
+      },
+      "progress": {
+        "string": "Progress",
+        "type": "float"
+      },
+      "overtime": {
+        "string": "Overtime",
+        "type": "float"
+      },
+      "subtask_effective_hours": {
+        "string": "Hours Spent on Sub-Tasks",
+        "type": "float"
+      },
+      "timesheet_ids": {
+        "relation": "account.analytic.line",
+        "string": "Timesheets",
+        "type": "one2many"
+      },
+      "encode_uom_in_days": {
+        "string": "Encode Uom In Days",
+        "type": "boolean"
+      },
+      "sale_order_id": {
+        "relation": "sale.order",
+        "string": "Sales Order",
+        "type": "many2one"
+      },
+      "sale_line_id": {
+        "relation": "sale.order.line",
+        "string": "Sales Order Item",
+        "type": "many2one"
+      },
+      "project_sale_order_id": {
+        "relation": "sale.order",
+        "string": "Project's sale order",
+        "type": "many2one"
+      },
+      "task_to_invoice": {
+        "string": "To invoice",
+        "type": "boolean"
+      },
+      "allow_billable": {
+        "string": "Billable",
+        "type": "boolean"
+      },
+      "display_sale_order_button": {
+        "string": "Display Sales Order",
+        "type": "boolean"
+      },
+      "audio_task_items_ids": {
+        "relation": "audio.task.items",
+        "string": "Audio Task Items",
+        "type": "one2many"
+      },
+      "video_task_items_ids": {
+        "relation": "video.task.items",
+        "string": "Video Task Items",
+        "type": "one2many"
+      },
+      "video_conferencing_task_items_ids": {
+        "relation": "video.conferencing.task.items",
+        "string": "Video Conferencing Task Items",
+        "type": "one2many"
+      },
+      "controller_task_items_ids": {
+        "relation": "controller.task.items",
+        "string": "Controller Task Items",
+        "type": "one2many"
+      },
+      "switching_task_items_ids": {
+        "relation": "switching.task.items",
+        "string": "Switching Task Items",
+        "type": "one2many"
+      },
+      "accessories_task_items_ids": {
+        "relation": "accessories.task.items",
+        "string": "Accessories Task Items",
+        "type": "one2many"
+      },
+      "task_items_summary_ids": {
+        "relation": "task.items.summary",
+        "string": "Task Items Summary",
+        "type": "one2many"
+      },
+      "can_add_products": {
+        "string": "Can Add Products",
+        "type": "boolean"
+      },
+      "control_page_visibility": {
+        "string": "Control Page Visibility",
+        "type": "boolean"
+      },
+      "so_analytic_account_id": {
+        "relation": "account.analytic.account",
+        "string": "Sale Order Analytic Account",
+        "type": "many2one"
+      },
+      "pricing_type": {
+        "string": "Pricing",
+        "type": "selection"
+      },
+      "is_project_map_empty": {
+        "string": "Is Project map empty",
+        "type": "boolean"
+      },
+      "has_multi_sol": {
+        "string": "Has Multi Sol",
+        "type": "boolean"
+      },
+      "timesheet_product_id": {
+        "relation": "product.product",
+        "string": "Timesheet Product",
+        "type": "many2one"
+      },
+      "remaining_hours_so": {
+        "string": "Remaining Hours on SO",
+        "type": "float"
+      },
+      "remaining_hours_available": {
+        "string": "Remaining Hours Available",
+        "type": "boolean"
+      }
+    }
+  },
+  "helpdesk.ticket": {
+    "count": 226,
+    "fields": {
+      "duration_tracking": {
+        "string": "Status time",
+        "type": "json"
+      },
+      "access_url": {
+        "string": "Portal Access URL",
+        "type": "char"
+      },
+      "access_token": {
+        "string": "Security Token",
+        "type": "char"
+      },
+      "access_warning": {
+        "string": "Access warning",
+        "type": "text"
+      },
+      "activity_ids": {
+        "relation": "mail.activity",
+        "string": "Activities",
+        "type": "one2many"
+      },
+      "activity_state": {
+        "string": "Activity State",
+        "type": "selection"
+      },
+      "activity_user_id": {
+        "relation": "res.users",
+        "string": "Responsible User",
+        "type": "many2one"
+      },
+      "activity_type_id": {
+        "relation": "mail.activity.type",
+        "string": "Next Activity Type",
+        "type": "many2one"
+      },
+      "activity_type_icon": {
+        "string": "Activity Type Icon",
+        "type": "char"
+      },
+      "activity_date_deadline": {
+        "string": "Next Activity Deadline",
+        "type": "date"
+      },
+      "my_activity_date_deadline": {
+        "string": "My Activity Deadline",
+        "type": "date"
+      },
+      "activity_summary": {
+        "string": "Next Activity Summary",
+        "type": "char"
+      },
+      "activity_exception_decoration": {
+        "string": "Activity Exception Decoration",
+        "type": "selection"
+      },
+      "activity_exception_icon": {
+        "string": "Icon",
+        "type": "char"
+      },
+      "activity_calendar_event_id": {
+        "relation": "calendar.event",
+        "string": "Next Activity Calendar Event",
+        "type": "many2one"
+      },
+      "message_is_follower": {
+        "string": "Is Follower",
+        "type": "boolean"
+      },
+      "message_follower_ids": {
+        "relation": "mail.followers",
+        "string": "Followers",
+        "type": "one2many"
+      },
+      "message_partner_ids": {
+        "relation": "res.partner",
+        "string": "Followers (Partners)",
+        "type": "many2many"
+      },
+      "message_ids": {
+        "relation": "mail.message",
+        "string": "Messages",
+        "type": "one2many"
+      },
+      "has_message": {
+        "string": "Has Message",
+        "type": "boolean"
+      },
+      "message_needaction": {
+        "string": "Action Needed",
+        "type": "boolean"
+      },
+      "message_needaction_counter": {
+        "string": "Number of Actions",
+        "type": "integer"
+      },
+      "message_has_error": {
+        "string": "Message Delivery error",
+        "type": "boolean"
+      },
+      "message_has_error_counter": {
+        "string": "Number of errors",
+        "type": "integer"
+      },
+      "message_attachment_count": {
+        "string": "Attachment Count",
+        "type": "integer"
+      },
+      "rating_ids": {
+        "relation": "rating.rating",
+        "string": "Ratings",
+        "type": "one2many"
+      },
+      "website_message_ids": {
+        "relation": "mail.message",
+        "string": "Website Messages",
+        "type": "one2many"
+      },
+      "message_has_sms_error": {
+        "string": "SMS Delivery error",
+        "type": "boolean"
+      },
+      "email_cc": {
+        "string": "Email cc",
+        "type": "char"
+      },
+      "number": {
+        "string": "Ticket number",
+        "type": "char"
+      },
+      "name": {
+        "string": "Title",
+        "type": "char"
+      },
+      "description": {
+        "string": "Description",
+        "type": "html"
+      },
+      "user_id": {
+        "relation": "res.users",
+        "string": "Assigned user",
+        "type": "many2one"
+      },
+      "user_ids": {
+        "relation": "res.users",
+        "string": "Users",
+        "type": "many2many"
+      },
+      "stage_id": {
+        "relation": "helpdesk.ticket.stage",
+        "string": "Stage",
+        "type": "many2one"
+      },
+      "partner_id": {
+        "relation": "res.partner",
+        "string": "Contact",
+        "type": "many2one"
+      },
+      "commercial_partner_id": {
+        "relation": "res.partner",
+        "string": "Commercial Partner",
+        "type": "many2one"
+      },
+      "partner_name": {
+        "string": "Partner Name",
+        "type": "char"
+      },
+      "partner_email": {
+        "string": "Email",
+        "type": "char"
+      },
+      "last_stage_update": {
+        "string": "Last Stage Update",
+        "type": "datetime"
+      },
+      "assigned_date": {
+        "string": "Assigned Date",
+        "type": "datetime"
+      },
+      "closed_date": {
+        "string": "Closed Date",
+        "type": "datetime"
+      },
+      "closed": {
+        "string": "Closed",
+        "type": "boolean"
+      },
+      "unattended": {
+        "string": "Unattended",
+        "type": "boolean"
+      },
+      "tag_ids": {
+        "relation": "helpdesk.ticket.tag",
+        "string": "Tags",
+        "type": "many2many"
+      },
+      "company_id": {
+        "relation": "res.company",
+        "string": "Company",
+        "type": "many2one"
+      },
+      "channel_id": {
+        "relation": "helpdesk.ticket.channel",
+        "string": "Channel",
+        "type": "many2one"
+      },
+      "category_id": {
+        "relation": "helpdesk.ticket.category",
+        "string": "Category",
+        "type": "many2one"
+      },
+      "team_id": {
+        "relation": "helpdesk.ticket.team",
+        "string": "Team",
+        "type": "many2one"
+      },
+      "priority": {
+        "string": "Priority",
+        "type": "selection"
+      },
+      "attachment_ids": {
+        "relation": "ir.attachment",
+        "string": "Media Attachments",
+        "type": "one2many"
+      },
+      "color": {
+        "string": "Color Index",
+        "type": "integer"
+      },
+      "kanban_state": {
+        "string": "Kanban State",
+        "type": "selection"
+      },
+      "sequence": {
+        "string": "Sequence",
+        "type": "integer"
+      },
+      "active": {
+        "string": "Active",
+        "type": "boolean"
+      },
+      "id": {
+        "string": "ID",
+        "type": "integer"
+      },
+      "display_name": {
+        "string": "Display Name",
+        "type": "char"
+      },
+      "create_uid": {
+        "relation": "res.users",
+        "string": "Created by",
+        "type": "many2one"
+      },
+      "create_date": {
+        "string": "Created on",
+        "type": "datetime"
+      },
+      "write_uid": {
+        "relation": "res.users",
+        "string": "Last Updated by",
+        "type": "many2one"
+      },
+      "write_date": {
+        "string": "Last Updated on",
+        "type": "datetime"
+      },
+      "project_id": {
+        "relation": "project.project",
+        "string": "Project",
+        "type": "many2one"
+      },
+      "task_id": {
+        "relation": "project.task",
+        "string": "Task",
+        "type": "many2one"
+      },
+      "sale_order_ids": {
+        "relation": "sale.order",
+        "string": "Sale Order",
+        "type": "many2many"
+      },
+      "so_count": {
+        "string": "Sale Order Count",
+        "type": "integer"
+      },
+      "product_id": {
+        "relation": "product.product",
+        "string": "Product",
+        "type": "many2one"
+      },
+      "product_identification_id": {
+        "relation": "stock.lot",
+        "string": "Product Identification",
+        "type": "many2one"
+      },
+      "amc_id": {
+        "relation": "amc.order",
+        "string": "AMC",
+        "type": "many2one"
+      },
+      "amc_validity": {
+        "string": "Amc Validity",
+        "type": "selection"
+      },
+      "service_order_ids": {
+        "relation": "service.order",
+        "string": "Service Order",
+        "type": "many2many"
+      },
+      "sso_count": {
+        "string": "Service Order Count",
+        "type": "integer"
+      }
+    }
+  },
+  "service.order": {
+    "count": 277,
+    "fields": {
+      "activity_ids": {
+        "relation": "mail.activity",
+        "string": "Activities",
+        "type": "one2many"
+      },
+      "activity_state": {
+        "string": "Activity State",
+        "type": "selection"
+      },
+      "activity_user_id": {
+        "relation": "res.users",
+        "string": "Responsible User",
+        "type": "many2one"
+      },
+      "activity_type_id": {
+        "relation": "mail.activity.type",
+        "string": "Next Activity Type",
+        "type": "many2one"
+      },
+      "activity_type_icon": {
+        "string": "Activity Type Icon",
+        "type": "char"
+      },
+      "activity_date_deadline": {
+        "string": "Next Activity Deadline",
+        "type": "date"
+      },
+      "my_activity_date_deadline": {
+        "string": "My Activity Deadline",
+        "type": "date"
+      },
+      "activity_summary": {
+        "string": "Next Activity Summary",
+        "type": "char"
+      },
+      "activity_exception_decoration": {
+        "string": "Activity Exception Decoration",
+        "type": "selection"
+      },
+      "activity_exception_icon": {
+        "string": "Icon",
+        "type": "char"
+      },
+      "activity_calendar_event_id": {
+        "relation": "calendar.event",
+        "string": "Next Activity Calendar Event",
+        "type": "many2one"
+      },
+      "message_is_follower": {
+        "string": "Is Follower",
+        "type": "boolean"
+      },
+      "message_follower_ids": {
+        "relation": "mail.followers",
+        "string": "Followers",
+        "type": "one2many"
+      },
+      "message_partner_ids": {
+        "relation": "res.partner",
+        "string": "Followers (Partners)",
+        "type": "many2many"
+      },
+      "message_ids": {
+        "relation": "mail.message",
+        "string": "Messages",
+        "type": "one2many"
+      },
+      "has_message": {
+        "string": "Has Message",
+        "type": "boolean"
+      },
+      "message_needaction": {
+        "string": "Action Needed",
+        "type": "boolean"
+      },
+      "message_needaction_counter": {
+        "string": "Number of Actions",
+        "type": "integer"
+      },
+      "message_has_error": {
+        "string": "Message Delivery error",
+        "type": "boolean"
+      },
+      "message_has_error_counter": {
+        "string": "Number of errors",
+        "type": "integer"
+      },
+      "message_attachment_count": {
+        "string": "Attachment Count",
+        "type": "integer"
+      },
+      "rating_ids": {
+        "relation": "rating.rating",
+        "string": "Ratings",
+        "type": "one2many"
+      },
+      "website_message_ids": {
+        "relation": "mail.message",
+        "string": "Website Messages",
+        "type": "one2many"
+      },
+      "message_has_sms_error": {
+        "string": "SMS Delivery error",
+        "type": "boolean"
+      },
+      "name": {
+        "string": "Service Order",
+        "type": "char"
+      },
+      "user_id": {
+        "relation": "res.users",
+        "string": "Responsible",
+        "type": "many2one"
+      },
+      "assigned_to": {
+        "relation": "res.users",
+        "string": "Assigned To",
+        "type": "many2one"
+      },
+      "customer_id": {
+        "relation": "res.partner",
+        "string": "Customer",
+        "type": "many2one"
+      },
+      "customer_ref": {
+        "string": "Customer Reference",
+        "type": "char"
+      },
+      "visit_date": {
+        "string": "Visit Date",
+        "type": "datetime"
+      },
+      "currency_id": {
+        "relation": "res.currency",
+        "string": "Currency",
+        "type": "many2one"
+      },
+      "date_order": {
+        "string": "Order Date",
+        "type": "datetime"
+      },
+      "date_approve": {
+        "string": "Confirmed Date",
+        "type": "datetime"
+      },
+      "company_id": {
+        "relation": "res.company",
+        "string": "Company",
+        "type": "many2one"
+      },
+      "is_amc": {
+        "string": "Is AMC",
+        "type": "boolean"
+      },
+      "amc_start_date": {
+        "string": "AMC Start Date",
+        "type": "date"
+      },
+      "repeat_interval": {
+        "string": "Repeat Interval",
+        "type": "integer"
+      },
+      "repeat_unit": {
+        "string": "Repeat Type",
+        "type": "selection"
+      },
+      "repeat_type": {
+        "string": "Repeat Type",
+        "type": "selection"
+      },
+      "repeat_until": {
+        "string": "Repeat Until",
+        "type": "date"
+      },
+      "order_line_ids": {
+        "relation": "service.order.line",
+        "string": "Order Lines",
+        "type": "one2many"
+      },
+      "state": {
+        "string": "Status",
+        "type": "selection"
+      },
+      "notes": {
+        "string": "Notes",
+        "type": "text"
+      },
+      "terms_and_conditions": {
+        "string": "Terms and Conditions",
+        "type": "text"
+      },
+      "id": {
+        "string": "ID",
+        "type": "integer"
+      },
+      "display_name": {
+        "string": "Display Name",
+        "type": "char"
+      },
+      "create_uid": {
+        "relation": "res.users",
+        "string": "Created by",
+        "type": "many2one"
+      },
+      "create_date": {
+        "string": "Created on",
+        "type": "datetime"
+      },
+      "write_uid": {
+        "relation": "res.users",
+        "string": "Last Updated by",
+        "type": "many2one"
+      },
+      "write_date": {
+        "string": "Last Updated on",
+        "type": "datetime"
+      },
+      "srn_ids": {
+        "relation": "srn",
+        "string": "Srn",
+        "type": "many2many"
+      },
+      "srn_count": {
+        "string": "Srn Count",
+        "type": "integer"
+      },
+      "check_in_image": {
+        "relation": "ir.attachment",
+        "string": "Site - Check In Image",
+        "type": "many2many"
+      },
+      "check_out_image": {
+        "relation": "ir.attachment",
+        "string": "Site - Check Out Image",
+        "type": "many2many"
+      },
+      "check_in_time": {
+        "string": "Check In Time",
+        "type": "datetime"
+      },
+      "check_in_latitude": {
+        "string": "Check In Latitude",
+        "type": "float"
+      },
+      "check_in_longitude": {
+        "string": "Check In Longitude",
+        "type": "float"
+      },
+      "check_out_time": {
+        "string": "Check Out Time",
+        "type": "datetime"
+      },
+      "check_out_latitude": {
+        "string": "Check Out Latitude",
+        "type": "char"
+      },
+      "check_out_longitude": {
+        "string": "Check Out Longitude",
+        "type": "char"
+      },
+      "customer_feedback": {
+        "string": "Customer Feedback",
+        "type": "html"
+      },
+      "customer_rating": {
+        "string": "Customer Rating",
+        "type": "selection"
+      },
+      "ticket_ids": {
+        "relation": "helpdesk.ticket",
+        "string": "Ticket",
+        "type": "many2many"
+      },
+      "ticket_count": {
+        "string": "Tickets Count",
+        "type": "integer"
+      }
+    }
+  },
+  "amc.order": {
+    "count": 49,
+    "fields": {
+      "activity_ids": {
+        "relation": "mail.activity",
+        "string": "Activities",
+        "type": "one2many"
+      },
+      "activity_state": {
+        "string": "Activity State",
+        "type": "selection"
+      },
+      "activity_user_id": {
+        "relation": "res.users",
+        "string": "Responsible User",
+        "type": "many2one"
+      },
+      "activity_type_id": {
+        "relation": "mail.activity.type",
+        "string": "Next Activity Type",
+        "type": "many2one"
+      },
+      "activity_type_icon": {
+        "string": "Activity Type Icon",
+        "type": "char"
+      },
+      "activity_date_deadline": {
+        "string": "Next Activity Deadline",
+        "type": "date"
+      },
+      "my_activity_date_deadline": {
+        "string": "My Activity Deadline",
+        "type": "date"
+      },
+      "activity_summary": {
+        "string": "Next Activity Summary",
+        "type": "char"
+      },
+      "activity_exception_decoration": {
+        "string": "Activity Exception Decoration",
+        "type": "selection"
+      },
+      "activity_exception_icon": {
+        "string": "Icon",
+        "type": "char"
+      },
+      "activity_calendar_event_id": {
+        "relation": "calendar.event",
+        "string": "Next Activity Calendar Event",
+        "type": "many2one"
+      },
+      "message_is_follower": {
+        "string": "Is Follower",
+        "type": "boolean"
+      },
+      "message_follower_ids": {
+        "relation": "mail.followers",
+        "string": "Followers",
+        "type": "one2many"
+      },
+      "message_partner_ids": {
+        "relation": "res.partner",
+        "string": "Followers (Partners)",
+        "type": "many2many"
+      },
+      "message_ids": {
+        "relation": "mail.message",
+        "string": "Messages",
+        "type": "one2many"
+      },
+      "has_message": {
+        "string": "Has Message",
+        "type": "boolean"
+      },
+      "message_needaction": {
+        "string": "Action Needed",
+        "type": "boolean"
+      },
+      "message_needaction_counter": {
+        "string": "Number of Actions",
+        "type": "integer"
+      },
+      "message_has_error": {
+        "string": "Message Delivery error",
+        "type": "boolean"
+      },
+      "message_has_error_counter": {
+        "string": "Number of errors",
+        "type": "integer"
+      },
+      "message_attachment_count": {
+        "string": "Attachment Count",
+        "type": "integer"
+      },
+      "rating_ids": {
+        "relation": "rating.rating",
+        "string": "Ratings",
+        "type": "one2many"
+      },
+      "website_message_ids": {
+        "relation": "mail.message",
+        "string": "Website Messages",
+        "type": "one2many"
+      },
+      "message_has_sms_error": {
+        "string": "SMS Delivery error",
+        "type": "boolean"
+      },
+      "name": {
+        "string": "Service Order",
+        "type": "char"
+      },
+      "user_id": {
+        "relation": "res.users",
+        "string": "Responsible",
+        "type": "many2one"
+      },
+      "partner_id": {
+        "relation": "res.partner",
+        "string": "Customer",
+        "type": "many2one"
+      },
+      "partner_address": {
+        "string": "Address",
+        "type": "char"
+      },
+      "partner_email": {
+        "string": "Email",
+        "type": "char"
+      },
+      "partner_phone": {
+        "string": "Mobile",
+        "type": "char"
+      },
+      "company_id": {
+        "relation": "res.company",
+        "string": "Company",
+        "type": "many2one"
+      },
+      "currency_id": {
+        "relation": "res.currency",
+        "string": "Currency",
+        "type": "many2one"
+      },
+      "amc_start_date": {
+        "string": "AMC Start Date",
+        "type": "date"
+      },
+      "amc_duration": {
+        "string": "AMC Duration",
+        "type": "integer"
+      },
+      "amc_duration_unit": {
+        "string": "Duration Type",
+        "type": "selection"
+      },
+      "amc_end_date": {
+        "string": "AMC End Date",
+        "type": "date"
+      },
+      "billing_cycle": {
+        "string": "Billing Cycle",
+        "type": "selection"
+      },
+      "next_billing_date": {
+        "string": "Next Billing Date",
+        "type": "date"
+      },
+      "is_amc_expired": {
+        "string": "Expired",
+        "type": "boolean"
+      },
+      "is_locked": {
+        "string": "Locked",
+        "type": "boolean"
+      },
+      "state": {
+        "string": "Status",
+        "type": "selection"
+      },
+      "amc_lines_ids": {
+        "relation": "amc.order.lines",
+        "string": "AMC Order Lines",
+        "type": "one2many"
+      },
+      "notes": {
+        "string": "Notes",
+        "type": "html"
+      },
+      "terms_and_conditions": {
+        "string": "Terms and Conditions",
+        "type": "html"
+      },
+      "amount_untaxed": {
+        "string": "Untaxed Amount",
+        "type": "monetary"
+      },
+      "amount_tax": {
+        "string": "Taxes",
+        "type": "monetary"
+      },
+      "amount_total": {
+        "string": "Total",
+        "type": "monetary"
+      },
+      "tax_totals": {
+        "string": "Tax Totals",
+        "type": "binary"
+      },
+      "id": {
+        "string": "ID",
+        "type": "integer"
+      },
+      "display_name": {
+        "string": "Display Name",
+        "type": "char"
+      },
+      "create_uid": {
+        "relation": "res.users",
+        "string": "Created by",
+        "type": "many2one"
+      },
+      "create_date": {
+        "string": "Created on",
+        "type": "datetime"
+      },
+      "write_uid": {
+        "relation": "res.users",
+        "string": "Last Updated by",
+        "type": "many2one"
+      },
+      "write_date": {
+        "string": "Last Updated on",
+        "type": "datetime"
+      },
+      "amc_site_visit_ids": {
+        "relation": "amc.site.visit",
+        "string": "Amc Site Visit",
+        "type": "many2many"
+      },
+      "amc_visit_count": {
+        "string": "Amc Visit Count",
+        "type": "integer"
+      },
+      "assigned_to": {
+        "relation": "res.users",
+        "string": "Assigned To",
+        "type": "many2one"
+      },
+      "visit_date": {
+        "string": "Visit Date",
+        "type": "datetime"
+      },
+      "replacement_ids": {
+        "relation": "amc.replacement",
+        "string": "Replacements",
+        "type": "one2many"
+      },
+      "expense_ids": {
+        "relation": "amc.expense",
+        "string": "Expenses",
+        "type": "one2many"
+      },
+      "replacement_count": {
+        "string": "Replacement Count",
+        "type": "integer"
+      },
+      "expense_count": {
+        "string": "Expense Count",
+        "type": "integer"
+      },
+      "pending_replacement_count": {
+        "string": "Pending Replacement Count",
+        "type": "integer"
+      },
+      "pending_expense_count": {
+        "string": "Pending Expense Count",
+        "type": "integer"
+      },
+      "total_revenue": {
+        "string": "AMC Revenue",
+        "type": "monetary"
+      },
+      "total_replacement_cost": {
+        "string": "Replacement Cost",
+        "type": "monetary"
+      },
+      "total_expense_cost": {
+        "string": "Other Expenses",
+        "type": "monetary"
+      },
+      "total_cost": {
+        "string": "Total Cost",
+        "type": "monetary"
+      },
+      "profit_amount": {
+        "string": "Profit / Loss",
+        "type": "monetary"
+      },
+      "profit_margin": {
+        "string": "Profit Margin (%)",
+        "type": "float"
+      },
+      "sale_order_id": {
+        "relation": "sale.order",
+        "string": "Quotations",
+        "type": "many2one"
+      },
+      "project_id": {
+        "relation": "project.project",
+        "string": "Project",
+        "type": "many2one"
+      }
+    }
+  },
+  "amc.service": {
+    "error": "<Fault 2: \"Object amc.service doesn't exist\">"
+  },
+  "hr.attendance": {
+    "count": 3931,
+    "fields": {
+      "message_is_follower": {
+        "string": "Is Follower",
+        "type": "boolean"
+      },
+      "message_follower_ids": {
+        "relation": "mail.followers",
+        "string": "Followers",
+        "type": "one2many"
+      },
+      "message_partner_ids": {
+        "relation": "res.partner",
+        "string": "Followers (Partners)",
+        "type": "many2many"
+      },
+      "message_ids": {
+        "relation": "mail.message",
+        "string": "Messages",
+        "type": "one2many"
+      },
+      "has_message": {
+        "string": "Has Message",
+        "type": "boolean"
+      },
+      "message_needaction": {
+        "string": "Action Needed",
+        "type": "boolean"
+      },
+      "message_needaction_counter": {
+        "string": "Number of Actions",
+        "type": "integer"
+      },
+      "message_has_error": {
+        "string": "Message Delivery error",
+        "type": "boolean"
+      },
+      "message_has_error_counter": {
+        "string": "Number of errors",
+        "type": "integer"
+      },
+      "message_attachment_count": {
+        "string": "Attachment Count",
+        "type": "integer"
+      },
+      "rating_ids": {
+        "relation": "rating.rating",
+        "string": "Ratings",
+        "type": "one2many"
+      },
+      "website_message_ids": {
+        "relation": "mail.message",
+        "string": "Website Messages",
+        "type": "one2many"
+      },
+      "message_has_sms_error": {
+        "string": "SMS Delivery error",
+        "type": "boolean"
+      },
+      "employee_id": {
+        "relation": "hr.employee",
+        "string": "Employee",
+        "type": "many2one"
+      },
+      "department_id": {
+        "relation": "hr.department",
+        "string": "Department",
+        "type": "many2one"
+      },
+      "check_in": {
+        "string": "Check In",
+        "type": "datetime"
+      },
+      "check_out": {
+        "string": "Check Out",
+        "type": "datetime"
+      },
+      "worked_hours": {
+        "string": "Worked Hours",
+        "type": "float"
+      },
+      "color": {
+        "string": "Color",
+        "type": "integer"
+      },
+      "overtime_hours": {
+        "string": "Over Time",
+        "type": "float"
+      },
+      "in_latitude": {
+        "string": "Latitude",
+        "type": "float"
+      },
+      "in_longitude": {
+        "string": "Longitude",
+        "type": "float"
+      },
+      "in_country_name": {
+        "string": "Country",
+        "type": "char"
+      },
+      "in_city": {
+        "string": "City",
+        "type": "char"
+      },
+      "in_ip_address": {
+        "string": "IP Address",
+        "type": "char"
+      },
+      "in_browser": {
+        "string": "Browser",
+        "type": "char"
+      },
+      "in_mode": {
+        "string": "Mode",
+        "type": "selection"
+      },
+      "out_latitude": {
+        "string": "Out Latitude",
+        "type": "float"
+      },
+      "out_longitude": {
+        "string": "Out Longitude",
+        "type": "float"
+      },
+      "out_country_name": {
+        "string": "Out Country Name",
+        "type": "char"
+      },
+      "out_city": {
+        "string": "Out City",
+        "type": "char"
+      },
+      "out_ip_address": {
+        "string": "Out Ip Address",
+        "type": "char"
+      },
+      "out_browser": {
+        "string": "Out Browser",
+        "type": "char"
+      },
+      "out_mode": {
+        "string": "Out Mode",
+        "type": "selection"
+      },
+      "id": {
+        "string": "ID",
+        "type": "integer"
+      },
+      "display_name": {
+        "string": "Display Name",
+        "type": "char"
+      },
+      "create_uid": {
+        "relation": "res.users",
+        "string": "Created by",
+        "type": "many2one"
+      },
+      "create_date": {
+        "string": "Created on",
+        "type": "datetime"
+      },
+      "write_uid": {
+        "relation": "res.users",
+        "string": "Last Updated by",
+        "type": "many2one"
+      },
+      "write_date": {
+        "string": "Last Updated on",
+        "type": "datetime"
+      },
+      "attendance_date": {
+        "string": "Attendance Date",
+        "type": "date"
+      }
+    }
+  },
+  "hr.employee": {
+    "count": 24,
+    "fields": {
+      "image_1920": {
+        "string": "Image",
+        "type": "binary"
+      },
+      "image_1024": {
+        "string": "Image 1024",
+        "type": "binary"
+      },
+      "image_512": {
+        "string": "Image 512",
+        "type": "binary"
+      },
+      "image_256": {
+        "string": "Image 256",
+        "type": "binary"
+      },
+      "image_128": {
+        "string": "Image 128",
+        "type": "binary"
+      },
+      "avatar_1920": {
+        "string": "Avatar",
+        "type": "binary"
+      },
+      "avatar_1024": {
+        "string": "Avatar 1024",
+        "type": "binary"
+      },
+      "avatar_512": {
+        "string": "Avatar 512",
+        "type": "binary"
+      },
+      "avatar_256": {
+        "string": "Avatar 256",
+        "type": "binary"
+      },
+      "avatar_128": {
+        "string": "Avatar 128",
+        "type": "binary"
+      },
+      "resource_id": {
+        "relation": "resource.resource",
+        "string": "Resource",
+        "type": "many2one"
+      },
+      "company_id": {
+        "relation": "res.company",
+        "string": "Company",
+        "type": "many2one"
+      },
+      "resource_calendar_id": {
+        "relation": "resource.calendar",
+        "string": "Working Hours",
+        "type": "many2one"
+      },
+      "tz": {
+        "string": "Timezone",
+        "type": "selection"
+      },
+      "activity_ids": {
+        "relation": "mail.activity",
+        "string": "Activities",
+        "type": "one2many"
+      },
+      "activity_state": {
+        "string": "Activity State",
+        "type": "selection"
+      },
+      "activity_user_id": {
+        "relation": "res.users",
+        "string": "Responsible User",
+        "type": "many2one"
+      },
+      "activity_type_id": {
+        "relation": "mail.activity.type",
+        "string": "Next Activity Type",
+        "type": "many2one"
+      },
+      "activity_type_icon": {
+        "string": "Activity Type Icon",
+        "type": "char"
+      },
+      "activity_date_deadline": {
+        "string": "Next Activity Deadline",
+        "type": "date"
+      },
+      "my_activity_date_deadline": {
+        "string": "My Activity Deadline",
+        "type": "date"
+      },
+      "activity_summary": {
+        "string": "Next Activity Summary",
+        "type": "char"
+      },
+      "activity_exception_decoration": {
+        "string": "Activity Exception Decoration",
+        "type": "selection"
+      },
+      "activity_exception_icon": {
+        "string": "Icon",
+        "type": "char"
+      },
+      "activity_calendar_event_id": {
+        "relation": "calendar.event",
+        "string": "Next Activity Calendar Event",
+        "type": "many2one"
+      },
+      "message_is_follower": {
+        "string": "Is Follower",
+        "type": "boolean"
+      },
+      "message_follower_ids": {
+        "relation": "mail.followers",
+        "string": "Followers",
+        "type": "one2many"
+      },
+      "message_partner_ids": {
+        "relation": "res.partner",
+        "string": "Followers (Partners)",
+        "type": "many2many"
+      },
+      "message_ids": {
+        "relation": "mail.message",
+        "string": "Messages",
+        "type": "one2many"
+      },
+      "has_message": {
+        "string": "Has Message",
+        "type": "boolean"
+      },
+      "message_needaction": {
+        "string": "Action Needed",
+        "type": "boolean"
+      },
+      "message_needaction_counter": {
+        "string": "Number of Actions",
+        "type": "integer"
+      },
+      "message_has_error": {
+        "string": "Message Delivery error",
+        "type": "boolean"
+      },
+      "message_has_error_counter": {
+        "string": "Number of errors",
+        "type": "integer"
+      },
+      "message_attachment_count": {
+        "string": "Attachment Count",
+        "type": "integer"
+      },
+      "rating_ids": {
+        "relation": "rating.rating",
+        "string": "Ratings",
+        "type": "one2many"
+      },
+      "website_message_ids": {
+        "relation": "mail.message",
+        "string": "Website Messages",
+        "type": "one2many"
+      },
+      "message_has_sms_error": {
+        "string": "SMS Delivery error",
+        "type": "boolean"
+      },
+      "message_main_attachment_id": {
+        "relation": "ir.attachment",
+        "string": "Main Attachment",
+        "type": "many2one"
+      },
+      "name": {
+        "string": "Employee Name",
+        "type": "char"
+      },
+      "active": {
+        "string": "Active",
+        "type": "boolean"
+      },
+      "color": {
+        "string": "Color Index",
+        "type": "integer"
+      },
+      "department_id": {
+        "relation": "hr.department",
+        "string": "Department",
+        "type": "many2one"
+      },
+      "member_of_department": {
+        "string": "Member of department",
+        "type": "boolean"
+      },
+      "job_id": {
+        "relation": "hr.job",
+        "string": "Job Position",
+        "type": "many2one"
+      },
+      "job_title": {
+        "string": "Job Title",
+        "type": "char"
+      },
+      "address_id": {
+        "relation": "res.partner",
+        "string": "Work Address",
+        "type": "many2one"
+      },
+      "work_phone": {
+        "string": "Work Phone",
+        "type": "char"
+      },
+      "mobile_phone": {
+        "string": "Work Mobile",
+        "type": "char"
+      },
+      "work_email": {
+        "string": "Work Email",
+        "type": "char"
+      },
+      "work_contact_id": {
+        "relation": "res.partner",
+        "string": "Work Contact",
+        "type": "many2one"
+      },
+      "work_location_id": {
+        "relation": "hr.work.location",
+        "string": "Work Location",
+        "type": "many2one"
+      },
+      "user_id": {
+        "relation": "res.users",
+        "string": "User",
+        "type": "many2one"
+      },
+      "parent_id": {
+        "relation": "hr.employee",
+        "string": "Manager",
+        "type": "many2one"
+      },
+      "coach_id": {
+        "relation": "hr.employee",
+        "string": "Coach",
+        "type": "many2one"
+      },
+      "hr_presence_state": {
+        "string": "Hr Presence State",
+        "type": "selection"
+      },
+      "last_activity": {
+        "string": "Last Activity",
+        "type": "date"
+      },
+      "last_activity_time": {
+        "string": "Last Activity Time",
+        "type": "char"
+      },
+      "hr_icon_display": {
+        "string": "Hr Icon Display",
+        "type": "selection"
+      },
+      "show_hr_icon_display": {
+        "string": "Show Hr Icon Display",
+        "type": "boolean"
+      },
+      "newly_hired": {
+        "string": "Newly Hired",
+        "type": "boolean"
+      },
+      "leave_manager_id": {
+        "relation": "res.users",
+        "string": "Time Off",
+        "type": "many2one"
+      },
+      "remaining_leaves": {
+        "string": "Remaining Paid Time Off",
+        "type": "float"
+      },
+      "current_leave_state": {
+        "string": "Current Time Off Status",
+        "type": "selection"
+      },
+      "leave_date_from": {
+        "string": "From Date",
+        "type": "date"
+      },
+      "leave_date_to": {
+        "string": "To Date",
+        "type": "date"
+      },
+      "leaves_count": {
+        "string": "Number of Time Off",
+        "type": "float"
+      },
+      "allocation_count": {
+        "string": "Total number of days allocated.",
+        "type": "float"
+      },
+      "allocations_count": {
+        "string": "Total number of allocations",
+        "type": "integer"
+      },
+      "show_leaves": {
+        "string": "Able to see Remaining Time Off",
+        "type": "boolean"
+      },
+      "is_absent": {
+        "string": "Absent Today",
+        "type": "boolean"
+      },
+      "allocation_display": {
+        "string": "Allocation Display",
+        "type": "char"
+      },
+      "allocation_remaining_display": {
+        "string": "Allocation Remaining Display",
+        "type": "char"
+      },
+      "child_all_count": {
+        "string": "Indirect Subordinates Count",
+        "type": "integer"
+      },
+      "department_color": {
+        "string": "Department Color",
+        "type": "integer"
+      },
+      "child_count": {
+        "string": "Direct Subordinates Count",
+        "type": "integer"
+      },
+      "filter_for_expense": {
+        "string": "Filter For Expense",
+        "type": "boolean"
+      },
+      "user_partner_id": {
+        "relation": "res.partner",
+        "string": "User's partner",
+        "type": "many2one"
+      },
+      "company_country_id": {
+        "relation": "res.country",
+        "string": "Company Country",
+        "type": "many2one"
+      },
+      "company_country_code": {
+        "string": "Country Code",
+        "type": "char"
+      },
+      "private_street": {
+        "string": "Private Street",
+        "type": "char"
+      },
+      "private_street2": {
+        "string": "Private Street2",
+        "type": "char"
+      },
+      "private_city": {
+        "string": "Private City",
+        "type": "char"
+      },
+      "private_state_id": {
+        "relation": "res.country.state",
+        "string": "Private State",
+        "type": "many2one"
+      },
+      "private_zip": {
+        "string": "Private Zip",
+        "type": "char"
+      },
+      "private_country_id": {
+        "relation": "res.country",
+        "string": "Private Country",
+        "type": "many2one"
+      },
+      "private_phone": {
+        "string": "Private Phone",
+        "type": "char"
+      },
+      "private_email": {
+        "string": "Private Email",
+        "type": "char"
+      },
+      "lang": {
+        "string": "Lang",
+        "type": "selection"
+      },
+      "country_id": {
+        "relation": "res.country",
+        "string": "Nationality (Country)",
+        "type": "many2one"
+      },
+      "gender": {
+        "string": "Gender",
+        "type": "selection"
+      },
+      "marital": {
+        "string": "Marital Status",
+        "type": "selection"
+      },
+      "spouse_complete_name": {
+        "string": "Spouse Complete Name",
+        "type": "char"
+      },
+      "spouse_birthdate": {
+        "string": "Spouse Birthdate",
+        "type": "date"
+      },
+      "children": {
+        "string": "Number of Dependent Children",
+        "type": "integer"
+      },
+      "place_of_birth": {
+        "string": "Place of Birth",
+        "type": "char"
+      },
+      "country_of_birth": {
+        "relation": "res.country",
+        "string": "Country of Birth",
+        "type": "many2one"
+      },
+      "birthday": {
+        "string": "Date of Birth",
+        "type": "date"
+      },
+      "ssnid": {
+        "string": "SSN No",
+        "type": "char"
+      },
+      "sinid": {
+        "string": "SIN No",
+        "type": "char"
+      },
+      "identification_id": {
+        "string": "Identification No",
+        "type": "char"
+      },
+      "passport_id": {
+        "string": "Passport No",
+        "type": "char"
+      },
+      "bank_account_id": {
+        "relation": "res.partner.bank",
+        "string": "Bank Account Number",
+        "type": "many2one"
+      },
+      "permit_no": {
+        "string": "Work Permit No",
+        "type": "char"
+      },
+      "visa_no": {
+        "string": "Visa No",
+        "type": "char"
+      },
+      "visa_expire": {
+        "string": "Visa Expiration Date",
+        "type": "date"
+      },
+      "work_permit_expiration_date": {
+        "string": "Work Permit Expiration Date",
+        "type": "date"
+      },
+      "has_work_permit": {
+        "string": "Work Permit",
+        "type": "binary"
+      },
+      "work_permit_scheduled_activity": {
+        "string": "Work Permit Scheduled Activity",
+        "type": "boolean"
+      },
+      "work_permit_name": {
+        "string": "work_permit_name",
+        "type": "char"
+      },
+      "additional_note": {
+        "string": "Additional Note",
+        "type": "text"
+      },
+      "certificate": {
+        "string": "Certificate Level",
+        "type": "selection"
+      },
+      "study_field": {
+        "string": "Field of Study",
+        "type": "char"
+      },
+      "study_school": {
+        "string": "School",
+        "type": "char"
+      },
+      "emergency_contact": {
+        "string": "Contact Name",
+        "type": "char"
+      },
+      "emergency_phone": {
+        "string": "Contact Phone",
+        "type": "char"
+      },
+      "km_home_work": {
+        "string": "Home-Work Distance",
+        "type": "integer"
+      },
+      "employee_type": {
+        "string": "Employee Type",
+        "type": "selection"
+      },
+      "child_ids": {
+        "relation": "hr.employee",
+        "string": "Direct subordinates",
+        "type": "one2many"
+      },
+      "category_ids": {
+        "relation": "hr.employee.category",
+        "string": "Tags",
+        "type": "many2many"
+      },
+      "notes": {
+        "string": "Notes",
+        "type": "text"
+      },
+      "barcode": {
+        "string": "Badge ID",
+        "type": "char"
+      },
+      "pin": {
+        "string": "PIN",
+        "type": "char"
+      },
+      "departure_reason_id": {
+        "relation": "hr.departure.reason",
+        "string": "Departure Reason",
+        "type": "many2one"
+      },
+      "departure_description": {
+        "string": "Additional Information",
+        "type": "html"
+      },
+      "departure_date": {
+        "string": "Departure Date",
+        "type": "date"
+      },
+      "id_card": {
+        "string": "ID Card Copy",
+        "type": "binary"
+      },
+      "driving_license": {
+        "string": "Driving License",
+        "type": "binary"
+      },
+      "private_car_plate": {
+        "string": "Private Car Plate",
+        "type": "char"
+      },
+      "currency_id": {
+        "relation": "res.currency",
+        "string": "Currency",
+        "type": "many2one"
+      },
+      "employee_properties": {
+        "string": "Properties",
+        "type": "properties"
+      },
+      "id": {
+        "string": "ID",
+        "type": "integer"
+      },
+      "display_name": {
+        "string": "Display Name",
+        "type": "char"
+      },
+      "create_uid": {
+        "relation": "res.users",
+        "string": "Created by",
+        "type": "many2one"
+      },
+      "create_date": {
+        "string": "Created on",
+        "type": "datetime"
+      },
+      "write_uid": {
+        "relation": "res.users",
+        "string": "Last Updated by",
+        "type": "many2one"
+      },
+      "write_date": {
+        "string": "Last Updated on",
+        "type": "datetime"
+      },
+      "attendance_manager_id": {
+        "relation": "res.users",
+        "string": "Attendance Manager",
+        "type": "many2one"
+      },
+      "attendance_ids": {
+        "relation": "hr.attendance",
+        "string": "Attendance",
+        "type": "one2many"
+      },
+      "last_attendance_id": {
+        "relation": "hr.attendance",
+        "string": "Last Attendance",
+        "type": "many2one"
+      },
+      "last_check_in": {
+        "string": "Check In",
+        "type": "datetime"
+      },
+      "last_check_out": {
+        "string": "Check Out",
+        "type": "datetime"
+      },
+      "attendance_state": {
+        "string": "Attendance Status",
+        "type": "selection"
+      },
+      "hours_last_month": {
+        "string": "Hours Last Month",
+        "type": "float"
+      },
+      "hours_today": {
+        "string": "Hours Today",
+        "type": "float"
+      },
+      "hours_previously_today": {
+        "string": "Hours Previously Today",
+        "type": "float"
+      },
+      "last_attendance_worked_hours": {
+        "string": "Last Attendance Worked Hours",
+        "type": "float"
+      },
+      "hours_last_month_display": {
+        "string": "Hours Last Month Display",
+        "type": "char"
+      },
+      "overtime_ids": {
+        "relation": "hr.attendance.overtime",
+        "string": "Overtime",
+        "type": "one2many"
+      },
+      "total_overtime": {
+        "string": "Total Overtime",
+        "type": "float"
+      },
+      "vehicle": {
+        "string": "Company Vehicle",
+        "type": "char"
+      },
+      "contract_ids": {
+        "relation": "hr.contract",
+        "string": "Employee Contracts",
+        "type": "one2many"
+      },
+      "contract_id": {
+        "relation": "hr.contract",
+        "string": "Current Contract",
+        "type": "many2one"
+      },
+      "calendar_mismatch": {
+        "string": "Calendar Mismatch",
+        "type": "boolean"
+      },
+      "contracts_count": {
+        "string": "Contract Count",
+        "type": "integer"
+      },
+      "contract_warning": {
+        "string": "Contract Warning",
+        "type": "boolean"
+      },
+      "first_contract_date": {
+        "string": "First Contract Date",
+        "type": "date"
+      },
+      "current_leave_id": {
+        "relation": "hr.leave.type",
+        "string": "Current Time Off Type",
+        "type": "many2one"
+      },
+      "hourly_cost": {
+        "string": "Hourly Cost",
+        "type": "monetary"
+      },
+      "subordinate_ids": {
+        "relation": "hr.employee",
+        "string": "Subordinates",
+        "type": "one2many"
+      },
+      "is_subordinate": {
+        "string": "Is Subordinate",
+        "type": "boolean"
+      },
+      "resume_line_ids": {
+        "relation": "hr.resume.line",
+        "string": "Resume lines",
+        "type": "one2many"
+      },
+      "employee_skill_ids": {
+        "relation": "hr.employee.skill",
+        "string": "Skills",
+        "type": "one2many"
+      },
+      "skill_ids": {
+        "relation": "hr.skill",
+        "string": "Skill",
+        "type": "many2many"
+      },
+      "hr_review_rating": {
+        "string": "HR Review Rating",
+        "type": "float"
+      },
+      "review_ids": {
+        "relation": "hr.performance.review",
+        "string": "Performance Reviews",
+        "type": "one2many"
+      },
+      "review_count": {
+        "string": "Review Count",
+        "type": "integer"
+      },
+      "goal_ids": {
+        "relation": "hr.review.goal",
+        "string": "Goals",
+        "type": "one2many"
+      },
+      "goal_count": {
+        "string": "Goal Count",
+        "type": "integer"
+      },
+      "last_review_date": {
+        "string": "Last Review Date",
+        "type": "date"
+      },
+      "last_review_rating": {
+        "string": "Last Review Rating",
+        "type": "float"
+      },
+      "average_rating": {
+        "string": "Average Rating",
+        "type": "float"
+      },
+      "slip_ids": {
+        "relation": "hr.payslip",
+        "string": "Payslips",
+        "type": "one2many"
+      },
+      "payslip_count": {
+        "string": "Payslip Count",
+        "type": "integer"
+      },
+      "expense_manager_id": {
+        "relation": "res.users",
+        "string": "Expense",
+        "type": "many2one"
+      },
+      "has_timesheet": {
+        "string": "Has Timesheet",
+        "type": "boolean"
+      },
+      "is_manager": {
+        "string": "Is Manager",
+        "type": "boolean"
+      },
+      "employee_code": {
+        "string": "Employee Code",
+        "type": "char"
+      },
+      "pan": {
+        "string": "PAN",
+        "type": "char"
+      },
+      "aadhar_no": {
+        "string": "Aadhar Number",
+        "type": "char"
+      },
+      "uan_no": {
+        "string": "UAN Number",
+        "type": "char"
+      },
+      "esic_no": {
+        "string": "ESIC Number",
+        "type": "char"
+      },
+      "date_of_joining": {
+        "string": "Date of Joining",
+        "type": "date"
+      },
+      "date_of_releaving": {
+        "string": "Date of Releaving",
+        "type": "date"
+      },
+      "performance_rating": {
+        "string": "Performance Rating",
+        "type": "float"
+      },
+      "manager_ids": {
+        "relation": "hr.employee",
+        "string": "Additional Managers",
+        "type": "many2many"
+      }
+    }
+  },
+  "hr.expense": {
+    "count": 7,
+    "fields": {
+      "analytic_distribution": {
+        "string": "Analytic Distribution",
+        "type": "json"
+      },
+      "analytic_distribution_search": {
+        "string": "Analytic Distribution Search",
+        "type": "json",
+        "searchable": false
+      },
+      "analytic_precision": {
+        "string": "Analytic Precision",
+        "type": "integer"
+      },
+      "distribution_analytic_account_ids": {
+        "relation": "account.analytic.account",
+        "string": "Distribution Analytic Account",
+        "type": "many2many"
+      },
+      "activity_ids": {
+        "relation": "mail.activity",
+        "string": "Activities",
+        "type": "one2many"
+      },
+      "activity_state": {
+        "string": "Activity State",
+        "type": "selection"
+      },
+      "activity_user_id": {
+        "relation": "res.users",
+        "string": "Responsible User",
+        "type": "many2one"
+      },
+      "activity_type_id": {
+        "relation": "mail.activity.type",
+        "string": "Next Activity Type",
+        "type": "many2one"
+      },
+      "activity_type_icon": {
+        "string": "Activity Type Icon",
+        "type": "char"
+      },
+      "activity_date_deadline": {
+        "string": "Next Activity Deadline",
+        "type": "date"
+      },
+      "my_activity_date_deadline": {
+        "string": "My Activity Deadline",
+        "type": "date"
+      },
+      "activity_summary": {
+        "string": "Next Activity Summary",
+        "type": "char"
+      },
+      "activity_exception_decoration": {
+        "string": "Activity Exception Decoration",
+        "type": "selection"
+      },
+      "activity_exception_icon": {
+        "string": "Icon",
+        "type": "char"
+      },
+      "activity_calendar_event_id": {
+        "relation": "calendar.event",
+        "string": "Next Activity Calendar Event",
+        "type": "many2one"
+      },
+      "message_is_follower": {
+        "string": "Is Follower",
+        "type": "boolean"
+      },
+      "message_follower_ids": {
+        "relation": "mail.followers",
+        "string": "Followers",
+        "type": "one2many"
+      },
+      "message_partner_ids": {
+        "relation": "res.partner",
+        "string": "Followers (Partners)",
+        "type": "many2many"
+      },
+      "message_ids": {
+        "relation": "mail.message",
+        "string": "Messages",
+        "type": "one2many"
+      },
+      "has_message": {
+        "string": "Has Message",
+        "type": "boolean"
+      },
+      "message_needaction": {
+        "string": "Action Needed",
+        "type": "boolean"
+      },
+      "message_needaction_counter": {
+        "string": "Number of Actions",
+        "type": "integer"
+      },
+      "message_has_error": {
+        "string": "Message Delivery error",
+        "type": "boolean"
+      },
+      "message_has_error_counter": {
+        "string": "Number of errors",
+        "type": "integer"
+      },
+      "message_attachment_count": {
+        "string": "Attachment Count",
+        "type": "integer"
+      },
+      "rating_ids": {
+        "relation": "rating.rating",
+        "string": "Ratings",
+        "type": "one2many"
+      },
+      "website_message_ids": {
+        "relation": "mail.message",
+        "string": "Website Messages",
+        "type": "one2many"
+      },
+      "message_has_sms_error": {
+        "string": "SMS Delivery error",
+        "type": "boolean"
+      },
+      "message_main_attachment_id": {
+        "relation": "ir.attachment",
+        "string": "Main Attachment",
+        "type": "many2one"
+      },
+      "name": {
+        "string": "Description",
+        "type": "char"
+      },
+      "date": {
+        "string": "Expense Date",
+        "type": "date"
+      },
+      "employee_id": {
+        "relation": "hr.employee",
+        "string": "Employee",
+        "type": "many2one"
+      },
+      "company_id": {
+        "relation": "res.company",
+        "string": "Company",
+        "type": "many2one"
+      },
+      "product_id": {
+        "relation": "product.product",
+        "string": "Category",
+        "type": "many2one"
+      },
+      "product_description": {
+        "string": "Product Description",
+        "type": "html"
+      },
+      "product_uom_id": {
+        "relation": "uom.uom",
+        "string": "Unit of Measure",
+        "type": "many2one"
+      },
+      "product_uom_category_id": {
+        "relation": "uom.category",
+        "string": "UoM Category",
+        "type": "many2one"
+      },
+      "product_has_cost": {
+        "string": "Product Has Cost",
+        "type": "boolean"
+      },
+      "product_has_tax": {
+        "string": "Whether tax is defined on a selected product",
+        "type": "boolean"
+      },
+      "quantity": {
+        "string": "Quantity",
+        "type": "float"
+      },
+      "description": {
+        "string": "Internal Notes",
+        "type": "text"
+      },
+      "message_main_attachment_checksum": {
+        "string": "Checksum/SHA1",
+        "type": "char"
+      },
+      "nb_attachment": {
+        "string": "Number of Attachments",
+        "type": "integer"
+      },
+      "attachment_ids": {
+        "relation": "ir.attachment",
+        "string": "Attachments",
+        "type": "one2many"
+      },
+      "state": {
+        "string": "Status",
+        "type": "selection"
+      },
+      "sheet_id": {
+        "relation": "hr.expense.sheet",
+        "string": "Expense Report",
+        "type": "many2one"
+      },
+      "approved_by": {
+        "relation": "res.users",
+        "string": "Approved By",
+        "type": "many2one"
+      },
+      "approved_on": {
+        "string": "Approved On",
+        "type": "datetime"
+      },
+      "duplicate_expense_ids": {
+        "relation": "hr.expense",
+        "string": "Duplicate Expense",
+        "type": "many2many"
+      },
+      "tax_amount_currency": {
+        "string": "Tax amount in Currency",
+        "type": "monetary"
+      },
+      "tax_amount": {
+        "string": "Tax amount",
+        "type": "monetary"
+      },
+      "total_amount_currency": {
+        "string": "Total In Currency",
+        "type": "monetary"
+      },
+      "untaxed_amount_currency": {
+        "string": "Total Untaxed Amount In Currency",
+        "type": "monetary"
+      },
+      "total_amount": {
+        "string": "Total",
+        "type": "monetary"
+      },
+      "price_unit": {
+        "string": "Unit Price",
+        "type": "float"
+      },
+      "currency_id": {
+        "relation": "res.currency",
+        "string": "Currency",
+        "type": "many2one"
+      },
+      "company_currency_id": {
+        "relation": "res.currency",
+        "string": "Report Company Currency",
+        "type": "many2one"
+      },
+      "is_multiple_currency": {
+        "string": "Is currency_id different from the company_currency_id",
+        "type": "boolean"
+      },
+      "currency_rate": {
+        "string": "Currency Rate",
+        "type": "float"
+      },
+      "label_currency_rate": {
+        "string": "Label Currency Rate",
+        "type": "char"
+      },
+      "payment_mode": {
+        "string": "Paid By",
+        "type": "selection"
+      },
+      "account_id": {
+        "relation": "account.account",
+        "string": "Account",
+        "type": "many2one"
+      },
+      "tax_ids": {
+        "relation": "account.tax",
+        "string": "Included taxes",
+        "type": "many2many"
+      },
+      "accounting_date": {
+        "string": "Accounting Date",
+        "type": "date"
+      },
+      "is_editable": {
+        "string": "Is Editable By Current User",
+        "type": "boolean"
+      },
+      "id": {
+        "string": "ID",
+        "type": "integer"
+      },
+      "display_name": {
+        "string": "Display Name",
+        "type": "char"
+      },
+      "create_uid": {
+        "relation": "res.users",
+        "string": "Created by",
+        "type": "many2one"
+      },
+      "create_date": {
+        "string": "Created on",
+        "type": "datetime"
+      },
+      "write_uid": {
+        "relation": "res.users",
+        "string": "Last Updated by",
+        "type": "many2one"
+      },
+      "write_date": {
+        "string": "Last Updated on",
+        "type": "datetime"
+      },
+      "state_label": {
+        "string": "State Label",
+        "type": "char"
+      },
+      "sale_order_id": {
+        "relation": "sale.order",
+        "string": "Customer to Reinvoice",
+        "type": "many2one"
+      },
+      "can_be_reinvoiced": {
+        "string": "Can be reinvoiced",
+        "type": "boolean"
+      }
+    }
+  },
+  "account.move": {
+    "count": 20,
+    "fields": {
+      "campaign_id": {
+        "relation": "utm.campaign",
+        "string": "Campaign",
+        "type": "many2one"
+      },
+      "source_id": {
+        "relation": "utm.source",
+        "string": "Source",
+        "type": "many2one"
+      },
+      "medium_id": {
+        "relation": "utm.medium",
+        "string": "Medium",
+        "type": "many2one"
+      },
+      "sequence_prefix": {
+        "string": "Sequence Prefix",
+        "type": "char"
+      },
+      "sequence_number": {
+        "string": "Sequence Number",
+        "type": "integer"
+      },
+      "activity_ids": {
+        "relation": "mail.activity",
+        "string": "Activities",
+        "type": "one2many"
+      },
+      "activity_state": {
+        "string": "Activity State",
+        "type": "selection"
+      },
+      "activity_user_id": {
+        "relation": "res.users",
+        "string": "Responsible User",
+        "type": "many2one"
+      },
+      "activity_type_id": {
+        "relation": "mail.activity.type",
+        "string": "Next Activity Type",
+        "type": "many2one"
+      },
+      "activity_type_icon": {
+        "string": "Activity Type Icon",
+        "type": "char"
+      },
+      "activity_date_deadline": {
+        "string": "Next Activity Deadline",
+        "type": "date"
+      },
+      "my_activity_date_deadline": {
+        "string": "My Activity Deadline",
+        "type": "date"
+      },
+      "activity_summary": {
+        "string": "Next Activity Summary",
+        "type": "char"
+      },
+      "activity_exception_decoration": {
+        "string": "Activity Exception Decoration",
+        "type": "selection"
+      },
+      "activity_exception_icon": {
+        "string": "Icon",
+        "type": "char"
+      },
+      "activity_calendar_event_id": {
+        "relation": "calendar.event",
+        "string": "Next Activity Calendar Event",
+        "type": "many2one"
+      },
+      "message_is_follower": {
+        "string": "Is Follower",
+        "type": "boolean"
+      },
+      "message_follower_ids": {
+        "relation": "mail.followers",
+        "string": "Followers",
+        "type": "one2many"
+      },
+      "message_partner_ids": {
+        "relation": "res.partner",
+        "string": "Followers (Partners)",
+        "type": "many2many"
+      },
+      "message_ids": {
+        "relation": "mail.message",
+        "string": "Messages",
+        "type": "one2many"
+      },
+      "has_message": {
+        "string": "Has Message",
+        "type": "boolean"
+      },
+      "message_needaction": {
+        "string": "Action Needed",
+        "type": "boolean"
+      },
+      "message_needaction_counter": {
+        "string": "Number of Actions",
+        "type": "integer"
+      },
+      "message_has_error": {
+        "string": "Message Delivery error",
+        "type": "boolean"
+      },
+      "message_has_error_counter": {
+        "string": "Number of errors",
+        "type": "integer"
+      },
+      "message_attachment_count": {
+        "string": "Attachment Count",
+        "type": "integer"
+      },
+      "rating_ids": {
+        "relation": "rating.rating",
+        "string": "Ratings",
+        "type": "one2many"
+      },
+      "website_message_ids": {
+        "relation": "mail.message",
+        "string": "Website Messages",
+        "type": "one2many"
+      },
+      "message_has_sms_error": {
+        "string": "SMS Delivery error",
+        "type": "boolean"
+      },
+      "message_main_attachment_id": {
+        "relation": "ir.attachment",
+        "string": "Main Attachment",
+        "type": "many2one"
+      },
+      "access_url": {
+        "string": "Portal Access URL",
+        "type": "char"
+      },
+      "access_token": {
+        "string": "Security Token",
+        "type": "char"
+      },
+      "access_warning": {
+        "string": "Access warning",
+        "type": "text"
+      },
+      "name": {
+        "string": "Number",
+        "type": "char"
+      },
+      "ref": {
+        "string": "Reference",
+        "type": "char"
+      },
+      "date": {
+        "string": "Date",
+        "type": "date"
+      },
+      "state": {
+        "string": "Status",
+        "type": "selection"
+      },
+      "move_type": {
+        "string": "Type",
+        "type": "selection"
+      },
+      "is_storno": {
+        "string": "Is Storno",
+        "type": "boolean"
+      },
+      "journal_id": {
+        "relation": "account.journal",
+        "string": "Journal",
+        "type": "many2one"
+      },
+      "company_id": {
+        "relation": "res.company",
+        "string": "Company",
+        "type": "many2one"
+      },
+      "line_ids": {
+        "relation": "account.move.line",
+        "string": "Journal Items",
+        "type": "one2many"
+      },
+      "payment_id": {
+        "relation": "account.payment",
+        "string": "Payment",
+        "type": "many2one"
+      },
+      "statement_line_id": {
+        "relation": "account.bank.statement.line",
+        "string": "Statement Line",
+        "type": "many2one"
+      },
+      "statement_id": {
+        "relation": "account.bank.statement",
+        "string": "Statement",
+        "type": "many2one"
+      },
+      "tax_cash_basis_rec_id": {
+        "relation": "account.partial.reconcile",
+        "string": "Tax Cash Basis Entry of",
+        "type": "many2one"
+      },
+      "tax_cash_basis_origin_move_id": {
+        "relation": "account.move",
+        "string": "Cash Basis Origin",
+        "type": "many2one"
+      },
+      "tax_cash_basis_created_move_ids": {
+        "relation": "account.move",
+        "string": "Cash Basis Entries",
+        "type": "one2many"
+      },
+      "always_tax_exigible": {
+        "string": "Always Tax Exigible",
+        "type": "boolean"
+      },
+      "auto_post": {
+        "string": "Auto-post",
+        "type": "selection"
+      },
+      "auto_post_until": {
+        "string": "Auto-post until",
+        "type": "date"
+      },
+      "auto_post_origin_id": {
+        "relation": "account.move",
+        "string": "First recurring entry",
+        "type": "many2one"
+      },
+      "hide_post_button": {
+        "string": "Hide Post Button",
+        "type": "boolean"
+      },
+      "to_check": {
+        "string": "To Check",
+        "type": "boolean"
+      },
+      "posted_before": {
+        "string": "Posted Before",
+        "type": "boolean"
+      },
+      "suitable_journal_ids": {
+        "relation": "account.journal",
+        "string": "Suitable Journal",
+        "type": "many2many"
+      },
+      "highest_name": {
+        "string": "Highest Name",
+        "type": "char"
+      },
+      "made_sequence_hole": {
+        "string": "Made Sequence Hole",
+        "type": "boolean"
+      },
+      "show_name_warning": {
+        "string": "Show Name Warning",
+        "type": "boolean"
+      },
+      "type_name": {
+        "string": "Type Name",
+        "type": "char"
+      },
+      "country_code": {
+        "string": "Country Code",
+        "type": "char"
+      },
+      "attachment_ids": {
+        "relation": "ir.attachment",
+        "string": "Attachments",
+        "type": "one2many"
+      },
+      "restrict_mode_hash_table": {
+        "string": "Lock Posted Entries with Hash",
+        "type": "boolean"
+      },
+      "secure_sequence_number": {
+        "string": "Inalteralbility No Gap Sequence #",
+        "type": "integer"
+      },
+      "inalterable_hash": {
+        "string": "Inalterability Hash",
+        "type": "char"
+      },
+      "string_to_hash": {
+        "string": "String To Hash",
+        "type": "char"
+      },
+      "invoice_line_ids": {
+        "relation": "account.move.line",
+        "string": "Invoice lines",
+        "type": "one2many"
+      },
+      "invoice_date": {
+        "string": "Invoice/Bill Date",
+        "type": "date"
+      },
+      "invoice_date_due": {
+        "string": "Due Date",
+        "type": "date"
+      },
+      "delivery_date": {
+        "string": "Delivery Date",
+        "type": "date"
+      },
+      "show_delivery_date": {
+        "string": "Show Delivery Date",
+        "type": "boolean"
+      },
+      "invoice_payment_term_id": {
+        "relation": "account.payment.term",
+        "string": "Payment Terms",
+        "type": "many2one"
+      },
+      "needed_terms": {
+        "string": "Needed Terms",
+        "type": "binary"
+      },
+      "needed_terms_dirty": {
+        "string": "Needed Terms Dirty",
+        "type": "boolean"
+      },
+      "tax_calculation_rounding_method": {
+        "string": "Tax calculation rounding method",
+        "type": "selection"
+      },
+      "partner_id": {
+        "relation": "res.partner",
+        "string": "Partner",
+        "type": "many2one"
+      },
+      "commercial_partner_id": {
+        "relation": "res.partner",
+        "string": "Commercial Entity",
+        "type": "many2one"
+      },
+      "partner_shipping_id": {
+        "relation": "res.partner",
+        "string": "Delivery Address",
+        "type": "many2one"
+      },
+      "partner_bank_id": {
+        "relation": "res.partner.bank",
+        "string": "Recipient Bank",
+        "type": "many2one"
+      },
+      "fiscal_position_id": {
+        "relation": "account.fiscal.position",
+        "string": "Fiscal Position",
+        "type": "many2one"
+      },
+      "payment_reference": {
+        "string": "Payment Reference",
+        "type": "char"
+      },
+      "display_qr_code": {
+        "string": "Display QR-code",
+        "type": "boolean"
+      },
+      "qr_code_method": {
+        "string": "Payment QR-code",
+        "type": "selection"
+      },
+      "invoice_outstanding_credits_debits_widget": {
+        "string": "Invoice Outstanding Credits Debits Widget",
+        "type": "binary"
+      },
+      "invoice_has_outstanding": {
+        "string": "Invoice Has Outstanding",
+        "type": "boolean"
+      },
+      "invoice_payments_widget": {
+        "string": "Invoice Payments Widget",
+        "type": "binary"
+      },
+      "company_currency_id": {
+        "relation": "res.currency",
+        "string": "Company Currency",
+        "type": "many2one"
+      },
+      "currency_id": {
+        "relation": "res.currency",
+        "string": "Currency",
+        "type": "many2one"
+      },
+      "direction_sign": {
+        "string": "Direction Sign",
+        "type": "integer"
+      },
+      "amount_untaxed": {
+        "string": "Untaxed Amount",
+        "type": "monetary"
+      },
+      "amount_tax": {
+        "string": "Tax",
+        "type": "monetary"
+      },
+      "amount_total": {
+        "string": "Total",
+        "type": "monetary"
+      },
+      "amount_residual": {
+        "string": "Amount Due",
+        "type": "monetary"
+      },
+      "amount_untaxed_signed": {
+        "string": "Untaxed Amount Signed",
+        "type": "monetary"
+      },
+      "amount_tax_signed": {
+        "string": "Tax Signed",
+        "type": "monetary"
+      },
+      "amount_total_signed": {
+        "string": "Total Signed",
+        "type": "monetary"
+      },
+      "amount_total_in_currency_signed": {
+        "string": "Total in Currency Signed",
+        "type": "monetary"
+      },
+      "amount_residual_signed": {
+        "string": "Amount Due Signed",
+        "type": "monetary"
+      },
+      "tax_totals": {
+        "string": "Invoice Totals",
+        "type": "binary"
+      },
+      "payment_state": {
+        "string": "Payment Status",
+        "type": "selection"
+      },
+      "amount_total_words": {
+        "string": "Amount total in words",
+        "type": "char"
+      },
+      "reversed_entry_id": {
+        "relation": "account.move",
+        "string": "Reversal of",
+        "type": "many2one"
+      },
+      "reversal_move_id": {
+        "relation": "account.move",
+        "string": "Reversal Move",
+        "type": "one2many"
+      },
+      "invoice_vendor_bill_id": {
+        "relation": "account.move",
+        "string": "Vendor Bill",
+        "type": "many2one"
+      },
+      "invoice_source_email": {
+        "string": "Source Email",
+        "type": "char"
+      },
+      "invoice_partner_display_name": {
+        "string": "Invoice Partner Display Name",
+        "type": "char"
+      },
+      "quick_edit_mode": {
+        "string": "Quick Edit Mode",
+        "type": "boolean"
+      },
+      "quick_edit_total_amount": {
+        "string": "Total (Tax inc.)",
+        "type": "monetary"
+      },
+      "quick_encoding_vals": {
+        "string": "Quick Encoding Vals",
+        "type": "json"
+      },
+      "narration": {
+        "string": "Terms and Conditions",
+        "type": "html"
+      },
+      "is_move_sent": {
+        "string": "Is Move Sent",
+        "type": "boolean"
+      },
+      "is_being_sent": {
+        "string": "Is Being Sent",
+        "type": "boolean"
+      },
+      "invoice_user_id": {
+        "relation": "res.users",
+        "string": "Salesperson",
+        "type": "many2one"
+      },
+      "user_id": {
+        "relation": "res.users",
+        "string": "User",
+        "type": "many2one"
+      },
+      "invoice_origin": {
+        "string": "Origin",
+        "type": "char"
+      },
+      "invoice_incoterm_id": {
+        "relation": "account.incoterms",
+        "string": "Incoterm",
+        "type": "many2one"
+      },
+      "incoterm_location": {
+        "string": "Incoterm Location",
+        "type": "char"
+      },
+      "invoice_cash_rounding_id": {
+        "relation": "account.cash.rounding",
+        "string": "Cash Rounding Method",
+        "type": "many2one"
+      },
+      "send_and_print_values": {
+        "string": "Send And Print Values",
+        "type": "json"
+      },
+      "invoice_pdf_report_id": {
+        "relation": "ir.attachment",
+        "string": "PDF Attachment",
+        "type": "many2one"
+      },
+      "invoice_pdf_report_file": {
+        "string": "PDF File",
+        "type": "binary"
+      },
+      "invoice_filter_type_domain": {
+        "string": "Invoice Filter Type Domain",
+        "type": "char"
+      },
+      "bank_partner_id": {
+        "relation": "res.partner",
+        "string": "Bank Partner",
+        "type": "many2one"
+      },
+      "tax_lock_date_message": {
+        "string": "Tax Lock Date Message",
+        "type": "char"
+      },
+      "display_inactive_currency_warning": {
+        "string": "Display Inactive Currency Warning",
+        "type": "boolean"
+      },
+      "tax_country_id": {
+        "relation": "res.country",
+        "string": "Tax Country",
+        "type": "many2one"
+      },
+      "tax_country_code": {
+        "string": "Tax Country Code",
+        "type": "char"
+      },
+      "has_reconciled_entries": {
+        "string": "Has Reconciled Entries",
+        "type": "boolean"
+      },
+      "show_reset_to_draft_button": {
+        "string": "Show Reset To Draft Button",
+        "type": "boolean"
+      },
+      "partner_credit_warning": {
+        "string": "Partner Credit Warning",
+        "type": "text"
+      },
+      "partner_credit": {
+        "string": "Partner Credit",
+        "type": "monetary"
+      },
+      "duplicated_ref_ids": {
+        "relation": "account.move",
+        "string": "Duplicated Ref",
+        "type": "many2many"
+      },
+      "need_cancel_request": {
+        "string": "Need Cancel Request",
+        "type": "boolean"
+      },
+      "show_update_fpos": {
+        "string": "Has Fiscal Position Changed",
+        "type": "boolean"
+      },
+      "payment_term_details": {
+        "string": "Payment Term Details",
+        "type": "binary"
+      },
+      "show_payment_term_details": {
+        "string": "Show Payment Term Details",
+        "type": "boolean"
+      },
+      "show_discount_details": {
+        "string": "Show Discount Details",
+        "type": "boolean"
+      },
+      "id": {
+        "string": "ID",
+        "type": "integer"
+      },
+      "display_name": {
+        "string": "Display Name",
+        "type": "char"
+      },
+      "create_uid": {
+        "relation": "res.users",
+        "string": "Created by",
+        "type": "many2one"
+      },
+      "create_date": {
+        "string": "Created on",
+        "type": "datetime"
+      },
+      "write_uid": {
+        "relation": "res.users",
+        "string": "Last Updated by",
+        "type": "many2one"
+      },
+      "write_date": {
+        "string": "Last Updated on",
+        "type": "datetime"
+      },
+      "payment_ids": {
+        "relation": "account.payment",
+        "string": "Payments",
+        "type": "one2many"
+      },
+      "statement_line_ids": {
+        "relation": "account.bank.statement.line",
+        "string": "Statements",
+        "type": "one2many"
+      },
+      "preferred_payment_method_id": {
+        "relation": "account.payment.method",
+        "string": "Preferred Payment Method",
+        "type": "many2one"
+      },
+      "ubl_cii_xml_id": {
+        "relation": "ir.attachment",
+        "string": "Attachment",
+        "type": "many2one"
+      },
+      "ubl_cii_xml_file": {
+        "string": "UBL/CII File",
+        "type": "binary"
+      },
+      "transaction_ids": {
+        "relation": "payment.transaction",
+        "string": "Transactions",
+        "type": "many2many"
+      },
+      "authorized_transaction_ids": {
+        "relation": "payment.transaction",
+        "string": "Authorized Transactions",
+        "type": "many2many"
+      },
+      "amount_paid": {
+        "string": "Amount paid",
+        "type": "monetary"
+      },
+      "expense_sheet_id": {
+        "relation": "hr.expense.sheet",
+        "string": "Expense Sheet",
+        "type": "many2one"
+      },
+      "show_commercial_partner_warning": {
+        "string": "Show Commercial Partner Warning",
+        "type": "boolean"
+      },
+      "purchase_vendor_bill_id": {
+        "relation": "purchase.bill.union",
+        "string": "Auto-complete",
+        "type": "many2one"
+      },
+      "purchase_id": {
+        "relation": "purchase.order",
+        "string": "Purchase Order",
+        "type": "many2one"
+      },
+      "purchase_order_count": {
+        "string": "Purchase Order Count",
+        "type": "integer"
+      },
+      "stock_move_id": {
+        "relation": "stock.move",
+        "string": "Stock Move",
+        "type": "many2one"
+      },
+      "stock_valuation_layer_ids": {
+        "relation": "stock.valuation.layer",
+        "string": "Stock Valuation Layer",
+        "type": "one2many"
+      },
+      "l10n_in_gst_treatment": {
+        "string": "GST Treatment",
+        "type": "selection"
+      },
+      "l10n_in_state_id": {
+        "relation": "res.country.state",
+        "string": "Place of supply",
+        "type": "many2one"
+      },
+      "l10n_in_gstin": {
+        "string": "GSTIN",
+        "type": "char"
+      },
+      "l10n_in_shipping_bill_number": {
+        "string": "Shipping bill number",
+        "type": "char"
+      },
+      "l10n_in_shipping_bill_date": {
+        "string": "Shipping bill date",
+        "type": "date"
+      },
+      "l10n_in_shipping_port_code_id": {
+        "relation": "l10n_in.port.code",
+        "string": "Port code",
+        "type": "many2one"
+      },
+      "l10n_in_reseller_partner_id": {
+        "relation": "res.partner",
+        "string": "Reseller",
+        "type": "many2one"
+      },
+      "l10n_in_journal_type": {
+        "string": "Journal Type",
+        "type": "selection"
+      },
+      "team_id": {
+        "relation": "crm.team",
+        "string": "Sales Team",
+        "type": "many2one"
+      },
+      "sale_order_count": {
+        "string": "Sale Order Count",
+        "type": "integer"
+      },
+      "asset_depreciation_ids": {
+        "relation": "account.asset.depreciation.line",
+        "string": "Assets Depreciation Lines",
+        "type": "one2many"
+      },
+      "has_due": {
+        "string": "Has due",
+        "type": "boolean"
+      },
+      "is_warning": {
+        "string": "Is warning",
+        "type": "boolean"
+      },
+      "due_amount": {
+        "string": "Due Amount",
+        "type": "float"
+      },
+      "recurring_ref": {
+        "string": "Recurring Ref",
+        "type": "char"
+      },
+      "l10n_in_is_withholding": {
+        "string": "Is Indian TDS Entry",
+        "type": "boolean"
+      },
+      "l10n_in_withholding_ref_move_id": {
+        "relation": "account.move",
+        "string": "Indian TDS Ref Move",
+        "type": "many2one"
+      },
+      "l10n_in_withhold_move_ids": {
+        "relation": "account.move",
+        "string": "Indian TDS Entries",
+        "type": "one2many"
+      },
+      "l10n_in_withholding_line_ids": {
+        "relation": "account.move.line",
+        "string": "Indian TDS Lines",
+        "type": "one2many"
+      },
+      "l10n_in_total_withholding_amount": {
+        "string": "Total Indian TDS Amount",
+        "type": "monetary"
+      },
+      "landed_costs_ids": {
+        "relation": "stock.landed.cost",
+        "string": "Landed Costs",
+        "type": "one2many"
+      },
+      "landed_costs_visible": {
+        "string": "Landed Costs Visible",
+        "type": "boolean"
+      },
+      "report_template_id1": {
+        "relation": "ir.actions.report",
+        "string": "Invoice Template1",
+        "type": "many2one"
+      },
+      "report_template_id": {
+        "relation": "ir.actions.report",
+        "string": "Invoice Template",
+        "type": "many2one"
+      },
+      "amount_to_text": {
+        "string": "In Words",
+        "type": "char"
+      },
+      "timesheet_ids": {
+        "relation": "account.analytic.line",
+        "string": "Timesheets",
+        "type": "one2many"
+      },
+      "timesheet_count": {
+        "string": "Number of timesheets",
+        "type": "integer"
+      },
+      "timesheet_encode_uom_id": {
+        "relation": "uom.uom",
+        "string": "Timesheet Encoding Unit",
+        "type": "many2one"
+      },
+      "timesheet_total_duration": {
+        "string": "Timesheet Total Duration",
+        "type": "integer"
+      }
+    }
+  },
+  "mail.activity": {
+    "count": 153,
+    "fields": {
+      "res_model_id": {
+        "relation": "ir.model",
+        "string": "Document Model",
+        "type": "many2one"
+      },
+      "res_model": {
+        "string": "Related Document Model",
+        "type": "char"
+      },
+      "res_id": {
+        "string": "Related Document ID",
+        "type": "many2one_reference"
+      },
+      "res_name": {
+        "string": "Document Name",
+        "type": "char"
+      },
+      "activity_type_id": {
+        "relation": "mail.activity.type",
+        "string": "Activity Type",
+        "type": "many2one"
+      },
+      "activity_category": {
+        "string": "Action",
+        "type": "selection"
+      },
+      "activity_decoration": {
+        "string": "Decoration Type",
+        "type": "selection"
+      },
+      "icon": {
+        "string": "Icon",
+        "type": "char"
+      },
+      "summary": {
+        "string": "Summary",
+        "type": "char"
+      },
+      "note": {
+        "string": "Note",
+        "type": "html"
+      },
+      "date_deadline": {
+        "string": "Due Date",
+        "type": "date"
+      },
+      "date_done": {
+        "string": "Completed Date",
+        "type": "date"
+      },
+      "automated": {
+        "string": "Automated activity",
+        "type": "boolean"
+      },
+      "attachment_ids": {
+        "relation": "ir.attachment",
+        "string": "Attachments",
+        "type": "many2many"
+      },
+      "user_id": {
+        "relation": "res.users",
+        "string": "Assigned to",
+        "type": "many2one"
+      },
+      "request_partner_id": {
+        "relation": "res.partner",
+        "string": "Requesting Partner",
+        "type": "many2one"
+      },
+      "state": {
+        "string": "State",
+        "type": "selection"
+      },
+      "recommended_activity_type_id": {
+        "relation": "mail.activity.type",
+        "string": "Recommended Activity Type",
+        "type": "many2one"
+      },
+      "previous_activity_type_id": {
+        "relation": "mail.activity.type",
+        "string": "Previous Activity Type",
+        "type": "many2one"
+      },
+      "has_recommended_activities": {
+        "string": "Next activities available",
+        "type": "boolean"
+      },
+      "mail_template_ids": {
+        "relation": "mail.template",
+        "string": "Email templates",
+        "type": "many2many"
+      },
+      "chaining_type": {
+        "string": "Chaining Type",
+        "type": "selection"
+      },
+      "can_write": {
+        "string": "Can Write",
+        "type": "boolean"
+      },
+      "active": {
+        "string": "Active",
+        "type": "boolean"
+      },
+      "id": {
+        "string": "ID",
+        "type": "integer"
+      },
+      "display_name": {
+        "string": "Display Name",
+        "type": "char"
+      },
+      "create_uid": {
+        "relation": "res.users",
+        "string": "Created by",
+        "type": "many2one"
+      },
+      "create_date": {
+        "string": "Created on",
+        "type": "datetime"
+      },
+      "write_uid": {
+        "relation": "res.users",
+        "string": "Last Updated by",
+        "type": "many2one"
+      },
+      "write_date": {
+        "string": "Last Updated on",
+        "type": "datetime"
+      },
+      "calendar_event_id": {
+        "relation": "calendar.event",
+        "string": "Calendar Meeting",
+        "type": "many2one"
+      },
+      "access_url": {
+        "string": "Portal Access URL",
+        "type": "char"
+      },
+      "access_token": {
+        "string": "Security Token",
+        "type": "char"
+      },
+      "access_warning": {
+        "string": "Access warning",
+        "type": "text"
+      },
+      "supervisor_id": {
+        "relation": "res.users",
+        "string": "Supervisor",
+        "type": "many2one"
+      },
+      "sh_activity_tags": {
+        "relation": "sh.activity.tags",
+        "string": "Activity Tags",
+        "type": "many2many"
+      },
+      "sh_state": {
+        "string": "Sh State",
+        "type": "selection"
+      },
+      "feedback": {
+        "string": "Feedback",
+        "type": "text"
+      },
+      "text_note": {
+        "string": "Notes In Char format ",
+        "type": "char"
+      },
+      "sh_user_ids": {
+        "relation": "res.users",
+        "string": "Assign Multi Users",
+        "type": "many2many"
+      },
+      "sh_display_multi_user": {
+        "string": "Sh Display Multi User",
+        "type": "boolean"
+      },
+      "company_id": {
+        "relation": "res.company",
+        "string": "Company",
+        "type": "many2one"
+      },
+      "color": {
+        "string": "Color Index",
+        "type": "integer"
+      },
+      "sh_create_individual_activity": {
+        "string": "Individual activities for multi users ?",
+        "type": "boolean"
+      },
+      "sh_activity_alarm_ids": {
+        "relation": "sh.activity.alarm",
+        "string": "Reminders",
+        "type": "many2many"
+      },
+      "sh_date_deadline": {
+        "string": "Reminder Due Date",
+        "type": "datetime"
+      },
+      "activity_cancel": {
+        "string": "Activity Cancel",
+        "type": "boolean"
+      },
+      "activity_done": {
+        "string": "Activity Done",
+        "type": "boolean"
+      },
+      "sh_activity_id": {
+        "relation": "sh.recurring.activities",
+        "string": "Sh Activity",
+        "type": "many2one"
+      },
+      "reference": {
+        "string": "Related Document",
+        "type": "reference"
+      }
+    }
+  },
+  "calendar.event": {
+    "count": 23,
+    "fields": {
+      "message_is_follower": {
+        "string": "Is Follower",
+        "type": "boolean"
+      },
+      "message_follower_ids": {
+        "relation": "mail.followers",
+        "string": "Followers",
+        "type": "one2many"
+      },
+      "message_partner_ids": {
+        "relation": "res.partner",
+        "string": "Followers (Partners)",
+        "type": "many2many"
+      },
+      "message_ids": {
+        "relation": "mail.message",
+        "string": "Messages",
+        "type": "one2many"
+      },
+      "has_message": {
+        "string": "Has Message",
+        "type": "boolean"
+      },
+      "message_needaction": {
+        "string": "Action Needed",
+        "type": "boolean"
+      },
+      "message_needaction_counter": {
+        "string": "Number of Actions",
+        "type": "integer"
+      },
+      "message_has_error": {
+        "string": "Message Delivery error",
+        "type": "boolean"
+      },
+      "message_has_error_counter": {
+        "string": "Number of errors",
+        "type": "integer"
+      },
+      "message_attachment_count": {
+        "string": "Attachment Count",
+        "type": "integer"
+      },
+      "rating_ids": {
+        "relation": "rating.rating",
+        "string": "Ratings",
+        "type": "one2many"
+      },
+      "website_message_ids": {
+        "relation": "mail.message",
+        "string": "Website Messages",
+        "type": "one2many"
+      },
+      "message_has_sms_error": {
+        "string": "SMS Delivery error",
+        "type": "boolean"
+      },
+      "name": {
+        "string": "Meeting Subject",
+        "type": "char"
+      },
+      "description": {
+        "string": "Description",
+        "type": "html"
+      },
+      "user_id": {
+        "relation": "res.users",
+        "string": "Organizer",
+        "type": "many2one"
+      },
+      "partner_id": {
+        "relation": "res.partner",
+        "string": "Scheduled by",
+        "type": "many2one"
+      },
+      "location": {
+        "string": "Location",
+        "type": "char"
+      },
+      "videocall_location": {
+        "string": "Meeting URL",
+        "type": "char"
+      },
+      "access_token": {
+        "string": "Invitation Token",
+        "type": "char"
+      },
+      "videocall_source": {
+        "string": "Videocall Source",
+        "type": "selection"
+      },
+      "videocall_channel_id": {
+        "relation": "discuss.channel",
+        "string": "Discuss Channel",
+        "type": "many2one"
+      },
+      "privacy": {
+        "string": "Privacy",
+        "type": "selection"
+      },
+      "show_as": {
+        "string": "Show as",
+        "type": "selection"
+      },
+      "is_highlighted": {
+        "string": "Is the Event Highlighted",
+        "type": "boolean"
+      },
+      "is_organizer_alone": {
+        "string": "Is the Organizer Alone",
+        "type": "boolean"
+      },
+      "active": {
+        "string": "Active",
+        "type": "boolean"
+      },
+      "categ_ids": {
+        "relation": "calendar.event.type",
+        "string": "Tags",
+        "type": "many2many"
+      },
+      "start": {
+        "string": "Start",
+        "type": "datetime"
+      },
+      "stop": {
+        "string": "Stop",
+        "type": "datetime"
+      },
+      "display_time": {
+        "string": "Event Time",
+        "type": "char"
+      },
+      "allday": {
+        "string": "All Day",
+        "type": "boolean"
+      },
+      "start_date": {
+        "string": "Start Date",
+        "type": "date"
+      },
+      "stop_date": {
+        "string": "End Date",
+        "type": "date"
+      },
+      "duration": {
+        "string": "Duration",
+        "type": "float"
+      },
+      "res_id": {
+        "string": "Document ID",
+        "type": "many2one_reference"
+      },
+      "res_model_id": {
+        "relation": "ir.model",
+        "string": "Document Model",
+        "type": "many2one"
+      },
+      "res_model": {
+        "string": "Document Model Name",
+        "type": "char"
+      },
+      "res_model_name": {
+        "string": "Model Description",
+        "type": "char"
+      },
+      "activity_ids": {
+        "relation": "mail.activity",
+        "string": "Activities",
+        "type": "one2many"
+      },
+      "attendee_ids": {
+        "relation": "calendar.attendee",
+        "string": "Participant",
+        "type": "one2many"
+      },
+      "current_attendee": {
+        "relation": "calendar.attendee",
+        "string": "Current Attendee",
+        "type": "many2one"
+      },
+      "current_status": {
+        "string": "Attending?",
+        "type": "selection"
+      },
+      "should_show_status": {
+        "string": "Should Show Status",
+        "type": "boolean"
+      },
+      "partner_ids": {
+        "relation": "res.partner",
+        "string": "Attendees",
+        "type": "many2many"
+      },
+      "invalid_email_partner_ids": {
+        "relation": "res.partner",
+        "string": "Invalid Email Partner",
+        "type": "many2many"
+      },
+      "alarm_ids": {
+        "relation": "calendar.alarm",
+        "string": "Reminders",
+        "type": "many2many"
+      },
+      "recurrency": {
+        "string": "Recurrent",
+        "type": "boolean"
+      },
+      "recurrence_id": {
+        "relation": "calendar.recurrence",
+        "string": "Recurrence Rule",
+        "type": "many2one"
+      },
+      "follow_recurrence": {
+        "string": "Follow Recurrence",
+        "type": "boolean"
+      },
+      "recurrence_update": {
+        "string": "Recurrence Update",
+        "type": "selection"
+      },
+      "rrule": {
+        "string": "Recurrent Rule",
+        "type": "char"
+      },
+      "rrule_type_ui": {
+        "string": "Repeat",
+        "type": "selection"
+      },
+      "rrule_type": {
+        "string": "Recurrence",
+        "type": "selection"
+      },
+      "event_tz": {
+        "string": "Timezone",
+        "type": "selection"
+      },
+      "end_type": {
+        "string": "Recurrence Termination",
+        "type": "selection"
+      },
+      "interval": {
+        "string": "Repeat On",
+        "type": "integer"
+      },
+      "count": {
+        "string": "Number of Repetitions",
+        "type": "integer"
+      },
+      "mon": {
+        "string": "Mon",
+        "type": "boolean"
+      },
+      "tue": {
+        "string": "Tue",
+        "type": "boolean"
+      },
+      "wed": {
+        "string": "Wed",
+        "type": "boolean"
+      },
+      "thu": {
+        "string": "Thu",
+        "type": "boolean"
+      },
+      "fri": {
+        "string": "Fri",
+        "type": "boolean"
+      },
+      "sat": {
+        "string": "Sat",
+        "type": "boolean"
+      },
+      "sun": {
+        "string": "Sun",
+        "type": "boolean"
+      },
+      "month_by": {
+        "string": "Option",
+        "type": "selection"
+      },
+      "day": {
+        "string": "Date of month",
+        "type": "integer"
+      },
+      "weekday": {
+        "string": "Weekday",
+        "type": "selection"
+      },
+      "byday": {
+        "string": "By day",
+        "type": "selection"
+      },
+      "until": {
+        "string": "Until",
+        "type": "date"
+      },
+      "display_description": {
+        "string": "Display Description",
+        "type": "boolean"
+      },
+      "attendees_count": {
+        "string": "Attendees Count",
+        "type": "integer"
+      },
+      "accepted_count": {
+        "string": "Accepted Count",
+        "type": "integer"
+      },
+      "declined_count": {
+        "string": "Declined Count",
+        "type": "integer"
+      },
+      "tentative_count": {
+        "string": "Tentative Count",
+        "type": "integer"
+      },
+      "awaiting_count": {
+        "string": "Awaiting Count",
+        "type": "integer"
+      },
+      "user_can_edit": {
+        "string": "User Can Edit",
+        "type": "boolean"
+      },
+      "id": {
+        "string": "ID",
+        "type": "integer"
+      },
+      "display_name": {
+        "string": "Display Name",
+        "type": "char"
+      },
+      "create_uid": {
+        "relation": "res.users",
+        "string": "Created by",
+        "type": "many2one"
+      },
+      "create_date": {
+        "string": "Created on",
+        "type": "datetime"
+      },
+      "write_uid": {
+        "relation": "res.users",
+        "string": "Last Updated by",
+        "type": "many2one"
+      },
+      "write_date": {
+        "string": "Last Updated on",
+        "type": "datetime"
+      },
+      "opportunity_id": {
+        "relation": "crm.lead",
+        "string": "Opportunity",
+        "type": "many2one"
+      }
+    }
+  },
+  "stock.lot": {
+    "count": 746,
+    "fields": {
+      "activity_ids": {
+        "relation": "mail.activity",
+        "string": "Activities",
+        "type": "one2many"
+      },
+      "activity_state": {
+        "string": "Activity State",
+        "type": "selection"
+      },
+      "activity_user_id": {
+        "relation": "res.users",
+        "string": "Responsible User",
+        "type": "many2one"
+      },
+      "activity_type_id": {
+        "relation": "mail.activity.type",
+        "string": "Next Activity Type",
+        "type": "many2one"
+      },
+      "activity_type_icon": {
+        "string": "Activity Type Icon",
+        "type": "char"
+      },
+      "activity_date_deadline": {
+        "string": "Next Activity Deadline",
+        "type": "date"
+      },
+      "my_activity_date_deadline": {
+        "string": "My Activity Deadline",
+        "type": "date"
+      },
+      "activity_summary": {
+        "string": "Next Activity Summary",
+        "type": "char"
+      },
+      "activity_exception_decoration": {
+        "string": "Activity Exception Decoration",
+        "type": "selection"
+      },
+      "activity_exception_icon": {
+        "string": "Icon",
+        "type": "char"
+      },
+      "activity_calendar_event_id": {
+        "relation": "calendar.event",
+        "string": "Next Activity Calendar Event",
+        "type": "many2one"
+      },
+      "message_is_follower": {
+        "string": "Is Follower",
+        "type": "boolean"
+      },
+      "message_follower_ids": {
+        "relation": "mail.followers",
+        "string": "Followers",
+        "type": "one2many"
+      },
+      "message_partner_ids": {
+        "relation": "res.partner",
+        "string": "Followers (Partners)",
+        "type": "many2many"
+      },
+      "message_ids": {
+        "relation": "mail.message",
+        "string": "Messages",
+        "type": "one2many"
+      },
+      "has_message": {
+        "string": "Has Message",
+        "type": "boolean"
+      },
+      "message_needaction": {
+        "string": "Action Needed",
+        "type": "boolean"
+      },
+      "message_needaction_counter": {
+        "string": "Number of Actions",
+        "type": "integer"
+      },
+      "message_has_error": {
+        "string": "Message Delivery error",
+        "type": "boolean"
+      },
+      "message_has_error_counter": {
+        "string": "Number of errors",
+        "type": "integer"
+      },
+      "message_attachment_count": {
+        "string": "Attachment Count",
+        "type": "integer"
+      },
+      "rating_ids": {
+        "relation": "rating.rating",
+        "string": "Ratings",
+        "type": "one2many"
+      },
+      "website_message_ids": {
+        "relation": "mail.message",
+        "string": "Website Messages",
+        "type": "one2many"
+      },
+      "message_has_sms_error": {
+        "string": "SMS Delivery error",
+        "type": "boolean"
+      },
+      "name": {
+        "string": "Lot/Serial Number",
+        "type": "char"
+      },
+      "ref": {
+        "string": "Internal Reference",
+        "type": "char"
+      },
+      "product_id": {
+        "relation": "product.product",
+        "string": "Product",
+        "type": "many2one"
+      },
+      "product_uom_id": {
+        "relation": "uom.uom",
+        "string": "Unit of Measure",
+        "type": "many2one"
+      },
+      "quant_ids": {
+        "relation": "stock.quant",
+        "string": "Quants",
+        "type": "one2many"
+      },
+      "product_qty": {
+        "string": "On Hand Quantity",
+        "type": "float"
+      },
+      "note": {
+        "string": "Description",
+        "type": "html"
+      },
+      "display_complete": {
+        "string": "Display Complete",
+        "type": "boolean"
+      },
+      "company_id": {
+        "relation": "res.company",
+        "string": "Company",
+        "type": "many2one"
+      },
+      "delivery_ids": {
+        "relation": "stock.picking",
+        "string": "Transfers",
+        "type": "many2many"
+      },
+      "delivery_count": {
+        "string": "Delivery order count",
+        "type": "integer"
+      },
+      "last_delivery_partner_id": {
+        "relation": "res.partner",
+        "string": "Last Delivery Partner",
+        "type": "many2one"
+      },
+      "lot_properties": {
+        "string": "Properties",
+        "type": "properties"
+      },
+      "location_id": {
+        "relation": "stock.location",
+        "string": "Location",
+        "type": "many2one"
+      },
+      "id": {
+        "string": "ID",
+        "type": "integer"
+      },
+      "display_name": {
+        "string": "Display Name",
+        "type": "char"
+      },
+      "create_uid": {
+        "relation": "res.users",
+        "string": "Created by",
+        "type": "many2one"
+      },
+      "create_date": {
+        "string": "Created on",
+        "type": "datetime"
+      },
+      "write_uid": {
+        "relation": "res.users",
+        "string": "Last Updated by",
+        "type": "many2one"
+      },
+      "write_date": {
+        "string": "Last Updated on",
+        "type": "datetime"
+      },
+      "purchase_order_ids": {
+        "relation": "purchase.order",
+        "string": "Purchase Orders",
+        "type": "many2many"
+      },
+      "purchase_order_count": {
+        "string": "Purchase order count",
+        "type": "integer"
+      },
+      "sale_order_ids": {
+        "relation": "sale.order",
+        "string": "Sales Orders",
+        "type": "many2many"
+      },
+      "sale_order_count": {
+        "string": "Sale order count",
+        "type": "integer"
+      }
+    }
+  }
+}

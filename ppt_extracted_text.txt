@@ -1,0 +1,1120 @@
+--- Slide 1 ---
+SAVI VISION
+EMPLOYEES STRUCTURE
+Click to add text
+
+--- Slide 2 ---
+Department
+HR
+NO
+GEM
+Ms Soni
+Presales
+Namita + Kuldeep
+Purchase
+Purchase -Mayank
+Store
+stock - Neeraj`
+Digital Signage
+Dev Karan
+Finance
+Billing + GST  + ESI + PF
+Mr. Harish + Shekhar
+Sales
+Project - CCTV + Audio Visual Equipment
+Sanjeev + Amit
+backend - Shweta
+Service
+Repair + AMC
+Shiv - Component
+Installation team -  Govind, Manish, Kapil, Sourabh, Pankaj,
+
+--- Slide 3 ---
+Order Execute with Gant Sh
+eet Share to Cust
+Order with format / instructions
+SO with specific instructions
+P&L
+Inst Drawing
+Purchase
+invoice
+Delivery with invoice + DC is must
+Installation
+Gantt Sheet (share with customer)
+Team Alignment
+completiion certificate
+Hand over Document
+SITE Video & Photo for website
+Testimonial
+Payment
+Inspection of delivery & Project
+Audit and close with P& L
+Service - Qtrly
+AMC
+Billing
+Payment
+Qty. Service
+AMC + NEW req
+Audit and close with P& L, Review
+ENQ SOURCE TYPE
+EMAIL
+Reference to further reference
+Telephonic
+New Search by Field Managers
+Website/Portal
+ENQ RECEIVED to be attache with  LEAD
+ENQ enter into System
+Product Requirement to be check
+Site Visit
+(Form to be filled of Site visit with requirement)
+Drawing
+BOQ/Quotation Should show the P&L
+Negotiation
+Follow up and Auto Follow up
+Order Received
+Auto Thanks Msg ro Customer
+Assign to concern department
+Commision to Employee or Cust
+
+--- Slide 4 ---
+SALES TREE
+Q & A
+Attendance
+with Location
+At Customer side in & Out  with Location
+Site photo Video upload on Project directly
+Activity
+with Date and time Name to appear both sender and
+receiver
+,
+auto
+pop up when it is due, Can
+select
+multiple person if required in one activity
+
+--- Slide 5 ---
+Auto mail and reporting system of every Work
+Thanks for enquiry will share quote soon,
+Message to assign manger,
+After quotation auto follow up of quote, thanks msg for order,
+auto msg for invoice and delivery dispatch detail,
+Service team alignment message,
+work completion message,
+Gantt Sheet, Thanks for completion of any service call, Payment reminder, Pay Rcvd Thanks, AMC Due message, Assignment of Engineer. After sales order auto message for installation to service team.
+Some other imp message like happy birthday or anniversary.
+Time to time mailer to customer category wise, vendor.
+Difference between lead and customer.
+AMC Auto Reminder message
+Engineer allocation reaching and moving time, photo form site,
+Later may be some more or you can recommend to make organization auto mode.
+
+--- Slide 6 ---
+AMC
+INST
+REPAIR
+
+--- Slide 7 ---
+AMC
+NEW
+EXISTING
+OLD SAVI
+AMC ENQ SOURCE
+EMAIL
+Reference to further reference
+Telephonic
+New Search by Field Mangers
+Website/Portal
+CALL RCVD – EMAIL/PHONE
+Ticket Generate + intimation to customer
+ONLINE SOLUTION TO CUSOTMER
+Site Visit with Job Card
+Completion with stamp and sign
+Intimation to customer
+Feedback + any suggestions for better serivce
+Thanks Message
+SALES ORD with serial no and period
+Billing as per scheduled
+Payment
+Timely service with signed report+ photo
+Renewal + New Reference with new lead  Generation
+AUTO REMINDER FOR IMP. TASK., AMC Message one month before due, some of the same as mentioned earalier.
+ENQ
+SITE VISIT
+For Repair send repair q
+uote
+QUOTE/BOQ
+Negotiation
+ORD
+New Reference generation
+PRODUCT INSP.
+(Make, Model, Serial NO, Condition
+Commision to Employee or Cust
+
+--- Slide 8 ---
+
+
+--- Slide 9 ---
+
+
+--- Slide 10 ---
+
+
+--- Slide 11 ---
+
+
+--- Slide 12 ---
+INSTALLATION
+SO / Patch with service
+Breifing with Sales Manger FIRST
+Briefing with other dept, Pur, Sales, Store, Fin + Sales Mgr
+Meeting with customer and site review
+Gantt Sheet – Work Policy
+Drawing and Start Wrok , take approval from Customer
+Daily Reporting of site  Mor + Eve with photo
+INSTALLATION
+Expenditure Detial Daily
+Check availability of Customer
+Daily Job Card+Site photo
+Case History to be generate
+Extra Goods equipment with approval
+Extra Billing
+Final Testing
+Handover  + Testimonial
+Site photo for Website
+Feedback
+Audit with P&L
+Form for the  boys to take the update ….............
+https://docs.google.com/spreadsheets/d/1NFdgFnrengsjZz2vXhzGSgGO1KUdIVpjdHUO5r1Iepw/edit?ts=60dc07fb#gid=1387659889
+Click to add text
+
+--- Slide 13 ---
+AMC
+NEW
+EXISTING
+OLD SAVI
+AMC ENQ SOURCE
+EMAIL
+Reference to further reference
+Telephonic
+New Search by Field Managers
+Website/Portal
+CALL RCVD – EMAIL/PHONE
+Ticket Generate + intimation to customer
+ONLINE SOLUTION TO CUSTOMER
+Site Visit with Job Card
+Completion with stamp and sign
+Intimation to customer
+Feedback + any suggestions for better serivce
+Thanks Message
+ENQ
+SITE VISIT
+For Repair send repair qutoe
+QUOTE/BOQ
+NEGOTATION
+ORD
+New Reference generation
+PRODUCT INSP.
+SALES ORD with serial no and period
+Billing as per scheduled
+Payment
+Timely service with signed report+ photo
+Renewal + New Reference with new lead  Generation
+AUTO REMINDER FOR IMP. TASK., AMC Message one month before due, some of the same as mentioned earlier.
+
+--- Slide 14 ---
+REPAIR
+CALL RCVD
+TICKET GENERATE
+Allocation of Engg/Shiv
+Site Visit Charges
+Photo of Product with issue
+Payment Advance
+Inspection
+REPAIR
+Onsite Repair or OFF Site
+Estimate / Quote
+PO Collected
+PI to be send
+Payment Advance
+Repair
+PHOTO of Product with Solution
+New Product Discussion
+NEW AMC to be discuss
+Feed back form + Testimonials
+Audit with P&L
+
+--- Slide 15 ---
+ENQ. Sales Dept.
+Search Vendor / SAP
+Take price and give to Sales
+If get order
+Negotiate vendor for better price
+Take Max Credit Period
+Before order
+Price and delivery time line from Sales
+Delivery place
+He will ask for delivery according to requirement
+ORDER PLACED
+Follow up of delivery
+After receiving + invoice to be submit in Fin.
+PURCHASE
+Other vendors
+Send thanks Mail  with reason
+Process to devp new vendor
+Do not place all order to one vendor always rotate
+SPL. WORK
+Check and assure rcvd goods billed
+
+--- Slide 16 ---
+ENQ. from Departments
+Check Stock availability
+Tell to purchase to buy
+Good Rcvd from Guard
+Insert bill and challah in SAP
+Handover document to Finance
+Inform to Purchase and related Person
+After SO make Delivery
+Arrange for dispatch
+Coordinate for EWAY BILL
+After receiving + invoice to be submit in Fin.
+STORE
+Dispatch
+Search for better courier with low price and better service
+Hand over to courier guy
+Send message to related manger and customer for dispatch
+Attach all dispatch documents in SAP
+Check and confirm Delivered or not.
+If delivered confirm to related Manger
+Stock Tally
+Damage Goods
+Report to EA+Sunil
+Rectify the product
+
+--- Slide 17 ---
+Daily Work
+Invoice + payment
+Ledger Telly
+Banking
+Eway bill
+GST
+GST1 & 3 To be check,  fill and deposit
+Return to be submitted
+GSTR 9 & 9c annual reprot
+FINANCE
+PF & ESI & TDS/IT
+Salary Working
+PF & ESI Calculation
+ESI & PF Submission
+Salary Slip
+ALL Retruns
+BANKING
+Daily work
+International Transactions
+Cash Flow
+Bank Reco
+Reporting
+MIS
+Monthly & Yearly working report
+
+--- Slide 18 ---
+Manage all IT Job
+Laptop
+Backend
+Server
+CCTV/EPBX
+SAP SOFTWARE
+Other software
+IT
+IT BACKEND
+WEBSITE
+Renewal
+OTHERS
+Regular Backup
+New Software
+
+--- Slide 19 ---
+Attendance
+In house with location-based
+Field with location
+LEAVES
+SALARY
+PF & ESI
+Co. Policy’s
+Rules Regulations
+Confirmation &
+Appointment
+Travelling policy
+Promotion
+Scorecard
+-
+Traffic Light System
+Onboarding
+HR / Admin
+Induction
+Company Structures
+KRA of employee
+Appreciation policy
+Today, 3 yrs
+5 yrs later designation
+https://docs.google.com/document/d/10Nk9M6Ig2hz7n1CDgjmorCHCpTO916Clzi7JI2sa1D4/edit?usp=sharing
+
+--- Slide 20 ---
+IMPORTANT FORMS
+https://docs.google.com/document/d/10Nk9M6Ig2hz7n1CDgjmorCHCpTO916Clzi7JI2sa1D4/edit?usp=sharing
+( RULES FOR VOUCHER SUBMISSION )
+https://drive.google.com/file/d/1PR3Ij4iB3NAyOfwr0pFLJhx7XMthFGGD/view?ts=60dc07fb
+( TOUR ALLOWANCE FORM )
+https://docs.google.com/forms/d/1IsHdgKfWgmIcleFf0eN3_20BVpXVonYEtUvDO0_f1tY/edit
+( EXPENSE FORM – ALL EMPLOYEES )
+Click to add text
+https://docs.google.com/forms/d/1c0OUl7wVec5kk0fvuuSPo1i7lnXDcOELgHcoyd0a8gs/edit
+( LEAVE APPLIICATION FORM)
+
+--- Slide 21 ---
+POLYCOM
+SAMSUNG
+LG
+CASIO
+Crestron
+Kramer
+POLYCOM
+Site Insp
+Faulty- Report to Disti + Shivam
+Photo + Video + Log
+RMA Generate
+Replacement by SAVI
+Return Back to Disti
+SAMSUNG/LG
+Make Online Complaint
+Survey by Samsung
+Repair and close.
+SAMSUNG Video Wall
+Make Online Complaint
+Survey by Samsung + SAVI Engg
+Repair and close.
+CASIO
+All done by SAVI
+Projector pick up
+Deliver to Casio Service Center
+After rapir pick up and retun to cusotmer
+Raise Rs.750 invoice to Casio
+OEM Repair Process
+
+--- Slide 22 ---
+TRAINING TREE / Call resolved tree/for Product, sales, telemarketing, solution providing.
+
+--- Slide 23 ---
+ROLES
+
+--- Slide 24 ---
+Recuritment
+Process and ROLE TO BE CLEAR BY TOMRROW. ORGANISATION CHART, PROCESS AND ROLE, ALLIGNENNT, MONITORING, Give them break and ask after one week how are you feeling.
+Format, Kra, Gda
+Induction – journey, dream, sOP, Defination of role, process of monitoring .  clear all point from day one
+Reference check is imp to check from last two company, where he do mistake, how many he take leave, debate he does or not,
+In front of activity we have do time limit, menstioning and polishing is imp to do. Devide the work in parts and then discuss instead of all work together
+One once month training , review onece in a week, guidance two  in a day (two times a day morening and evening)
+Review weekly is must – Monday SAles, Tue –Fin, Wed – Service or weekly once.
+If anyone is doing any mistake keep in mind or note it and discuss in review or right message to him that darling it is observation that this is not ok so do not reapeat again.  Tell ethicate in the meeting and point out without taking any name.
+Like a blity. Employee should feel that boss is very good,
+Complaint disucss in meeting that other people do this and say it should not be happened in our company, if consiquence will be this, half day leave, or Designation high with low qualtiy job.
+Diagnose the issue wehre is the problem, why employee is getting irritating, if he do now want to work send him to home, it is a test that he is intersting to work or not.
+Tell employee that I will beat you and I will love you also, and I love my property and I care for that.
+8 hours working, take 15 min break, DND Do not distrubt, employee dream and employee dream should be alligned.
+
+--- Slide 25 ---
+Important forms
+https://docs.google.com/forms/d/1Yk780eCRll5THpVJY3EdZsAVngBkaDAy50Gp64Nu6OA/edit
+( EMPLOYEE HIRING FORM)
+Click to add text
+
+--- Slide 26 ---
+SALES HEAD
+Mange the complete sales department a to z – process
+responsibility to increase the sale & Enquiry Process. ( submit the proposal)
+Target set and achieve, weekly, monthly, quarterly, half yearly yearly. (submit by 30th May)
+resp. to take report from team, weekly, Monthly (format required)
+resp. to send report to Director - (format required)
+Resp. to appoint sales dept. employee, front, backend.
+support to team technical and commercial – already doing
+Enquiry, quotation, follow up, delivery, payment, project completion – doing
+New Business Devp – Project New Customer Acquisition – Rs.2000 currency not on Rs.10/-
+Key account to be look after – list to be made and share. Share by sunday
+One to one meeting with customer
+Customer Visit to showroom  - part of ranking. And make part of incentive Rs. 200/- per lac if 2 lac and above Rs. 500/-
+Regular involvement in Marketing Activity. - mailer – today
+Competitor analysis – just for review or if you lose any order. - set format. (google format Vyas)
+Product on website + Video Technical and sales – Training – engineers – end customer. ( Neeraj and Vyas) - work on youtube channel for training to new commerce. Need support from Rahul akshar team for linkdin and youtbue.
+Payment recovery  - already working. Need to remove the non coming payment accounts.
+
+--- Slide 27 ---
+Sales – ALL format will clear by today 11th June 2021
+1.
+Mange the complete sales department a to z
+( to cover 3 major area of sales – Project ( govt + corp) , Amc, Box (report format from manger to you and you to director.  timing.
+https://savivisionpvt-my.sharepoint.com/:x:/g/personal/sunil_savivision_com/EX7HSlb8_hxFq8vwVz5fjGQB6XLnz7e2X2tP5RveFfDOgQ?e=pmJIqK
+Taking reports from all the division heads – format - back to director format.
+2  Responsibility to increase the sale & Enquiry Process.
+New prospecting, marketing activities, market mapping team handling
+3.Target set and achieve, weekly, monthly, quarterly, half yearly yearly.
+60 cr company target set yearly – REPORTING FORMAT
+4.resp. to take report from team, weekly, Monthly ( format )
+https://savivisionpvt-my.sharepoint.com/:x:/g/personal/sunil_savivision_com/EV4JR-_hbr9BoS4xAJ7uoI8B7AWAvty9i2YKQHk63hlmmQ?e=2s05D7
+- Format taken from previous ex company.
+5. resp. to send report to Director. ( format)
+https://savivisionpvt-my.sharepoint.com/:x:/g/personal/sunil_savivision_com/ETqfS8UCvk9MpT2rKcdYl6kBKa4VKyUdseuidUfrQPloGA?e=aS3lsg
+- format taken from previous company
+6-Resp. to appoint sales dept. employee, front, backend
+- already in process
+
+--- Slide 28 ---
+7. support to team technical and commercial
+– already doing
+8.Enquiry, quotation, follow up, delivery, payment, project completion – doing ( twice a week need to be done with sales team, once in a week with management)
+Format is required – PROCESS. Will discuss in funnel
+9.New Business Devp – Project New Customer Acquisition – Rs.2000 currency not on Rs.10/-
+- keeping focus on big value client, regularly searching new big query from govt Gem, CPP & corporate
+10-Key account to be look after – list to be made and share
+- optum group,  ( to be completed by …...)  LIST REQUIRED
+1- Optum, XL-health, 2- Bharti Airtel, 3-Modi care, 4-Godfrey, 5-Adiyta Birla, 6- IARI, 7- Navy, 8- Puma, 9- shoppers stop, 10- Hero, 11- Honda Trading, 12- F'Kabi, 13- BeuroVaritas, 14- DCM, 15- Vestige, 16- Spicejet, 17- Air India, 18- Jublient, 19- Jindal Saw, 20- Havells, 21- Dabur, 22- Zee entertainment, 23- Exought , 24- Bacardy, 25- TCNS
+11- One to one meeting with customer
+-  to start meeting as soon as covid improves or customer allows to meet
+12-Customer Visit to showroom  - part of ranking. And make part of incentive Rs. 200/- per lac if 2 lac and above Rs. 500/-
+- need to make announcement in group with incentive structure by …..)
+
+--- Slide 29 ---
+13. Regular involvement in Marketing Activity. - mailer – today
+Weekly dedicated day for same- every saturday social media day
+14. Competitor analysis – just for review or if you lose any order. - set format. (google formate vyas) - PART OF monthly Review. -
+15. Product on website + Video Technical and sales – Training – engineers – end customer. ----- ( Neeraj and Vyas) - work on youtube channel for training to new commerce. Need support from (Rahul Parthi akshar team for linkd-in ) and ( youtbue + other social media – Amit Gupta)
+16. Payment recovery
+- already working. Need to remove the non coming payment accounts.
+
+--- Slide 30 ---
+Presales - Shweta
+Query management system
+Technical discussion or ask from Mohit or Kumud
+Check same or similar model in stock.
+Take price from SAP or Purchase Department
+Send quote to customer
+Ask about the confirmation that he received or not.
+If received, when he can close the order.
+Make regular follow up
+Do negotiations if required.
+Take the order send thanks confirmation to customer. Also update him about delivery and installation date/ Plan.
+ADVANCE PAYMENT FOLLOW UP
+New Vender registration in customer portal / record
+BP creation in sap
+Punch the order in the system with delivery time line and installation requirement
+Check goods in warehouse or not, if not make PR to purchase department
+Follow up with purchase for edd of material
+Co-ordinate with purchase and store, (Handover to Meenakshi for final delivery.
+
+--- Slide 31 ---
+1.Query management system
+- 3 ways of query- land line, email, other staff, ) do it my self if I am confident- about price stock & other info
+, or take help from Kumud, Sanjeev sir, store, sap – than quote
+2.TEchnical discussion or ask from Mohit or Kumud
+- in case of technical clarity routine discussion are done with Kumud, Sanjeev sir & Mohit
+3.Check same or similar model in stock.
+= yes coordinate with Suraj is regular practice.
+4.Take price from SAP or Purchase Department
+- yes it is in the practice
+5. Send quote to customer.
+Communication to customer for company address, location, email id & contact number etc
+ALL FORMATE DISCSS OVER SAP. - REQUIRED FROMAT FROM SUNIL SAP TO EXCEL
+
+--- Slide 32 ---
+6-Ask about the confirmation that he received or not.
+- doing on call , or email next day in case of no reply on phone.
+7-If recevied, when he can close the order.
+Make courtesy call, and polietly ask for opportunity to serve.
+8.Make regular follow up
+9.Do negotiations if required.
+-- in case of negotiation concern person is been taken in loop for final prices to close deal.
+10. Take the order send thanks confirmation to customer. Also update him about delivery and installation date/ Plan.
+- yes thaks email is the regular practice, Meenakshi is also taken in loop, if stock available we ask for suitable or immediate delivery.
+INCASE OF NO MATERIAL IN STOCK- CUSTOMER & MYSEL ARE ALWAYS IN DARK ON EDD- THIS NEEDS TO BE RESOLVED
+. AS soon as we release PO will send one copy to them.
+INSTALLATION IS NOT MY AREA- BUT AT THE TIME OF EMAIL SERVICE TEAM TAKEN IN LOOP ALONG WITH MEENAKSHI.
+
+--- Slide 33 ---
+11. ADVANCE PAYMENT FOLLOW UP
+Share PI & takes advance payment
+12. New Vender registration in customer portal / record
+- yes we fill up all the details of our company.
+13- BP creation in sap
+All the details/ record of the customer is done in sap
+14. Punch the order in the system with delivery time line and installation requirement.
+Order is punched once customer gives confirmation.
+15.Check goods in warehouse or not, if not make PR to purchase department .
+In sap document is created & for purchase requirement.
+Follow up with purchase for add of material
+- this is gray area auto system is to be made
+16- Co-ordinate with purchase and store, (Handover to Meenakshi for final delivery. - yes Meenakshi is taken in loop for the same.
+
+--- Slide 34 ---
+SALES MANGER - RUSSEL
+Responsibility to increase the sale & Enquiry.
+Target set and achieve, weekly, monthly, quarterly, half yearly yearly.
+resp. to Give report to Dept Head. + EA, Daily, weekly, Monthly, quarterly, half yearly yearly.
+https://savivisionpvt-my.sharepoint.com/:x:/g/personal/sunil_savivision_com/ERuBYOdYUqBAjndueQPQDXUBREx5IgOtllg1buYJvvWWtw?e=cpNn3z
+Attend all enquiry, Generate New Enq. Work on ARCHITECT Projects .
+One to one Meetings
+Follow the organization rules
+Work on AMC with Neeraj.
+GEM & GOVT + Corporate business.
+Existing customer + add on new customer
+Discuss on 12th June 2021 – salary Rs. 30k + 3000 conv.+ 10% incentive of profit, sales minium upto 30 to 50 lac
+If sales increase by 75 to 1 cr salary will be 50k + 5000 cony. If any month sales drop same as above.  His Desingation will be Key account manager, if next week ord rcvd of Pizza Express savi will issue one laptop to him. Traning after 22nd of June, basic will start from Monday onward.
+
+--- Slide 35 ---
+Responsibility to increase the sale & Enquiry. - To send mails to concern persons, to take the meetings, To work on existing data of Architect and Interior designes, new builders and old , existing, new coo working spaces, higher company, direct meeting only no calls and mails will be considered.
+Target set and achieve, weekly, monthly, quarterly, half yearly yearly.- No target sets for sales, need to set format for the same( 3 projects minimum running every month)
+resp. to Give report to Dept Head. + EA, Daily, weekly, Monthly, quarterly, half yearly yearly- Format already set for the same, Morningn and Evening reports will be received on whatsapp and thru mails  and CRM.
+Attend all enquiry, Generate New Enquiry Work on ARCHITECT Projects- Enquiries thiose are getting from system or direct from Sanjeev Sir will be handle, for new enq. Will work on their existing personal data and need to concentrate on Architect projects.
+One to one Meetings – mail or call will be handled and according to requirements meetings will be coducted with concern dept persons and complete discussion details will be shared HOD
+Follow the organization rules- Attendance, Leave Policy, Appointment letter, offer letter, etc shared .
+
+--- Slide 36 ---
+7. Work on AMC with Neeraj. - Whenever get the lead for AMC will coordinate with Neeraj and work accordingly.
+8. GEM & GOVT + Corporate business. -
+9. Existing customer + add on new customer -
+
+--- Slide 37 ---
+SALES MANGER – CCTV Rajneesh
+Responsibility to increase the sale & Enquiry of CCTV & Servilance
+Getting call for Presales.
+Site visit, Making BOQ and Drawing by Auto Cad Personas per customer requirement.
+Coordination with OEM Technical and Price
+Final negotiations and order.
+Help in implementing the order / installation.
+Trget set and achieve, weekly, monthly, quarterly, half yearly.
+https://savivisionpvt-my.sharepoint.com/:x:/g/personal/sunil_savivision_com/ERuBYOdYUqBAjndueQPQDXUBREx5IgOtllg1buYJvvWWtw?e=cpNn3z
+resp. to Give report to Dept Head. + EA, Daily, weekly, Monthly, quarterly, half yearly.
+Attend all enquiry, Generate New Enquiry Work on Projects Corporate and Government.
+One to one Meetings
+Follow the organization rules
+Work on AMC with Neeraj.
+Existing customer + add on new customers
+Training to engineers for products + Video by Vyas
+Support to engineers for product technical / installation
+Demo of products at office or customer site.
+Work on Tender corporate and Govt.
+Create format for projects for better performance
+
+--- Slide 38 ---
+Responsibility to increase the sale & Enquiry of CCTV & Servilance - To approach the security person and dept, advertisement , by intruducing latest features like analytic or artificial intellegency, by registering on GEM, Groups of builders, on India Mart, Trade India etc
+2.  Getting call for Presales- Will get calls from existing data directly or indirectly from company website.
+3.  Site visit,  Drawing by Auto Cad Person as per customer requirement.- Site visits will be as per need of the site, solution will be design as per site, products will be choose / selected accordingly, pricing for OEM and vendors and BOQ will be made,
+4. Coordination with OEM Technical and Price – Technical team will help for support and pricing will be discussed with OEM sales person, we have terms to add 40% on landing cost and 25% on trading.
+5. Final negotiations and order- Follow ups with concern person of purchase or deciding person from client side after confirmation order will be received by PO or mail confirmation. After that will the share the our PO/ PI with customer and close it.
+6. Help in implementing the order / installation.- Technical support will be given by phone calls, mails or by visiting sites if required. If any thing which can not be don from our side will take support from OEM technical team.
+
+--- Slide 39 ---
+14. Training to engineers for products + Video by Vyas- Training can be done by online or  by physically presence with help IT person. Reservations- connectivity- Analog- IP- Area Covering-training of lenses to capture diferent areas. Confrigation on cameras DVR and NVR. Cloud confrigartion- of DVR and NVR. Giving access to clients on laptop or desktop. \Confrigration of analytic and artificial intellegence on softwares.
+15. Demo of products at office or customer site- After approaching if  required  need to demo of the products will share with manangement take approval and after confirmation on mail demo will be provided.
+16. Work on Tender corporate and Govt.- offline tenders documents will be purshaced, fill the same, qoute and put into the envelop with seal and send to related authority. If it is online we have to fill online and documents provided on website. Wew have deposit EMD to participate in thenders. At the timing of tender they call to attend the bid opening as the date and time difined by them and technical  bid discussions has to be done oin the same day.
+17. Create format for projects for better performance – Format can be provided as per Sunil Katheria and terms & conditions might be changed.
+
+--- Slide 40 ---
+Mohit – Presales
+Getting call for Presales.
+Making BOQ and Drawing by CAD person as per customer requirement.
+Coordination with OEM Technical and Price
+Final negotiations and order.
+Help in implementing the order / installation.
+Training to engineers for products + Video by Vyas
+Support to engineers for product technical / installation
+Demo of products at office or customer site.
+Work on Tender corporate and Govt.
+Create format for projects for better performance
+
+--- Slide 41 ---
+1. Getting call for Presale's business- Requirements coming from Sales team, leads forwards on mail, discussion with salesperson, if required discussion with end customer if required site visit will be done along with sales representees and start to work accordingly
+2.  Coordination with OEM Technical Team and Price – Presale's person will coordinate with Technical team and prices will be taken by purchase/ commercial team; price proposal will be shared with management.
+3. Making BOQ and Drawing by CAD person as per customer requirement- BOQ will be designed by presales person and drawing by cad engineer, prices will be given by purchase or commercial team,  approval given by the management given to sales team, sales team understand the proposal before sending to the customer. If all ok order will be processed.
+4. Final negotiations and order- Sales team will work on negotiations and order to be close.
+5. Help in implementing the order / installation- If there is any technical challenges facing by project team will help to provide the solutions and if any other help need will support 100%.
+
+--- Slide 42 ---
+6. Training to engineers for products + Video by Vyas-  To organize the Technical training about the products to the engineers, firstly will inform to project head about the same and training will be conducted accordingly.
+7. Support to engineers for product technical / installation –if there is any technical training or support required project head will discuss with presales person and he will support as per his expertise.
+8. Demo of products at office or customer site- To coordinate with project team and arrange the demo of products as per requirement and this will be handled by Project team.
+9. Work on Tender corporate and Govt.- Tender person will share the order requirements and BOQ preparations/creations will be done after taking prices from purchase /commercial team and discussions management if ok order will be processed.
+10. Create format for projects for better performance – will discuss with Sunil sir
+
+--- Slide 43 ---
+GEM & AUTOCAD - Kanika
+Getting drawing from Presales or customer in Autocad
+Make the Autocad drawing as per insturction of Presales.
+Send to Presales and customer and do the needful
+GEM – Search the product on GEM Portal
+Registration on other web portal.
+Work on orgainsation portal also – indian oil, ongc etc.
+Search the tender for SALES & AMC of AV Products.
+Quote, negotiate, mature, delivery and payemnt of GEM Orders
+Training video make with the help of Mr. Vyas
+if any meeting is required forward to Mr. Sunil / Mohit for the same.
+Work on Tender corporate and Govt.
+Create format for projects for better performance
+
+--- Slide 44 ---
+Backend  - Meenakshi
+Rcvd. activity from Shweta for billing.
+Check product from store and request finance for billing
+Confirm to customer for Delivery
+Confirm the receiving of Delivery to the costumer.
+Share required documents with customer
+Ask customer for installation
+Payment Follow up
+Payment details
+Manually Invoices
+To make Sales order and Quotes
+Outstanding Payments Follow ups
+https://docs.google.com/spreadsheets/d/1mxc5GhrYzugvYur_IfW_KyMcMS_HSwZi/edit?rtpof=true
+
+--- Slide 45 ---
+Rcvd. activity from Shweta for billing. - Shweta send activity  to check with Store to get done the delivery after completion of this ask in Account to process the invoice/billing.
+Check product from store and request finance for billing- To check with Store if material available in the stock so create activity to process the billing in accounts if not inform to purchase to order the material from vendor.
+3.    Confirm to customer for Delivery – After completed all activity from Salles, Store and Accounts to inform to costumer about status of delivery, when we are going to deliver the same.
+4. Confirm the receiving of Delivery to the costumer-  After material out from the premises for
+Delivery to follow up from Costumer material received not if received than ok, if not so check        with store and get it done.
+5. Share required documents with customer – To share the invoices with Clients to get payment done according to payment terms.
+
+--- Slide 46 ---
+​
+6. Ask customer for installation- After sharing the documents by mail or hard copy as per clients requirement to follow up with costumer  if installation required, if yes inform to service team if not send a mail to service team.​
+7. Payment Follow up – After completion of all process to follow up with the clients regarding payments, outstanding, current which ever is pending from client side.
+8. payment Details- To share the UTR, ledger with accounts to make entry in the books/ records and  to check the same.
+9. To make manually changes like Serial no., date in the invoices if required by clients.
+10. To make quotes and sales orders if Shweta is not available or as per management requirements.
+11. To take daily follow ups on outstanding payments, if received  to inform to accounts if not discuss with management.
+
+--- Slide 47 ---
+SERVICE /PROJECT HEAD- RAHUL
+Mange the complete service department a to z
+Motivation to the team Members
+allocation of engineers
+work performance report send to Director /GM
+Day to day service call to be attended by engineer
+Day to day amc call to be attended
+increase amc business
+Job card etc. to be made
+quote to be sent for AMC & Repair
+New business Development.
+Customer feedback – satisfaction delightful
+One day before of work intimation to sr. Management and allocation to engineer. (Deepti and Rahul).
+https://docs.google.com/forms/d/1gQXDhSqKJKp5ehNLEQvmO2TFa3ZHwMFCiSrtd5wFv74/edit
+( ENGINNERS FIELD REPORT FORM & ATTENDANCE FORM)
+Click to add text
+
+--- Slide 48 ---
+DIFFERENT FORMS FOR SERVICE ENGG
+https://docs.google.com/forms/d/1nFLLEDy74cRFugyt53l7GkYQ1z4Q9jv84VXfwl_hKT0/edit
+( CUSTOMER SATISFACTION FORM)
+A.  https://docs.google.com/forms/d/1gQXDhSqKJKp5ehNLEQvmO2TFa3ZHwMFCiSrtd5wFv74/edit
+( ENGINEER FIELD REPORT & ATTENDANCE FORM )
+B.
+https://docs.google.com/forms/d/1vC8DoYGCuZjJw-5F1cY3TkM-ocGXe7STOM3tyhfA_7A/edit
+PENDING WORK FORM
+C.
+https://docs.google.com/forms/d/1handVjhm-iHP2XZOoWpF6lDdteIq_eJkX_PwBvSrjb4/edit
+( WORK COMPLETION FORM)
+
+--- Slide 49 ---
+1.Mange the complete service department a to z
+- AMC, Service, Installation – complete responsibility, - complete responsibility of alingnement of engineers. ( 5 field +1 back end staff)
+2.Motivation to the team Members.
+Get together (15 days), samosa party, lunch party together ( 30 days) , dinner party on good performance ( 3 month)
+Appreciation on good installation practices, engineer of the month, star performer
+Total task completed.
+Daily appreciation whatsapp
+Best attendance of the month, highest number of project/ site visit/ task
+3, allocation of engineers
+To be set one day in advance
+4.work performance report send to Director /GM-
+Rahul is making format, he will share it tomorrow
+
+--- Slide 50 ---
+5. Day to day service call to be attended by engineer.
+- to give complete prior information of visit location , contact person, work to be done plane one day in advance, also ensure all raw material &  consumables arrangements.
+6.Day to day AMC call to be attended -
+Routine Service call, chargeable calls, warranty calls , or courtesy call.
+7. increase AMC business
+Where ever request problem coming same customer is to be encourage for AMC.
+Asking for reference for other site of same customer
+Feedback to be seprately filles ( Rahul to make feed back form)
+file:///C:/Users/Sanjay/Downloads/Jobcard.pdf
+( JOB CARD)
+8. Job card etc. to be made
+( feed back form, training certificate, warenty certificate, - old company 5 pages completion report , operation manual- do/don'ts to be discuss.)
+9.Q
+uote to be sent for AMC & Repair -
+Deepti to send quotes after consultation with management
+
+--- Slide 51 ---
+10. New business Devp.
+- retail chain customer need to maximise.
+- maintaining ralatioship with the vendors.
+11. Customer feedback – satisfaction delightful
+- goods services, promt response, good behavier at site, dedication, coutsey call ( to warentee customers).-
+12. One day before of work intimation to sr. Management and allocation to engineer. (Deepti and Rahul).
+- work  to be tought to deepty , slowely make her super hand in back end.
+
+--- Slide 52 ---
+Service Coordinator -
+Responsible for A) Repair, B) service &C) AMC – related maters of back end ( LG, Samsung & other vendors)
+Resp. For every service coordination  ( ( paid , non paid , advance payments)
+Mange the engineer allocation
+Mange the customer call
+Manage the JOB Card, allocation of engineer
+Coordinate and feedback with customer
+Take completion job card from engineer and attach in SAP
+Make the sales order and invoice (repair, AMC & Spares) if required.
+Make AMC Quote, follow up and close the order.
+Coordinate with sales and presales person for instalation work.
+Clear the bills of 3rd party and engineer daily expenditure
+Help and control to service department to give world class best service to customer.
+Thanks mail to customer for completion work, order rcvd. or any other work.
+Working on customer Delight
+------------------------------------------------------------------------------------------------------------------
+
+--- Slide 53 ---
+Rahul – Service – Project Manger
+Call received for repair and installation
+Alignment of engineers
+Resource's arrangement, requirement of far site 3rd party manpower & raw Material.
+Coordination with customer for installation and repair.
+Coordination with OEM for repairs
+Document for Projects – Drawing, PO, Job cards, installation report,
+Project Handover documents,
+Time to time training to the engineers
+Client feedback
+SAP Job card issue, completion and attachment in SAP.
+Photograph of sites before start the job, working and completion, give to Vyas to upload on website to make project success story.
+https://forms.gle/7ZFwgrhnyncmuhxA6
+https://docs.google.com/forms/d/1LJjeHnxXWLh2lOosARQqEfQvakuUduHv_C1ZwGUAAIY/edit#responses
+
+--- Slide 54 ---
+Neeraj – Software & AMC
+Resp. of Digital signage, work with software development team, quote to customer, delivery to customer, satisfied to customer, all othe service to customer.
+For order, installation, support of any other work
+Demo of AV product
+Amc follow up
+Take new amc
+Follow up and working of new amc
+Product Training to customer and staff.
+Handling of Demo Center
+Support to engineer and customer for technical support.
+Site visit AMC / Demo
+Quote make and send to customer.
+New software working and recommending to organisation
+
+--- Slide 55 ---
+Commerical – Finance- Chander
+Supervision of complete finance department, + coordinate to other department.
+Day to day accounts work, Telephone, electricity, vehicle, cards, Legal & illegal work, etc. Etc.
+Payments, office, vendor and others.
+Maintain cash ledger and cash book
+Voucher + invoice
+Salary, PF & ESI Work
+GST Work
+Income tax work
+Timley fill up all returns and forms.
+Banking work daily and others.
+Match balance sheet.
+Making MIS Report and to send to Director.
+Work on interest part and other financial development work.
+Saving of interest
+Custom department work
+Payment follow up & collection supervision.
+ROI of every work.
+Bank reco, balance sheet, trail balance etc.
+https://docs.google.com/spreadsheets/d/18igAUMUYHoSh-TmtzKc64g9rr009Og6F/edit#gid=2133689025
+
+--- Slide 56 ---
+1. day to day general accounting- , invoices , banking, funds management, vendor payment and invoicing, Statutory payments and returns.
+*Clint Invoicing- Request received from the concern dept, need to check the delivery in regards of concern invoice and also check the sales order and approvals and also check the naccessary required details like GST no., bill to address and ship to address, client name, and also descriptions of goods should be matched with the PO.
+If any  extra items is including in invoice than naccessary approval required for the same.
+*Vendor payment- First received the invoice from the concern dept, after delivery of material need to check the naccessary details whole processsing the same like line of items, descriptions of goods, price of goods, GST, and payment terms should be aling with the respective PO.
+* Banking- To chench the bank statsment on daily basis and update the fund management sheet accordinly, day to day bank entries is counted or acknowledge in our system and do the bank reco. Accordingly.
+*general Accounting- Employees expenses, Employees reimburse and claims, need to received the vouchers from  the meployees on weekly basis and will process the same in next two days after checking the naccessary details like claim should be under comomnay guidelins and limits, naccessary aprroval shoul be attached, expense, vouchers, and iunvoise shoukld be attached after that the respendtive cliam need to be book in system and process.
+
+--- Slide 57 ---
+* Petty Cash- |need to manage day to day petty cash expenses as per the requirement of the comopany we also need to maintain the petty cash manual books and also along with the naccesry voichers, after checking the same we also need to book the expenses in the system.
+*Statutory Payment and Returns- Need to check the
+
+--- Slide 58 ---
+Commerical – Finance - Preeti
+Bank updating
+NEFT/ RTGS preparation
+Bank Reco
+Vendor/ Costumer internal reco
+Sales Invoices checking and generation
+Purchase/ journal invoices checking and generation
+TDS Calculation and paid
+Challans calculation and paid
+TDS returns
+GST R1 returns
+GST R3B returns/ GSTR2A and 2B calculation
+Salary checking and transfer
+ESI and PF
+Payment of Consultants, Vendors
+Preparation of PDC, CDC
+
+--- Slide 59 ---
+1.Bank Reco- Login in net banking, download the statement, entries manually feed in the SAP and go to reco and finish
+2.Bank Updation- Checking current balances of all banks and update in Google drive,
+Checking PDC Release the o/s of vendors and consultants etc
+3.NEFT/ RTGS preparation- Prepare NETF as per Accounts Head instruction
+4.Vendor/ Costumer internal Reco- To check with invoices and link or done with internal reco or TDS  adjustment as per payment advice, adjustment entries
+5.Sales Invoices checking and generation- After receiving sales invoicing generation request from sales team to check with SO-check points also and invoice generation
+6.Purchase/ journal invoices checking and generation- After receiving purchase invoicing from store, check with check list and generate invoice
+7.TDS calculation and paid- Monthly paid , check in SAP and prepare the excel sheet, discussion with accounts Head and paid
+8.Challan calculation and paid- after calculation of TDS in excel sheet go to Govt. website (E tax Challan) payment and paid as per challan section
+
+--- Slide 60 ---
+9.TDS returns- Quarterly Basis, prepare data of salary TDA and other than salary TDS and prepare data in excel of three months and updation in WEBtel software, manually feed in SAP and checking, balances matched, upload, file generate from WEBtel , after receiving the FUV file will be uploaded in income tax website.​
+10. GST R1 returns- Export data from SAP (Sales), prepare bifurcation as per GST rates, and exemption, nil rates SEZ zones, credit notes, debit notes, registered , unregistered data preparation. HSN Code Data preparation, matching with data from SAP and HSN code, final calculation.
+Data manually feed on GST Website
+HSN manually feed on GST website
+Balances to be matched from Excel sheet or SAP
+GST returns file on website
+11. GST R3B returns-
+3B calculation in excel
+Download GSTR 2A & 2B
+Manual calculation – to find out the difference , discussion with Accounts Head
+Final Payment
+
+--- Slide 61 ---
+12. Salary checking and transfer- Prepared data from attendance register and after finalize by Accounts head to make the NEFT transfer.
+13.ESI and PF – To check with Consultant, Accounts Head and get payment done as per instructions by Account s Head and entry in SAP
+14.Payment of Consultants, Vendors ETC- Check in SAP and payment will be done as instructed by Account s Head
+15. Preparation of PDC, CDC- To make PDC, CDC as per requirements.
+Price List Feb 2021.xlsx (sharepoint.com)
+
+--- Slide 62 ---
+Purchase Head
+New Vendor Search( complete vendor management)
+Comparative prices & negotiation ( price+ payments terms)
+Take price and give to sales
+Make PO
+Material follow up
+Vendor payment
+Coordinate for receving the goods at warehosue.
+Coordinate for invoice with  stores.
+
+--- Slide 63 ---
+HR HEAD + EA Negative and appreciation, control
+Motivate to every employee – weekly review of emplyee on positve working agaisnt payment + order + other intiate. -
+Negativity how to stop – ranking + responsitbilty on your sholder, we should do appreciation only publically and negativity we should send over mail memo or warning letter (add in appointment letter), whatsapp and ranking and make demotion of designation.
+Birthday + anniversay celeberation – Rs.100/- choclate + 4pm leave. - intimatation one day before for leave with pay.  -
+OK ALLOWED
+Send report of every employee to Director daily basis – NEED Format
+keep personal touch with every employee
+Ranking to be given to employee on every day basis  - make stick rule and implement stickly, learn from football match as they give red and green card during game.
+Attendance + Leave work to be done
+Behavior of all employee, Penalty to all employee
+Recruitment of employee
+follow up on my calls.
+Salary, PF & ESI  to be check and clear
+Administration
+Appreciate/ recognize to employees for good work. + PMS
+Grievance handling,  Administration work, Induction of employee.
+
+--- Slide 64 ---
+HR HEAD + EA Negative and appreciation control
+Motivate to every employee – weekly review of employee on positive working against payment + order + other initiate. -
+Process –
+Pray, Exercise activity, dance on the floor, Clapping , Laughing, Team Building Exercise, Employee of the week, monthly, quartlely half yearly, yearly, birthday, aniversary, marriage, office aniversary, Ranking base on KRA-Payment, Quotation, Order Follow up, Installation, Reporting, Behaviour, Activities, Response on assign tasks, zero leave, regulatory, Punchuality, Dress Code, Hygenenic, Extra Ordinary in any field.
+2. Negativity how to stop – ranking + responsitbilty on your sholder, we should do appreciation only publically and negativity we should send over mail memo or warning letter (add in appointment letter), whatsapp and ranking and make demotion of designation.
+3. Birthday + anniversay celeberation – Rs.100/- chocolate + 4pm leave. - intimatation one day before for leave with pay.  -
+OK ALLOWED
+4.  Send report of every employee to Director daily basis – NEED Format
+Daily Attendance.xlsx (sharepoint.com)
+
+--- Slide 65 ---
+HR HEAD + EA Negative and appreciation control
+5.
+keep personal touch with every employee- greet to every employee in the morning, family, find the smll and big goal of the employee and ask about them, have sometime tea ot lunch with the employee, outing with best performer employee, vouchers of the shopping,
+6. Ranking to be given to employee on every day basis  - make stick rule and implement stickly, learn from football match as they give red and green card during game.
+7. Attendance + Leave work to be done- if SMG meeting not attended mark half day morning or evening, leave has to be approve on be day before otherwise this will be considered as absent, Show and confirm attendance every day to every employee, check attendance from Register, morning and evening SMG meetings and confirm from service head if anyone is on OD, monthly leave sheet to be shared with employees,
+Leave Balance from Sep'20 to Apr'21.xlsx (sharepoint.com)
+8. Behavior of all employee, Penalty to all employee – Memos / warning letter, after three letters employee will be terminated
+
+--- Slide 66 ---
+9. Recruitment of employee – Requirement from dept., verified the requirement, try to managre with exesting manpowewr, if comfirmed, job posting on Naukri com, Linkedin, whatsup status, facebook, after receving profiles check with dept head and screening the same, call to shortlisted candidates, arrange the interviews, approved by Director and share the offer letter.
+10. follow up on MD's calls- quote, order, payment. Day to day work, reporting on planner
+11.  Salary, PF & ESI  to be check and clear- check attendance, salary should be as per govt. Rules, distribute the salary, PF, ESI to be check by Vijay (consultant).
+12.  Administration – check list preparation for pantry and HSK staff, scheduling the tasks from morning to evening as Cleaning of the office, Dusting of all systems, chair, tables, printers etc.  if anything pending or missing than rating will be reduced accordingly, To keep monitoring on office items and check day by day, petty cash, to check dress code of the staff, arrangements of saturday lunch party, to manage all required items in the board room , demo room for customer visit preparation, to check lights, fan and AC's twice in a day it should not be on unnecessarily, employees ID cards, employees authorized letter for lockdown period.
+13.  Appreciate/ recognize to employees for good work. + PMS-
+
+--- Slide 67 ---
+14. Grievance handling- one to one with the employee, if resolved send details to management if not discuss the same with top management and get it clear, everything should be in written only and keep it in the records
+15. Induction of employee- The greeting of new employees- on joining day send greet mail ,Information – about company and staff   ,The job- responsibilities and work , The main terms and conditions of employment- attendance, leave, office timings, short breaks, Company rules- dress code, reach on time in the office, no personal calls and whatsup in the office.
+Job Security- about job for long time if he perform well and good, Health and safety- hygienic in the office, gloves, sanitization, mask, Data protection- all things should be on cloud so that no lose of data and maintain planner and activities in the SAP, Training and dev. - training about planner, SAP, Teams To Do to keep track on tasks, Employee benefits and facilities – PF, ESI deduction for betterment where employee and employer both are submitting the amount.
+Future growth-  confirmation in 6 months, appraisal twice in a year, increment yearly, promotions 2/3 years
+
+--- Slide 68 ---
+Vyas – IT Manger
+Resp. of all hardware and software
+Working on website
+Resp. for EPBX / CCTV / landline / bandwidth
+Daily backup
+New software knowledge
+Make videos
+Coordinate with other department for better and smooth working.
+Make video on SAP, Induction, website development,
+Induction video
+Training to new employee and existing.
+Regular take test of all employees about SAP and other software.
+12
+13
+13
+Click to add text
+
+--- Slide 69 ---
+STORE Suraj & Neeraj
+Inventory Management and systems.
+Day to day stock update to mangement
+Look for all receiveing of goods
+Resp for all dispatch and receivieing (GRPO)
+Receiving confiramtion from customer stamp and signed
+Clear all pending stock which is defective.
+After receiving goods inform to sales concern person
+Submit invoice to Finance department to enter purchase in books.
+Store audit is must by every month end.
+https://docs.google.com/spreadsheets/d/1g5Xo1fY2QG4LuIwPhRNzmL83ZZqQXnnq/edit?rtpof=true#gid=281142888
+
+--- Slide 70 ---
+1. Inventory Management and systems-  To check match in system and physically stock available in the store, if short or extra will inform to management
+2. Day to day stock update to management - After checking physically and in SAP prepare Google excel sheet and update by mail
+3. Look for all receiving of goods- After getting confirmation mail from Purchase that material for End costumer need to received, take invoices of vendor, Check by Guard, Goods check physically, feed in SAP
+4. Resp for all dispatch and receiving (GRPO) - After receiving confirmation from sales team, SO will be checked, make delivery challan, inform to accounts for billing, after billing material will be dispatched.
+5. Receiving confirmation from customer stamp and signed- To check with costumer that he received the material or not, if yes ask for the receiving from client with stamp and sign.
+
+--- Slide 71 ---
+6. Clear all pending stock which is defective.- To check with engineer repair the same if possible if not check with product company for repairing if it is in warranty/guaranty if not inform to management for the same.
+7.After receiving goods inform to sales concern person – After checking with Purchase, will inform to Sales team to whom this material need to send, take details of costumer delivery address from sales team to dispatch the same.
+8.Submit invoice to Finance department to enter purchase in books- To check the invoice of vendor with Purchase if anything pending will add on or rectify by vendor after than invoice will be enter in the register, SAP than submitted to Accounts
+9. Store audit is must by every month end- To check purchase invoices and Sales invoices in the SAP, to check which material in and out according to PO and SO, prepare excel sheet, if something mismatched will check with both dept. And get it clear.
+
+--- Slide 72 ---
+Drivers
+Resp. To maintain the vehicle
+Delivery and pick up the goods from required location safely
+Collect payment is required
+Help in warehouse and other work of the organization time to time.
+Keep uptate all document of vehicle like – Insurance, Pollution, Tag etc.
+Maintain the log book of vehicle
+Night only keep check GAS, petrol or desile.
+No personal use of official vehicle.
+Maintain the rule regulation of origination.
+During office hours do not go out for personal work etc.
+
+--- Slide 73 ---
+Resp. To maintain the vehicle- To clean with dusting cloth, with water also, to check oiling and
+coolent, to check Gas, Petrol on daily basis after reaching office in the morning.
+2. Delivery and pick up the goods from required location safely – Store person will inform if any delivery or pick up need to done in the day, to collect invoice, proper address, contact number of contact person, to load material in the vehicle and go for delivery, if any pick up to check what is the material  need to pick, dimension, if need someone else also inform to store to allign someone, to match ;with vendor invoice and internal invoice at the timing of pick up, to handover to guard to make the entry in his register and than inform to Store also.
+3. Collect payment is required – After receiving calls from accounts dept to pick up or handover the payment to concern person like vendor or Bank, after done the same inform to accounts dept.
+4. Help in warehouse and other work of the organization time to time. - After getting calls from respective dept to help any work do the same and inform to those person that work has been done.
+
+--- Slide 74 ---
+5. Keep update all document of vehicle like – Insurance, Pollution, Tag etc. ​- To check time to time insurance, Pollution and fastag and all documents kept in the vehicle apart of RC. To inform in accounts or HR if anything is pending and get it done.
+6. Maintain the log book of vehicle - Whenever going for any work to check starting KM than Trip KM and after than Ending KM, CNG – While filling CNG gas to noted KM and after trip check again.
+7. Night only keep check GAS, petrol or desile- At the time of leaving from Office or Home will check the same if not sufficient immediately inform to Sir and Ma'am and if required get it fill as per their instructions.
+8.No personal use of official vehicle- Never use office vehicle for our personal works always take their own or public transports.
+9. Maintain the rule regulation of organization- To reach in office on time, leave approval 2 days before, Dress should be neat and clean, No smoking and Tabbacco,etc.
+10. During office hours do not go out for personal work etc. - Thuis is strict instructions from management that do not go outside from office for our personal works, if there is any emergency talk to HR , HR will take approval from Top management and decide, if not following the same We can be charged penalty of as an absent.
+
+--- Slide 75 ---
+PEONS
+Resp. To clean and maintain the office.
+Water, tea and food to be serve in time
+Serve to guest
+Do other activity as per instruction of department heads.
+Manage all the stock of required item.
+Maintain the descipline and rule regulation of organisation
+Always come with well dress and maintain your self.
+Wear official uniform always + shoes.
+PEON WORKING.xlsx (sharepoint.com)
+
+--- Slide 76 ---
+Discussion point of SALES
+As on today
+Presales look afer by Shweta
+Post sales look after by Meenkashi
+recommended
+All job from Lead to Payment shold be one person for one customer
+We can devied leads in two part, one to Shweta and 2nd meenakshi
+Compition who close how many leads and award.
+
+--- Slide 77 ---
+Induction of employee.
+Induction of employee.
+Knowledge of all employee and introduction.
+Knowledge of company, growth of organization, hierarchy of organization,
+Company policy
+3 days training, about company+ Products, all policy, department work, training of software,
+Take process from Mr. Chawal Ji also.
+Role of other department persons wise and your relationship with them.
+Show some video to new employee, what is future of organisation and his also.
+
+--- Slide 78 ---
+employee induction
+Introduce to employee for products, policies, procedures, history, etc. Of the organization.
+Role base training - KRA & KPI of employee - KRA’s–Through this an employee’s performance is judged in a financial year. And also update about existing employees
+Role, Dream what he will get if perform and not if not performs
+Hierarchy structure – today post and after 3 yr or 5 yrs your next point
+Designation role, exp., Mgr to Sr, Mgr, VP ETC.
+Policy – attendance and others, Tour policy
+Employee Hand Book.
+Technical Training – Software and Product.
+Carier development training
+After training Exam of employee
+After exam issue the appointment letter.
+
+--- Slide 79 ---
+Confidential
+You shall treat as strictly confidential all oral, written or electronic data (whether or not marked or identified as confidential information), including information contained in any manuals or dealings or any information concerning the Company, its finances, transactions or affairs and/or those of the Company’s affiliates/subsidiaries/ associates which may come to your knowledge and/or be imparted/disclosed to you by the Company during the employment (“Confidential Information”) that are not generally accessible and have been supplied by the Company and/or its affiliates/subsidiaries/associates and will use such Confidential Information only for the purpose of performing work assigned to you by the Company.
+Your salary is extremely confidential information. We would appreciate your commitment towards the confidentiality. Any information indicating that the same has been shared may lead to disciplinary action.
+
+--- Slide 80 ---
+New Requirement to run better way.
+
+--- Slide 81 ---
+SALES – Sunil Katheria
+Front End
+Key Acc – Govt.  - Himanshu – SALES
+Key Acc - 1 corporate( SUNIL )
+Required
+Req –Feld Manger x 4 – different area
+Key acc Corporate – one
+Key acc Manger – News channel
+Backend
+Presales Project – Mohit – one More
+Auto cad x 1 – we have – need one
+Backend coordinator  - SHWETA
+Required
+GEM X 1 Backend
+Backend  x 1 Boy
+
+--- Slide 82 ---
+Existing and required in Sale and service department only
+Sales Head
+Project manger x 1 (need 1 more)
+Field Manger x (need 4)
+Backend coordinator x 2 we have
+Auto cad x 1 – we have
+Key acc Sales Manger x 1 corporate - need
+Key acc Sales Manger x 1 Govt -
+GEM X 1 Backend  - Need
+Service Head
+Project/Installation Manger - RAVI / Kuldeep
+Site engineer x 1 (need 3 more)
+Electrician x 3 ( need one more)
+AMC X 1 - RAVI
+Repair x 1 - shiv
+
+--- Slide 83 ---
