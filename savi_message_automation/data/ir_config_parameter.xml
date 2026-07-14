@@ -1,0 +1,36 @@
+<odoo>
+    <data noupdate="1">
+        <record id="param_lead_ack_email_enabled" model="ir.config_parameter">
+            <field name="key">savi_message_automation.lead_ack_email_enabled</field>
+            <field name="value">0</field>
+        </record>
+        <record id="param_dispatch_customer_email_enabled" model="ir.config_parameter">
+            <field name="key">savi_message_automation.dispatch_customer_email_enabled</field>
+            <field name="value">0</field>
+        </record>
+        <record id="param_service_assignment_activity_enabled" model="ir.config_parameter">
+            <field name="key">savi_message_automation.service_assignment_activity_enabled</field>
+            <field name="value">1</field>
+        </record>
+        <record id="param_service_assignment_customer_email_enabled" model="ir.config_parameter">
+            <field name="key">savi_message_automation.service_assignment_customer_email_enabled</field>
+            <field name="value">0</field>
+        </record>
+        <record id="param_srn_feedback_email_enabled" model="ir.config_parameter">
+            <field name="key">savi_message_automation.srn_feedback_email_enabled</field>
+            <field name="value">0</field>
+        </record>
+        <record id="param_amc_renewal_activity_enabled" model="ir.config_parameter">
+            <field name="key">savi_message_automation.amc_renewal_activity_enabled</field>
+            <field name="value">1</field>
+        </record>
+        <record id="param_amc_renewal_customer_email_enabled" model="ir.config_parameter">
+            <field name="key">savi_message_automation.amc_renewal_customer_email_enabled</field>
+            <field name="value">0</field>
+        </record>
+        <record id="param_amc_renewal_days" model="ir.config_parameter">
+            <field name="key">savi_message_automation.amc_renewal_days</field>
+            <field name="value">30</field>
+        </record>
+    </data>
+</odoo>

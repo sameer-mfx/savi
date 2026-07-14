@@ -1,0 +1,26 @@
+{
+    "name": "SAVI Message Automation",
+    "summary": "Milestone-based communication automation for SAVI workflows",
+    "version": "17.0.1.0.0",
+    "category": "Productivity",
+    "author": "Macrofix",
+    "website": "https://www.macrofix.com",
+    "depends": [
+        "crm",
+        "sale_management",
+        "stock_delivery",
+        "service_order_mfx",
+        "amc_mfx",
+        "savi_phase2_workflow_config",
+    ],
+    "data": [
+        "data/ir_config_parameter.xml",
+        "data/mail_templates.xml",
+        "data/ir_cron.xml",
+        "views/res_config_settings_views.xml",
+    ],
+    "installable": True,
+    "application": False,
+    "auto_install": False,
+    "license": "LGPL-3",
+}

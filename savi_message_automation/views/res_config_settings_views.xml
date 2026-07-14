@@ -1,0 +1,41 @@
+<odoo>
+    <record id="res_config_settings_view_form_savi_message_automation" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.savi.message.automation</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form" position="inside">
+                <app string="SAVI Message Automation" data-string="SAVI Message Automation" name="savi_message_automation">
+                    <block title="Customer Emails">
+                        <setting string="Enquiry acknowledgement">
+                            <field name="savi_lead_ack_email_enabled"/>
+                        </setting>
+                        <setting string="Dispatch updates">
+                            <field name="savi_dispatch_customer_email_enabled"/>
+                        </setting>
+                        <setting string="Service assignment emails">
+                            <field name="savi_service_assignment_customer_email_enabled"/>
+                        </setting>
+                        <setting string="SRN feedback emails">
+                            <field name="savi_srn_feedback_email_enabled"/>
+                        </setting>
+                        <setting string="AMC renewal emails">
+                            <field name="savi_amc_renewal_customer_email_enabled"/>
+                        </setting>
+                    </block>
+                    <block title="Internal Activities">
+                        <setting string="Engineer assignment activities">
+                            <field name="savi_service_assignment_activity_enabled"/>
+                        </setting>
+                        <setting string="AMC renewal activities">
+                            <field name="savi_amc_renewal_activity_enabled"/>
+                        </setting>
+                        <setting string="AMC renewal reminder days">
+                            <field name="savi_amc_renewal_days"/>
+                        </setting>
+                    </block>
+                </app>
+            </xpath>
+        </field>
+    </record>
+</odoo>

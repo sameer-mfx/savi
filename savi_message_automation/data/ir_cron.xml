@@ -1,0 +1,14 @@
+<odoo>
+    <data noupdate="1">
+        <record id="ir_cron_savi_amc_renewal_reminders" model="ir.cron">
+            <field name="name">SAVI: AMC Renewal Reminders</field>
+            <field name="model_id" ref="amc_mfx.model_amc_order"/>
+            <field name="state">code</field>
+            <field name="code">model._cron_savi_amc_renewal_reminders()</field>
+            <field name="interval_type">days</field>
+            <field name="interval_number">1</field>
+            <field name="numbercall">-1</field>
+            <field name="active" eval="True"/>
+        </record>
+    </data>
+</odoo>

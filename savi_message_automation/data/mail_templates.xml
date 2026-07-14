@@ -1,0 +1,83 @@
+<odoo>
+    <data>
+        <record id="email_template_lead_acknowledgement" model="mail.template">
+            <field name="name">SAVI: Enquiry Acknowledgement</field>
+            <field name="model_id" ref="crm.model_crm_lead"/>
+            <field name="subject">Thank you for your enquiry</field>
+            <field name="email_from">{{ object.user_id.email_formatted or object.company_id.email_formatted or user.email_formatted }}</field>
+            <field name="email_to">{{ object.email_from or object.partner_id.email }}</field>
+            <field name="body_html" type="html">
+                <div style="font-size:13px;">
+                    <p>Dear <t t-out="object.contact_name or object.partner_id.name or 'Customer'"/>,</p>
+                    <p>Thank you for contacting us. We have received your enquiry <strong><t t-out="object.name"/></strong>.</p>
+                    <p>Our team will review the requirement and get back to you shortly.</p>
+                    <p>Regards,<br/><t t-out="object.user_id.name or object.company_id.name"/></p>
+                </div>
+            </field>
+            <field name="auto_delete" eval="False"/>
+        </record>
+
+        <record id="email_template_dispatch_update" model="mail.template">
+            <field name="name">SAVI: Dispatch Update</field>
+            <field name="model_id" ref="stock.model_stock_picking"/>
+            <field name="subject">Dispatch update for {{ object.origin or object.name }}</field>
+            <field name="email_from">{{ object.company_id.email_formatted or user.email_formatted }}</field>
+            <field name="email_to">{{ object.partner_id.email }}</field>
+            <field name="body_html" type="html">
+                <div style="font-size:13px;">
+                    <p>Dear <t t-out="object.partner_id.name or 'Customer'"/>,</p>
+                    <p>Your material has been dispatched under reference <strong><t t-out="object.name"/></strong>.</p>
+                    <ul>
+                        <li t-if="object.origin"><strong>Source Document:</strong> <t t-out="object.origin"/></li>
+                        <li t-if="object.date_done"><strong>Dispatch Date:</strong> <t t-out="format_datetime(object.date_done, tz=user.tz)"/></li>
+                        <li t-if="object.carrier_id"><strong>Courier:</strong> <t t-out="object.carrier_id.name"/></li>
+                        <li t-if="object.carrier_tracking_ref"><strong>Tracking Reference:</strong> <t t-out="object.carrier_tracking_ref"/></li>
+                    </ul>
+                    <p>Regards,<br/><t t-out="object.company_id.name"/></p>
+                </div>
+            </field>
+            <field name="auto_delete" eval="False"/>
+        </record>
+
+        <record id="email_template_service_assignment" model="mail.template">
+            <field name="name">SAVI: Service Visit Assignment</field>
+            <field name="model_id" ref="service_order_mfx.model_service_order"/>
+            <field name="subject">Service visit scheduled: {{ object.name }}</field>
+            <field name="email_from">{{ object.user_id.email_formatted or object.company_id.email_formatted or user.email_formatted }}</field>
+            <field name="email_to">{{ object.customer_id.email }}</field>
+            <field name="body_html" type="html">
+                <div style="font-size:13px;">
+                    <p>Dear <t t-out="object.customer_id.name or 'Customer'"/>,</p>
+                    <p>Your service visit has been scheduled under reference <strong><t t-out="object.name"/></strong>.</p>
+                    <ul>
+                        <li t-if="object.visit_date"><strong>Visit Date:</strong> <t t-out="format_datetime(object.visit_date, tz=user.tz)"/></li>
+                        <li t-if="object.assigned_to"><strong>Assigned Engineer:</strong> <t t-out="object.assigned_to.name"/></li>
+                    </ul>
+                    <p>Regards,<br/><t t-out="object.company_id.name"/></p>
+                </div>
+            </field>
+            <field name="auto_delete" eval="False"/>
+        </record>
+
+        <record id="email_template_amc_renewal_reminder" model="mail.template">
+            <field name="name">SAVI: AMC Renewal Reminder</field>
+            <field name="model_id" ref="amc_mfx.model_amc_order"/>
+            <field name="subject">AMC renewal reminder for {{ object.name }}</field>
+            <field name="email_from">{{ object.user_id.email_formatted or object.company_id.email_formatted or user.email_formatted }}</field>
+            <field name="email_to">{{ object.partner_id.email }}</field>
+            <field name="body_html" type="html">
+                <div style="font-size:13px;">
+                    <p>Dear <t t-out="object.partner_id.name or 'Customer'"/>,</p>
+                    <p>This is a reminder that AMC <strong><t t-out="object.name"/></strong> is due for renewal.</p>
+                    <ul>
+                        <li t-if="object.amc_start_date"><strong>Start Date:</strong> <t t-out="format_date(object.amc_start_date)"/></li>
+                        <li t-if="object.amc_end_date"><strong>End Date:</strong> <t t-out="format_date(object.amc_end_date)"/></li>
+                    </ul>
+                    <p>Our team will contact you for renewal support.</p>
+                    <p>Regards,<br/><t t-out="object.company_id.name"/></p>
+                </div>
+            </field>
+            <field name="auto_delete" eval="False"/>
+        </record>
+    </data>
+</odoo>
