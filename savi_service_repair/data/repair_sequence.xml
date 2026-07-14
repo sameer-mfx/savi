@@ -1,0 +1,8 @@
+<odoo>
+    <record id="seq_x_savi_service_repair" model="ir.sequence">
+        <field name="name">SAVI Service Repair</field>
+        <field name="code">x_savi.service.repair</field>
+        <field name="prefix">REP/</field>
+        <field name="padding">5</field>
+    </record>
+</odoo>

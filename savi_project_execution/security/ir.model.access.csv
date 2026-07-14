@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_x_savi_project_daily_report_user,access.x_savi.project.daily.report.user,model_x_savi_project_daily_report,project.group_project_user,1,1,1,0
+access_x_savi_project_daily_report_manager,access.x_savi.project.daily.report.manager,model_x_savi_project_daily_report,project.group_project_manager,1,1,1,1
+access_x_savi_project_closure_user,access.x_savi.project.closure.user,model_x_savi_project_closure,project.group_project_user,1,1,1,0
+access_x_savi_project_closure_manager,access.x_savi.project.closure.manager,model_x_savi_project_closure,project.group_project_manager,1,1,1,1
