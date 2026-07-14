@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<odoo>
+    <record id="ticket_view_form_inherit_service" model="ir.ui.view">
+        <field name="model">helpdesk.ticket</field>
+        <field name="inherit_id" ref="helpdesk_mgmt.ticket_view_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//div[@name='button_box']" position="inside">
+                <button name="action_view_service_orders" type="object" class="oe_stat_button" icon="fa-dollar">
+                    <field string="Service Orders" name="sso_count" widget="statinfo" />
+                </button>
+            </xpath>
+        </field>
+    </record>
+    <record id="action_helpdesk_ticket_service" model="ir.actions.act_window">
+        <field name="name">Tickets</field>
+        <field name="res_model">helpdesk.ticket</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('service_order_ids', 'in', active_id)]</field>
+        <field name="context">{'default_service_order_ids': [(4, active_id)]}</field>
+    </record>
+</odoo>

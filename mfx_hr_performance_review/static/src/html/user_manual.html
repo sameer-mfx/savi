@@ -1,0 +1,1186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HR Performance Review - User Manual</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #714B67;
+            --primary-light: #8e6583;
+            --primary-dark: #5a3a52;
+            --primary-glow: rgba(113, 75, 103, 0.15);
+            --accent: #e8436e;
+            --accent-light: #ffeef3;
+            --gradient-start: #714B67;
+            --gradient-end: #a855f7;
+            --bg: #f6f5f8;
+            --bg-card: #ffffff;
+            --text: #1e1b2e;
+            --text-secondary: #6b7280;
+            --text-muted: #9ca3af;
+            --border: #e5e2ea;
+            --border-light: #f0edf3;
+            --success: #10b981;
+            --success-bg: #ecfdf5;
+            --warning: #f59e0b;
+            --warning-bg: #fffbeb;
+            --info: #3b82f6;
+            --info-bg: #eff6ff;
+            --danger: #ef4444;
+            --shadow-sm: 0 1px 3px rgba(30, 27, 46, 0.06);
+            --shadow-md: 0 4px 16px rgba(30, 27, 46, 0.08);
+            --shadow-lg: 0 8px 30px rgba(30, 27, 46, 0.12);
+            --radius: 12px;
+            --radius-sm: 8px;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            line-height: 1.75;
+            color: var(--text);
+            background: var(--bg);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ===== PAGE LAYOUT ===== */
+        .page-wrapper {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* ===== SIDEBAR ===== */
+        .sidebar {
+            width: 290px;
+            min-width: 290px;
+            background: linear-gradient(180deg, #1e1b2e 0%, #2d2640 100%);
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            overflow-y: auto;
+            padding: 0;
+            z-index: 10;
+        }
+        .sidebar-header {
+            padding: 28px 24px 24px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--gradient-end) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .sidebar-header::before {
+            content: '';
+            position: absolute;
+            top: -30px;
+            right: -30px;
+            width: 100px;
+            height: 100px;
+            background: rgba(255,255,255,0.08);
+            border-radius: 50%;
+        }
+        .sidebar-header::after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: -10px;
+            width: 60px;
+            height: 60px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 50%;
+        }
+        .sidebar-header h3 {
+            font-size: 1.05em;
+            color: #fff;
+            margin: 0;
+            font-weight: 700;
+            letter-spacing: -0.2px;
+            position: relative;
+            z-index: 1;
+        }
+        .sidebar-header p {
+            font-size: 0.75em;
+            color: rgba(255,255,255,0.6);
+            margin-top: 5px;
+            position: relative;
+            z-index: 1;
+            font-weight: 400;
+        }
+        .sidebar nav {
+            padding: 12px 0 20px;
+        }
+        .sidebar .nav-group {
+            margin-bottom: 4px;
+        }
+        .sidebar .nav-group-label {
+            font-size: 0.65em;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            color: rgba(255,255,255,0.3);
+            padding: 16px 24px 6px;
+        }
+        .sidebar a {
+            display: flex;
+            align-items: center;
+            padding: 9px 24px;
+            color: rgba(255,255,255,0.65);
+            text-decoration: none;
+            font-size: 0.82em;
+            font-weight: 400;
+            line-height: 1.4;
+            border-left: 3px solid transparent;
+            transition: all 0.2s ease;
+            position: relative;
+        }
+        .sidebar a:hover {
+            background: rgba(255,255,255,0.06);
+            color: rgba(255,255,255,0.95);
+            border-left-color: rgba(255,255,255,0.2);
+        }
+        .sidebar a.active {
+            background: rgba(168, 85, 247, 0.15);
+            color: #fff;
+            font-weight: 600;
+            border-left-color: var(--accent);
+        }
+        .sidebar a.active::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 3px;
+            height: 60%;
+            background: var(--accent);
+            border-radius: 3px 0 0 3px;
+        }
+        .sidebar a .nav-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 24px;
+            min-width: 24px;
+            height: 20px;
+            color: rgba(255,255,255,0.3);
+            font-size: 0.85em;
+            font-weight: 600;
+            margin-right: 8px;
+        }
+        .sidebar a.active .nav-number {
+            color: var(--accent);
+        }
+
+        /* Sidebar toggle for mobile */
+        .sidebar-toggle {
+            display: none;
+            position: fixed;
+            top: 16px;
+            left: 16px;
+            z-index: 20;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--gradient-end) 100%);
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            width: 44px;
+            height: 44px;
+            font-size: 1.2em;
+            cursor: pointer;
+            box-shadow: var(--shadow-lg);
+            transition: transform 0.2s;
+        }
+        .sidebar-toggle:hover {
+            transform: scale(1.05);
+        }
+
+        /* ===== MAIN CONTENT ===== */
+        .main-content {
+            flex: 1;
+            max-width: 880px;
+            margin: 0 auto;
+            padding: 48px 56px 60px;
+            min-height: 100vh;
+        }
+
+        /* Title area */
+        h1 {
+            font-size: 2.2em;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--gradient-end) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.5px;
+            margin-bottom: 8px;
+        }
+        .subtitle {
+            color: var(--text-secondary);
+            font-size: 0.88em;
+            margin-bottom: 36px;
+            font-weight: 400;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            align-items: center;
+        }
+        .subtitle strong {
+            color: var(--text);
+            font-weight: 600;
+        }
+        .subtitle .sep {
+            color: var(--border);
+        }
+
+        /* Section headings */
+        h2 {
+            font-size: 1.45em;
+            font-weight: 700;
+            color: var(--text);
+            margin-top: 52px;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--border-light);
+            scroll-margin-top: 24px;
+            letter-spacing: -0.3px;
+            position: relative;
+        }
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 48px;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary), var(--gradient-end));
+            border-radius: 2px;
+        }
+        h3 {
+            font-size: 1.05em;
+            font-weight: 600;
+            color: var(--text);
+            margin-top: 28px;
+            margin-bottom: 10px;
+            letter-spacing: -0.2px;
+        }
+
+        /* Text */
+        p { margin-bottom: 14px; color: var(--text-secondary); }
+        p strong { color: var(--text); }
+        strong { color: var(--text); font-weight: 600; }
+
+        /* Lists */
+        ul, ol {
+            margin-bottom: 16px;
+            padding-left: 22px;
+        }
+        li {
+            margin-bottom: 8px;
+            color: var(--text-secondary);
+            padding-left: 4px;
+        }
+        li strong { color: var(--text); }
+        li::marker {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        /* Tables */
+        table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin: 18px 0;
+            font-size: 0.88em;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-light);
+        }
+        th {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: #fff;
+            padding: 12px 16px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 0.92em;
+            letter-spacing: 0.2px;
+        }
+        td {
+            padding: 11px 16px;
+            border-bottom: 1px solid var(--border-light);
+            color: var(--text-secondary);
+        }
+        td strong { color: var(--text); }
+        tr:last-child td { border-bottom: none; }
+        tr:nth-child(even) { background: #faf9fc; }
+        tr:hover td { background: #f5f3f8; }
+
+        /* Callout boxes */
+        .note, .important, .tip {
+            padding: 16px 20px;
+            margin: 20px 0;
+            border-radius: var(--radius-sm);
+            font-size: 0.9em;
+            line-height: 1.65;
+            position: relative;
+            border: 1px solid transparent;
+        }
+        .note {
+            background: var(--info-bg);
+            border-color: #bfdbfe;
+            border-left: 4px solid var(--info);
+            color: #1e40af;
+        }
+        .note strong { color: #1e3a8a; }
+        .important {
+            background: var(--warning-bg);
+            border-color: #fde68a;
+            border-left: 4px solid var(--warning);
+            color: #92400e;
+        }
+        .important strong { color: #78350f; }
+        .tip {
+            background: var(--success-bg);
+            border-color: #a7f3d0;
+            border-left: 4px solid var(--success);
+            color: #065f46;
+        }
+        .tip strong { color: #064e3b; }
+
+        /* Code & pre */
+        code {
+            background: #f3f0f7;
+            padding: 2px 8px;
+            border-radius: 5px;
+            font-size: 0.88em;
+            color: var(--primary);
+            font-weight: 500;
+        }
+        pre {
+            background: linear-gradient(135deg, #1e1b2e 0%, #2d2640 100%);
+            color: #e2e0ea;
+            padding: 22px 24px;
+            border-radius: var(--radius);
+            overflow-x: auto;
+            margin: 18px 0;
+            font-size: 0.84em;
+            line-height: 1.6;
+            box-shadow: var(--shadow-md);
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        /* Badges */
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 3px 12px;
+            border-radius: 20px;
+            font-size: 0.78em;
+            font-weight: 600;
+            letter-spacing: 0.2px;
+        }
+        .badge-draft {
+            background: #e0f2fe;
+            color: #0369a1;
+        }
+        .badge-progress {
+            background: #fef3c7;
+            color: #92400e;
+        }
+        .badge-done {
+            background: #d1fae5;
+            color: #065f46;
+        }
+        .badge-cancel {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+
+        /* Workflow boxes */
+        .workflow-box {
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 24px;
+            margin: 16px 0;
+            background: var(--bg-card);
+            position: relative;
+            box-shadow: var(--shadow-sm);
+            transition: box-shadow 0.2s, transform 0.2s;
+        }
+        .workflow-box:hover {
+            box-shadow: var(--shadow-md);
+            transform: translateY(-1px);
+        }
+        .workflow-box h4 {
+            color: var(--primary);
+            margin-bottom: 12px;
+            font-size: 0.85em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .workflow-box h4::before {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--gradient-end));
+        }
+        .workflow-box ol { color: var(--text-secondary); }
+        .workflow-box li { margin-bottom: 6px; }
+
+        .workflow-arrow {
+            text-align: center;
+            font-size: 1.3em;
+            color: var(--primary);
+            margin: 6px 0;
+            opacity: 0.5;
+        }
+
+        /* FAQ */
+        .faq-q {
+            font-weight: 600;
+            color: var(--text);
+            margin-top: 20px;
+            margin-bottom: 6px;
+            font-size: 0.95em;
+        }
+        .faq-a {
+            background: #faf9fc;
+            padding: 14px 18px;
+            border-radius: var(--radius-sm);
+            margin-bottom: 14px;
+            border-left: 3px solid var(--primary);
+            font-size: 0.9em;
+            color: var(--text-secondary);
+        }
+        .faq-a strong { color: var(--text); }
+
+        /* Dividers */
+        hr {
+            border: none;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--border), transparent);
+            margin: 44px 0;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.82em;
+            margin-top: 60px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border-light);
+        }
+        .footer p { color: var(--text-muted); }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 900px) {
+            .sidebar {
+                position: fixed;
+                left: -300px;
+                top: 0;
+                height: 100vh;
+                transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+                box-shadow: 6px 0 30px rgba(0,0,0,0.3);
+            }
+            .sidebar.open { left: 0; }
+            .sidebar-toggle { display: flex; align-items: center; justify-content: center; }
+            .sidebar-overlay {
+                display: none;
+                position: fixed;
+                top: 0; left: 0; right: 0; bottom: 0;
+                background: rgba(0,0,0,0.4);
+                backdrop-filter: blur(2px);
+                z-index: 9;
+            }
+            .sidebar-overlay.open { display: block; }
+            .main-content {
+                padding: 48px 24px;
+                padding-top: 72px;
+            }
+            h1 { font-size: 1.6em; }
+            h2 { font-size: 1.25em; }
+        }
+
+        @media print {
+            .sidebar, .sidebar-toggle { display: none !important; }
+            body { background: #fff; }
+            .main-content { box-shadow: none; padding: 20px; max-width: 100%; }
+            h1 { -webkit-text-fill-color: var(--primary); }
+            h2 { page-break-before: auto; }
+            .workflow-box { box-shadow: none; border: 1px solid #ddd; }
+        }
+
+        /* Sidebar scrollbar */
+        .sidebar::-webkit-scrollbar { width: 4px; }
+        .sidebar::-webkit-scrollbar-track { background: transparent; }
+        .sidebar::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 4px; }
+        .sidebar::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.2); }
+
+        /* Smooth transitions */
+        * { scroll-behavior: smooth; }
+    </style>
+</head>
+<body>
+
+<!-- Mobile toggle button -->
+<button class="sidebar-toggle" id="sidebarToggle" title="Toggle navigation">&#9776;</button>
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+<div class="page-wrapper">
+
+    <!-- SIDEBAR NAVIGATION -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h3>HR Performance Review</h3>
+            <p>User Manual &bull; v17.0.1.0.0</p>
+        </div>
+        <nav>
+            <div class="nav-group">
+                <div class="nav-group-label">Overview</div>
+                <a href="#introduction"><span class="nav-number">1.</span> Introduction</a>
+                <a href="#roles"><span class="nav-number">2.</span> User Roles &amp; Permissions</a>
+                <a href="#navigation"><span class="nav-number">3.</span> Module Navigation</a>
+            </div>
+            <div class="nav-group">
+                <div class="nav-group-label">Workflow Phases</div>
+                <a href="#setup"><span class="nav-number">4.</span> Initial Setup</a>
+                <a href="#cycle"><span class="nav-number">5.</span> Creating a Review Cycle</a>
+                <a href="#generate"><span class="nav-number">6.</span> Generating Reviews</a>
+                <a href="#start"><span class="nav-number">7.</span> Starting the Cycle</a>
+                <a href="#self-review"><span class="nav-number">8.</span> Employee Self-Review</a>
+                <a href="#manager-review"><span class="nav-number">9.</span> Manager Review</a>
+                <a href="#hr-review"><span class="nav-number">10.</span> HR Review &amp; Approval</a>
+                <a href="#complete"><span class="nav-number">11.</span> Completing the Cycle</a>
+            </div>
+            <div class="nav-group">
+                <div class="nav-group-label">Features</div>
+                <a href="#goals"><span class="nav-number">12.</span> Goal Tracking</a>
+                <a href="#history"><span class="nav-number">13.</span> Performance History</a>
+                <a href="#rating"><span class="nav-number">14.</span> Rating System &amp; Formula</a>
+                <a href="#emails"><span class="nav-number">15.</span> Email Notifications</a>
+            </div>
+            <div class="nav-group">
+                <div class="nav-group-label">Reference</div>
+                <a href="#faq"><span class="nav-number">16.</span> FAQ</a>
+                <a href="#quick-reference">Quick Reference</a>
+            </div>
+        </nav>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <div class="main-content">
+
+        <h1>HR Performance Review Module</h1>
+        <p class="subtitle">
+            <strong>User Manual</strong> <span class="sep">|</span>
+            Version 17.0.1.0.0 <span class="sep">|</span>
+            Odoo 17 Community Edition <span class="sep">|</span>
+            Macrofix
+        </p>
+
+        <hr>
+
+        <!-- 1. INTRODUCTION -->
+        <h2 id="introduction">1. Introduction</h2>
+        <p>The HR Performance Review module provides a complete performance management system for your organization. It enables structured employee evaluations through configurable review cycles, weighted evaluation criteria, goal tracking, and a multi-stage approval workflow.</p>
+
+        <h3>Key Features</h3>
+        <ul>
+            <li><strong>Review Cycles</strong> &mdash; Quarterly, Semi-Annual, Annual, or Custom review periods</li>
+            <li><strong>Customizable Templates</strong> &mdash; Define evaluation criteria with weighted scoring categories</li>
+            <li><strong>Multi-Stage Workflow</strong> &mdash; Draft &rarr; Self-Review &rarr; Manager Review &rarr; HR Review &rarr; Completed</li>
+            <li><strong>Goal Tracking</strong> &mdash; Set, track, and measure employee goals with progress tracking</li>
+            <li><strong>Automated Scoring</strong> &mdash; Weighted final rating calculated automatically</li>
+            <li><strong>Email Notifications</strong> &mdash; Automatic notifications at each stage of the review process</li>
+            <li><strong>Performance History</strong> &mdash; Track employee ratings across multiple review cycles</li>
+            <li><strong>Role-Based Access</strong> &mdash; Separate views and permissions for Employees, Managers, and HR Officers</li>
+        </ul>
+
+        <hr>
+
+        <!-- 2. USER ROLES -->
+        <h2 id="roles">2. User Roles &amp; Permissions</h2>
+        <p>The module has three security roles, each with increasing levels of access:</p>
+        <table>
+            <tr><th>Role</th><th>Who Should Have It</th><th>What They Can Do</th></tr>
+            <tr><td><strong>Employee (Self-Review)</strong></td><td>All employees</td><td>View and submit their own reviews; view and manage their own goals</td></tr>
+            <tr><td><strong>Manager</strong></td><td>Team leads, supervisors</td><td>Everything an Employee can do, plus: manage reviews for their direct reports; create and assign goals to team members</td></tr>
+            <tr><td><strong>HR Officer</strong></td><td>HR department staff</td><td>Full access to everything: manage all reviews, cycles, templates, goals; approve and complete reviews</td></tr>
+        </table>
+
+        <h3>How to Assign Roles</h3>
+        <ol>
+            <li>Navigate to <strong>Settings</strong> &rarr; <strong>Users &amp; Companies</strong> &rarr; <strong>Users</strong></li>
+            <li>Select the user</li>
+            <li>Scroll down to the <strong>Performance Reviews</strong> section</li>
+            <li>Select the appropriate role: Employee, Manager, or HR Officer</li>
+            <li>Click <strong>Save</strong></li>
+        </ol>
+        <div class="note"><strong>Note:</strong> Each role includes the permissions of the roles below it. An HR Officer automatically has Manager and Employee permissions.</div>
+
+        <hr>
+
+        <!-- 3. MODULE NAVIGATION -->
+        <h2 id="navigation">3. Module Navigation</h2>
+        <p>After installation, you will find the <strong>Performance</strong> application in the main menu. The menu structure is organized as follows:</p>
+        <pre>
+Performance
+&#9500;&#9472;&#9472; My
+&#9474;   &#9500;&#9472;&#9472; My Reviews          &larr; Employee's own performance reviews
+&#9474;   &#9492;&#9472;&#9472; My Goals            &larr; Employee's personal goals
+&#9500;&#9472;&#9472; Team                    &larr; Visible to Managers only
+&#9474;   &#9492;&#9472;&#9472; Team Reviews        &larr; Reviews of the manager's direct reports
+&#9500;&#9472;&#9472; Reviews                 &larr; Visible to HR Officers only
+&#9474;   &#9500;&#9472;&#9472; All Reviews         &larr; All performance reviews across the organization
+&#9474;   &#9500;&#9472;&#9472; All Goals           &larr; All goals across the organization
+&#9474;   &#9492;&#9472;&#9472; Review Cycles       &larr; Manage review cycle periods
+&#9500;&#9472;&#9472; Configuration           &larr; Visible to HR Officers only
+&#9474;   &#9492;&#9472;&#9472; Review Templates    &larr; Define evaluation criteria templates
+&#9492;&#9472;&#9472; User Manual             &larr; This guide</pre>
+
+        <hr>
+
+        <!-- 4. INITIAL SETUP -->
+        <h2 id="setup">4. Phase 1 &mdash; Initial Setup</h2>
+        <p>Before starting your first review cycle, you need to create a Review Template. Templates define the evaluation criteria and their weights that will be used to score employee performance.</p>
+
+        <h3>Step 1: Create a Review Template</h3>
+        <ol>
+            <li>Navigate to <strong>Performance</strong> &rarr; <strong>Configuration</strong> &rarr; <strong>Review Templates</strong></li>
+            <li>Click <strong>New</strong></li>
+            <li>Fill in the following fields:</li>
+        </ol>
+        <table>
+            <tr><th>Field</th><th>Description</th><th>Required</th></tr>
+            <tr><td><strong>Template Name</strong></td><td>A descriptive name for the template (e.g., "Standard Annual Review")</td><td>Yes</td></tr>
+            <tr><td><strong>Company</strong></td><td>The company this template applies to (visible only in multi-company setups)</td><td>No</td></tr>
+            <tr><td><strong>Applicable Departments</strong></td><td>Restrict template to specific departments. Leave empty to apply to all.</td><td>No</td></tr>
+            <tr><td><strong>Applicable Job Positions</strong></td><td>Restrict template to specific job positions. Leave empty to apply to all.</td><td>No</td></tr>
+            <tr><td><strong>Description</strong></td><td>A brief description of the template's purpose</td><td>No</td></tr>
+        </table>
+
+        <h3>Step 2: Add Evaluation Criteria</h3>
+        <p>In the <strong>Evaluation Criteria</strong> tab, add the criteria by which employees will be evaluated:</p>
+        <table>
+            <tr><th>Field</th><th>Description</th></tr>
+            <tr><td><strong>Criteria Name</strong></td><td>The name of the evaluation criteria (e.g., "Job Knowledge")</td></tr>
+            <tr><td><strong>Category</strong></td><td>Job Performance, Core Competencies, Behavioral, Leadership, Teamwork, Communication, Innovation, or Other</td></tr>
+            <tr><td><strong>Weight (%)</strong></td><td>The percentage weight of this criteria in the overall score</td></tr>
+            <tr><td><strong>Description</strong></td><td>Optional detailed description of what this criteria evaluates</td></tr>
+        </table>
+        <div class="important"><strong>Important:</strong> The total weight of all criteria must equal exactly <strong>100%</strong>. The system will show an error if the weights do not add up to 100%.</div>
+
+        <h3>Example Template</h3>
+        <table>
+            <tr><th>Criteria Name</th><th>Category</th><th>Weight (%)</th></tr>
+            <tr><td>Job Knowledge</td><td>Job Performance</td><td>25</td></tr>
+            <tr><td>Communication Skills</td><td>Communication</td><td>20</td></tr>
+            <tr><td>Teamwork &amp; Collaboration</td><td>Teamwork</td><td>20</td></tr>
+            <tr><td>Problem Solving</td><td>Core Competencies</td><td>15</td></tr>
+            <tr><td>Initiative &amp; Innovation</td><td>Innovation</td><td>10</td></tr>
+            <tr><td>Punctuality &amp; Attendance</td><td>Behavioral</td><td>10</td></tr>
+            <tr><td><strong>Total</strong></td><td></td><td><strong>100</strong></td></tr>
+        </table>
+        <div class="tip"><strong>Tip:</strong> You can create multiple templates for different departments, job positions, or review types (e.g., one for sales staff, another for engineers).</div>
+
+        <hr>
+
+        <!-- 5. CREATING A REVIEW CYCLE -->
+        <h2 id="cycle">5. Phase 2 &mdash; Creating a Review Cycle</h2>
+        <p>A Review Cycle defines the time period for performance reviews and links to a template. All reviews within a cycle use the same evaluation criteria.</p>
+
+        <h3>Step 1: Create a New Cycle</h3>
+        <ol>
+            <li>Navigate to <strong>Performance</strong> &rarr; <strong>Reviews</strong> &rarr; <strong>Review Cycles</strong></li>
+            <li>Click <strong>New</strong></li>
+            <li>Fill in the following fields:</li>
+        </ol>
+        <table>
+            <tr><th>Field</th><th>Description</th><th>Required</th></tr>
+            <tr><td><strong>Cycle Name</strong></td><td>A descriptive name (e.g., "Annual Review 2026", "Q1 2026 Review")</td><td>Yes</td></tr>
+            <tr><td><strong>Cycle Type</strong></td><td>Quarterly, Semi-Annual, Annual, or Custom</td><td>Yes</td></tr>
+            <tr><td><strong>Start Date</strong></td><td>The beginning of the review period</td><td>Yes</td></tr>
+            <tr><td><strong>End Date</strong></td><td>The end of the review period (must be after Start Date)</td><td>Yes</td></tr>
+            <tr><td><strong>Self-Review Deadline</strong></td><td>Deadline for employees to complete their self-assessment</td><td>No</td></tr>
+            <tr><td><strong>Manager Review Deadline</strong></td><td>Deadline for managers to complete their evaluation</td><td>No</td></tr>
+            <tr><td><strong>Review Template</strong></td><td>The evaluation template to use for this cycle</td><td>Yes</td></tr>
+            <tr><td><strong>Departments</strong></td><td>Restrict the cycle to specific departments. Leave empty for all.</td><td>No</td></tr>
+        </table>
+        <p>The cycle is now in <span class="badge badge-draft">Draft</span> status and is ready for review generation.</p>
+
+        <hr>
+
+        <!-- 6. GENERATING REVIEWS -->
+        <h2 id="generate">6. Phase 3 &mdash; Generating Reviews</h2>
+        <p>Once a cycle is created, you need to generate individual reviews for employees. This creates one review record per employee.</p>
+
+        <h3>Step 1: Open the Generate Reviews Wizard</h3>
+        <ol>
+            <li>Open the review cycle you created</li>
+            <li>Click the <strong>Generate Reviews</strong> button in the top-left corner</li>
+            <li>A dialog window (wizard) will appear</li>
+        </ol>
+
+        <h3>Step 2: Configure Generation Options</h3>
+        <table>
+            <tr><th>Field</th><th>Description</th></tr>
+            <tr><td><strong>Departments</strong></td><td>Pre-filled from the cycle settings. You can adjust if needed. Leave empty for all departments.</td></tr>
+            <tr><td><strong>Specific Employees</strong></td><td>Select specific employees to generate reviews for. Leave empty to include all.</td></tr>
+            <tr><td><strong>Skip Existing Reviews</strong></td><td>When checked (default), employees who already have a review in this cycle will be skipped.</td></tr>
+        </table>
+
+        <h3>Step 3: Generate</h3>
+        <ol>
+            <li>Click <strong>Generate</strong></li>
+            <li>A success notification will appear showing how many reviews were created and how many employees were skipped</li>
+            <li>You will be taken to the list of generated reviews</li>
+        </ol>
+
+        <div class="note"><strong>Note:</strong> The wizard automatically assigns each employee's direct manager as the reviewer. If an employee has no manager assigned, the Manager field will be empty and should be filled in manually before starting the cycle.</div>
+
+        <hr>
+
+        <!-- 7. STARTING THE CYCLE -->
+        <h2 id="start">7. Phase 4 &mdash; Starting the Review Cycle</h2>
+        <p>Starting the cycle activates all reviews and notifies employees to begin their self-assessments.</p>
+        <ol>
+            <li>Open the review cycle</li>
+            <li>Click the <strong>Start Cycle</strong> button</li>
+            <li>Confirm the dialog</li>
+        </ol>
+
+        <h3>What Happens Automatically</h3>
+        <ul>
+            <li>The cycle status changes from <span class="badge badge-draft">Draft</span> to <span class="badge badge-progress">In Progress</span></li>
+            <li>All draft reviews within the cycle move to the <strong>Self-Review</strong> stage</li>
+            <li>Each employee receives an <strong>email notification</strong> requesting them to complete their self-assessment</li>
+        </ul>
+        <div class="important"><strong>Important:</strong> You cannot start a cycle that has no reviews. Generate reviews first using the wizard.</div>
+
+        <hr>
+
+        <!-- 8. EMPLOYEE SELF-REVIEW -->
+        <h2 id="self-review">8. Phase 5 &mdash; Employee Self-Review</h2>
+        <p>This is the employee's turn to evaluate their own performance.</p>
+
+        <h3>For the Employee</h3>
+        <ol>
+            <li>Navigate to <strong>Performance</strong> &rarr; <strong>My</strong> &rarr; <strong>My Reviews</strong></li>
+            <li>Open the review with status <strong>Self-Review</strong></li>
+        </ol>
+
+        <h3>Step 1: Rate Yourself on Each Criteria</h3>
+        <p>Go to the <strong>Evaluation Criteria</strong> tab. For each criteria row, enter:</p>
+        <table>
+            <tr><th>Field</th><th>Description</th></tr>
+            <tr><td><strong>Self Score</strong></td><td>Your self-rating on a scale of <strong>0 to 5</strong> (0 = Not Applicable, 1 = Poor, 5 = Excellent)</td></tr>
+            <tr><td><strong>Self Comment</strong></td><td>Optional comments explaining your self-rating</td></tr>
+        </table>
+        <div class="note"><strong>Note:</strong> The criteria, category, and weight columns are read-only &mdash; they are set by the template and cannot be changed.</div>
+
+        <h3>Step 2: Write Your Self-Assessment</h3>
+        <p>Go to the <strong>Self-Assessment</strong> tab and fill in:</p>
+        <table>
+            <tr><th>Field</th><th>Description</th></tr>
+            <tr><td><strong>Employee Self-Assessment Summary</strong></td><td>A summary of your overall performance during the review period</td></tr>
+            <tr><td><strong>Self-Identified Strengths</strong></td><td>Areas where you believe you excelled</td></tr>
+            <tr><td><strong>Areas for Improvement (Self)</strong></td><td>Areas where you see room for growth</td></tr>
+        </table>
+
+        <h3>Step 3: Submit</h3>
+        <ol>
+            <li>Click the <strong>Submit Self-Review</strong> button</li>
+            <li>The review status changes to <strong>Manager Review</strong></li>
+            <li>Your manager receives an email notification</li>
+        </ol>
+        <div class="important"><strong>Important:</strong> Once submitted, the self-assessment fields become read-only. Make sure you have completed everything before submitting.</div>
+
+        <hr>
+
+        <!-- 9. MANAGER REVIEW -->
+        <h2 id="manager-review">9. Phase 6 &mdash; Manager Review</h2>
+        <p>The manager evaluates the employee's performance, with visibility into the employee's self-scores for reference.</p>
+
+        <h3>For the Manager</h3>
+        <ol>
+            <li>Navigate to <strong>Performance</strong> &rarr; <strong>Team</strong> &rarr; <strong>Team Reviews</strong></li>
+            <li>Open the review with status <strong>Manager Review</strong></li>
+        </ol>
+
+        <h3>Step 1: Review Employee's Self-Assessment</h3>
+        <ul>
+            <li>The <strong>Evaluation Criteria</strong> tab shows the employee's self-scores and comments</li>
+            <li>The <strong>Self-Assessment</strong> tab shows the employee's written self-assessment</li>
+            <li>Use these as reference points for your own evaluation</li>
+        </ul>
+
+        <h3>Step 2: Provide Manager Ratings</h3>
+        <p>In the <strong>Evaluation Criteria</strong> tab, for each criteria row, enter:</p>
+        <table>
+            <tr><th>Field</th><th>Description</th></tr>
+            <tr><td><strong>Manager Score</strong></td><td>Your assessment on a scale of <strong>0 to 5</strong></td></tr>
+            <tr><td><strong>Manager Comment</strong></td><td>Optional comments justifying your rating</td></tr>
+        </table>
+
+        <h3>Step 3: Write Manager Assessment</h3>
+        <p>Go to the <strong>Manager Assessment</strong> tab and fill in:</p>
+        <table>
+            <tr><th>Field</th><th>Description</th></tr>
+            <tr><td><strong>Manager Assessment Summary</strong></td><td>Your overall assessment of the employee's performance</td></tr>
+            <tr><td><strong>Strengths (Manager)</strong></td><td>Key strengths you have observed</td></tr>
+            <tr><td><strong>Areas for Improvement (Manager)</strong></td><td>Areas where the employee should focus on improving</td></tr>
+        </table>
+
+        <h3>Step 4: Submit</h3>
+        <ol>
+            <li>Click the <strong>Submit Manager Review</strong> button</li>
+            <li>The review status changes to <strong>HR Review</strong></li>
+        </ol>
+
+        <hr>
+
+        <!-- 10. HR REVIEW & APPROVAL -->
+        <h2 id="hr-review">10. Phase 7 &mdash; HR Review &amp; Approval</h2>
+        <p>HR performs the final review, adds any comments, and approves the review to complete the process.</p>
+
+        <h3>For the HR Officer</h3>
+        <ol>
+            <li>Navigate to <strong>Performance</strong> &rarr; <strong>Reviews</strong> &rarr; <strong>All Reviews</strong></li>
+            <li>Open the review with status <strong>HR Review</strong></li>
+        </ol>
+
+        <h3>Step 1: Review the Rating Summary</h3>
+        <p>The <strong>Rating Summary</strong> section displays automatically calculated scores:</p>
+        <table>
+            <tr><th>Field</th><th>Description</th></tr>
+            <tr><td><strong>Self Rating</strong></td><td>Weighted average of the employee's self-scores</td></tr>
+            <tr><td><strong>Manager Rating</strong></td><td>Weighted average of the manager's scores</td></tr>
+            <tr><td><strong>Goal Achievement (%)</strong></td><td>Average progress across all linked goals</td></tr>
+            <tr><td><strong>Final Rating</strong></td><td>Overall rating calculated using the formula (see Section 14)</td></tr>
+            <tr><td><strong>Performance Level</strong></td><td>Label based on the final rating (e.g., "Exceeds Expectations")</td></tr>
+        </table>
+
+        <h3>Step 2: Add HR Comments (Optional)</h3>
+        <ol>
+            <li>Go to the <strong>HR Comments</strong> tab (visible only to HR Officers)</li>
+            <li>Enter any final notes, observations, or recommendations</li>
+        </ol>
+
+        <h3>Step 3: Approve</h3>
+        <ol>
+            <li>Click the <strong>Approve &amp; Complete</strong> button</li>
+            <li>The review status changes to <span class="badge badge-done">Done</span></li>
+            <li>The employee's <strong>HR Review Rating</strong> is automatically updated</li>
+            <li>The employee receives an <strong>email notification</strong> with their final rating</li>
+        </ol>
+
+        <hr>
+
+        <!-- 11. COMPLETING THE CYCLE -->
+        <h2 id="complete">11. Phase 8 &mdash; Completing the Review Cycle</h2>
+        <ol>
+            <li>Navigate to <strong>Performance</strong> &rarr; <strong>Reviews</strong> &rarr; <strong>Review Cycles</strong></li>
+            <li>Open the cycle</li>
+            <li>Click <strong>Complete Cycle</strong></li>
+            <li>The cycle status changes to <span class="badge badge-done">Completed</span></li>
+        </ol>
+        <div class="important"><strong>Important:</strong> You cannot complete a cycle if any reviews are still pending. The system will display an error message showing how many reviews are still incomplete.</div>
+
+        <h3>Cancelling a Review or Cycle</h3>
+        <ul>
+            <li><strong>Cancel a single review:</strong> Open the review and click <strong>Cancel</strong>. It can be reset to Draft later.</li>
+            <li><strong>Cancel an entire cycle:</strong> Click <strong>Cancel</strong> on the cycle. This cancels all non-completed reviews.</li>
+            <li><strong>Reset to Draft:</strong> Both cancelled reviews and cycles can be reset to Draft to start over.</li>
+        </ul>
+
+        <hr>
+
+        <!-- 12. GOAL TRACKING -->
+        <h2 id="goals">12. Goal Tracking</h2>
+        <p>Goals can be created independently or linked to a specific performance review. When linked, goal progress contributes to the final rating calculation.</p>
+
+        <h3>Creating a Goal</h3>
+        <ol>
+            <li>Navigate to <strong>Performance</strong> &rarr; <strong>My</strong> &rarr; <strong>My Goals</strong> (employees) or <strong>Reviews</strong> &rarr; <strong>All Goals</strong> (HR)</li>
+            <li>Click <strong>New</strong> and fill in:</li>
+        </ol>
+        <table>
+            <tr><th>Field</th><th>Description</th><th>Required</th></tr>
+            <tr><td><strong>Goal Title</strong></td><td>A clear, specific title for the goal</td><td>Yes</td></tr>
+            <tr><td><strong>Employee</strong></td><td>The employee this goal is assigned to</td><td>Yes</td></tr>
+            <tr><td><strong>Assigned By</strong></td><td>The manager who assigned this goal (auto-filled)</td><td>No</td></tr>
+            <tr><td><strong>Performance Review</strong></td><td>Link to a specific review (optional)</td><td>No</td></tr>
+            <tr><td><strong>Goal Type</strong></td><td>Performance, Development, Project, Learning, or Behavioral</td><td>Yes</td></tr>
+            <tr><td><strong>Priority</strong></td><td>Low, Medium, High, or Critical</td><td>No</td></tr>
+            <tr><td><strong>Deadline</strong></td><td>Target completion date</td><td>No</td></tr>
+            <tr><td><strong>Success Metric</strong></td><td>How the goal will be measured</td><td>No</td></tr>
+        </table>
+
+        <h3>Goal Lifecycle</h3>
+        <table>
+            <tr><th>Action</th><th>Button</th><th>Effect</th></tr>
+            <tr><td><strong>Start</strong></td><td>Click <strong>Start</strong></td><td>Moves from Draft to In Progress</td></tr>
+            <tr><td><strong>Update Progress</strong></td><td>Edit <strong>Progress (%)</strong></td><td>Update completion percentage (0-100%)</td></tr>
+            <tr><td><strong>Mark Achieved</strong></td><td>Click <strong>Mark Achieved</strong></td><td>Sets status to Achieved and progress to 100%</td></tr>
+            <tr><td><strong>Partially Achieved</strong></td><td>Click <strong>Partially Achieved</strong></td><td>Sets status to Partially Achieved at current progress</td></tr>
+            <tr><td><strong>Not Achieved</strong></td><td>Click <strong>Not Achieved</strong></td><td>Sets status to Not Achieved</td></tr>
+            <tr><td><strong>Cancel</strong></td><td>Click <strong>Cancel</strong></td><td>Cancels the goal</td></tr>
+            <tr><td><strong>Reset</strong></td><td>Click <strong>Reset</strong></td><td>Returns to Draft, resets progress to 0% (Manager only)</td></tr>
+        </table>
+
+        <div class="note"><strong>Goal Impact on Rating:</strong> If goals are linked to a performance review, their average progress contributes <strong>10%</strong> to the final rating calculation.</div>
+
+        <hr>
+
+        <!-- 13. EMPLOYEE PERFORMANCE HISTORY -->
+        <h2 id="history">13. Employee Performance History</h2>
+        <p>The module adds performance tracking information to each employee's record.</p>
+
+        <h3>Viewing Performance Data</h3>
+        <ol>
+            <li>Navigate to <strong>Employees</strong> &rarr; open any employee</li>
+            <li>At the top, you will see <strong>Reviews</strong> and <strong>Goals</strong> stat buttons</li>
+            <li>Scroll to the <strong>Performance</strong> tab (visible to Managers and HR Officers):</li>
+        </ol>
+        <table>
+            <tr><th>Field</th><th>Description</th></tr>
+            <tr><td><strong>Last Review Date</strong></td><td>The date of the most recently completed review</td></tr>
+            <tr><td><strong>Last Review Rating</strong></td><td>The final rating from the most recent completed review</td></tr>
+            <tr><td><strong>Average Rating</strong></td><td>The average of all completed review final ratings across all cycles</td></tr>
+        </table>
+        <p>Below these fields, a <strong>review history table</strong> shows all reviews with reference numbers, ratings, and statuses.</p>
+
+        <hr>
+
+        <!-- 14. RATING SYSTEM -->
+        <h2 id="rating">14. Rating System &amp; Formula</h2>
+
+        <h3>Scoring Scale</h3>
+        <table>
+            <tr><th>Score</th><th>Meaning</th></tr>
+            <tr><td>0</td><td>Not Applicable / Not Rated</td></tr>
+            <tr><td>1</td><td>Needs Significant Improvement</td></tr>
+            <tr><td>2</td><td>Below Expectations</td></tr>
+            <tr><td>3</td><td>Meets Expectations</td></tr>
+            <tr><td>4</td><td>Exceeds Expectations</td></tr>
+            <tr><td>5</td><td>Outstanding / Exceptional</td></tr>
+        </table>
+
+        <h3>Weighted Score Calculation</h3>
+        <p><strong>Self Rating</strong> and <strong>Manager Rating</strong> are each calculated as weighted averages:</p>
+        <pre>Rating = Sum of (Score x Weight) / Total Weight</pre>
+
+        <h3>Example Calculation</h3>
+        <table>
+            <tr><th>Criteria</th><th>Weight</th><th>Manager Score</th><th>Weighted</th></tr>
+            <tr><td>Job Knowledge</td><td>25%</td><td>4</td><td>100</td></tr>
+            <tr><td>Communication</td><td>20%</td><td>3</td><td>60</td></tr>
+            <tr><td>Teamwork</td><td>20%</td><td>5</td><td>100</td></tr>
+            <tr><td>Problem Solving</td><td>15%</td><td>4</td><td>60</td></tr>
+            <tr><td>Initiative</td><td>10%</td><td>3</td><td>30</td></tr>
+            <tr><td>Punctuality</td><td>10%</td><td>5</td><td>50</td></tr>
+            <tr><td><strong>Total</strong></td><td><strong>100%</strong></td><td></td><td><strong>400</strong></td></tr>
+        </table>
+        <p><strong>Manager Rating = 400 / 100 = 4.00</strong></p>
+
+        <h3>Final Rating Formula</h3>
+        <pre>Final Rating = (Manager Rating x 70%) + (Self Rating x 20%) + (Goal Score x 10%)
+
+Goal Score = (Average Goal Progress % / 100) x 5.0</pre>
+
+        <h3>Example</h3>
+        <table>
+            <tr><th>Component</th><th>Value</th><th>Weight</th><th>Contribution</th></tr>
+            <tr><td>Manager Rating</td><td>4.00</td><td>70%</td><td>2.80</td></tr>
+            <tr><td>Self Rating</td><td>4.10</td><td>20%</td><td>0.82</td></tr>
+            <tr><td>Goal Score (80% progress = 4.0)</td><td>4.00</td><td>10%</td><td>0.40</td></tr>
+            <tr><td><strong>Final Rating</strong></td><td></td><td></td><td><strong>4.02</strong></td></tr>
+        </table>
+
+        <h3>Performance Level Labels</h3>
+        <table>
+            <tr><th>Final Rating</th><th>Performance Level</th></tr>
+            <tr><td>4.50 &mdash; 5.00</td><td><strong>Outstanding</strong></td></tr>
+            <tr><td>3.50 &mdash; 4.49</td><td><strong>Exceeds Expectations</strong></td></tr>
+            <tr><td>2.50 &mdash; 3.49</td><td><strong>Meets Expectations</strong></td></tr>
+            <tr><td>1.50 &mdash; 2.49</td><td><strong>Below Expectations</strong></td></tr>
+            <tr><td>0.00 &mdash; 1.49</td><td><strong>Needs Improvement</strong></td></tr>
+        </table>
+
+        <hr>
+
+        <!-- 15. EMAIL NOTIFICATIONS -->
+        <h2 id="emails">15. Email Notifications</h2>
+        <table>
+            <tr><th>Stage</th><th>Recipient</th><th>When</th><th>Content</th></tr>
+            <tr><td><strong>Self-Review Request</strong></td><td>Employee</td><td>When the cycle is started</td><td>Requests completion of self-assessment</td></tr>
+            <tr><td><strong>Manager Review Request</strong></td><td>Manager</td><td>When employee submits self-review</td><td>Notifies that self-review is ready for evaluation</td></tr>
+            <tr><td><strong>Review Completed</strong></td><td>Employee</td><td>When HR approves the review</td><td>Final rating and performance level</td></tr>
+        </table>
+
+        <h3>Deadline Reminders</h3>
+        <p>A daily automated task sends reminders <strong>3 days before</strong> each deadline:</p>
+        <ul>
+            <li><strong>Self-Review Deadline:</strong> Reminds employees who haven't submitted</li>
+            <li><strong>Manager Review Deadline:</strong> Reminds managers who haven't evaluated</li>
+        </ul>
+
+        <hr>
+
+        <!-- 16. FAQ -->
+        <h2 id="faq">16. Frequently Asked Questions</h2>
+
+        <h3>General</h3>
+        <p class="faq-q">Q: Can I create a review for an employee without a review cycle?</p>
+        <div class="faq-a">Yes. You can create individual reviews from <strong>Performance &rarr; Reviews &rarr; All Reviews &rarr; New</strong>. However, you will need to assign a cycle that has a template for the criteria to be generated.</div>
+
+        <p class="faq-q">Q: What happens if an employee has no manager assigned?</p>
+        <div class="faq-a">The review will be created with an empty Manager field. HR should manually assign a reviewer before the cycle starts. The Manager can be edited while the review is in Draft status.</div>
+
+        <p class="faq-q">Q: Can I change the evaluation criteria after reviews are generated?</p>
+        <div class="faq-a">No. The evaluation criteria are copied from the template at the time of review creation. Changing the template afterward will not affect existing reviews.</div>
+
+        <h3>Scoring</h3>
+        <p class="faq-q">Q: What if a manager doesn't score all criteria?</p>
+        <div class="faq-a">Criteria with a score of 0 will still be included in the weighted average, which will lower the overall rating. Managers should score all criteria for an accurate assessment.</div>
+
+        <p class="faq-q">Q: Why is the final rating showing 0 even after I entered scores?</p>
+        <div class="faq-a">The final rating requires the <strong>manager rating</strong> to be greater than 0. If only self-scores are entered, the final rating will equal the self-rating. The full formula applies only when manager scores are present.</div>
+
+        <p class="faq-q">Q: Can we change the rating formula (70/20/10 split)?</p>
+        <div class="faq-a">The current formula is fixed at 70% Manager, 20% Self, 10% Goals. If you need a different split, please contact your system administrator.</div>
+
+        <h3>Goals</h3>
+        <p class="faq-q">Q: Do goals have to be linked to a review?</p>
+        <div class="faq-a">No. Goals can exist independently. However, only goals linked to a specific review will contribute to that review's goal achievement percentage and final rating.</div>
+
+        <p class="faq-q">Q: Can an employee create their own goals?</p>
+        <div class="faq-a">Employees with the Employee role can view and manage their own goals. By default, Managers and HR Officers can create new goals.</div>
+
+        <h3>Workflow</h3>
+        <p class="faq-q">Q: Can a review be sent back to a previous stage?</p>
+        <div class="faq-a">Reviews cannot be sent backward through the workflow. However, they can be cancelled and then reset to Draft to start over.</div>
+
+        <p class="faq-q">Q: What if the cycle deadline passes but reviews are incomplete?</p>
+        <div class="faq-a">Reviews can still be completed after the deadline &mdash; the deadlines are informational and do not block the workflow.</div>
+
+        <p class="faq-q">Q: Can I delete a review?</p>
+        <div class="faq-a">Only HR Officers can delete reviews, and only if the review is in Draft or Cancelled status.</div>
+
+        <hr>
+
+        <!-- QUICK REFERENCE -->
+        <h2 id="quick-reference">Quick Reference &mdash; Complete Workflow</h2>
+
+        <div class="workflow-box">
+            <h4>HR Officer Setup</h4>
+            <ol>
+                <li>Create Review Template (criteria + weights = 100%)</li>
+                <li>Create Review Cycle (dates, deadlines, template)</li>
+                <li>Generate Reviews (wizard &rarr; select departments/people)</li>
+                <li>Start Cycle (notifies all employees)</li>
+            </ol>
+        </div>
+        <div class="workflow-arrow">&darr;</div>
+        <div class="workflow-box">
+            <h4>Employee</h4>
+            <ol start="5">
+                <li>Opens My Reviews &rarr; fills Self Scores + Self-Assessment</li>
+                <li>Clicks "Submit Self-Review"</li>
+            </ol>
+        </div>
+        <div class="workflow-arrow">&darr;</div>
+        <div class="workflow-box">
+            <h4>Manager</h4>
+            <ol start="7">
+                <li>Opens Team Reviews &rarr; reviews self-scores</li>
+                <li>Fills Manager Scores + Manager Assessment</li>
+                <li>Clicks "Submit Manager Review"</li>
+            </ol>
+        </div>
+        <div class="workflow-arrow">&darr;</div>
+        <div class="workflow-box">
+            <h4>HR Officer</h4>
+            <ol start="10">
+                <li>Reviews Rating Summary (auto-calculated)</li>
+                <li>Adds HR Comments (optional)</li>
+                <li>Clicks "Approve &amp; Complete"</li>
+                <li>Employee's rating is updated + completion email sent</li>
+                <li>Complete the Review Cycle when all reviews are done</li>
+            </ol>
+        </div>
+
+        <div class="footer">
+            <p>HR Performance Review Module &mdash; User Manual</p>
+            <p>Version 17.0.1.0.0 | Macrofix</p>
+        </div>
+
+    </div>
+</div>
+
+<script>
+    // Sidebar toggle for mobile
+    var toggle = document.getElementById('sidebarToggle');
+    var sidebar = document.getElementById('sidebar');
+    var overlay = document.getElementById('sidebarOverlay');
+
+    toggle.addEventListener('click', function() {
+        sidebar.classList.toggle('open');
+        overlay.classList.toggle('open');
+    });
+    overlay.addEventListener('click', function() {
+        sidebar.classList.remove('open');
+        overlay.classList.remove('open');
+    });
+
+    // Highlight active section on scroll
+    var sections = document.querySelectorAll('h2[id]');
+    var navLinks = document.querySelectorAll('.sidebar a');
+
+    function setActiveLink() {
+        var scrollPos = window.scrollY + 80;
+        var current = '';
+
+        sections.forEach(function(section) {
+            if (section.offsetTop <= scrollPos) {
+                current = section.getAttribute('id');
+            }
+        });
+
+        navLinks.forEach(function(link) {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === '#' + current) {
+                link.classList.add('active');
+            }
+        });
+    }
+
+    window.addEventListener('scroll', setActiveLink);
+    window.addEventListener('load', setActiveLink);
+
+    // Smooth scroll on nav click
+    navLinks.forEach(function(link) {
+        link.addEventListener('click', function(e) {
+            var targetId = this.getAttribute('href').substring(1);
+            var target = document.getElementById(targetId);
+            if (target) {
+                e.preventDefault();
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                // Close mobile sidebar
+                sidebar.classList.remove('open');
+                overlay.classList.remove('open');
+            }
+        });
+    });
+</script>
+
+</body>
+</html>

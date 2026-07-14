@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Tree view inheritance -->
+    <record id="project_task_type_view_tree_inherit_projects_management" model="ir.ui.view">
+        <field name="name">project.task.type.view.tree.inherit.projects.management</field>
+        <field name="model">project.task.type</field>
+        <field name="inherit_id" ref="project.task_type_tree_inherited"/>
+        <field name="arch" type="xml">
+            <field name="fold" position="after">
+                <field name="can_add_products_to_so"/>
+            </field>
+        </field>
+    </record>
+
+    <!-- Form view inheritance -->
+    <record id="project_task_type_view_form_inherit_projects_management" model="ir.ui.view">
+        <field name="name">project.task.type.view.form.inherit.projects.management</field>
+        <field name="model">project.task.type</field>
+        <field name="inherit_id" ref="project.task_type_edit"/>
+        <field name="arch" type="xml">
+            <field name="fold" position="after">
+                <field name="can_add_products_to_so"/>
+            </field>
+        </field>
+    </record>
+</odoo>

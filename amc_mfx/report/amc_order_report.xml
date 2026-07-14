@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Custom Paperformat with minimal footer margin -->
+    <record id="paperformat_amc_order" model="report.paperformat">
+        <field name="name">AMC Order Format</field>
+        <field name="default" eval="False"/>
+        <field name="format">A4</field>
+        <field name="page_height">0</field>
+        <field name="page_width">0</field>
+        <field name="orientation">Portrait</field>
+        <field name="margin_top">40</field>
+        <field name="margin_bottom">10</field>
+        <field name="margin_left">7</field>
+        <field name="margin_right">7</field>
+        <field name="header_line" eval="False"/>
+        <field name="header_spacing">35</field>
+        <field name="dpi">90</field>
+    </record>
+
+    <!-- Report Action -->
+    <record id="action_report_amc_order" model="ir.actions.report">
+        <field name="name">AMC Order</field>
+        <field name="model">amc.order</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">amc_mfx.report_amc_order_document</field>
+        <field name="report_file">amc_mfx.report_amc_order_document</field>
+        <field name="binding_model_id" ref="model_amc_order"/>
+        <field name="binding_type">report</field>
+        <field name="print_report_name">'AMC - %s' % (object.name)</field>
+        <field name="paperformat_id" ref="paperformat_amc_order"/>
+    </record>
+
+    <!-- Report Template -->
+    <template id="report_amc_order_document">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <!-- Set dynamic color variables from company settings -->
+                <t t-set="theme_color" t-value="o.company_id.theme_color or '#2c3e50'"/>
+                <t t-set="theme_text_color" t-value="o.company_id.theme_text_color or '#FFFFFF'"/>
+                <t t-set="text_color" t-value="o.company_id.text_color or '#000000'"/>
+                <t t-set="company_color" t-value="o.company_id.company_color or '#2c3e50'"/>
+                <t t-set="company_address_color" t-value="o.company_id.company_address_color or '#34495e'"/>
+                <t t-set="customer_color" t-value="o.company_id.customer_color or '#2c3e50'"/>
+                <t t-set="customer_address_color" t-value="o.company_id.customer_address_color or '#34495e'"/>
+                <t t-set="odd_party_color" t-value="o.company_id.odd_party_color or '#ffffff'"/>
+                <t t-set="even_party_color" t-value="o.company_id.even_party_color or '#f8f9fa'"/>
+                <t t-set="font_family" t-value="o.company_id.font_id.family or 'Arial'"/>
+                <t t-set="font_size" t-value="o.company_id.font_size or 12"/>
+                
+                <div class="header" style="border: none !important; outline: none !important; box-shadow: none !important;">
+                    <style>
+                        .header * { border: none !important; }
+                    </style>
+                    <!-- Custom Header: Logo, Title, Company Address - Using Table for Perfect Alignment -->
+                    <table style="width: 100%; border-collapse: collapse; border: none !important; margin-bottom: 0;">
+                        <tr>
+                            <!-- Company Logo (Left) -->
+                            <td style="width: 25%; vertical-align: middle; border: none !important; padding: 0 10px 15px 0;">
+                                <t t-if="o.company_id.invoice_logo">
+                                    <img t-att-src="image_data_uri(o.company_id.invoice_logo)" style="max-height: 120px; max-width: 100%; border: none !important;"/>
+                                </t>
+                                <t t-elif="o.company_id.logo">
+                                    <img t-att-src="image_data_uri(o.company_id.logo)" style="max-height: 120px; max-width: 100%; border: none !important;"/>
+                                </t>
+                            </td>
+                            
+                            <!-- Document Title (Center) - Vertically Centered -->
+                            <td style="width: 50%; text-align: center; vertical-align: middle; border: none !important; padding: 0 0 15px 0;">
+                                <h2 t-att-style="'margin: 0; font-size: 24px; font-weight: 700; color: ' + theme_color + '; text-transform: uppercase; letter-spacing: 1px;'">
+                                    Annual Maintenance Contract
+                                </h2>
+                            </td>
+                            
+                            <!-- Company Address (Right) - Vertically Centered -->
+                            <td t-att-style="'width: 25%; text-align: right; vertical-align: middle; font-size: 10px; line-height: 1.4; color: ' + company_address_color + '; border: none !important; padding: 0 0 15px 10px;'">
+                                <strong t-att-style="'font-size: 11px; color: ' + company_color + ';'">
+                                    <t t-if="o.company_id.is_company_bold"><strong><t t-out="o.company_id.name"/></strong></t>
+                                    <t t-else=""><t t-out="o.company_id.name"/></t>
+                                </strong><br/>
+                                <t t-if="o.company_id.street"><t t-out="o.company_id.street"/><br/></t>
+                                <t t-if="o.company_id.street2"><t t-out="o.company_id.street2"/><br/></t>
+                                <t t-if="o.company_id.city">
+                                    <t t-out="o.company_id.city"/>
+                                    <t t-if="o.company_id.state_id"> <t t-out="o.company_id.state_id.code"/></t>
+                                    <t t-if="o.company_id.zip"> <t t-out="o.company_id.zip"/></t><br/>
+                                </t>
+                                <t t-if="o.company_id.country_id"><t t-out="o.company_id.country_id.name"/><br/></t>
+                                <t t-if="o.company_id.phone">Ph: <t t-out="o.company_id.phone"/><br/></t>
+                                <t t-if="o.company_id.email"><t t-out="o.company_id.email"/></t>
+                            </td>
+                        </tr>
+                    </table>
+                    <!-- Thick separator line between header and body -->
+                    <div t-att-style="'border-bottom: 3px solid ' + theme_color + ' !important; margin: 0 !important;'"></div>
+                </div>
+                
+                <div class="article" style="border: none !important;">
+                    <div class="page" t-att-style="'border: none !important; font-family: ' + font_family + '; font-size: ' + str(font_size) + 'px;'">
+                        <style>
+                            /* Remove all default Odoo borders EXCEPT our intentional ones */
+                            .header {
+                                border: none !important;
+                                outline: none !important;
+                                box-shadow: none !important;
+                            }
+                            .header table, .header tr, .header td, .header th {
+                                border: none !important;
+                            }
+                            .article {
+                                border: none !important;
+                            }
+                            .page {
+                                border: none !important;
+                            }
+                            /* Keep borders for our data table */
+                            .amc-table, .amc-table th, .amc-table td {
+                                border: 1px solid #dee2e6 !important;
+                            }
+                            .info-box {
+                                background-color: #ecf0f1;
+                                padding: 20px;
+                                margin-bottom: 25px;
+                            }
+                            .info-row {
+                                display: flex;
+                                justify-content: space-between;
+                                padding: 8px 0;
+                            }
+                            .customer-box {
+                                background-color: #f8f9fa;
+                                border: 1px solid #dee2e6;
+                                padding: 15px;
+                                border-radius: 4px;
+                                min-height: 120px;
+                            }
+                            .customer-box h6 {
+                                color: #2c3e50;
+                                font-weight: 700;
+                                margin: 0 0 10px 0;
+                                font-size: 14px;
+                                text-transform: uppercase;
+                            }
+                            .amc-table {
+                                width: 100%;
+                                margin-top: 15px;
+                                border-collapse: collapse;
+                            }
+                            .amc-table th {
+                                padding: 12px 8px;
+                                text-align: left;
+                                font-weight: 600;
+                                border: 1px solid #2c3e50;
+                            }
+                            .amc-table td {
+                                padding: 10px 8px;
+                                border: 1px solid #dee2e6;
+                                vertical-align: top;
+                            }
+                            .amc-table tbody tr {
+                                background-color: white;
+                            }
+                            .amc-table tbody tr:nth-child(even) {
+                                background-color: #f8f9fa;
+                            }
+                            .serial-numbers {
+                                font-size: 10px;
+                                color: #6c757d;
+                                line-height: 1.4;
+                            }
+                            .total-box {
+                                background-color: #f8f9fa;
+                                border: 2px solid #dee2e6;
+                                padding: 20px;
+                                margin-top: 20px;
+                            }
+                            .total-row {
+                                display: flex;
+                                justify-content: space-between;
+                                padding: 8px 0;
+                                font-size: 14px;
+                            }
+                            .grand-total {
+                                border-top: 2px solid #2c3e50;
+                                padding-top: 12px;
+                                margin-top: 10px;
+                                font-weight: 700;
+                                font-size: 18px;
+                                color: #2c3e50;
+                            }
+                            .status-badge {
+                                display: inline-block;
+                                padding: 6px 16px;
+                                border-radius: 3px;
+                                font-size: 11px;
+                                font-weight: 700;
+                                text-transform: uppercase;
+                                letter-spacing: 0.5px;
+                            }
+                            .status-approved { background-color: #27ae60; color: white; }
+                            .status-draft { background-color: #95a5a6; color: white; }
+                            .status-expired { background-color: #e74c3c; color: white; }
+                            .status-pending { background-color: #f39c12; color: white; }
+                            .status-cancel { background-color: #c0392b; color: white; }
+                            .notes-box {
+                                background-color: #fafafa;
+                                border: 1px solid #dee2e6;
+                                padding: 15px;
+                                margin-top: 10px;
+                                font-size: 13px;
+                                line-height: 1.6;
+                            }
+                        </style>
+
+                        <!-- Contract Details (Combined with Contract No) -->
+                        <div class="info-box" t-att-style="'margin-top: 10px; border-left: 4px solid ' + theme_color + ';'">
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="info-row">
+                                        <span t-att-style="'font-weight: 600; color: ' + text_color + ';'">Contract No:</span>
+                                        <span t-att-style="'font-size: 18px; font-weight: 700; color: ' + theme_color + ';'"><t t-out="o.name"/></span>
+                                    </div>
+                                    <div class="info-row">
+                                        <span t-att-style="'font-weight: 600; color: ' + text_color + ';'">Contract Start Date:</span>
+                                        <span t-att-style="'color: ' + text_color + ';'"><t t-out="o.amc_start_date" t-options='{"widget": "date"}'/></span>
+                                    </div>
+                                    <div class="info-row">
+                                        <span t-att-style="'font-weight: 600; color: ' + text_color + ';'">Contract End Date:</span>
+                                        <span t-att-style="'color: ' + text_color + ';'"><t t-out="o.amc_end_date" t-options='{"widget": "date"}'/></span>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="info-row">
+                                        <span t-att-style="'font-weight: 600; color: ' + text_color + ';'">Duration:</span>
+                                        <span t-att-style="'color: ' + text_color + ';'">
+                                            <t t-out="o.amc_duration"/> 
+                                            <t t-if="o.amc_duration_unit == 'month'">Month(s)</t>
+                                            <t t-if="o.amc_duration_unit == 'year'">Year(s)</t>
+                                        </span>
+                                    </div>
+                                    <div class="info-row">
+                                        <span t-att-style="'font-weight: 600; color: ' + text_color + ';'">Total Contract Value:</span>
+                                        <span t-att-style="'font-size: 18px; font-weight: 700; color: ' + theme_color + ';'">
+                                            <t t-out="o.amount_total" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Customer and Service Provider -->
+                        <div class="row" style="margin-bottom: 30px;">
+                            <div class="col-6">
+                                <div class="customer-box">
+                                    <h6 t-att-style="'color: ' + theme_color + '; font-weight: 700; margin: 0 0 10px 0; font-size: 14px; text-transform: uppercase;'">Customer Details</h6>
+                                    <p t-att-style="'margin: 0; font-weight: ' + ('700' if o.company_id.is_customer_bold else '600') + '; color: ' + customer_color + ';'">
+                                        <t t-out="o.partner_id.name"/>
+                                    </p>
+                                    <p t-att-style="'margin: 5px 0 0 0; font-size: 12px; color: ' + customer_address_color + '; line-height: 1.5;'">
+                                        <t t-if="o.partner_address"><t t-out="o.partner_address"/><br/></t>
+                                        <t t-if="o.partner_email">Email: <t t-out="o.partner_email"/><br/></t>
+                                        <t t-if="o.partner_phone">Mobile: <t t-out="o.partner_phone"/></t>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="customer-box">
+                                    <h6 t-att-style="'color: ' + theme_color + '; font-weight: 700; margin: 0 0 10px 0; font-size: 14px; text-transform: uppercase;'">Service Provider</h6>
+                                    <p t-att-style="'margin: 0; font-weight: ' + ('700' if o.company_id.is_company_bold else '600') + '; color: ' + company_color + ';'">
+                                        <t t-out="o.company_id.name"/>
+                                    </p>
+                                    <p t-att-style="'margin: 5px 0 0 0; font-size: 12px; color: ' + company_address_color + '; line-height: 1.5;'">
+                                        <t t-if="o.company_id.street"><t t-out="o.company_id.street"/><br/></t>
+                                        <t t-if="o.company_id.city">
+                                            <t t-out="o.company_id.city"/>
+                                            <t t-if="o.company_id.zip"> - <t t-out="o.company_id.zip"/></t><br/>
+                                        </t>
+                                        <t t-if="o.company_id.phone">Phone: <t t-out="o.company_id.phone"/></t>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Responsible Person -->
+                        <div t-att-style="'margin-bottom: 20px; padding: 10px 15px; background-color: #ecf0f1; border-left: 4px solid ' + theme_color + ';'">
+                            <strong t-att-style="'color: ' + text_color + ';'">Responsible Person:</strong> 
+                            <t t-out="o.user_id.name"/>
+                            <t t-if="o.user_id.mobile"> | Mobile: <t t-out="o.user_id.mobile"/></t>
+                            <t t-if="o.user_id.email"> | Email: <t t-out="o.user_id.email"/></t>
+                        </div>
+
+                        <!-- Services Table -->
+                        <div t-att-style="'font-size: 16px; font-weight: 700; color: ' + theme_color + '; margin: 25px 0 15px 0; padding-bottom: 8px; border-bottom: 2px solid ' + theme_color + '; text-transform: uppercase; letter-spacing: 0.5px;'">
+                            Services Covered
+                        </div>
+                        
+                        <table class="amc-table">
+                            <thead>
+                                <tr t-att-style="'background-color: ' + theme_color + '; color: ' + theme_text_color + ';'">
+                                    <th style="width: 18%; padding: 12px 8px; text-align: left; font-weight: 600; border: 1px solid #2c3e50;">Product</th>
+                                    <th style="width: 15%; padding: 12px 8px; text-align: left; font-weight: 600; border: 1px solid #2c3e50;">Service Type</th>
+                                    <th style="width: 15%; padding: 12px 8px; text-align: left; font-weight: 600; border: 1px solid #2c3e50;">Location</th>
+                                    <th style="width: 20%; padding: 12px 8px; text-align: left; font-weight: 600; border: 1px solid #2c3e50;">Serial/Lot Numbers</th>
+                                    <th style="width: 8%; padding: 12px 8px; text-align: center; font-weight: 600; border: 1px solid #2c3e50;">Qty</th>
+                                    <th style="width: 12%; padding: 12px 8px; text-align: right; font-weight: 600; border: 1px solid #2c3e50;">Unit Price</th>
+                                    <th style="width: 12%; padding: 12px 8px; text-align: right; font-weight: 600; border: 1px solid #2c3e50;">Amount</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <t t-foreach="o.amc_lines_ids" t-as="line">
+                                    <tr t-att-style="'background-color: ' + (odd_party_color if line_index % 2 == 0 else even_party_color) + ';'">
+                                        <td style="padding: 10px 8px; border: 1px solid #dee2e6;"><strong><t t-out="line.product_id.name"/></strong></td>
+                                        <td style="padding: 10px 8px; border: 1px solid #dee2e6;"><t t-out="line.service_id.name or '-'"/></td>
+                                        <td style="padding: 10px 8px; border: 1px solid #dee2e6;"><t t-out="line.location or '-'"/></td>
+                                        <td style="padding: 10px 8px; border: 1px solid #dee2e6;">
+                                            <span style="font-size: 10px; color: #6c757d; line-height: 1.4;">
+                                                <t t-if="line.product_identification_ids">
+                                                    <t t-out="', '.join(line.product_identification_ids.mapped('name'))"/>
+                                                </t>
+                                                <t t-if="not line.product_identification_ids">-</t>
+                                            </span>
+                                        </td>
+                                        <td style="text-align: center; padding: 10px 8px; border: 1px solid #dee2e6;"><t t-out="line.quantity"/></td>
+                                        <td style="text-align: right; padding: 10px 8px; border: 1px solid #dee2e6;">
+                                            <t t-out="line.unit_price" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                                        </td>
+                                        <td style="text-align: right; padding: 10px 8px; border: 1px solid #dee2e6;">
+                                            <t t-out="line.total_price" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                                        </td>
+                                    </tr>
+                                </t>
+                            </tbody>
+                        </table>
+
+                        <!-- Totals - Prevent Page Break -->
+                        <div class="row" style="page-break-inside: avoid !important;">
+                            <div class="col-7"></div>
+                            <div class="col-5">
+                                <div class="total-box" style="page-break-inside: avoid !important;">
+                                    <div class="total-row" t-att-style="'color: ' + text_color + ';'">
+                                        <span>Subtotal:</span>
+                                        <span><t t-out="o.amount_untaxed" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/></span>
+                                    </div>
+                                    <div class="total-row" t-att-style="'color: ' + text_color + ';'">
+                                        <span>Taxes:</span>
+                                        <span><t t-out="o.amount_tax" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/></span>
+                                    </div>
+                                    <div class="total-row" t-att-style="'border-top: 2px solid ' + theme_color + '; padding-top: 12px; margin-top: 10px; font-weight: 700; font-size: 18px; color: ' + theme_color + ';'">
+                                        <span>TOTAL:</span>
+                                        <span><t t-out="o.amount_total" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Notes -->
+                        <t t-if="o.notes">
+                            <div t-att-style="'font-size: 16px; font-weight: 700; color: ' + theme_color + '; margin: 25px 0 15px 0; padding-bottom: 8px; border-bottom: 2px solid ' + theme_color + '; text-transform: uppercase; letter-spacing: 0.5px;'">
+                                Additional Notes
+                            </div>
+                            <div t-att-style="'background-color: #fafafa; border: 1px solid #dee2e6; padding: 15px; margin-top: 10px; font-size: 13px; line-height: 1.6; color: ' + text_color + ';'">
+                                <t t-out="o.notes"/>
+                            </div>
+                        </t>
+
+                        <!-- Terms and Conditions -->
+                        <t t-if="o.terms_and_conditions">
+                            <div t-att-style="'font-size: 16px; font-weight: 700; color: ' + theme_color + '; margin: 25px 0 15px 0; padding-bottom: 8px; border-bottom: 2px solid ' + theme_color + '; text-transform: uppercase; letter-spacing: 0.5px;'">
+                                Terms and Conditions
+                            </div>
+                            <div t-att-style="'background-color: #fafafa; border: 1px solid #dee2e6; padding: 15px; margin-top: 10px; font-size: 11px; line-height: 1.6; color: ' + text_color + ';'">
+                                <t t-out="o.terms_and_conditions"/>
+                            </div>
+                        </t>
+
+                    </div>
+                </div>
+                
+                <!-- Custom Footer - Page Numbers Only -->
+                <div class="footer" t-att-style="'margin-top: 5px !important; padding: 0 !important; height: auto !important;'">
+                    <div t-att-style="'border-top: 3px solid ' + theme_color + '; padding-top: 5px !important; margin: 0 !important; text-align: center; font-size: 9px; color: #7f8c8d;'">
+                        Page <span class="page"/> of <span class="topage"/>
+                    </div>
+                </div>
+            </t>
+        </t>
+    </template>
+</odoo>
+

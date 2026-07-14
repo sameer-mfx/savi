@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record id="helpdesk_ticket_views_inherit_amc_service" model="ir.ui.view">
+        <field name="name">Helpdesk AMC Service</field>
+        <field name="model">helpdesk.ticket</field>
+        <field name="inherit_id" ref="helpdesk_mgmt.ticket_view_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                <page name="verify_amc_details" string="Verify AMC Details">
+                    <group>
+                        <group>
+                            <field name="product_id"/>
+                            <field name="product_identification_id"/>
+                            <button colspan="2" type="object" name="fetch_amc" class="oe_highlight" string="Fetch AMC Details"/>
+                        </group>
+                        <group>
+                            <field name="amc_id" readonly="1" force_save="1"/>
+                            <field name="amc_validity" readonly="1" force_save="1"/>
+                        </group>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

@@ -1,0 +1,268 @@
+<odoo>
+
+    <!-- Record Rule: Restrict users to their company visits -->
+    <record id="amc_visit_rule_company" model="ir.rule">
+        <field name="name">AMC Visit: Company Rule</field>
+        <field name="model_id" ref="model_amc_site_visit"/>
+        <field name="domain_force">[('company_id', '=', user.company_id.id)]</field>
+        <field name="groups" eval="[(4, ref('base.group_user'))]"/>
+    </record>
+
+    <!-- Added a button for creating Site Visit -->
+    <record id="view_amc_order_form_inherit" model="ir.ui.view">
+        <field name="name">AMC Order Inherit</field>
+        <field name="model">amc.order</field>
+        <field name="inherit_id" ref="amc_mfx.amc_order_form"/>
+        <field name="arch" type="xml">
+            <data>
+                <xpath expr="//div[@name='button_box']" position="inside">
+                    <button name="button_show_amc_visits" type="object" class="oe_stat_button" icon="fa-list-alt">
+                        <field name="amc_visit_count" widget="statinfo" string="Visits"/>
+                    </button>
+                </xpath>
+                <xpath expr="//header" position="inside">
+                    <button type="object" name="create_site_visit" string="Create Site Visit" class="oe_highlight" invisible="state != 'approved' or is_amc_expired"/>
+                </xpath>
+            </data>
+        </field>
+    </record>
+
+    <!-- Search View -->
+    <record id="view_amc_visit_search" model="ir.ui.view">
+        <field name="name">amc.visit.search.view</field>
+        <field name="model">amc.site.visit</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="state"/>
+                <field name="date_order"/>
+                <filter name="my_amc_visits" string="My Visits" domain="[('engineer_ids', 'in', [uid])]"/>
+                <separator/>
+                <filter string="My Activities" name="activities_my"
+                    domain="[('activity_ids.user_id', '=', uid)]"/>
+                <filter string="Late Activities" name="activities_overdue"
+                    domain="[('activity_ids.date_deadline', '&lt;', context_today().strftime('%Y-%m-%d'))]"/>
+                <filter string="Today Activities" name="activities_today"
+                    domain="[('activity_ids.date_deadline', '=', context_today().strftime('%Y-%m-%d'))]"/>
+                <filter string="Future Activities" name="activities_upcoming_all"
+                    domain="[('activity_ids.date_deadline', '&gt;', context_today().strftime('%Y-%m-%d'))]"/>
+                <group expand="0" string="Group By">
+                    <filter name="group_by_partner_id" string="Customer" context="{'group_by':'partner_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- Calendar View -->
+    <record id="view_amc_visit_calendar" model="ir.ui.view">
+        <field name="name">amc.visit.calendar</field>
+        <field name="model">amc.site.visit</field>
+        <field name="arch" type="xml">
+            <calendar string="AMC Visits Calendar" date_start="date_order" color="calendar_color" mode="month" create="0" delete="0">
+                <field name="display_name" color="calendar_color" invisible="1"/>
+                <field name="engineer_ids" invisible="1"/>
+            </calendar>
+        </field>
+    </record>
+
+    <!-- Form View -->
+    <record id="amc_visit_form_view" model="ir.ui.view">
+        <field name="name">amc.visit.form</field>
+        <field name="model">amc.site.visit</field>
+        <field name="priority">1</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button type="object" name="amc_button_approve" string="Approve" class="oe_highlight" invisible="state != 'draft'" groups="amc_mfx.amc_group_manager"/>
+                    <button type="object" name="amc_button_cancel" string="Cancel" class="btn btn-danger" invisible="state in ('done', 'cancel')" groups="amc_mfx.amc_group_manager"/>
+                    <button type="object" name="action_send_satisfaction_email" string="Send Satisfaction Survey" class="btn-primary" invisible="state != 'done' or satisfaction_email_sent"/>
+                    <button type="object" name="action_send_satisfaction_email" string="Resend Satisfaction Survey" invisible="state != 'done' or not satisfaction_email_sent"/>
+                    <field name="satisfaction_email_sent" invisible="1"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,done"/>
+                </header>
+                <div class="alert alert-info text-center" role="alert" invisible="not satisfaction_email_sent">
+                    <i class="fa fa-envelope-o"/>
+                    Customer satisfaction survey was sent on
+                    <field name="satisfaction_email_sent_date" readonly="1" nolabel="1" class="oe_inline"/>
+                    by
+                    <field name="satisfaction_email_sent_by" readonly="1" nolabel="1" class="oe_inline"/>.
+                </div>
+                <sheet>
+                    <h1><field name="name" readonly="1"/></h1>
+                    <group>
+                        <group>
+                            <field name="assigned_by" readonly="1"/>
+                            <field name="engineer_ids" widget="many2many_tags" readonly="1"/>
+                            <field name="partner_id" readonly="1"/>
+                            <field name="partner_address" readonly="1"/>
+                            <field name="partner_email" readonly="1"/>
+                            <field name="partner_phone" readonly="1"/>
+                        </group>
+                        <group>
+                            <field name="date_order" readonly="1" invisible="not date_order or date_confirm"/>
+                            <field name="date_confirm" readonly="1" invisible="not date_confirm"/>
+                            <field name="company_id" readonly="1"/>
+                            <field name="amc_order_id" readonly="1"/>
+                            <field name="performance_rating" widget="priority" invisible="state!='done'"/>
+                        </group>
+                    </group>
+                    <group invisible="not note">
+                        <separator string="Remarks / Instructions" colspan="2"/>
+                        <field name="note" nolabel="1" colspan="2" readonly="state != 'draft'"/>
+                    </group>
+                    <notebook>
+                        <page string="Services on Products">
+                            <field name="visit_line_ids">
+                                <tree editable="bottom" decoration-muted="state=='cancel'" create="0" edit="1" delete="0">
+                                    <field name="state" column_invisible="1"/>
+                                    <field name="product_id" readonly="1"/>
+                                    <field name="service_id" readonly="1"/>
+                                    <field name="description" readonly="1"/>
+                                    <field name="location" readonly="1"/>
+                                    <field name="product_identification_ids" widget="many2many_tags" readonly="1"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Replacements">
+                            <div class="alert alert-info" role="alert">
+                                Technicians: raise replacement requests here for any faulty/damaged item encountered on-site. Click <strong>Submit for Approval</strong> on each row before it can roll up to the AMC P&amp;L.
+                            </div>
+                            <button name="action_submit_replacements" type="object" string="Submit All Drafts for Approval"
+                                    class="btn-primary" invisible="not replacement_ids"/>
+                            <field name="replacement_ids" context="{'default_amc_id': amc_order_id, 'default_visit_id': id}">
+                                <tree editable="bottom" decoration-muted="state in ('cancel','rejected')" decoration-success="state in ('approved','done')">
+                                    <field name="issue_date"/>
+                                    <field name="faulty_product_id"/>
+                                    <field name="faulty_lot_id" optional="hide"/>
+                                    <field name="issued_product_id" required="1"/>
+                                    <field name="issued_lot_id" optional="hide"/>
+                                    <field name="quantity"/>
+                                    <field name="unit_cost"/>
+                                    <field name="total_cost"/>
+                                    <field name="note" optional="hide"/>
+                                    <field name="state" widget="badge"
+                                           decoration-info="state=='draft'"
+                                           decoration-warning="state in ('to_approve','issued')"
+                                           decoration-success="state in ('approved','done')"
+                                           decoration-danger="state in ('cancel','rejected')"
+                                           readonly="1"/>
+                                    <field name="amc_id" column_invisible="1"/>
+                                    <field name="visit_id" column_invisible="1"/>
+                                    <field name="currency_id" column_invisible="1"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Expenses">
+                            <div class="alert alert-info" role="alert">
+                                Log visit expenses (cab, labour, consumables, parts). Submit for manager approval so they can be billed against the AMC.
+                            </div>
+                            <button name="action_submit_expenses" type="object" string="Submit All Drafts for Approval"
+                                    class="btn-primary" invisible="not expense_ids"/>
+                            <field name="expense_ids" context="{'default_amc_id': amc_order_id, 'default_visit_id': id}">
+                                <tree editable="bottom" decoration-muted="state in ('cancel','rejected')" decoration-success="state in ('approved','confirmed')">
+                                    <field name="expense_date"/>
+                                    <field name="expense_type"/>
+                                    <field name="description" required="1"/>
+                                    <field name="engineer_id"/>
+                                    <field name="replacement_id" optional="hide"/>
+                                    <field name="amount" required="1"/>
+                                    <field name="note" optional="hide"/>
+                                    <field name="state" widget="badge"
+                                           decoration-info="state=='draft'"
+                                           decoration-warning="state=='to_approve'"
+                                           decoration-success="state in ('approved','confirmed')"
+                                           decoration-danger="state in ('cancel','rejected')"
+                                           readonly="1"/>
+                                    <field name="amc_id" column_invisible="1"/>
+                                    <field name="visit_id" column_invisible="1"/>
+                                    <field name="currency_id" column_invisible="1"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <!-- Tree View -->
+    <record id="amc_visit_tree_view" model="ir.ui.view">
+        <field name="name">amc.visit.tree</field>
+        <field name="model">amc.site.visit</field>
+        <field name="arch" type="xml">
+            <tree string="AMC Visits" create="1" edit="1" delete="0">
+                <field name="name"/>
+                <field name="partner_id"/>
+                <field name="assigned_by"/>
+                <field name="engineer_ids" widget="many2many_tags"/>
+                <field name="date_confirm"/>
+                <field name="company_id"/>
+                <field name="state" widget="badge" decoration-danger="state=='cancel'" decoration-info="state=='draft'" decoration-success="state=='done'"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- This action will be called when the smart button is clicked -->
+    <record model="ir.actions.act_window" id="action_amc_visit_list">
+        <field name="name">Visit</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">amc.site.visit</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Pending AMC Visits -->
+    <record id="action_show_pending_amc_visits" model="ir.actions.act_window">
+        <field name="name">Pending AMC Visits</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">amc.site.visit</field>
+        <field name="view_mode">calendar,tree,form</field>
+        <field name="views" eval="[(ref('view_amc_visit_calendar'), 'calendar'), (ref('amc_visit_tree_view'), 'tree'), (ref('amc_visit_form_view'), 'form')]"/>
+        <field name="domain">[('state', '=', 'draft')]</field>
+        <field name="context">{'search_default_group_by_partner_id': 1, 'search_default_my_amc_visits': 1}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create Site Visit from any AMC Order.
+            </p>
+        </field>
+    </record>
+
+    <!-- Done AMC Visits -->
+    <record id="action_show_done_amc_visits" model="ir.actions.act_window">
+        <field name="name">Completed AMC Visits</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">amc.site.visit</field>
+        <field name="view_mode">calendar,tree,form</field>
+        <field name="views" eval="[(ref('view_amc_visit_calendar'), 'calendar'), (ref('amc_visit_tree_view'), 'tree'), (ref('amc_visit_form_view'), 'form')]"/>
+        <field name="domain">[('state', '=', 'done')]</field>
+        <field name="context">{'search_default_group_by_partner_id': 1, 'search_default_my_amc_visits': 1}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create Site Visit from any AMC Order.
+            </p>
+        </field>
+    </record>
+
+    <!-- Menu Items -->
+    <menuitem id="amc_visit_menu_id"
+              parent="amc_mfx.menu_amc_management"
+              name="Visits"
+              groups="amc_mfx.amc_group_user"
+              sequence="2"/>
+
+    <menuitem id="view_pending_amc_visits_menu_id"
+              parent="amc_visit_menu_id"
+              name="Pending"
+              action="action_show_pending_amc_visits"
+              sequence="1"/>
+
+    <menuitem id="view_done_amc_visits_menu_id"
+              parent="amc_visit_menu_id"
+              name="Completed"
+              action="action_show_done_amc_visits"
+              sequence="2"/>
+
+</odoo>

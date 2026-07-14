@@ -1,0 +1,96 @@
+<odoo>
+
+    <record id="view_sale_order_tree_custom" model="ir.ui.view">
+        <field name="name">sale.order.tree.custom</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_quotation_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//tree/field[@name='expected_date']" position="after">
+                <field name="next_reminder_date" optional="hide"/>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Add Margin % field to sale order line tree -->
+    <record id="view_sale_order_form_margin_percentage" model="ir.ui.view">
+        <field name="name">sale.order.form.margin.percentage</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='order_line']//tree//field[@name='purchase_price']" position="after">
+                <field name="margin_percentage" optional="show"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_sale_order_form_custom" model="ir.ui.view">
+        <field name="name">sale.order.form.custom</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//header/button[@name='action_quotation_send']" position="after">
+                <button name="action_send_custom_quotation_email" string="Send Quotation Email" type="object" class="btn-secondary"/>
+            </xpath>
+            <xpath expr="//header/button[@name='action_unlock']" position="after">
+                <button name="send_reminder" type="object" string="Send Reminder Email" invisible="state != 'sent'"/>
+            </xpath>
+            <xpath expr="//notebook/page[@name='order_lines']/field[@name='order_line']/tree/field[@name='name']" position="attributes">
+                <attribute name="width">300px</attribute>
+            </xpath>
+            <xpath expr="//notebook/page[@name='order_lines']/field[@name='order_line']/tree/field[@name='name']" position="after">
+                <field name="warranty_start_date" invisible="not warranty_start_date" optional="hide"/>
+                <field name="warranty_interval" optional="hide"/>
+                <field name="warranty_unit" optional="hide"/>
+                <field name="warranty_end_date" invisible="not warranty_end_date" optional="hide"/>
+            </xpath>
+            <field name="payment_term_id" position="replace">
+                <field name="tandc_id" domain="[('type', '=', 'sale')]" context="{'default_type': 'sale'}"/>
+                <field name="purchase_order_ids" widget="many2many_tags"/>
+                <field name="remind_every" invisible="state != 'sent'"/>
+                <field name="next_reminder_date" invisible="state != 'sent' or not remind_every or not next_reminder_date"/>
+            </field>
+            <field name="partner_id" position="after">
+                <field name="email" widget="email" readonly="state in ('sale', 'cancel')"/>
+                <field name="mobile" widget="phone" readonly="state in ('sale', 'cancel')"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="action_def_tandc_sales" model="ir.actions.act_window">
+        <field name="name">Terms and Conditions</field>
+        <field name="res_model">def.tandc</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{'from_sales': True}</field>
+        <field name="domain">[('type', '=', 'sale')]</field>
+    </record>
+
+    <record id="sale_order_line_tree_custom" model="ir.ui.view">
+        <field name="name">sale.order.line.tree.custom</field>
+        <field name="model">sale.order.line</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="order_id"/>
+                <field name="order_partner_id"/>
+                <field name="name"/>
+                <field name="salesman_id"/>
+                <field name="product_uom_qty"/>
+                <field name="warranty_start_date" optional="show"/>
+                <field name="warranty_interval" optional="show"/>
+                <field name="warranty_unit" optional="show"/>
+                <field name="warranty_end_date" optional="show"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_sale_warranty_details" model="ir.actions.act_window">
+        <field name="name">Sale Order Lines</field>
+        <field name="res_model">sale.order.line</field>
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="custom_crm_mfx.sale_order_line_tree_custom"/>
+        <field name="domain">[('warranty_end_date', '>=', context_today())]</field>
+    </record>
+
+    <menuitem id="menu_def_tandc" name="Terms and Conditions" parent="sale.menu_sale_config" action="custom_crm_mfx.action_def_tandc_sales" sequence="10"/>
+    <menuitem id="menu_sale_order_lines" name="Sale Order Lines" parent="sale.sale_order_menu" action="custom_crm_mfx.action_sale_warranty_details" sequence="10"/>
+
+</odoo>

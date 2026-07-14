@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Module Category -->
+    <record id="module_category_hr_performance" model="ir.module.category">
+        <field name="name">Performance Reviews</field>
+        <field name="description">Access rights for HR Performance Review module</field>
+        <field name="sequence">30</field>
+    </record>
+
+    <!-- Security Groups -->
+    <record id="group_performance_user" model="res.groups">
+        <field name="name">Employee (Self-Review)</field>
+        <field name="category_id" ref="module_category_hr_performance"/>
+        <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        <field name="comment">Can view and submit own performance reviews and goals.</field>
+    </record>
+
+    <record id="group_performance_manager" model="res.groups">
+        <field name="name">Manager</field>
+        <field name="category_id" ref="module_category_hr_performance"/>
+        <field name="implied_ids" eval="[(4, ref('group_performance_user'))]"/>
+        <field name="comment">Can manage reviews for their team members.</field>
+    </record>
+
+    <record id="group_performance_hr" model="res.groups">
+        <field name="name">HR Officer</field>
+        <field name="category_id" ref="module_category_hr_performance"/>
+        <field name="implied_ids" eval="[(4, ref('group_performance_manager'))]"/>
+        <field name="comment">Full access to all performance reviews, cycles, and templates.</field>
+    </record>
+
+    <!-- Record Rules -->
+
+    <!-- Employees can only see their own reviews -->
+    <record id="rule_review_employee" model="ir.rule">
+        <field name="name">Performance Review: Employee sees own</field>
+        <field name="model_id" ref="model_hr_performance_review"/>
+        <field name="domain_force">[('employee_id.user_id', '=', user.id)]</field>
+        <field name="groups" eval="[(4, ref('group_performance_user'))]"/>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="False"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+
+    <!-- Managers can see reviews of their subordinates -->
+    <record id="rule_review_manager" model="ir.rule">
+        <field name="name">Performance Review: Manager sees team</field>
+        <field name="model_id" ref="model_hr_performance_review"/>
+        <field name="domain_force">['|', ('employee_id.user_id', '=', user.id), ('manager_id.user_id', '=', user.id)]</field>
+        <field name="groups" eval="[(4, ref('group_performance_manager'))]"/>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+
+    <!-- HR sees all reviews -->
+    <record id="rule_review_hr" model="ir.rule">
+        <field name="name">Performance Review: HR sees all</field>
+        <field name="model_id" ref="model_hr_performance_review"/>
+        <field name="domain_force">[(1, '=', 1)]</field>
+        <field name="groups" eval="[(4, ref('group_performance_hr'))]"/>
+    </record>
+
+    <!-- Goals: employees see own -->
+    <record id="rule_goal_employee" model="ir.rule">
+        <field name="name">Goals: Employee sees own</field>
+        <field name="model_id" ref="model_hr_review_goal"/>
+        <field name="domain_force">[('employee_id.user_id', '=', user.id)]</field>
+        <field name="groups" eval="[(4, ref('group_performance_user'))]"/>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="False"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+
+    <!-- Goals: managers see team -->
+    <record id="rule_goal_manager" model="ir.rule">
+        <field name="name">Goals: Manager sees team</field>
+        <field name="model_id" ref="model_hr_review_goal"/>
+        <field name="domain_force">['|', ('employee_id.user_id', '=', user.id), ('employee_id.parent_id.user_id', '=', user.id)]</field>
+        <field name="groups" eval="[(4, ref('group_performance_manager'))]"/>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+
+    <!-- Goals: HR sees all -->
+    <record id="rule_goal_hr" model="ir.rule">
+        <field name="name">Goals: HR sees all</field>
+        <field name="model_id" ref="model_hr_review_goal"/>
+        <field name="domain_force">[(1, '=', 1)]</field>
+        <field name="groups" eval="[(4, ref('group_performance_hr'))]"/>
+    </record>
+
+</odoo>

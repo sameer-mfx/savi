@@ -1,0 +1,370 @@
+<odoo>
+    <data>
+        <record id="paperformat_sale_order_custom" model="report.paperformat">
+            <field name="name">Sales Quotation Custom Format</field>
+            <field name="default" eval="False"/>
+            <field name="format">A4</field>
+            <field name="page_height">0</field>
+            <field name="page_width">0</field>
+            <field name="orientation">Portrait</field>
+            <field name="margin_top">35</field>
+            <field name="margin_bottom">12</field>
+            <field name="margin_left">7</field>
+            <field name="margin_right">7</field>
+            <field name="header_line" eval="False"/>
+            <field name="header_spacing">35</field>
+            <field name="dpi">90</field>
+        </record>
+
+        <template id="report_saleorder_document_custom_quotation">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-set="theme_color" t-value="o.company_id.theme_color or '#2c3e50'"/>
+                    <t t-set="theme_text_color" t-value="o.company_id.theme_text_color or '#FFFFFF'"/>
+                    <t t-set="text_color" t-value="o.company_id.text_color or '#000000'"/>
+                    <t t-set="company_color" t-value="o.company_id.company_color or '#2c3e50'"/>
+                    <t t-set="company_address_color" t-value="o.company_id.company_address_color or '#34495e'"/>
+                    <t t-set="customer_color" t-value="o.company_id.customer_color or '#2c3e50'"/>
+                    <t t-set="customer_address_color" t-value="o.company_id.customer_address_color or '#34495e'"/>
+                    <t t-set="odd_row_color" t-value="o.company_id.odd_party_color or '#ffffff'"/>
+                    <t t-set="even_row_color" t-value="o.company_id.even_party_color or '#f8f9fa'"/>
+                    <t t-set="font_family" t-value="o.company_id.font_id.family or 'Arial'"/>
+                    <t t-set="font_size" t-value="o.company_id.font_size or 12"/>
+
+                    <div class="header" style="border: none !important; outline: none !important; box-shadow: none !important;">
+                        <style>
+                            .header * { border: none !important; }
+                        </style>
+                        <table style="width: 100%; border-collapse: collapse; border: none !important; margin-bottom: 0;">
+                            <tr>
+                                <td style="width: 25%; vertical-align: middle; border: none !important; padding: 0 10px 15px 0;">
+                                    <t t-if="o.company_id.invoice_logo">
+                                        <img t-att-src="image_data_uri(o.company_id.invoice_logo)" style="max-height: 120px; max-width: 100%; border: none !important;"/>
+                                    </t>
+                                    <t t-elif="o.company_id.logo">
+                                        <img t-att-src="image_data_uri(o.company_id.logo)" style="max-height: 120px; max-width: 100%; border: none !important;"/>
+                                    </t>
+                                </td>
+                                <td style="width: 50%; text-align: center; vertical-align: middle; border: none !important; padding: 0 0 15px 0;">
+                                    <h2 t-att-style="'margin: 0; font-size: 26px; font-weight: 700; color: ' + theme_color + '; text-transform: uppercase; letter-spacing: 1px;'">
+                                        Sales Quotation
+                                    </h2>
+                                </td>
+                                <td t-att-style="'width: 25%; text-align: right; vertical-align: middle; font-size: 10px; line-height: 1.4; color: ' + company_address_color + '; border: none !important; padding: 0 0 15px 10px;'">
+                                    <strong t-att-style="'font-size: 11px; color: ' + company_color + ';'">
+                                        <t t-out="o.company_id.name"/>
+                                    </strong><br/>
+                                    <t t-if="o.company_id.street"><t t-out="o.company_id.street"/><br/></t>
+                                    <t t-if="o.company_id.street2"><t t-out="o.company_id.street2"/><br/></t>
+                                    <t t-if="o.company_id.city">
+                                        <t t-out="o.company_id.city"/>
+                                        <t t-if="o.company_id.state_id">, <t t-out="o.company_id.state_id.name"/></t>
+                                        <t t-if="o.company_id.zip"> - <t t-out="o.company_id.zip"/></t><br/>
+                                    </t>
+                                    <t t-if="o.company_id.country_id"><t t-out="o.company_id.country_id.name"/><br/></t>
+                                    <t t-if="o.company_id.phone">Ph: <t t-out="o.company_id.phone"/><br/></t>
+                                    <t t-if="o.company_id.email"><t t-out="o.company_id.email"/></t>
+                                </td>
+                            </tr>
+                        </table>
+                        <div t-att-style="'border-bottom: 3px solid ' + theme_color + ' !important; margin: 0 !important;'"></div>
+                    </div>
+
+                    <div class="article" style="border: none !important;">
+                        <div class="page" t-att-style="'border: none !important; font-family: ' + font_family + '; font-size: ' + str(font_size) + 'px;'">
+                            <style>
+                                .header, .header table, .header tr, .header td, .header th,
+                                .article, .page {
+                                    border: none !important;
+                                }
+                                .quotation-info {
+                                    background-color: #ecf0f1;
+                                    padding: 20px;
+                                    margin: 15px 0 25px 0;
+                                    border-left: 4px solid #2c3e50;
+                                }
+                                .info-row {
+                                    display: flex;
+                                    justify-content: space-between;
+                                    padding: 6px 0;
+                                }
+                                .address-box {
+                                    background-color: #f8f9fa;
+                                    border: 1px solid #dee2e6;
+                                    padding: 15px;
+                                    border-radius: 4px;
+                                    min-height: 120px;
+                                }
+                                .address-box h6 {
+                                    color: #2c3e50;
+                                    font-weight: 700;
+                                    margin: 0 0 10px 0;
+                                    font-size: 14px;
+                                    text-transform: uppercase;
+                                }
+                                .quotation-table, .quotation-table th, .quotation-table td {
+                                    border: 1px solid #dee2e6 !important;
+                                }
+                                .quotation-table {
+                                    width: 100%;
+                                    border-collapse: collapse;
+                                    margin-top: 15px;
+                                }
+                                .quotation-table th {
+                                    padding: 12px 8px;
+                                    font-weight: 600;
+                                    text-align: left;
+                                }
+                                .quotation-table td {
+                                    padding: 10px 8px;
+                                    vertical-align: top;
+                                }
+                                .totals-box {
+                                    background-color: #f8f9fa;
+                                    border: 2px solid #dee2e6;
+                                    padding: 18px;
+                                    margin-top: 20px;
+                                }
+                                .totals-row {
+                                    display: flex;
+                                    justify-content: space-between;
+                                    padding: 6px 0;
+                                    font-size: 14px;
+                                }
+                                .totals-row.total {
+                                    border-top: 2px solid #2c3e50;
+                                    padding-top: 12px;
+                                    margin-top: 10px;
+                                    font-weight: 700;
+                                    font-size: 18px;
+                                    color: #2c3e50;
+                                }
+                                .notes-block {
+                                    background-color: #fafafa;
+                                    border: 1px solid #dee2e6;
+                                    padding: 15px;
+                                    margin-top: 15px;
+                                    font-size: 13px;
+                                    line-height: 1.6;
+                                }
+                            </style>
+
+                            <div class="quotation-info" t-att-style="'border-left: 4px solid ' + theme_color + ';'">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="info-row" t-att-style="'color: ' + text_color + ';'">
+                                            <span style="font-weight: 600;">Quotation Number:</span>
+                                            <span t-att-style="'font-size: 18px; font-weight: 700; color: ' + theme_color + ';'"><t t-out="o.name"/></span>
+                                        </div>
+                                <div class="info-row" t-att-style="'color: ' + text_color + ';'">
+                                    <span style="font-weight: 600;">Salesperson:</span>
+                                    <span><t t-out="o.user_id.name or '-'"/></span>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="info-row" t-att-style="'color: ' + text_color + ';'">
+                                    <span style="font-weight: 600;">Quotation Date:</span>
+                                    <span><t t-out="o.date_order" t-options='{"widget": "date"}'/></span>
+                                </div>
+                                <div class="info-row" t-att-style="'color: ' + text_color + ';'">
+                                    <span style="font-weight: 600;">Expiration Date:</span>
+                                    <span>
+                                        <t t-if="o.validity_date"><t t-out="o.validity_date" t-options='{"widget": "date"}'/></t>
+                                        <t t-if="not o.validity_date">—</t>
+                                    </span>
+                                </div>
+                                <t t-if="o.client_order_ref">
+                                    <div class="info-row" t-att-style="'color: ' + text_color + ';'">
+                                        <span style="font-weight: 600;">Customer Reference:</span>
+                                        <span><t t-out="o.client_order_ref"/></span>
+                                    </div>
+                                </t>
+                            </div>
+                        </div>
+                    </div>
+
+                            <div class="row" style="margin-bottom: 25px;">
+                                <div class="col-6">
+                                    <div class="address-box">
+                                        <h6 t-att-style="'color: ' + theme_color + ';'">Customer</h6>
+                                        <p t-att-style="'margin: 0; font-weight: 600; color: ' + customer_color + ';'">
+                                            <t t-out="o.partner_id.name"/>
+                                        </p>
+                                        <p t-att-style="'margin: 5px 0 0 0; font-size: 12px; color: ' + customer_address_color + '; line-height: 1.5;'">
+                                            <t t-if="o.partner_invoice_id">
+                                                <t t-if="o.partner_invoice_id.street"><t t-out="o.partner_invoice_id.street"/><br/></t>
+                                                <t t-if="o.partner_invoice_id.street2"><t t-out="o.partner_invoice_id.street2"/><br/></t>
+                                                <t t-if="o.partner_invoice_id.city">
+                                                    <t t-out="o.partner_invoice_id.city"/>
+                                                    <t t-if="o.partner_invoice_id.state_id">, <t t-out="o.partner_invoice_id.state_id.name"/></t>
+                                                    <t t-if="o.partner_invoice_id.zip"> - <t t-out="o.partner_invoice_id.zip"/></t><br/>
+                                                </t>
+                                                <t t-if="o.partner_invoice_id.country_id"><t t-out="o.partner_invoice_id.country_id.name"/><br/></t>
+                                            </t>
+                                            <t t-if="o.partner_id.mobile">Mobile: <t t-out="o.partner_id.mobile"/><br/></t>
+                                            <t t-if="o.partner_id.email">Email: <t t-out="o.partner_id.email"/></t>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="address-box">
+                                        <h6 t-att-style="'color: ' + theme_color + ';'">Delivery Address</h6>
+                                        <p t-att-style="'margin: 0; font-weight: 600; color: ' + company_color + ';'">
+                                            <t t-out="o.partner_shipping_id.name or '-'"/>
+                                        </p>
+                                        <p t-att-style="'margin: 5px 0 0 0; font-size: 12px; color: ' + company_address_color + '; line-height: 1.5;'">
+                                            <t t-if="o.partner_shipping_id">
+                                                <t t-if="o.partner_shipping_id.street"><t t-out="o.partner_shipping_id.street"/><br/></t>
+                                                <t t-if="o.partner_shipping_id.street2"><t t-out="o.partner_shipping_id.street2"/><br/></t>
+                                                <t t-if="o.partner_shipping_id.city">
+                                                    <t t-out="o.partner_shipping_id.city"/>
+                                                    <t t-if="o.partner_shipping_id.state_id">, <t t-out="o.partner_shipping_id.state_id.name"/></t>
+                                                    <t t-if="o.partner_shipping_id.zip"> - <t t-out="o.partner_shipping_id.zip"/></t><br/>
+                                                </t>
+                                                <t t-if="o.partner_shipping_id.country_id"><t t-out="o.partner_shipping_id.country_id.name"/><br/></t>
+                                            </t>
+                                            <t t-else="">-</t>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div style="font-size: 16px; font-weight: 700; color: #2c3e50; margin: 25px 0 15px 0; padding-bottom: 8px; border-bottom: 2px solid #2c3e50; text-transform: uppercase;">
+                                Products &amp; Services
+                            </div>
+
+                            <table class="quotation-table">
+                                <thead>
+                                    <tr t-att-style="'background-color: ' + theme_color + '; color: ' + theme_text_color + ';'">
+                                        <th style="width: 6%; text-align: center;">Sr. No</th>
+                                        <th style="width: 10%; text-align: center;">Image</th>
+                                        <th style="width: 32%; text-align: left;">Description</th>
+                                        <th style="width: 12%; text-align: left;">URL</th>
+                                        <th style="width: 10%; text-align: center;">Quantity</th>
+                                        <th style="width: 10%; text-align: right;">Unit Price</th>
+                                        <th style="width: 10%; text-align: center;">Taxes</th>
+                                        <th style="width: 10%; text-align: right;">Price</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <t t-set="line_number" t-value="0"/>
+                                    <t t-foreach="o.order_line.filtered(lambda l: not (l.product_id.detailed_type == 'service' and l.product_id.service_tracking))" t-as="line">
+                                        <t t-if="line.display_type == 'line_section'">
+                                            <tr t-att-style="'background-color: ' + theme_color + '10;'">
+                                                <td colspan="8" style="font-weight: 700; padding: 12px 8px;">
+                                                    <t t-out="line.name"/>
+                                                </td>
+                                            </tr>
+                                        </t>
+                                        <t t-elif="line.display_type == 'line_note'">
+                                            <tr>
+                                                <td colspan="8" style="padding: 10px 8px; font-style: italic; color: #6c757d;">
+                                                    <t t-out="line.name"/>
+                                                </td>
+                                            </tr>
+                                        </t>
+                                        <t t-else="">
+                                            <t t-set="line_number" t-value="line_number + 1"/>
+                                            <tr t-att-style="'background-color: ' + (odd_row_color if line_number % 2 == 1 else even_row_color) + ';'">
+                                                <td style="text-align: center; padding: 10px 8px;">
+                                                    <t t-out="line_number"/>
+                                                </td>
+                                                <td style="text-align: center; padding: 10px 8px;">
+                                                    <span t-field="line.product_id.image_256"
+                                                          t-options="{'widget': 'image', 'class': 'img-rounded mh-100'}"
+                                                          style="width: 64px; height: 64px; display: flex; align-items: center; justify-content: center;"/>
+                                                </td>
+                                                <td style="padding: 10px 8px;">
+                                                    <strong><t t-out="line.product_id.display_name or line.name"/></strong>
+                                                    <div t-if="line.name and line.product_id.display_name != line.name" style="color: #6c757d; font-size: 11px; margin-top: 4px;">
+                                                        <t t-out="line.name"/>
+                                                    </div>
+                                                </td>
+                                                <td style="padding: 10px 8px; font-size: 11px; word-break: break-all;">
+                                                    <a t-if="line.product_template_id.website_url" t-att-href="line.product_template_id.website_url" target="_blank" style="font-size:10px; color:#007bff;">
+                                                       <span t-out="line.product_template_id.website_url"/>
+                                                    </a>
+                                                </td>
+                                                <td style="text-align: center; padding: 10px 8px;">
+                                                    <t t-out="line.product_uom_qty"/>
+                                                    <span t-if="line.product_uom" style="font-size: 11px; color: #6c757d;"> <t t-out="line.product_uom.name"/></span>
+                                                </td>
+                                                <td style="text-align: right; padding: 10px 8px;">
+                                                    <t t-out="line.price_unit" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                                                </td>
+                                                <td style="text-align: center; padding: 10px 8px;">
+                                                    <t t-set="taxes" t-value="', '.join([(tax.invoice_label or tax.name) for tax in line.tax_id])"/>
+                                                    <t t-if="taxes"><t t-out="taxes"/></t>
+                                                    <t t-else="">-</t>
+                                                </td>
+                                                <td style="text-align: right; padding: 10px 8px; font-weight: 600;">
+                                                    <t t-out="line.price_subtotal" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                                                </td>
+                                            </tr>
+                                        </t>
+                                    </t>
+                                </tbody>
+                            </table>
+
+                            <div class="row" style="page-break-inside: avoid !important;">
+                                <div class="col-7"></div>
+                                <div class="col-5">
+                                    <div class="totals-box">
+                                        <div class="totals-row" t-att-style="'color: ' + text_color + ';'">
+                                            <span>Subtotal</span>
+                                            <span><t t-out="o.amount_untaxed" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/></span>
+                                        </div>
+                                        <div class="totals-row" t-att-style="'color: ' + text_color + ';'">
+                                            <span>Taxes</span>
+                                            <span><t t-out="o.amount_tax" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/></span>
+                                        </div>
+                                        <div class="totals-row total">
+                                            <span>Total</span>
+                                            <span><t t-out="o.amount_total" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <t t-if="o.note">
+                                <div style="font-size: 16px; font-weight: 700; color: #2c3e50; margin: 25px 0 15px 0; padding-bottom: 8px; border-bottom: 2px solid #2c3e50; text-transform: uppercase;">
+                                    Terms &amp; Conditions
+                                </div>
+                                <div class="notes-block">
+                                    <t t-out="o.note"/>
+                                </div>
+                            </t>
+
+                        </div>
+                    </div>
+
+                    <div class="footer" t-att-style="'margin-top: 5px !important; padding: 0 !important; height: auto !important;'">
+                        <div t-att-style="'border-top: 3px solid ' + theme_color + '; padding-top: 5px !important; margin: 0 !important; text-align: center; font-size: 9px; color: #7f8c8d;'">
+                            Page <span class="page"/> of <span class="topage"/>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </template>
+
+        <template id="report_saleorder_custom_quotation_raw">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="doc">
+                    <t t-call="custom_crm_mfx.report_saleorder_document_custom_quotation" t-lang="doc.partner_id.lang"/>
+                </t>
+            </t>
+        </template>
+
+        <record id="action_report_saleorder_custom_quotation" model="ir.actions.report">
+            <field name="name">Sales Quotation (Custom)</field>
+            <field name="model">sale.order</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">custom_crm_mfx.report_saleorder_custom_quotation_raw</field>
+            <field name="report_file">custom_crm_mfx.report_saleorder_custom_quotation_raw</field>
+            <field name="print_report_name">'Quotation - %s' % (object.name)</field>
+            <field name="paperformat_id" ref="custom_crm_mfx.paperformat_sale_order_custom"/>
+            <field name="binding_model_id" ref="sale.model_sale_order"/>
+            <field name="binding_type">report</field>
+        </record>
+    </data>
+</odoo>

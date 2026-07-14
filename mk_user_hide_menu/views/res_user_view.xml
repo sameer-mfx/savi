@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+  <record id="user_hide_menu_view" model="ir.ui.view">
+	 <field name="name">user.hide.menu.view</field>
+	 <field name="model">res.users</field>
+	 <field name="inherit_id" ref="base.view_users_form"/>
+	 <field name="arch" type="xml">
+		<xpath expr="//notebook[last()]" position="inside">
+                <page string="Hide Menu">
+                        <field name="hide_menu_ids" nolabel="1">
+                        	<tree editable="bottom">
+                        		<field name="name"/>
+                        		<field name="complete_name"/>
+                        	</tree>
+                        </field>
+                </page>
+        </xpath>
+	</field>
+ </record>
+</odoo>
+
+

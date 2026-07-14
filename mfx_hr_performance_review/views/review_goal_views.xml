@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Goal Form View -->
+    <record id="view_review_goal_form" model="ir.ui.view">
+        <field name="name">hr.review.goal.form</field>
+        <field name="model">hr.review.goal</field>
+        <field name="arch" type="xml">
+            <form string="Goal">
+                <header>
+                    <button name="action_start" string="Start"
+                            type="object" class="btn-primary"
+                            invisible="state != 'draft'"/>
+                    <button name="action_achieve" string="Mark Achieved"
+                            type="object" class="btn-success"
+                            invisible="state not in ('in_progress',)"/>
+                    <button name="action_partial" string="Partially Achieved"
+                            type="object"
+                            invisible="state not in ('in_progress',)"/>
+                    <button name="action_fail" string="Not Achieved"
+                            type="object"
+                            invisible="state not in ('in_progress',)"/>
+                    <button name="action_cancel" string="Cancel"
+                            type="object"
+                            invisible="state in ('achieved', 'not_achieved', 'cancelled')"/>
+                    <button name="action_reset" string="Reset"
+                            type="object"
+                            invisible="state not in ('cancelled', 'not_achieved')"
+                            groups="mfx_hr_performance_review.group_performance_manager"/>
+                    <field name="state" widget="statusbar"
+                           statusbar_visible="draft,in_progress,achieved"/>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <label for="name"/>
+                        <h1>
+                            <field name="name" placeholder="e.g., Complete Sales Target Q1"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="employee_id"/>
+                            <field name="manager_id"/>
+                            <field name="review_id"/>
+                            <field name="company_id" groups="base.group_multi_company"/>
+                        </group>
+                        <group>
+                            <field name="goal_type"/>
+                            <field name="priority" widget="priority"/>
+                            <field name="deadline"/>
+                            <field name="progress" widget="progressbar"/>
+                        </group>
+                    </group>
+                    <group>
+                        <field name="description" placeholder="Detailed description of the goal..."/>
+                        <field name="metric" placeholder="e.g., Close 10 deals, Complete AWS certification"/>
+                    </group>
+                    <notebook>
+                        <page string="Notes" name="notes">
+                            <group>
+                                <field name="employee_notes"
+                                       placeholder="Employee's notes on goal progress..."/>
+                                <field name="manager_notes"
+                                       placeholder="Manager's feedback on goal..."
+                                       groups="mfx_hr_performance_review.group_performance_manager"/>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <!-- Goal List View -->
+    <record id="view_review_goal_list" model="ir.ui.view">
+        <field name="name">hr.review.goal.list</field>
+        <field name="model">hr.review.goal</field>
+        <field name="arch" type="xml">
+            <tree string="Goals"
+                  decoration-success="state == 'achieved'"
+                  decoration-warning="state in ('in_progress', 'partially_achieved')"
+                  decoration-danger="state == 'not_achieved'"
+                  decoration-muted="state == 'cancelled'">
+                <field name="name"/>
+                <field name="employee_id" widget="many2one_avatar_employee"/>
+                <field name="goal_type"/>
+                <field name="priority" widget="priority"/>
+                <field name="deadline"/>
+                <field name="progress" widget="progressbar"/>
+                <field name="review_id" optional="hide"/>
+                <field name="state" widget="badge"
+                       decoration-info="state == 'draft'"
+                       decoration-warning="state in ('in_progress', 'partially_achieved')"
+                       decoration-success="state == 'achieved'"
+                       decoration-danger="state == 'not_achieved'"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Goal Kanban View -->
+    <record id="view_review_goal_kanban" model="ir.ui.view">
+        <field name="name">hr.review.goal.kanban</field>
+        <field name="model">hr.review.goal</field>
+        <field name="arch" type="xml">
+            <kanban default_group_by="state" class="o_kanban_small_column">
+                <field name="name"/>
+                <field name="employee_id"/>
+                <field name="goal_type"/>
+                <field name="priority"/>
+                <field name="deadline"/>
+                <field name="progress"/>
+                <field name="state"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_card oe_kanban_global_click">
+                            <div class="oe_kanban_content">
+                                <div class="o_kanban_record_top">
+                                    <div class="o_kanban_record_headings">
+                                        <strong class="o_kanban_record_title">
+                                            <field name="name"/>
+                                        </strong>
+                                    </div>
+                                    <field name="priority" widget="priority"/>
+                                </div>
+                                <div class="o_kanban_record_body">
+                                    <div>
+                                        <field name="employee_id" widget="many2one_avatar_employee"/>
+                                    </div>
+                                    <div class="mt-1">
+                                        <span class="badge rounded-pill bg-secondary">
+                                            <field name="goal_type"/>
+                                        </span>
+                                    </div>
+                                    <div t-if="record.deadline.raw_value" class="mt-1">
+                                        <i class="fa fa-clock-o me-1" title="Deadline"/>
+                                        <field name="deadline"/>
+                                    </div>
+                                    <div class="mt-1">
+                                        <field name="progress" widget="progressbar"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <!-- Goal Search View -->
+    <record id="view_review_goal_search" model="ir.ui.view">
+        <field name="name">hr.review.goal.search</field>
+        <field name="model">hr.review.goal</field>
+        <field name="arch" type="xml">
+            <search string="Goals">
+                <field name="name"/>
+                <field name="employee_id"/>
+                <separator/>
+                <filter string="My Goals" name="filter_my_goals"
+                        domain="[('employee_id.user_id', '=', uid)]"/>
+                <filter string="My Team's Goals" name="filter_team_goals"
+                        domain="[('employee_id.parent_id.user_id', '=', uid)]"/>
+                <separator/>
+                <filter string="In Progress" name="filter_in_progress"
+                        domain="[('state', '=', 'in_progress')]"/>
+                <filter string="Achieved" name="filter_achieved"
+                        domain="[('state', '=', 'achieved')]"/>
+                <filter string="Overdue" name="filter_overdue"
+                        domain="[('deadline', '&lt;', context_today().strftime('%Y-%m-%d')), ('state', 'in', ('draft', 'in_progress'))]"/>
+                <group expand="0" string="Group By">
+                    <filter string="Employee" name="group_employee"
+                            context="{'group_by': 'employee_id'}"/>
+                    <filter string="Goal Type" name="group_type"
+                            context="{'group_by': 'goal_type'}"/>
+                    <filter string="Status" name="group_state"
+                            context="{'group_by': 'state'}"/>
+                    <filter string="Priority" name="group_priority"
+                            context="{'group_by': 'priority'}"/>
+                    <filter string="Deadline" name="group_deadline"
+                            context="{'group_by': 'deadline:month'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- Action: All Goals -->
+    <record id="action_review_goal" model="ir.actions.act_window">
+        <field name="name">Goals</field>
+        <field name="res_model">hr.review.goal</field>
+        <field name="view_mode">tree,form,kanban</field>
+        <field name="search_view_id" ref="view_review_goal_search"/>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Set your first goal
+            </p>
+            <p>
+                Define performance, development, and project goals for employees
+                with deadlines and progress tracking.
+            </p>
+        </field>
+    </record>
+
+    <!-- Action: My Goals -->
+    <record id="action_my_goals" model="ir.actions.act_window">
+        <field name="name">My Goals</field>
+        <field name="res_model">hr.review.goal</field>
+        <field name="view_mode">kanban,tree,form</field>
+        <field name="search_view_id" ref="view_review_goal_search"/>
+        <field name="context">{'search_default_filter_my_goals': 1}</field>
+    </record>
+
+</odoo>

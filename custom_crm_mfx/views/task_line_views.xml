@@ -1,0 +1,20 @@
+<odoo>
+    <record id="view_cons_task_line_line_form_custom" model="ir.ui.view">
+        <field name="name">cons.task.line.line.form.custom</field>
+        <field name="model">cons.task.line</field>
+        <field name="inherit_id" ref="con_construction_base.cons_task_line_line_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='original_unit_cost']" position="after">
+                <field name="margin_percentage" readonly="state == 'approved'"/>
+            </xpath>
+            <xpath expr="//field[@name='revenue_already_recognized']" position="after">
+                <field name="model" readonly="state == 'approved'"/>
+                <field name="serial_no" readonly="state == 'approved'"/>
+                <field name="model" readonly="state == 'approved'"/>
+                <field name="warranty_start_date" readonly="state == 'approved'"/>
+                <field name="warranty_end_date" readonly="state == 'approved'"/>
+                <field name="remind_before" readonly="state == 'approved'"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

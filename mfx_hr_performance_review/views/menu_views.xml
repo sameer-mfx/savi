@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Top-level menu: Performance -->
+    <menuitem id="menu_performance_root"
+              name="Performance"
+              web_icon="mfx_hr_performance_review,static/description/icon.png"
+              sequence="25"
+              groups="mfx_hr_performance_review.group_performance_user"/>
+
+    <!-- My Section -->
+    <menuitem id="menu_performance_my"
+              name="My"
+              parent="menu_performance_root"
+              sequence="10"/>
+
+    <menuitem id="menu_my_reviews"
+              name="My Reviews"
+              parent="menu_performance_my"
+              action="action_my_reviews"
+              sequence="10"/>
+
+    <menuitem id="menu_my_goals"
+              name="My Goals"
+              parent="menu_performance_my"
+              action="action_my_goals"
+              sequence="20"/>
+
+    <!-- Manager Section -->
+    <menuitem id="menu_performance_manager"
+              name="Team"
+              parent="menu_performance_root"
+              sequence="20"
+              groups="mfx_hr_performance_review.group_performance_manager"/>
+
+    <menuitem id="menu_team_reviews"
+              name="Team Reviews"
+              parent="menu_performance_manager"
+              action="action_team_reviews"
+              sequence="10"/>
+
+    <!-- All Reviews & Goals -->
+    <menuitem id="menu_performance_all"
+              name="Reviews"
+              parent="menu_performance_root"
+              sequence="30"
+              groups="mfx_hr_performance_review.group_performance_hr"/>
+
+    <menuitem id="menu_all_reviews"
+              name="All Reviews"
+              parent="menu_performance_all"
+              action="action_performance_review"
+              sequence="10"/>
+
+    <menuitem id="menu_all_goals"
+              name="All Goals"
+              parent="menu_performance_all"
+              action="action_review_goal"
+              sequence="20"/>
+
+    <menuitem id="menu_review_cycles"
+              name="Review Cycles"
+              parent="menu_performance_all"
+              action="action_review_cycle"
+              sequence="30"/>
+
+    <!-- Configuration -->
+    <menuitem id="menu_performance_config"
+              name="Configuration"
+              parent="menu_performance_root"
+              sequence="90"
+              groups="mfx_hr_performance_review.group_performance_hr"/>
+
+    <menuitem id="menu_review_templates"
+              name="Review Templates"
+              parent="menu_performance_config"
+              action="action_review_template"
+              sequence="10"/>
+
+    <!-- User Manual -->
+    <menuitem id="menu_user_manual"
+              name="User Manual"
+              parent="menu_performance_root"
+              action="action_hr_performance_user_manual"
+              sequence="100"/>
+
+</odoo>

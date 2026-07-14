@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record id="view_service_order_form_inherit" model="ir.ui.view">
+        <field name="name">service.order.form.inherit</field>
+        <field name="model">service.order</field>
+        <field name="inherit_id" ref="service_order_mfx.service_order_form"/>
+        <field name="priority">1</field>
+        <field name="arch" type="xml">
+            <xpath expr="//sheet/group/group[2]" position="inside">
+                <field name="origin" readonly="1" force_save="1"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

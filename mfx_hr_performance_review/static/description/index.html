@@ -1,0 +1,153 @@
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <div class="oe_span12">
+            <h2 class="oe_slogan" style="color: #F57C00;">HR Performance Review System</h2>
+            <h3 class="oe_slogan">Complete review cycles with self-assessment, manager review, HR approval, goal tracking, and composite scoring</h3>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <h3 style="color: #F57C00; border-bottom: 2px solid #F57C00; padding-bottom: 8px;">What This Module Does</h3>
+        <p>A comprehensive performance review system supporting structured evaluation through multi-stage reviews. Includes weighted review criteria, self and manager assessments, goal tracking, composite scoring, and deadline-driven automation.</p>
+    </div>
+</section>
+
+<section class="oe_container oe_dark">
+    <div class="oe_row oe_spaced">
+        <h3 style="color: #F57C00;">Key Features</h3>
+        <div class="oe_span6">
+            <ul>
+                <li><strong>Review Cycles</strong> — Quarterly, Semi-Annual, Annual, or Custom</li>
+                <li><strong>Templates</strong> — Weighted criteria (must total 100%)</li>
+                <li><strong>Self Assessment</strong> — Employees rate themselves with comments</li>
+                <li><strong>Manager Review</strong> — Managers assess with their own scores</li>
+            </ul>
+        </div>
+        <div class="oe_span6">
+            <ul>
+                <li><strong>HR Approval</strong> — Final approval with computed ratings</li>
+                <li><strong>Goal Tracking</strong> — Track goals with progress (0-100%)</li>
+                <li><strong>Composite Rating</strong> — 70% Manager + 20% Self + 10% Goals</li>
+                <li><strong>Deadline Reminders</strong> — Auto-email 3 days before deadlines</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <h3 style="color: #F57C00; border-bottom: 2px solid #F57C00; padding-bottom: 8px;">Workflow: Performance Review Cycle</h3>
+        <div style="background: #fff3e0; padding: 15px; border-radius: 8px; margin-bottom: 15px;">
+            <strong>Review States:</strong> Draft → Self Review → Manager Review → HR Review → Done<br/>
+            <strong>Rating Formula:</strong> 70% Manager Score + 20% Self Score + 10% Goal Achievement
+        </div>
+
+        <h4>Phase 1: Setup (HR Manager)</h4>
+        <ol>
+            <li>Create a <strong>Template</strong> at HR → Performance → Templates:
+                <ul>
+                    <li>Add criteria: Performance (30%), Competency (25%), Leadership (20%), Teamwork (15%), Innovation (10%)</li>
+                    <li><strong>Weights must total 100%</strong></li>
+                </ul>
+            </li>
+            <li>Create a <strong>Review Cycle</strong> at HR → Performance → Review Cycles:
+                <ul>
+                    <li>Set cycle type, date range, deadlines, template, and departments</li>
+                </ul>
+            </li>
+            <li>Click <strong>"Generate Reviews"</strong> → creates individual review records</li>
+            <li>Click <strong>"Start"</strong> → sends all reviews to self-review stage with email notifications</li>
+        </ol>
+
+        <div style="background: #e8f5e9; padding: 12px; border-left: 4px solid #4caf50; margin: 15px 0;">
+            <strong>Use Case Example — Annual Review Setup:</strong><br/>
+            <em>
+            Cycle: "Annual Review 2026"<br/>
+            Period: Jan 1 – Dec 31, 2026<br/>
+            Self Review Deadline: Jan 15, 2027<br/>
+            Manager Review Deadline: Jan 31, 2027<br/>
+            Departments: All<br/><br/>
+            Generate → 50 reviews created<br/>
+            Start → All employees receive: "Your performance review is ready for self-assessment"
+            </em>
+        </div>
+
+        <h4>Phase 2: Self Review (Employee)</h4>
+        <ol>
+            <li>Employee opens their review from <strong>HR → Performance → My Reviews</strong></li>
+            <li>For each criteria: give a <strong>self-score (0-5)</strong> and add a <strong>self-comment</strong></li>
+            <li>Fill in: Self Summary, Strengths, Areas for Improvement</li>
+            <li>Click <strong>"Submit Self Review"</strong> → moves to Manager Review</li>
+        </ol>
+
+        <h4>Phase 3: Manager Review</h4>
+        <ol>
+            <li>Manager sees employee's self-scores and comments</li>
+            <li>For each criteria: give a <strong>manager score (0-5)</strong> and <strong>manager comment</strong></li>
+            <li>Fill in: Manager Summary, Strengths, Development Areas</li>
+            <li>Click <strong>"Submit Manager Review"</strong> → moves to HR Review</li>
+        </ol>
+
+        <h4>Phase 4: HR Approval</h4>
+        <ol>
+            <li>HR reviews all scores and adds comments if needed</li>
+            <li>Click <strong>"Approve"</strong></li>
+            <li>System computes final rating and sends completion notification</li>
+        </ol>
+
+        <div style="background: #e8f5e9; padding: 12px; border-left: 4px solid #4caf50; margin: 15px 0;">
+            <strong>Use Case Example — Rating Calculation:</strong><br/>
+            <em>Employee: Suresh</em>
+            <ul>
+                <li>Self-assessment weighted score: 3.8 / 5</li>
+                <li>Manager assessment weighted score: 4.2 / 5</li>
+                <li>Goal achievement rate: 85% (= 4.25 / 5)</li>
+                <li><strong>Final Rating</strong> = (4.2 × 0.7) + (3.8 × 0.2) + (4.25 × 0.1) = 2.94 + 0.76 + 0.425 = <strong>4.125 / 5 → "Exceeds Expectations"</strong></li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container oe_dark">
+    <div class="oe_row oe_spaced">
+        <h3 style="color: #F57C00; border-bottom: 2px solid #F57C00; padding-bottom: 8px;">Goal Tracking</h3>
+        <ol>
+            <li>Create goals from the employee profile or review form</li>
+            <li>Each goal has: Name, Type (Performance/Development/Project/Learning/Behavioral), Priority, Deadline, Progress (0-100%)</li>
+            <li>Goal states: Draft → In Progress → Achieved / Partially Achieved / Not Achieved</li>
+            <li>Average goal progress contributes <strong>10% to the final rating</strong></li>
+        </ol>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <h3 style="color: #F57C00; border-bottom: 2px solid #F57C00; padding-bottom: 8px;">Rating Scale</h3>
+        <table class="table table-bordered">
+            <thead><tr><th>Score Range</th><th>Rating Label</th></tr></thead>
+            <tbody>
+                <tr><td>4.5 - 5.0</td><td><strong>Outstanding</strong></td></tr>
+                <tr><td>3.5 - 4.49</td><td><strong>Exceeds Expectations</strong></td></tr>
+                <tr><td>2.5 - 3.49</td><td><strong>Meets Expectations</strong></td></tr>
+                <tr><td>1.5 - 2.49</td><td><strong>Below Expectations</strong></td></tr>
+                <tr><td>0 - 1.49</td><td><strong>Needs Improvement</strong></td></tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<section class="oe_container oe_dark">
+    <div class="oe_row oe_spaced">
+        <h3 style="color: #F57C00; border-bottom: 2px solid #F57C00; padding-bottom: 8px;">What NOT To Do</h3>
+        <ul>
+            <li><strong>Don't create templates with weights ≠ 100%</strong> — System enforces this</li>
+            <li><strong>Don't skip self-review</strong> — Manager review only opens after self-assessment is submitted</li>
+            <li><strong>Don't rate criteria outside 0-5</strong> — System validates score range</li>
+            <li><strong>Don't set goal progress above 100%</strong></li>
+            <li><strong>Don't start a cycle without generating reviews first</strong></li>
+            <li><strong>Don't ignore deadline reminders</strong> — Auto-sent 3 days before each deadline</li>
+        </ul>
+    </div>
+</section>

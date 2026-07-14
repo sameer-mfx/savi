@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_order_form_inherit_amc_end_date" model="ir.ui.view">
+        <field name="name">sale.order.form.inherit.amc.end.date</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='validity_date']" position="after">
+                <field name="amc_id" invisible="1"/>
+                <field name="amc_end_date" invisible="not amc_id or not amc_end_date" readonly="1"/>
+            </xpath>
+            <xpath expr="//div[@name='button_box']" position="inside">
+                <button name="action_open_amc_order" type="object" class="oe_stat_button" icon="fa-wrench" invisible="not amc_id">
+                    <div class="o_stat_info">
+                        <span class="o_stat_text">AMC Order</span>
+                    </div>
+                </button>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

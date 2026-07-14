@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="service_order_site_checkin_inherit" model="ir.ui.view">
+        <field name="name">service.order.site.checkin.inherit</field>
+        <field name="model">service.order</field>
+        <field name="inherit_id" ref="service_order_mfx.service_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                <page name="site_visit" string="Site Visit Images" invisible="state in ('draft', 'cancel')">
+                    <button name="action_check_in" type="object" string="Check In" class="oe_highlight" invisible="check_in_time"/>
+                    <button name="action_check_out" type="object" string="Check Out" class="oe_highlight" invisible="not check_in_time or check_out_time"/>
+                    <group>
+                        <group invisible="not check_in_time">
+                            <separator string="Check In"/>
+                            <field name="check_in_time" readonly="1"/>
+                            <field name="check_in_image" widget="many2many_binary" options="{'create': True}" required="check_in_time" readonly="check_out_time"/>
+<!--                            <label for="check_in_latitude" string="GPS Coordinates"/>-->
+<!--                            <div>-->
+<!--                                <div class="o_row">-->
+<!--                                    <span>-->
+<!--                                        <field name="check_in_latitude"/>-->
+<!--                                    </span>,-->
+<!--                                    <span>-->
+<!--                                        <field name="check_in_longitude" nolabel="1"/>-->
+<!--                                    </span>-->
+<!--                                </div>-->
+<!--                                <button name="action_in_attendance_maps" type="object" class="btn btn-link ps-0 pt-0 pb-2" icon="oi-arrow-right" string="View on Maps" colspan="2"/>-->
+<!--                            </div>-->
+                        </group>
+                        <group invisible="not check_out_time">
+                            <separator string="Check Out"/>
+                            <field name="check_out_time" readonly="1"/>
+                            <field name="check_out_image" widget="many2many_binary" options="{'create': True}" required="check_out_time" readonly="customer_feedback"/>
+                            <field name="customer_feedback" invisible="1"/>
+<!--                            <label for="check_out_latitude" string="GPS Coordinates"/>-->
+<!--                            <div>-->
+<!--                                <div class="o_row">-->
+<!--                                    <span>-->
+<!--                                        <field name="check_out_latitude"/>-->
+<!--                                    </span>,-->
+<!--                                    <span>-->
+<!--                                        <field name="check_out_longitude" nolabel="1"/>-->
+<!--                                    </span>-->
+<!--                                </div>-->
+<!--                                <button name="action_out_attendance_maps" type="object" class="btn btn-link ps-0 pt-0 pb-2" icon="oi-arrow-right" string="View on Maps" colspan="2"/>-->
+<!--                            </div>-->
+                        </group>
+                    </group>
+                    <group invisible="not check_out_image" groups="service_order_mfx.service_order_group_manager">
+                        <field name="customer_feedback" widget="html" required="check_out_image" readonly="customer_rating != '0'" force_save="1"/>
+                        <field name="customer_rating" widget="priority" readonly="customer_rating != '0'" force_save="1"/>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>

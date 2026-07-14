@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Show "Purchase Order Cancellation" instead of "Purchase Order Confirmation"
+         when the PO state is 'cancel' across all general_template PO layouts. -->
+
+    <template id="purchase_elegant_header_cancel_title"
+              inherit_id="general_template.purchase_elegant_header">
+        <xpath expr="//span[contains(text(), 'Purchase Order Confirmation')]" position="replace">
+            <span t-if="o.state == 'cancel'">Purchase Order Cancellation # </span>
+            <span t-if="o.state not in ['draft', 'cancel']">Purchase Order Confirmation # </span>
+        </xpath>
+    </template>
+
+    <template id="report_purchase_advanced_main_cancel_title"
+              inherit_id="general_template.report_purchase_advanced_main">
+        <xpath expr="//span[contains(text(), 'Purchase Order Confirmation')]" position="replace">
+            <span t-if="o.state == 'cancel'">Purchase Order Cancellation # </span>
+            <span t-if="o.state not in ['draft', 'cancel']">Purchase Order Confirmation # </span>
+        </xpath>
+    </template>
+
+    <template id="purchase_template_header_cancel_title"
+              inherit_id="general_template.purchase_template_header">
+        <xpath expr="//span[contains(text(), 'Purchase Order Confirmation')]" position="replace">
+            <span t-if="o.state == 'cancel'">Purchase Order Cancellation # </span>
+            <span t-if="o.state not in ['draft', 'cancel']">Purchase Order Confirmation # </span>
+        </xpath>
+    </template>
+
+    <template id="report_purchase_incredible_main_cancel_title"
+              inherit_id="general_template.report_purchase_incredible_main">
+        <xpath expr="(//span[contains(text(), 'Purchase Order Confirmation')])[1]" position="replace">
+            <span t-if="o.state == 'cancel'">Purchase Order Cancellation # </span>
+            <span t-if="o.state not in ['draft', 'cancel']">Purchase Order Confirmation # </span>
+        </xpath>
+        <xpath expr="//span[contains(text(), 'Purchase Order Confirmation')]" position="replace">
+            <span t-if="o.state == 'cancel'">Purchase Order Cancellation # </span>
+            <span t-if="o.state not in ['draft', 'cancel']">Purchase Order Confirmation # </span>
+        </xpath>
+    </template>
+
+    <template id="purchase_delivery_creative_header_cancel_title"
+              inherit_id="general_template.purchase_delivery_creative_header">
+        <xpath expr="//span[contains(text(), 'Purchase Order Confirmation')]" position="replace">
+            <span t-if="o.state == 'cancel'">Purchase Order Cancellation # </span>
+            <span t-if="o.state not in ['draft', 'cancel']">Purchase Order Confirmation # </span>
+        </xpath>
+    </template>
+
+    <template id="report_purchase_exclusive_main_cancel_title"
+              inherit_id="general_template.report_purchase_exclusive_main">
+        <xpath expr="//span[contains(text(), 'Purchase Order Confirmation')]" position="replace">
+            <span t-if="o.state == 'cancel'">Purchase Order Cancellation # </span>
+            <span t-if="o.state not in ['draft', 'cancel']">Purchase Order Confirmation # </span>
+        </xpath>
+    </template>
+
+</odoo>

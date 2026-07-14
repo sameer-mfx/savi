@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="email_template_purchase_cancel" model="mail.template">
+        <field name="name">Purchase Order: Cancellation Notice</field>
+        <field name="model_id" ref="purchase.model_purchase_order"/>
+        <field name="subject">{{ object.company_id.name }} Order (Ref {{ object.name }}) - Cancelled</field>
+        <field name="email_from">{{ (object.user_id.email_formatted or object.company_id.email_formatted or user.email_formatted) }}</field>
+        <field name="partner_to">{{ object.partner_id.id }}</field>
+        <field name="reply_to">{{ (object.user_id.email_formatted or object.company_id.email_formatted) }}</field>
+        <field name="description">Sent to the vendor when a Purchase Order is cancelled.</field>
+        <field name="body_html" type="html">
+            <div style="margin: 0px; padding: 0px;">
+                <p style="margin: 0px; padding: 0px; font-size: 13px;">
+                    Dear
+                    <t t-out="object.partner_id.name or ''">Vendor</t>,
+                    <br/><br/>
+                    Please be informed that our purchase order
+                    <strong t-out="object.name or ''">PO Reference</strong>
+                    dated
+                    <t t-out="format_date(object.date_order) or ''"/>
+                    has been <strong>cancelled</strong>.
+                    <br/><br/>
+                    Kindly disregard the previously shared purchase order and treat it as null and void.
+                    The cancelled copy is attached to this email for your records.
+                    <br/><br/>
+                    We apologise for any inconvenience caused. Please feel free to reach out if you need any clarification.
+                    <br/><br/>
+                    Best regards,<br/>
+                    <t t-out="object.user_id.name or user.name or ''"/><br/>
+                    <t t-out="object.company_id.name or ''"/>
+                    <t t-if="object.user_id.mobile"><br/>Mobile: <t t-out="object.user_id.mobile"/></t>
+                    <t t-if="object.user_id.email"><br/>Email: <t t-out="object.user_id.email"/></t>
+                </p>
+            </div>
+        </field>
+        <field name="report_template_ids" eval="[(4, ref('purchase.action_report_purchase_order'))]"/>
+        <field name="auto_delete" eval="True"/>
+        <field name="lang">{{ object.partner_id.lang }}</field>
+    </record>
+</odoo>

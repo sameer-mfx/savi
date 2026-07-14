@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="hr_contract_view_form_inherit" model="ir.ui.view">
+        <field name="name">hr.contract.view.form.inherit.payroll</field>
+        <field name="model">hr.contract</field>
+        <field name="inherit_id" ref="hr_contract.hr_contract_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group[@name='salary']" position="inside">
+                <h4>Monthly Deductions</h4>
+                <br/>
+                <label for="professional_tax"/>
+                <div class="o_row">
+                    <field name="professional_tax" nolabel="1"/>
+                    <span>/ month</span>
+                </div>
+                <label for="income_tax"/>
+                <div class="o_row">
+                    <field name="income_tax" nolabel="1"/>
+                    <span>/ month</span>
+                </div>
+                <label for="advance_loan_deduction"/>
+                <div class="o_row">
+                    <field name="advance_loan_deduction" nolabel="1"/>
+                    <span>/ month</span>
+                </div>
+                <label for="other_deductions"/>
+                <div class="o_row">
+                    <field name="other_deductions" nolabel="1"/>
+                    <span>/ month</span>
+                </div>
+                <label for="esic_employee_contribution"/>
+                <div class="o_row">
+                    <field name="esic_employee_contribution" nolabel="1"/>
+                    <span>/ month</span>
+                </div>
+                <label for="pf_employee_contribution"/>
+                <div class="o_row">
+                    <field name="pf_employee_contribution" nolabel="1"/>
+                    <span>/ month</span>
+                </div>
+
+                <label for="work_days_in_month"/>
+                <div class="o_row">
+                    <field name="work_days_in_month" nolabel="1"/>
+                    <span>/ month</span>
+                </div>
+                <label for="days_present"/>
+                <div class="o_row">
+                    <field name="days_present" nolabel="1"/>
+                    <span>/ month</span>
+                </div>
+                <label for="lop_days"/>
+                <div class="o_row">
+                    <field name="lop_days" nolabel="1"/>
+                    <span>/ month</span>
+                </div>
+                <label for="employer_pf_contribution"/>
+                <div class="o_row">
+                    <field name="employer_pf_contribution" nolabel="1"/>
+                    <span>/ month</span>
+                </div>
+                <label for="employer_esic_contribution"/>
+                <div class="o_row">
+                    <field name="employer_esic_contribution" nolabel="1"/>
+                    <span>/ month</span>
+                </div>
+            </xpath>
+
+            <xpath expr="//group[@name='allowances']" position="inside">
+                 <label for="conveyance_allowance"/>
+                <div class="o_row">
+                    <field name="conveyance_allowance" nolabel="1"/>
+                    <span>/ month</span>
+                </div>
+                <label for="special_allowance"/>
+                <div class="o_row">
+                    <field name="special_allowance" nolabel="1"/>
+                    <span>/ month</span>
+                </div>
+                <label for="over_time"/>
+                <div class="o_row">
+                    <field name="over_time" nolabel="1"/>
+                    <span>/ month</span>
+                </div>
+                <label for="incentives"/>
+                <div class="o_row">
+                    <field name="incentives" nolabel="1"/>
+                    <span>/ month</span>
+                </div>
+                <label for="bonus"/>
+                <div class="o_row">
+                    <field name="bonus" nolabel="1"/>
+                    <span>/ month</span>
+                </div>
+                <label for="gross"/>
+                <div class="o_row">
+                    <field name="gross" nolabel="1"/>
+                    <span>/ month</span>
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>

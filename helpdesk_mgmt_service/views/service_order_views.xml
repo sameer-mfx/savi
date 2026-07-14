@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="view_service_order_form" model="ir.ui.view">
+        <field name="model">service.order</field>
+        <field name="inherit_id" ref="service_order_mfx.service_order_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//sheet/group/group[2]/field[@name='date_approve']" position="after">
+                <field name="ticket_ids" widget="many2many_tags" invisible="not ticket_ids"/>
+            </xpath>
+            <xpath expr="//div[@name='button_box']" position="inside">
+                <button name="%(action_helpdesk_ticket_service)d" type="action" class="btn btn-primary" icon="fa-ticket" context="{'default_service_order_ids': [(4, id)]}" invisible="not ticket_count">
+                    <field string="Tickets" name="ticket_count" widget="statinfo" />
+                </button>
+            </xpath>
+        </field>
+    </record>
+</odoo>

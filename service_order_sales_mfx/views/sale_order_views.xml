@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data noupdate="1">
+        <record id="view_sale_order_form_inherit_for_service_order" model="ir.ui.view">
+            <field name="name">sale.order.form</field>
+            <field name="model">sale.order</field>
+            <field name="priority">1</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//button[@id='create_invoice']" position="after">
+                    <button type="object" name="create_service_order" class="oe_highlight" string="Create Service Order" invisible="state != 'sale'" groups="service_order_mfx.service_order_group_manager"/>
+                </xpath>
+                <xpath expr="//sheet/div[@class='oe_button_box']" position="inside">
+                    <button name="button_show_service_orders" type="object" class="oe_stat_button" icon="fa-list-alt" invisible="sso_count == 0">
+                        <field name="sso_count" widget="statinfo" string="Service Order(s)"/>
+                    </button>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

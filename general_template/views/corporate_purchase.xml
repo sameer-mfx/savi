@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="purchase_exclusive_external_layout">
+        <!-- Multicompany -->
+        <t t-if="o and 'company_id' in o">
+            <t t-set="company" t-value="o.company_id"/>
+        </t>
+        <t t-if="not o or not 'company_id' in o">
+            <t t-set="company" t-value="res_company"/>
+        </t>
+        <t t-call="general_template.purchase_exclusive_header"/>
+        <div class="article o_report_layout_standard" t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id" t-att-data-oe-lang="o and o.env.context.get('lang')">
+            <t t-out="0"/>
+        </div>
+        <t t-call="general_template.templates_footer"/>
+    </template>
+    <template id="purchase_exclusive_header">
+        <div class="header container" style="width:100%;height:10%" t-att-style="'font-family:'+o.company_id.font_id.family+';font-size:'+str(o.company_id.font_size)+'px;'">
+            <div class="row">
+                <div class="col-9">
+                    <t t-if="o.company_id.invoice_logo">
+                        <img t-att-src="image_data_uri(o.company_id.invoice_logo)" style="height: 100px;"/>
+                    </t>
+                </div>
+                <div class="col-4">
+                    <t t-if="o.company_id.street">
+                        <span t-attf-style="color: #{o.company_id and o.company_id.company_address_color or '#000000'};" t-field="o.company_id.street"/><br/>
+                    </t>
+                    <t t-if="o.company_id.phone">
+                        <span t-attf-style="color: #{o.company_id and o.company_id.company_address_color or '#000000'};" t-field="o.company_id.phone"/><br/>
+                    </t>
+                    <t t-if="o.company_id.email">
+                        <span t-attf-style="color: #{o.company_id and o.company_id.company_address_color or '#000000'};" t-field="o.company_id.email"/><br/>
+                    </t>
+                    <t t-if="o.company_id.website">
+                        <span t-attf-style="color: #{o.company_id and o.company_id.company_address_color or '#000000'};" t-field="o.company_id.website"/>
+                    </t>
+                </div>
+            </div>
+            <div>
+                <p t-attf-style="border-bottom:1px solid #{theme_color};width:100%;padding:10px;"/>
+            </div>
+        </div>
+    </template>
+    <template id="report_purchase_exclusive_main">
+        <t t-call="general_template.purchase_exclusive_external_layout">
+            <t t-set="o" t-value="o.with_context({'lang':o.partner_id.lang})"/>
+            <t t-set="theme_color" t-value="o.company_id and o.company_id.theme_color"/>
+            <t t-set="theme_text_color" t-value="o.company_id and o.company_id.theme_text_color"/>
+            <t t-set="company_color" t-value="o.company_id and o.company_id.company_color"/>
+            <t t-set="company_address_color" t-value="o.company_id and o.company_id.company_address_color"/>
+            <t t-set="customer_color" t-value="o.company_id and o.company_id.customer_color"/>
+            <t t-set="customer_address_color" t-value="o.company_id and o.company_id.customer_address_color"/>
+            <t t-set="text_color" t-value="o.company_id and o.company_id.text_color"/>
+            <div class="page" t-att-style="'font-family:'+o.company_id.font_id.family+';font-size:'+str(o.company_id.font_size)+'px;'">
+                <div class="oe_structure"/>
+                <t t-call="general_template.templates_watermark"/>
+                <br/>
+                <div width="100%">
+                    <div>
+                        <p class="table table-borderless" t-attf-style="color: #{o.company_id and o.company_id.theme_color or '#000000'};font-weight:bold;width:100%;font-size:30px;">
+                            <span t-if="o.state not in ['draft']">Purchase Order Confirmation # </span>
+                            <span t-if="o.state in ['draft']">Request for Quotation # </span> 
+                            <span t-field="o.name"/>
+                        </p>
+
+                    </div>
+                    <div>
+                        <p t-attf-style="color: #{o.company_id and o.company_id.theme_text_color or '#000000'};font-weight:bold; background-color: #{o.company_id and o.company_id.theme_color or '#000000'};width:100%;border-radius: 20px;padding: 10px;">
+                            <t>
+                                <span t-if="o.state not in ['draft']">Date Ordered:</span>
+                                <span t-if="o.state in ['draft']">Quotation Date:</span>
+                                <span t-field="o.date_order"/><br/>
+                            </t>
+                            <t t-if="o.partner_ref">
+                                <span>Your Order Reference:</span>
+                                <span t-field="o.partner_ref"/><br/>
+                            </t>
+                            <t t-if="o.user_id">
+                                <span>Purchase Representative:</span>
+                                <span t-field="o.user_id"/><br/>
+                            </t>
+                        </p>
+                    </div>
+                    <div t-attf-style="color: #{o.company_id and o.company_id.text_color or '#000000'};">
+                        
+                        <div class="row">
+                            <div class="col-4" style="border-radius: 10px;border: 2px solid #666;padding: 5px;height: auto;">
+                                <t t-call="general_template.templates_customer_details"/>
+                            </div>
+                            <div class="col-4" style="border-radius: 10px;border: 2px solid #666;padding: 5px;height: auto;margin-left:0.5%;">
+                                <t t-call="general_template.templates_warehouse_details"/>
+                            </div>
+                            <div class="col-4" style="border-radius: 10px;border: 2px solid #666;padding: 10px;height: auto;margin-left:0.5%;"><strong>Pay to:</strong><br/>
+                                <t t-call="general_template.templates_company_details"/>
+                            </div>
+                            
+                        </div>                   
+                        <div>
+                            <p  t-attf-style="padding:5px 0px 0px 0px; height:5px; border-bottom: 1px solid #{theme_color or '#000000'};"/>
+                        </div>
+                        <div>
+                            <t t-call="general_template.purchase_template_order_lines"/>
+                        </div>
+                        <div style="overflow:auto;">
+                            <t t-call="general_template.purchase_template_order_subtotal"/>
+                        </div>
+                        <div t-attf-style="border-bottom:1px solid #{'#959595'}; padding:0px">
+                            <t t-call="general_template.template_total_amount_word"/>
+                        </div>
+                        <div t-attf-style="color: #{text_color or '#000000'}; padding-top:5px; width:100%;" t-if="o.notes and o.company_id.is_show_notes == True">
+                            <p t-field="o.notes"/>
+                        </div>
+                        <div align="right" t-attf-style="color: #{text_color or '#000000'};">
+                            <t t-call="general_template.report_signature"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="oe_structure"/>
+            </div>
+            <t t-call="general_template.report_barcode"/>
+        </t>
+    </template>
+    <template id="report_purchase_custom_exclusive">
+        <t t-call="web.html_container">
+            <t t-as="o" t-foreach="docs">
+                <t t-set="o" t-value="o.with_context(lang=lang)" />
+                <t t-call="general_template.report_purchase_exclusive_main" t-lang="lang"/>
+            </t>
+        </t>
+    </template>
+</odoo>

@@ -1,0 +1,40 @@
+<odoo>
+    <record id="view_employee_form_custom" model="ir.ui.view">
+        <field name="name">hr.employee.form.custom</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='parent_id']" position="after">
+                <field name="manager_ids" widget="many2many_tags" domain="[('id', '!=', active_id)]" context="{'default_employee_id': active_id}"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="base.action_partner_form" model="ir.actions.act_window">
+        <field name="context">
+            {'res_partner_search_mode': 'customer', 'search_default_type_company': True}
+        </field>
+    </record>
+
+    <record id="view_partner_form_custom" model="ir.ui.view">
+        <field name="name">res.partner.form.custom</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <field name="category_id" position="after">
+                <field name="date_of_birth" invisible="is_company"/>
+                <field name="marital_status" invisible="is_company"/>
+                <field name="marriage_date" invisible="is_company or (marital_status != 'married')"/>
+                <field name="formation_date" invisible="not is_company"/>
+                <field name="anniversary" invisible="is_company or (marital_status != 'married')"/>
+                <field name="anniversary" invisible="not is_company or not formation_date" string="Company Anniversary"/>
+            </field>
+            <field name="child_ids" position="attributes">
+                <attribute name="context">
+                    {'default_parent_id': id, 'default_street': street, 'default_street2': street2, 'default_city': city, 'default_state_id': state_id, 'default_zip': zip, 'default_country_id': country_id, 'default_lang': lang, 'default_user_id': user_id, 'default_type': 'contact'}
+                </attribute>
+            </field>
+        </field>
+    </record>
+
+</odoo>

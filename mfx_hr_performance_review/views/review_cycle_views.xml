@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Review Cycle Form View -->
+    <record id="view_review_cycle_form" model="ir.ui.view">
+        <field name="name">hr.review.cycle.form</field>
+        <field name="model">hr.review.cycle</field>
+        <field name="arch" type="xml">
+            <form string="Review Cycle">
+                <header>
+                    <button name="action_generate_reviews" string="Generate Reviews"
+                            type="object" class="btn-primary"
+                            invisible="state != 'draft'"/>
+                    <button name="action_start" string="Start Cycle"
+                            type="object" class="btn-primary"
+                            invisible="state != 'draft'"
+                            confirm="This will start the review cycle and notify all employees. Continue?"/>
+                    <button name="action_complete" string="Complete Cycle"
+                            type="object" class="btn-primary"
+                            invisible="state != 'in_progress'"/>
+                    <button name="action_cancel" string="Cancel"
+                            type="object"
+                            invisible="state in ('done', 'cancelled')"/>
+                    <button name="action_reset_to_draft" string="Reset to Draft"
+                            type="object"
+                            invisible="state not in ('cancelled',)"/>
+                    <field name="state" widget="statusbar"
+                           statusbar_visible="draft,in_progress,done"/>
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="action_view_reviews" type="object"
+                                class="oe_stat_button" icon="fa-star">
+                            <field name="review_count" widget="statbutton"
+                                   string="Reviews"/>
+                        </button>
+                    </div>
+                    <div class="oe_title">
+                        <label for="name"/>
+                        <h1>
+                            <field name="name" placeholder="e.g., Annual Review 2026"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="cycle_type"/>
+                            <field name="template_id"/>
+                            <field name="company_id" groups="base.group_multi_company"/>
+                        </group>
+                        <group>
+                            <field name="date_start"/>
+                            <field name="date_end"/>
+                            <field name="self_review_deadline"/>
+                            <field name="manager_review_deadline"/>
+                        </group>
+                    </group>
+                    <group>
+                        <field name="department_ids" widget="many2many_tags"/>
+                    </group>
+                    <notebook>
+                        <page string="Notes" name="notes">
+                            <field name="note"/>
+                        </page>
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <!-- Review Cycle List View -->
+    <record id="view_review_cycle_list" model="ir.ui.view">
+        <field name="name">hr.review.cycle.list</field>
+        <field name="model">hr.review.cycle</field>
+        <field name="arch" type="xml">
+            <tree string="Review Cycles" decoration-info="state == 'draft'"
+                  decoration-success="state == 'done'"
+                  decoration-muted="state == 'cancelled'">
+                <field name="name"/>
+                <field name="cycle_type"/>
+                <field name="template_id"/>
+                <field name="date_start"/>
+                <field name="date_end"/>
+                <field name="review_count" string="Reviews"/>
+                <field name="state" widget="badge"
+                       decoration-info="state == 'draft'"
+                       decoration-warning="state == 'in_progress'"
+                       decoration-success="state == 'done'"
+                       decoration-danger="state == 'cancelled'"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Review Cycle Search View -->
+    <record id="view_review_cycle_search" model="ir.ui.view">
+        <field name="name">hr.review.cycle.search</field>
+        <field name="model">hr.review.cycle</field>
+        <field name="arch" type="xml">
+            <search string="Review Cycles">
+                <field name="name"/>
+                <field name="template_id"/>
+                <filter string="Draft" name="filter_draft"
+                        domain="[('state', '=', 'draft')]"/>
+                <filter string="In Progress" name="filter_in_progress"
+                        domain="[('state', '=', 'in_progress')]"/>
+                <filter string="Completed" name="filter_done"
+                        domain="[('state', '=', 'done')]"/>
+                <separator/>
+                <filter string="Quarterly" name="filter_quarterly"
+                        domain="[('cycle_type', '=', 'quarterly')]"/>
+                <filter string="Semi-Annual" name="filter_semi_annual"
+                        domain="[('cycle_type', '=', 'semi_annual')]"/>
+                <filter string="Annual" name="filter_annual"
+                        domain="[('cycle_type', '=', 'annual')]"/>
+                <group expand="0" string="Group By">
+                    <filter string="Status" name="group_state"
+                            context="{'group_by': 'state'}"/>
+                    <filter string="Cycle Type" name="group_type"
+                            context="{'group_by': 'cycle_type'}"/>
+                    <filter string="Template" name="group_template"
+                            context="{'group_by': 'template_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- Action -->
+    <record id="action_review_cycle" model="ir.actions.act_window">
+        <field name="name">Review Cycles</field>
+        <field name="res_model">hr.review.cycle</field>
+        <field name="view_mode">tree,form</field>
+        <field name="search_view_id" ref="view_review_cycle_search"/>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create your first review cycle
+            </p>
+            <p>
+                Define review periods (quarterly, semi-annual, annual) and generate
+                performance reviews for all employees.
+            </p>
+        </field>
+    </record>
+
+</odoo>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="replaced_items_form_view" model="ir.ui.view">
+        <field name="name">replaced.items.form</field>
+        <field name="model">srn.line</field>
+        <field name="priority">1</field>
+        <field name="arch" type="xml">
+            <form string="Replaced Items">
+                <group>
+                    <field name="state" invisible="1"/>
+                    <div>
+                        <label for="product_id" name="Product"/>
+                        <field name="product_id" readonly="1" />
+                    </div>
+                    <div>
+                        <label for="service_product_id" name="Service Product"/>
+                        <field name="service_product_id" readonly="1" />
+                    </div>
+                </group>
+                <field name="replaced_item_ids" mode="tree" widget="one2many_tag" readonly="state != 'draft'">
+                    <tree string="Replaced Items" editable="bottom">
+                        <field name="product_id" domain="[('type','=','product')]" options="{'no_create': True, 'no_create_edit': True}"/>
+                        <field name="product_uom_id" readonly="1" force_save="1"/>
+                        <field name="quantity"/>
+                        <field name="price"/>
+                        <field name="tax_ids" widget="many2many_tags" domain="[('type_tax_use', '=', 'purchase')]"/>
+                        <field name="srn_line_id" column_invisible="1"/>
+                    </tree>
+                </field>
+                <footer class="oe_edit_only" invisible="state != 'draft'">
+                        <button string="Confirm" special="save" class="oe_highlight"/>
+                        <button string="Discard" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <!-- Added a button for creating Replaced Items from SRN Line -->
+    <record id="view_srn_inherit" model="ir.ui.view">
+        <field name="name">Srn Inherit</field>
+        <field name="model">srn</field>
+        <field name="inherit_id" ref="service_order_mfx.srn_form_view"/>
+        <field name="arch" type="xml">
+            <data>
+                <field name="service_order_line_id" position="after">
+                    <button name="srn_line_show_replaced_items" type="object" icon="fa-arrow-circle-right" title="Show Replaced Items" width="1"/>
+                </field>
+                <xpath expr="//sheet/notebook" position="inside">
+                    <page string="Replaced Items">
+                        <field name="replaced_item_ids">
+                            <tree editable="bottom" decoration-muted="parent.state == 'cancel'" create="0" edit="1" delete="0">
+                                <field name="product_id" readonly="1" force_save="1" options="{'no_create': True, 'no_create_edit': True}"/>
+                                <field name="product_uom_id" readonly="1" force_save="1"/>
+                                <field name="quantity" readonly="1" force_save="1"/>
+                                <field name="price" readonly="1" force_save="1"/>
+                                <field name="tax_ids" widget="many2many_tags" domain="[('type_tax_use', '=', 'purchase')]" readonly="1" force_save="1"/>
+                                <field name="price_subtotal" readonly="1" force_save="1"/>
+                                <field name="srn_line_id" column_invisible="1"/>
+                            </tree>
+                        </field>
+                    </page>
+                </xpath>
+            </data>
+        </field>
+    </record>
+
+</odoo>

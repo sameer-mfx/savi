@@ -1,0 +1,866 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-name="payroll_customizations.UserManualPage" owl="1">
+        <div class="o_payroll_user_manual">
+            <!-- Sidebar / Table of Contents -->
+            <div class="manual-sidebar">
+                <div class="sidebar-title">Table of Contents</div>
+                <ul class="sidebar-section">
+                    <li><a t-on-click="scrollToSection" data-section="sec-overview">
+                        <span class="section-number">1.</span> System Overview
+                    </a></li>
+                    <li><a t-on-click="scrollToSection" data-section="sec-modules">
+                        <span class="section-number">2.</span> Installed Modules
+                    </a></li>
+                    <li><a t-on-click="scrollToSection" data-section="sec-roles">
+                        <span class="section-number">3.</span> User Roles &amp; Permissions
+                    </a></li>
+                    <li><a t-on-click="scrollToSection" data-section="sec-matrix">
+                        <span class="section-number">4.</span> Role-Based Access Matrix
+                    </a></li>
+                    <li><a t-on-click="scrollToSection" data-section="sec-features">
+                        <span class="section-number">5.</span> Module-Wise Feature Guide
+                    </a></li>
+                    <li><a t-on-click="scrollToSection" data-section="sec-checklist">
+                        <span class="section-number">6.</span> Setup Checklist
+                    </a></li>
+                    <li><a t-on-click="scrollToSection" data-section="sec-gaps">
+                        <span class="section-number">7.</span> Status &amp; Gaps
+                    </a></li>
+                    <li><a t-on-click="scrollToSection" data-section="sec-appendix-a">
+                        <span class="section-number">A.</span> Salary Rule Categories
+                    </a></li>
+                    <li><a t-on-click="scrollToSection" data-section="sec-appendix-b">
+                        <span class="section-number">B.</span> Navigation Paths
+                    </a></li>
+                    <li><a t-on-click="scrollToSection" data-section="sec-appendix-c">
+                        <span class="section-number">C.</span> Role Recommendations
+                    </a></li>
+                </ul>
+                <div class="sidebar-actions">
+                    <button class="btn-print" t-on-click="printManual">
+                        <i class="fa fa-print"/> Print / Download PDF
+                    </button>
+                </div>
+            </div>
+
+            <!-- Main Content -->
+            <div class="manual-content">
+                <!-- Header -->
+                <div class="manual-header">
+                    <h1>HR &amp; Payroll User Manual</h1>
+                    <h2>Savi Vision Private Limited — Odoo 17 Community Edition</h2>
+                    <div class="manual-meta">
+                        <span><i class="fa fa-tag"/> Version 1.0</span>
+                        <span><i class="fa fa-calendar"/> February 2026</span>
+                        <span><i class="fa fa-user"/> Macrofix Implementation Team</span>
+                    </div>
+                </div>
+
+                <!-- ============================================ -->
+                <!-- SECTION 1: SYSTEM OVERVIEW -->
+                <!-- ============================================ -->
+                <h2 class="section-title" id="sec-overview">1. System Overview</h2>
+
+                <table class="manual-table">
+                    <tbody>
+                        <tr><td><strong>Company</strong></td><td>Savi Vision Private Limited</td></tr>
+                        <tr><td><strong>Odoo Version</strong></td><td>17.0 Community Edition</td></tr>
+                        <tr><td><strong>Country</strong></td><td>India</td></tr>
+                        <tr><td><strong>Currency</strong></td><td>INR</td></tr>
+                        <tr><td><strong>Total Employees</strong></td><td>22</td></tr>
+                        <tr><td><strong>Total Active Users</strong></td><td>23</td></tr>
+                    </tbody>
+                </table>
+
+                <p>
+                    The payroll system is built on the <strong>Cybrosys HR Payroll Community</strong> module
+                    (since Odoo 17 CE does not include native payroll). On top of it, several extension modules
+                    provide accounting integration, automation, dashboards, reporting, and Indian compliance features.
+                </p>
+
+                <!-- ============================================ -->
+                <!-- SECTION 2: INSTALLED MODULES -->
+                <!-- ============================================ -->
+                <h2 class="section-title" id="sec-modules">2. Installed Modules</h2>
+
+                <h3 class="subsection-title">Core HR Modules (Odoo Standard)</h3>
+                <table class="manual-table">
+                    <thead>
+                        <tr><th>Module</th><th>Description</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>hr</strong></td><td>Employee management, departments, job positions</td></tr>
+                        <tr><td><strong>hr_contract</strong></td><td>Employee contracts with salary and duration</td></tr>
+                        <tr><td><strong>hr_holidays</strong></td><td>Leave/time-off management with allocation</td></tr>
+                        <tr><td><strong>hr_attendance</strong></td><td>Check-in/check-out attendance tracking</td></tr>
+                        <tr><td><strong>hr_expense</strong></td><td>Employee expense claims and reimbursement</td></tr>
+                        <tr><td><strong>hr_skills</strong></td><td>Employee skills and resume management</td></tr>
+                        <tr><td><strong>hr_timesheet</strong></td><td>Timesheet/task logging</td></tr>
+                        <tr><td><strong>hr_org_chart</strong></td><td>Organization chart visualization</td></tr>
+                    </tbody>
+                </table>
+
+                <h3 class="subsection-title">Payroll Modules (Community + Custom)</h3>
+                <table class="manual-table">
+                    <thead>
+                        <tr><th>Module</th><th>Purpose</th><th>Author</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>hr_payroll_community</strong></td><td>Core payroll engine (structures, rules, payslips)</td><td>Cybrosys</td></tr>
+                        <tr><td><strong>hr_payroll_account_community</strong></td><td>Accounting journal entries for payslips</td><td>Cybrosys</td></tr>
+                        <tr><td><strong>automatic_payroll</strong></td><td>Scheduled automatic payslip generation</td><td>Cybrosys</td></tr>
+                        <tr><td><strong>hr_payroll_dashboard</strong></td><td>Payroll analytics dashboard with charts</td><td>Cybrosys</td></tr>
+                        <tr><td><strong>hr_payslip_monthly_report</strong></td><td>Monthly reporting + email payslip distribution</td><td>Cybrosys</td></tr>
+                        <tr><td><strong>payroll_customizations</strong></td><td>Indian compliance fields (PAN, Aadhar, PF, ESIC, etc.)</td><td>Macrofix</td></tr>
+                    </tbody>
+                </table>
+
+                <!-- ============================================ -->
+                <!-- SECTION 3: USER ROLES -->
+                <!-- ============================================ -->
+                <h2 class="section-title" id="sec-roles">3. User Roles &amp; Permissions</h2>
+
+                <h3 class="subsection-title">3.1 Role Hierarchy</h3>
+                <div class="role-hierarchy">System Administrator (base.group_system)
+    |
+    v
+Payroll Manager (group_hr_payroll_community_manager)
+    |  - Inherits all Officer permissions
+    |  - Unrestricted payslip access
+    |  - Batch payslip management
+    |  - Configuration access
+    v
+Payroll Officer (group_hr_payroll_community_user)
+    |  - Inherits HR User + Contract Manager
+    |  - Department-restricted payslip access
+    |  - Salary rule &amp; structure management
+    v
+HR User (hr.group_hr_user)
+    |  - Read-only access to salary structures
+    |  - Employee and contract viewing
+    v
+Internal User (base.group_user)
+    - No payroll access
+    - Basic employee self-service only</div>
+
+                <h3 class="subsection-title">3.2 Role Descriptions</h3>
+
+                <h4 class="subsubsection-title">System Administrator</h4>
+                <p><strong>Who should have this:</strong> IT Admin, System Owner<br/>
+                <strong>Purpose:</strong> Full system configuration, module installation, technical settings</p>
+
+                <h4 class="subsubsection-title">Payroll Manager</h4>
+                <p><strong>Who should have this:</strong> HR Head, Finance Manager, or designated Payroll Manager<br/>
+                <strong>Purpose:</strong> Full payroll processing, batch management, configuration, reporting<br/>
+                <strong>Key privilege:</strong> Can see ALL payslips across ALL departments (no record restrictions)</p>
+
+                <h4 class="subsubsection-title">Payroll Officer</h4>
+                <p><strong>Who should have this:</strong> HR executives, payroll processors<br/>
+                <strong>Purpose:</strong> Day-to-day payslip creation and processing<br/>
+                <strong>Key restriction:</strong> Can only see payslips for their own employee record, employees in departments they manage, and employees with no department assigned.</p>
+
+                <h4 class="subsubsection-title">HR User (Base HR)</h4>
+                <p><strong>Who should have this:</strong> Any staff who needs to view employee info<br/>
+                <strong>Payroll access:</strong> Can only view salary structures and contract templates (read-only)</p>
+
+                <h4 class="subsubsection-title">Internal User</h4>
+                <p><strong>Who should have this:</strong> All internal staff<br/>
+                <strong>Payroll access:</strong> None</p>
+
+                <h3 class="subsection-title">3.3 Current User Assignments</h3>
+
+                <div class="info-box">
+                    <strong>Note:</strong> Currently all 11 payroll users have BOTH Officer and Manager roles.
+                    This should be reviewed — service engineers, electricians, and coordinators likely should NOT have payroll access.
+                </div>
+
+                <table class="manual-table">
+                    <thead>
+                        <tr><th>#</th><th>User</th><th>Email</th><th>Recommended Role</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>1</td><td>Administrator</td><td>admin</td><td>System Admin</td></tr>
+                        <tr><td>2</td><td>Anjali Karn</td><td>service@savivision.com</td><td>Should be: None</td></tr>
+                        <tr><td>3</td><td>Ashish Mishra</td><td>ea@savivision.com</td><td>Should be: Officer or None</td></tr>
+                        <tr><td>4</td><td>Dev Ratra</td><td>devratra@savivision.com</td><td>Manager (Director)</td></tr>
+                        <tr><td>5</td><td>Komal</td><td>hr@savivision.com</td><td>Officer (Sr. HR Executive)</td></tr>
+                        <tr><td>6</td><td>Mandeep Chawla</td><td>mandeep@savivision.com</td><td>Manager (HR &amp; Admin Manager)</td></tr>
+                        <tr><td>7</td><td>Mohammad Nazim</td><td>nazim@savivision.com</td><td>Should be: None</td></tr>
+                        <tr><td>8</td><td>Pinto Kumar</td><td>accounts@savivision.com</td><td>Manager (Finance Manager)</td></tr>
+                        <tr><td>9</td><td>Sanjeev Ratra</td><td>sanjeev@savivision.com</td><td>Manager (Managing Director)</td></tr>
+                        <tr><td>10</td><td>Subodh Kumar</td><td>subodh@savivision.com</td><td>Should be: None</td></tr>
+                        <tr><td>11</td><td>Veena Ratra</td><td>veenaratra@savivision.com</td><td>Manager (Director)</td></tr>
+                    </tbody>
+                </table>
+
+                <!-- ============================================ -->
+                <!-- SECTION 4: ACCESS MATRIX -->
+                <!-- ============================================ -->
+                <h2 class="section-title" id="sec-matrix">4. Role-Based Access Matrix</h2>
+
+                <h3 class="subsection-title">4.1 Payroll Operations</h3>
+                <table class="manual-table">
+                    <thead>
+                        <tr>
+                            <th>Operation</th>
+                            <th class="text-center">Internal User</th>
+                            <th class="text-center">HR User</th>
+                            <th class="text-center">Payroll Officer</th>
+                            <th class="text-center">Payroll Manager</th>
+                            <th class="text-center">System Admin</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>View own payslip</td>
+                            <td class="text-center dash">-</td>
+                            <td class="text-center dash">-</td>
+                            <td class="text-center">Own only</td>
+                            <td class="text-center check">All</td>
+                            <td class="text-center check">All</td>
+                        </tr>
+                        <tr>
+                            <td>View team payslips</td>
+                            <td class="text-center dash">-</td>
+                            <td class="text-center dash">-</td>
+                            <td class="text-center">Own dept</td>
+                            <td class="text-center check">All</td>
+                            <td class="text-center check">All</td>
+                        </tr>
+                        <tr>
+                            <td>View all payslips</td>
+                            <td class="text-center dash">-</td>
+                            <td class="text-center dash">-</td>
+                            <td class="text-center dash">-</td>
+                            <td class="text-center check">All</td>
+                            <td class="text-center check">All</td>
+                        </tr>
+                        <tr>
+                            <td>Create payslip</td>
+                            <td class="text-center dash">-</td>
+                            <td class="text-center dash">-</td>
+                            <td class="text-center check">Yes</td>
+                            <td class="text-center check">Yes</td>
+                            <td class="text-center check">Yes</td>
+                        </tr>
+                        <tr>
+                            <td>Confirm payslip</td>
+                            <td class="text-center dash">-</td>
+                            <td class="text-center dash">-</td>
+                            <td class="text-center check">Yes</td>
+                            <td class="text-center check">Yes</td>
+                            <td class="text-center check">Yes</td>
+                        </tr>
+                        <tr>
+                            <td>Cancel payslip</td>
+                            <td class="text-center dash">-</td>
+                            <td class="text-center dash">-</td>
+                            <td class="text-center">Own dept</td>
+                            <td class="text-center check">Yes</td>
+                            <td class="text-center check">Yes</td>
+                        </tr>
+                        <tr>
+                            <td>Mass confirm payslips</td>
+                            <td class="text-center dash">-</td>
+                            <td class="text-center dash">-</td>
+                            <td class="text-center check">Yes</td>
+                            <td class="text-center check">Yes</td>
+                            <td class="text-center check">Yes</td>
+                        </tr>
+                        <tr>
+                            <td>Create payslip batch</td>
+                            <td class="text-center dash">-</td>
+                            <td class="text-center dash">-</td>
+                            <td class="text-center dash">-</td>
+                            <td class="text-center check">Yes</td>
+                            <td class="text-center check">Yes</td>
+                        </tr>
+                        <tr>
+                            <td>Generate batch payslips</td>
+                            <td class="text-center dash">-</td>
+                            <td class="text-center dash">-</td>
+                            <td class="text-center dash">-</td>
+                            <td class="text-center check">Yes</td>
+                            <td class="text-center check">Yes</td>
+                        </tr>
+                        <tr>
+                            <td>Close payslip batch</td>
+                            <td class="text-center dash">-</td>
+                            <td class="text-center dash">-</td>
+                            <td class="text-center dash">-</td>
+                            <td class="text-center check">Yes</td>
+                            <td class="text-center check">Yes</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3 class="subsection-title">4.2 Configuration</h3>
+                <table class="manual-table">
+                    <thead>
+                        <tr>
+                            <th>Operation</th>
+                            <th class="text-center">Internal User</th>
+                            <th class="text-center">HR User</th>
+                            <th class="text-center">Payroll Officer</th>
+                            <th class="text-center">Payroll Manager</th>
+                            <th class="text-center">System Admin</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>View salary structures</td>
+                            <td class="text-center dash">-</td>
+                            <td class="text-center">Read only</td>
+                            <td class="text-center check">Full</td>
+                            <td class="text-center check">Full</td>
+                            <td class="text-center check">Full</td>
+                        </tr>
+                        <tr>
+                            <td>Create/edit salary structures</td>
+                            <td class="text-center dash">-</td>
+                            <td class="text-center dash">-</td>
+                            <td class="text-center check">Full</td>
+                            <td class="text-center check">Full</td>
+                            <td class="text-center check">Full</td>
+                        </tr>
+                        <tr>
+                            <td>View/edit salary rules</td>
+                            <td class="text-center dash">-</td>
+                            <td class="text-center dash">-</td>
+                            <td class="text-center check">Full</td>
+                            <td class="text-center check">Full</td>
+                            <td class="text-center check">Full</td>
+                        </tr>
+                        <tr>
+                            <td>Contribution registers</td>
+                            <td class="text-center dash">-</td>
+                            <td class="text-center dash">-</td>
+                            <td class="text-center check">Full</td>
+                            <td class="text-center check">Full</td>
+                            <td class="text-center check">Full</td>
+                        </tr>
+                        <tr>
+                            <td>Payroll settings</td>
+                            <td class="text-center dash">-</td>
+                            <td class="text-center dash">-</td>
+                            <td class="text-center dash">-</td>
+                            <td class="text-center dash">-</td>
+                            <td class="text-center check">Full</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3 class="subsection-title">4.3 Reporting &amp; Dashboard</h3>
+                <table class="manual-table">
+                    <thead>
+                        <tr>
+                            <th>Operation</th>
+                            <th class="text-center">Internal User</th>
+                            <th class="text-center">HR User</th>
+                            <th class="text-center">Payroll Officer</th>
+                            <th class="text-center">Payroll Manager</th>
+                            <th class="text-center">System Admin</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Payroll dashboard</td>
+                            <td class="text-center dash">-</td>
+                            <td class="text-center dash">-</td>
+                            <td class="text-center check">Yes</td>
+                            <td class="text-center check">Yes</td>
+                            <td class="text-center check">Yes</td>
+                        </tr>
+                        <tr>
+                            <td>Monthly payroll report</td>
+                            <td class="text-center dash">-</td>
+                            <td class="text-center dash">-</td>
+                            <td class="text-center check">Yes</td>
+                            <td class="text-center check">Yes</td>
+                            <td class="text-center check">Yes</td>
+                        </tr>
+                        <tr>
+                            <td>Payslip report (PDF)</td>
+                            <td class="text-center dash">-</td>
+                            <td class="text-center dash">-</td>
+                            <td class="text-center">Own dept</td>
+                            <td class="text-center check">Yes</td>
+                            <td class="text-center check">Yes</td>
+                        </tr>
+                        <tr>
+                            <td>Email payslip to employee</td>
+                            <td class="text-center dash">-</td>
+                            <td class="text-center dash">-</td>
+                            <td class="text-center check">Yes</td>
+                            <td class="text-center check">Yes</td>
+                            <td class="text-center check">Yes</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3 class="subsection-title">4.4 Employee &amp; Contract Management</h3>
+                <table class="manual-table">
+                    <thead>
+                        <tr>
+                            <th>Operation</th>
+                            <th class="text-center">Internal User</th>
+                            <th class="text-center">HR User</th>
+                            <th class="text-center">Payroll Officer</th>
+                            <th class="text-center">Payroll Manager</th>
+                            <th class="text-center">System Admin</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>View employees</td>
+                            <td class="text-center">Self only</td>
+                            <td class="text-center check">All</td>
+                            <td class="text-center check">All</td>
+                            <td class="text-center check">All</td>
+                            <td class="text-center check">All</td>
+                        </tr>
+                        <tr>
+                            <td>Edit employee records</td>
+                            <td class="text-center dash">-</td>
+                            <td class="text-center check">Yes</td>
+                            <td class="text-center check">Yes</td>
+                            <td class="text-center check">Yes</td>
+                            <td class="text-center check">Yes</td>
+                        </tr>
+                        <tr>
+                            <td>View/edit contracts</td>
+                            <td class="text-center dash">-</td>
+                            <td class="text-center check">Yes</td>
+                            <td class="text-center check">Yes</td>
+                            <td class="text-center check">Yes</td>
+                            <td class="text-center check">Yes</td>
+                        </tr>
+                        <tr>
+                            <td>Indian compliance fields (PAN, Aadhar, etc.)</td>
+                            <td class="text-center dash">-</td>
+                            <td class="text-center dash">-</td>
+                            <td class="text-center check">Yes</td>
+                            <td class="text-center check">Yes</td>
+                            <td class="text-center check">Yes</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!-- ============================================ -->
+                <!-- SECTION 5: FEATURE GUIDE -->
+                <!-- ============================================ -->
+                <h2 class="section-title" id="sec-features">5. Module-Wise Feature Guide</h2>
+
+                <!-- 5.1 Core Payroll -->
+                <h3 class="subsection-title">5.1 HR Payroll Community (Core)</h3>
+                <p><strong>Menu Path:</strong> <span class="menu-path">Payroll</span> (main menu)</p>
+
+                <h4 class="subsubsection-title">Creating a Payslip (Officer / Manager)</h4>
+                <ol class="steps-list">
+                    <li>Go to <span class="menu-path">Payroll &gt; Payslips &gt; All Payslips</span></li>
+                    <li>Click <strong>Create</strong></li>
+                    <li>Select <strong>Employee</strong></li>
+                    <li>Set <strong>Period</strong> (Date From / Date To)</li>
+                    <li>Select <strong>Salary Structure</strong></li>
+                    <li>Click <strong>Compute Sheet</strong> to calculate salary lines</li>
+                    <li>Review the computed lines (Basic, Allowances, Deductions, Net)</li>
+                    <li>Click <strong>Confirm</strong> to finalize</li>
+                </ol>
+
+                <h4 class="subsubsection-title">Payslip States</h4>
+                <table class="manual-table">
+                    <tbody>
+                        <tr><td><strong>Draft</strong></td><td>Initial state, can be edited</td></tr>
+                        <tr><td><strong>Verify</strong></td><td>Computed and ready for review</td></tr>
+                        <tr><td><strong>Done</strong></td><td>Confirmed and locked</td></tr>
+                        <tr><td><strong>Cancel</strong></td><td>Cancelled payslip</td></tr>
+                    </tbody>
+                </table>
+
+                <h4 class="subsubsection-title">Processing Batch Payslips (Manager Only)</h4>
+                <ol class="steps-list">
+                    <li>Go to <span class="menu-path">Payroll &gt; Payslips &gt; Batches</span></li>
+                    <li>Click <strong>Create</strong></li>
+                    <li>Set batch name (e.g., "January 2026 Payroll")</li>
+                    <li>Set <strong>Period</strong> (Date From / Date To)</li>
+                    <li>Click <strong>Generate Payslips</strong></li>
+                    <li>Select employees in the wizard</li>
+                    <li>Choose <strong>Salary Structure</strong></li>
+                    <li>Click <strong>Generate</strong> to create payslips for all selected employees</li>
+                    <li>Review individual payslips</li>
+                    <li>Click <strong>Close</strong> to finalize the batch</li>
+                </ol>
+
+                <h4 class="subsubsection-title">Managing Salary Structures (Officer / Manager)</h4>
+                <ol class="steps-list">
+                    <li>Go to <span class="menu-path">Payroll &gt; Configuration &gt; Salary Structures</span></li>
+                    <li>Create or edit structures</li>
+                    <li>Assign salary rules to structures</li>
+                    <li>Set parent structures for inheritance</li>
+                </ol>
+
+                <h4 class="subsubsection-title">Managing Salary Rules (Officer / Manager)</h4>
+                <ol class="steps-list">
+                    <li>Go to <span class="menu-path">Payroll &gt; Configuration &gt; Salary Rules</span></li>
+                    <li>Each rule has: Name, Code, Category, Sequence, Computation Type</li>
+                    <li>Computation types: <strong>Fixed Amount</strong>, <strong>Percentage</strong>, <strong>Python Code</strong></li>
+                    <li>Rules can have conditions (Python expressions)</li>
+                </ol>
+
+                <!-- 5.2 Payroll Accounting -->
+                <h3 class="subsection-title">5.2 HR Payroll Account Community (Accounting)</h3>
+                <p>Automatically creates accounting journal entries when payslips are confirmed.</p>
+
+                <h4 class="subsubsection-title">How It Works</h4>
+                <ol class="steps-list">
+                    <li>Each salary rule is mapped to a <strong>Debit Account</strong> and <strong>Credit Account</strong></li>
+                    <li>Each contract has a <strong>Salary Journal</strong> assigned</li>
+                    <li>When a payslip moves to "Done" state, a journal entry is automatically created</li>
+                    <li>If totals don't balance, an adjustment entry is added</li>
+                </ol>
+
+                <h4 class="subsubsection-title">Setting Up Accounts on Salary Rules</h4>
+                <ol class="steps-list">
+                    <li>Go to <span class="menu-path">Payroll &gt; Configuration &gt; Salary Rules</span></li>
+                    <li>Open a salary rule</li>
+                    <li>Under <strong>Accounting</strong> tab, set Debit Account, Credit Account, and optionally Analytic Account</li>
+                </ol>
+
+                <!-- 5.3 Automatic Payroll -->
+                <h3 class="subsection-title">5.3 Automatic Payroll</h3>
+                <p>Automatically generates payslip batches on a schedule via a daily cron job.</p>
+
+                <h4 class="subsubsection-title">Configuration (System Admin Only)</h4>
+                <ol class="steps-list">
+                    <li>Go to <span class="menu-path">Payroll &gt; Configuration &gt; Settings</span></li>
+                    <li>Enable <strong>Generate Payslip</strong> checkbox</li>
+                    <li>Choose generation option: <strong>First of Month</strong>, <strong>End of Month</strong>, or <strong>Specific Date</strong></li>
+                    <li>Save settings</li>
+                </ol>
+
+                <div class="info-box">
+                    <strong>Note:</strong> Payslips are created in <strong>Draft</strong> state — they still need manual confirmation.
+                </div>
+
+                <!-- 5.4 Dashboard -->
+                <h3 class="subsection-title">5.4 HR Payroll Dashboard</h3>
+                <p><strong>Menu Path:</strong> <span class="menu-path">Payroll &gt; Dashboard</span></p>
+
+                <table class="manual-table">
+                    <thead>
+                        <tr><th>View</th><th>Features</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>Officers</strong> (Department View)</td><td>Employee count, own attendance, leave balance, work days</td></tr>
+                        <tr><td><strong>Managers</strong> (Organization View)</td><td>Payslip stats, department-wise leave analytics, attendance across teams, expense summaries</td></tr>
+                    </tbody>
+                </table>
+
+                <!-- 5.5 Monthly Report -->
+                <h3 class="subsection-title">5.5 HR Payslip Monthly Report</h3>
+
+                <h4 class="subsubsection-title">Payroll Analysis Report</h4>
+                <ol class="steps-list">
+                    <li>Go to <span class="menu-path">Payroll &gt; Reporting &gt; Payroll Analysis</span></li>
+                    <li>Filter by date range, employee, department, salary rule, structure, or state</li>
+                    <li>Group by: Employee, Department, Job Position, Rule Category</li>
+                </ol>
+
+                <h4 class="subsubsection-title">Mass Confirm Payslips</h4>
+                <ol class="steps-list">
+                    <li>Go to <span class="menu-path">Payroll &gt; Payslips &gt; All Payslips</span></li>
+                    <li>Select multiple payslips</li>
+                    <li>Use the <strong>Mass Confirm</strong> action</li>
+                </ol>
+
+                <h4 class="subsubsection-title">Email Payslip to Employee</h4>
+                <ol class="steps-list">
+                    <li>Open a confirmed payslip</li>
+                    <li>Click <strong>Send by Email</strong></li>
+                    <li>Review and send using the email composer</li>
+                </ol>
+
+                <h4 class="subsubsection-title">Auto Email on Confirmation (System Admin)</h4>
+                <ol class="steps-list">
+                    <li>Go to <span class="menu-path">Payroll &gt; Configuration &gt; Settings</span></li>
+                    <li>Enable <strong>Automatic Send Payslip By Mail</strong></li>
+                </ol>
+
+                <!-- 5.6 Payroll Customizations -->
+                <h3 class="subsection-title">5.6 Payroll Customizations (Indian Compliance)</h3>
+
+                <h4 class="subsubsection-title">Employee Fields Added</h4>
+                <table class="manual-table">
+                    <thead>
+                        <tr><th>Field</th><th>Description</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Employee Code</td><td>Custom employee ID</td></tr>
+                        <tr><td>PAN</td><td>Permanent Account Number</td></tr>
+                        <tr><td>Aadhar No</td><td>Aadhar identification number</td></tr>
+                        <tr><td>UAN No</td><td>Universal Account Number (PF)</td></tr>
+                        <tr><td>ESIC No</td><td>ESIC registration number</td></tr>
+                        <tr><td>Date of Joining</td><td>Employment start date</td></tr>
+                        <tr><td>Date of Relieving</td><td>Employment end date</td></tr>
+                    </tbody>
+                </table>
+
+                <h4 class="subsubsection-title">Contract Salary Components — Earnings</h4>
+                <table class="manual-table">
+                    <thead>
+                        <tr><th>Field</th><th>Description</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Basic Wage</td><td>Base salary (standard Odoo field)</td></tr>
+                        <tr><td>HRA</td><td>House Rent Allowance</td></tr>
+                        <tr><td>Conveyance Allowance</td><td>Transport allowance</td></tr>
+                        <tr><td>Special Allowance</td><td>Special/flexible allowance</td></tr>
+                        <tr><td>Travel / Meal / Medical / Other</td><td>Various allowances</td></tr>
+                        <tr><td>Overtime / Incentives / Bonus</td><td>Variable pay components</td></tr>
+                        <tr><td><strong>Gross</strong></td><td><strong>Auto-calculated: Basic + All Allowances</strong></td></tr>
+                    </tbody>
+                </table>
+
+                <h4 class="subsubsection-title">Contract Salary Components — Deductions</h4>
+                <table class="manual-table">
+                    <thead>
+                        <tr><th>Field</th><th>Description</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>PF Employee Contribution</td><td>Provident Fund (employee share)</td></tr>
+                        <tr><td>ESIC Employee Contribution</td><td>ESIC (employee share)</td></tr>
+                        <tr><td>Professional Tax</td><td>State professional tax</td></tr>
+                        <tr><td>Income Tax (TDS)</td><td>Tax deducted at source</td></tr>
+                        <tr><td>Advance/Loan Deduction</td><td>Loan EMI or advance recovery</td></tr>
+                        <tr><td>Other Deductions</td><td>Miscellaneous deductions</td></tr>
+                        <tr><td><strong>Total Deductions</strong></td><td><strong>Auto-calculated: Sum of all deductions</strong></td></tr>
+                    </tbody>
+                </table>
+
+                <p><strong>Net Salary</strong> = Gross - Total Deductions</p>
+
+                <!-- ============================================ -->
+                <!-- SECTION 6: SETUP CHECKLIST -->
+                <!-- ============================================ -->
+                <h2 class="section-title" id="sec-checklist">6. Implementation Setup Checklist</h2>
+
+                <h3 class="subsection-title">Phase 1: Foundation Setup</h3>
+                <ul class="checklist">
+                    <li>Review and clean up user roles (see Section 3.3 recommendations)</li>
+                    <li>Set up departments properly (remove duplicates)</li>
+                    <li>Verify job positions are correctly assigned to employees</li>
+                    <li>Fill in Indian compliance fields for all 22 employees (PAN, Aadhar, UAN, ESIC)</li>
+                </ul>
+
+                <h3 class="subsection-title">Phase 2: Contract Setup</h3>
+                <ul class="checklist">
+                    <li>Create contracts for all 21 employees who currently lack contracts</li>
+                    <li>Configure Basic Wage and all applicable allowances</li>
+                    <li>Configure all applicable deductions (PF, ESIC, Professional Tax, etc.)</li>
+                    <li>Assign Salary Structure to each contract</li>
+                    <li>Set contract start date and type (Running/Open)</li>
+                    <li>Set Salary Journal for accounting integration</li>
+                </ul>
+
+                <h3 class="subsection-title">Phase 3: Salary Structure &amp; Rules</h3>
+                <ul class="checklist">
+                    <li>Clean up duplicate structures (BASE, SAVI DELHI, SALARY STRUCTURE)</li>
+                    <li>Design salary structures for different employee categories</li>
+                    <li>Create salary rules: Basic, HRA, Conveyance, Special Allowance, etc.</li>
+                    <li>Create deduction rules: PF (12%), ESIC (0.75%), Professional Tax, Income Tax</li>
+                    <li>Map GL accounts to salary rules (Debit/Credit accounts)</li>
+                    <li>Set up Contribution Registers for PF, ESIC, PT</li>
+                </ul>
+
+                <h3 class="subsection-title">Phase 4: Leave Configuration</h3>
+                <ul class="checklist">
+                    <li class="done">Paid Time Off (requires allocation)</li>
+                    <li class="done">Sick Time Off (no allocation needed)</li>
+                    <li class="done">Unpaid Leave</li>
+                    <li class="done">Compensatory Days (requires allocation)</li>
+                    <li>Create leave allocations for eligible employees</li>
+                    <li>Verify leave approval workflows match company policy</li>
+                </ul>
+
+                <h3 class="subsection-title">Phase 5: Automation &amp; Reporting</h3>
+                <ul class="checklist">
+                    <li>Configure automatic payroll generation timing</li>
+                    <li>Configure email payslip distribution</li>
+                    <li>Test payroll dashboard</li>
+                </ul>
+
+                <h3 class="subsection-title">Phase 6: Testing &amp; Go-Live</h3>
+                <ul class="checklist">
+                    <li>Process a test payslip for one employee</li>
+                    <li>Verify salary computation matches expected CTC breakdown</li>
+                    <li>Verify accounting entries are created correctly</li>
+                    <li>Test batch payslip generation</li>
+                    <li>Review payslip report output (PDF)</li>
+                    <li>Test email distribution of payslips</li>
+                    <li>Process first full payroll cycle</li>
+                </ul>
+
+                <!-- ============================================ -->
+                <!-- SECTION 7: GAPS -->
+                <!-- ============================================ -->
+                <h2 class="section-title" id="sec-gaps">7. Current Instance Status &amp; Gaps</h2>
+
+                <h3 class="subsection-title">What's Working</h3>
+                <ul class="steps-list">
+                    <li>All 7 payroll modules are installed and active</li>
+                    <li>22 employees are registered with departments and job positions</li>
+                    <li>4 leave types are configured</li>
+                    <li>Basic salary structures exist</li>
+                    <li>Payroll dashboard is available</li>
+                </ul>
+
+                <h3 class="subsection-title">Critical Gaps</h3>
+                <table class="manual-table">
+                    <thead>
+                        <tr><th>#</th><th>Gap</th><th>Impact</th><th>Priority</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td><strong>21 of 22 employees have no contract</strong></td>
+                            <td>Cannot process payroll</td>
+                            <td class="gap-high">HIGH</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td><strong>Only 5 salary rules configured</strong></td>
+                            <td>Incomplete salary computation</td>
+                            <td class="gap-high">HIGH</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td><strong>No GL accounts mapped to salary rules</strong></td>
+                            <td>Journal entries won't be meaningful</td>
+                            <td class="gap-high">HIGH</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td><strong>Duplicate salary structures</strong></td>
+                            <td>Confusing for users</td>
+                            <td class="gap-medium">MEDIUM</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td><strong>All payroll users have Manager role</strong></td>
+                            <td>Over-permissioned; security risk</td>
+                            <td class="gap-medium">MEDIUM</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td><strong>Only 1 contribution register exists</strong></td>
+                            <td>Need PF, ESIC, PT registers</td>
+                            <td class="gap-medium">MEDIUM</td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td><strong>Employee compliance fields empty</strong></td>
+                            <td>PAN, Aadhar, UAN, ESIC not filled</td>
+                            <td class="gap-medium">MEDIUM</td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td><strong>All 3 existing payslips are Draft with 0 amounts</strong></td>
+                            <td>Test data, should be cleaned up</td>
+                            <td class="gap-low">LOW</td>
+                        </tr>
+                        <tr>
+                            <td>9</td>
+                            <td><strong>Duplicate/empty departments</strong></td>
+                            <td>Confusing org structure</td>
+                            <td class="gap-low">LOW</td>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td><strong>Auto-payroll not configured</strong></td>
+                            <td>Manual batch creation required</td>
+                            <td class="gap-low">LOW</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!-- ============================================ -->
+                <!-- APPENDIX A -->
+                <!-- ============================================ -->
+                <h2 class="section-title" id="sec-appendix-a">Appendix A: Salary Rule Categories</h2>
+                <table class="manual-table">
+                    <thead>
+                        <tr><th>Code</th><th>Name</th><th>Use For</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>BASIC</td><td>Basic</td><td>Base salary component</td></tr>
+                        <tr><td>ALW</td><td>Allowance</td><td>All allowances (HRA, DA, etc.)</td></tr>
+                        <tr><td>HRA</td><td>House Rent Allowance</td><td>HRA specifically</td></tr>
+                        <tr><td>DA</td><td>Dearness Allowance</td><td>DA component</td></tr>
+                        <tr><td>Travel</td><td>Travel Allowance</td><td>Travel/conveyance</td></tr>
+                        <tr><td>Meal</td><td>Meal Allowance</td><td>Food/meal allowance</td></tr>
+                        <tr><td>Medical</td><td>Medical Allowance</td><td>Medical reimbursement</td></tr>
+                        <tr><td>Other</td><td>Other Allowance</td><td>Miscellaneous allowances</td></tr>
+                        <tr><td>GROSS</td><td>Gross</td><td>Gross salary (Basic + Allowances)</td></tr>
+                        <tr><td>DED</td><td>Deduction</td><td>All deductions (PF, ESIC, PT, etc.)</td></tr>
+                        <tr><td>NET</td><td>Net</td><td>Net salary (Gross - Deductions)</td></tr>
+                        <tr><td>COMP</td><td>Company Contribution</td><td>Employer PF/ESIC contributions</td></tr>
+                    </tbody>
+                </table>
+
+                <!-- ============================================ -->
+                <!-- APPENDIX B -->
+                <!-- ============================================ -->
+                <h2 class="section-title" id="sec-appendix-b">Appendix B: Key Navigation Paths</h2>
+                <table class="manual-table">
+                    <thead>
+                        <tr><th>Action</th><th>Menu Path</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>View all payslips</td><td><span class="menu-path">Payroll &gt; Payslips &gt; All Payslips</span></td></tr>
+                        <tr><td>Create payslip batch</td><td><span class="menu-path">Payroll &gt; Payslips &gt; Batches</span></td></tr>
+                        <tr><td>Payroll dashboard</td><td><span class="menu-path">Payroll &gt; Dashboard</span></td></tr>
+                        <tr><td>Payroll analysis report</td><td><span class="menu-path">Payroll &gt; Reporting &gt; Payroll Analysis</span></td></tr>
+                        <tr><td>Salary structures</td><td><span class="menu-path">Payroll &gt; Configuration &gt; Salary Structures</span></td></tr>
+                        <tr><td>Salary rules</td><td><span class="menu-path">Payroll &gt; Configuration &gt; Salary Rules</span></td></tr>
+                        <tr><td>Contribution registers</td><td><span class="menu-path">Payroll &gt; Configuration &gt; Contribution Registers</span></td></tr>
+                        <tr><td>Payroll settings</td><td><span class="menu-path">Payroll &gt; Configuration &gt; Settings</span></td></tr>
+                        <tr><td>Employee list</td><td><span class="menu-path">Employees &gt; Employees</span></td></tr>
+                        <tr><td>Employee contracts</td><td><span class="menu-path">Employees &gt; Contracts</span></td></tr>
+                        <tr><td>Leave management</td><td><span class="menu-path">Time Off &gt; Dashboard</span></td></tr>
+                        <tr><td>Attendance</td><td><span class="menu-path">Attendances &gt; Overview</span></td></tr>
+                    </tbody>
+                </table>
+
+                <!-- ============================================ -->
+                <!-- APPENDIX C -->
+                <!-- ============================================ -->
+                <h2 class="section-title" id="sec-appendix-c">Appendix C: Recommended Role Assignment</h2>
+                <table class="manual-table">
+                    <thead>
+                        <tr><th>User</th><th>Current Role</th><th>Recommended Role</th><th>Reason</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Administrator</td><td>Manager</td><td>System Admin</td><td>Technical admin</td></tr>
+                        <tr><td>Sanjeev Ratra</td><td>Manager</td><td>Manager</td><td>MD - needs full visibility</td></tr>
+                        <tr><td>Dev Ratra</td><td>Manager</td><td>Manager</td><td>Director - needs full visibility</td></tr>
+                        <tr><td>Veena Ratra</td><td>Manager</td><td>Manager</td><td>Director - needs full visibility</td></tr>
+                        <tr><td>Mandeep Chawla</td><td>Manager</td><td>Manager</td><td>HR &amp; Admin Head</td></tr>
+                        <tr><td>Pinto Kumar</td><td>Manager</td><td>Manager</td><td>Finance Manager - payroll accounting</td></tr>
+                        <tr><td>Komal</td><td>Manager</td><td>Officer</td><td>HR Executive - day-to-day processing</td></tr>
+                        <tr><td>Ashish Mishra</td><td>Manager</td><td>Officer or None</td><td>EA - limited payroll need</td></tr>
+                        <tr><td>Anjali Karn</td><td>Manager</td><td>None</td><td>Service Coordinator - no payroll role</td></tr>
+                        <tr><td>Mohammad Nazim</td><td>Manager</td><td>None</td><td>Electrician - no payroll role</td></tr>
+                        <tr><td>Subodh Kumar</td><td>Manager</td><td>None</td><td>Engineer - no payroll role</td></tr>
+                    </tbody>
+                </table>
+
+                <!-- Footer -->
+                <div class="manual-footer">
+                    <p>HR &amp; Payroll User Manual v1.0 — Savi Vision Private Limited<br/>
+                    Prepared by Macrofix Implementation Team — February 2026</p>
+                </div>
+            </div>
+        </div>
+    </t>
+</templates>

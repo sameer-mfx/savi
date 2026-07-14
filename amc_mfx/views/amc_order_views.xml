@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- IR Rule to control user control based on the company assosciated to him -->
+    <record id="amc_order_rule_company" model="ir.rule">
+        <field name="name">AMC Order: company rule</field>
+        <field name="model_id" ref="model_amc_order"/>
+        <field name="domain_force">[('company_id', '=', user.company_id.id)]</field>
+        <field name="groups" eval="[(4, ref('base.group_user'))]"/>
+    </record>
+
+    <!-- This action will be called when AMC Order menu item was clicked -->
+    <record id="action_amc_order" model="ir.actions.act_window">
+        <field name="name">AMC Order</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">amc.order</field>
+        <field name="view_mode">tree,form</field>
+        <field name="binding_view_types">form</field>
+        <field name="context">{'search_default_group_by_partner_id': 1}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Click on New to create an AMC Order
+            </p>
+        </field>
+    </record>
+
+    <!-- AMC Order Form view with amc order lines -->
+    <record id="amc_order_form" model="ir.ui.view">
+        <field name="name">amc.order.form</field>
+        <field name="model">amc.order</field>
+        <field name="priority">1</field>
+        <field name="arch" type="xml">
+            <form string="AMC Order">
+                <header>
+                    <button name="action_submit_amc" type="object" string="Submit" invisible="state not in ('draft')"/>
+                    <button name="action_approve_amc" type="object" string="Approve" invisible="state not in ('to_approve')" class="oe_highlight" groups="amc_mfx.amc_group_manager"/>
+                    <button name="action_send_amc_draft_email" type="object" string="Send Proposal by Email" icon="fa-envelope" class="btn-primary" invisible="state not in ('draft', 'to_approve')" data-hotkey="p"/>
+                    <button name="action_send_amc_email" type="object" string="Send by Email" icon="fa-envelope" class="btn-primary" invisible="state != 'approved'" data-hotkey="s"/>
+                    <button name="action_lock_amc" type="object" string="Lock" icon="fa-lock" class="btn btn-warning" invisible="is_locked or state == 'expired'" groups="amc_mfx.amc_group_higher_management"/>
+                    <button name="action_unlock_amc" type="object" string="Unlock" icon="fa-unlock" class="btn btn-info" invisible="not is_locked or state == 'expired'" groups="amc_mfx.amc_group_higher_management"/>
+                    <button name="action_cancel_amc" string="Cancel" type="object" class="btn btn-danger" invisible="state in ('approved', 'cancel', 'expired')" groups="amc_mfx.amc_group_manager"/>
+                    <button name="action_draft_amc" string="Reset to Draft" type="object" invisible="state != 'cancel'" groups="amc_mfx.amc_group_manager"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,to_approve,approved"/>
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <field name="is_locked" invisible="1"/>
+                        <div class="btn-group o_not_editable" invisible="not is_locked">
+                            <span class="badge rounded-pill text-bg-warning fs-6">
+                                <i class="fa fa-lock me-1"/>Locked
+                            </span>
+                        </div>
+                        <div class="btn-group o_not_editable" invisible="is_locked or state in ('draft', 'expired')">
+                            <span class="badge rounded-pill text-bg-success fs-6">
+                                <i class="fa fa-unlock me-1"/>Unlocked
+                            </span>
+                        </div>
+                    </div>
+                    <div class="pull-left">
+                        <label for="name" class="oe_edit_only oe_inline" />
+                        <h1>
+                            <field name="name"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="user_id" readonly="1" force_save="1"/>
+                            <field name="partner_id" required="1" readonly="is_locked or state == 'expired'" domain="[('user_ids', '=', False)]" options="{'no_create': True, 'no_create_edit': True}"/>
+                            <field name="partner_address" readonly="is_locked or state == 'expired'"/>
+                            <field name="partner_email" readonly="is_locked or state == 'expired'"/>
+                            <field name="partner_phone" readonly="is_locked or state == 'expired'"/>
+                            <field name="is_amc_expired" invisible="not is_amc_expired"/>
+                        </group>
+                        <group>
+                            <field name="company_id" readonly="1" force_save="1"/>
+                            <field name="currency_id" required="1" readonly="is_locked or state == 'expired'"/>
+                            <field name="amc_start_date" required="1" readonly="is_locked or state == 'expired'"/>
+                            <label for="amc_duration" invisible="not amc_start_date"/>
+                            <div invisible="not amc_start_date" class="o_row">
+                                <field name="amc_duration" required="amc_start_date" class="o_col-2 me-2" style="max-width: 4rem !important;" readonly="is_locked or state == 'expired'"/>
+                                <field name="amc_duration_unit" required="amc_start_date" class="o_col-2 me-2" style="max-width: 8rem !important;" readonly="is_locked or state == 'expired'"/>
+                            </div>
+                            <field name="amc_end_date" invisible="not amc_end_date" required="1" readonly="1" force_save="1"/>
+                            <field name="billing_cycle" readonly="is_locked or state == 'expired'"/>
+                            <field name="next_billing_date" readonly="1" invisible="billing_cycle in ('one_time', False)"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="AMC Details">
+                            <field name="amc_lines_ids" readonly="is_locked or state == 'expired'">
+                                <tree string="Services" editable="bottom" decoration-mute="parent.state == 'cancel'" create="1" edit="1" delete="1">
+                                    <field name="product_id" required="1"/>
+                                    <field name="service_id" domain="[('product_id', '=', product_id)]" context="{'default_product_id': product_id}" required="1"/>
+                                    <field name="description" readonly="parent.state not in ('draft', 'to_approve')" groups="!amc_mfx.amc_group_higher_management"/>
+                                    <field name="description" groups="amc_mfx.amc_group_higher_management"/>
+                                    <field name="quantity"/>
+                                    <field name="unit_price"/>
+                                    <field name="tax_ids" widget="many2many_tags"/>
+                                    <field name="subtotal_price"/>
+                                    <field name="total_price"/>
+                                    <field name="is_tracked" column_invisible="1"/>
+                                    <field name="currency_id" column_invisible="1"/>
+                                    <field name="location_id" column_invisible="1"/>
+                                    <field name="product_identification_ids" widget="many2many_tags" context="{'default_product_id': product_id, 'default_location_id': location_id}" domain="[('product_id', '=', product_id)]" required="is_tracked" readonly="not is_tracked"/>
+                                    <field name="location" required="1"/>
+                                    <field name="remarks" column_invisible="parent.state != 'approved'"/>
+                                </tree>
+                            </field>
+                            <group name="note_group" col="6" class="mt-2 mt-md-0">
+                                <group colspan="4">
+                                </group>
+                                <group class="oe_subtotal_footer" colspan="2" name="sale_total">
+                                    <field name="tax_totals" widget="account-tax-totals-field" nolabel="1" colspan="2" readonly="1"/>
+                                </group>
+                                <div class="clearfix"/>
+                            </group>
+                        </page>
+                        <page string="AMC Notes">
+                            <field name="notes" type="html" options="{'collaborative': true, 'resizable': false}" nolabel="1" placeholder="Remarks"/>
+                        </page>
+                        <page string="AMC Terms and Conditions">
+                            <field name="terms_and_conditions" type="html" options="{'collaborative': true, 'resizable': false}" nolabel="1" placeholder="Terms and Conditions"/>
+                        </page>
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" groups="base.group_user" />
+                    <field name="activity_ids" />
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <!-- AMC Order search view -->
+    <record id="view_amc_order_search" model="ir.ui.view">
+        <field name="name">amc.order.search.view</field>
+        <field name="model">amc.order</field>
+        <field name="arch" type="xml">
+            <search string="Search AMC Orders">
+                <!-- Search fields -->
+                <field name="name" string="Reference"/>
+                <field name="partner_id" string="Customer"/>
+                <field name="user_id" string="Responsible"/>
+                <field name="company_id" string="Company"/>
+                <field name="amc_lines_ids" string="Product" filter_domain="[('amc_lines_ids.product_id.name', 'ilike', self)]"/>
+
+                <!-- Status filters -->
+                <filter name="filter_draft" string="Draft" domain="[('state', '=', 'draft')]"/>
+                <filter name="filter_to_approve" string="To Approve" domain="[('state', '=', 'to_approve')]"/>
+                <filter name="filter_approved" string="Approved" domain="[('state', '=', 'approved')]"/>
+                <filter name="filter_expired" string="Expired" domain="[('state', '=', 'expired')]"/>
+                <filter name="filter_cancelled" string="Cancelled" domain="[('state', '=', 'cancel')]"/>
+                <separator/>
+                <filter name="filter_my_orders" string="My Orders" domain="[('user_id', '=', uid)]"/>
+                <separator/>
+
+                <!-- Lock status -->
+                <filter name="filter_locked" string="Locked" domain="[('is_locked', '=', True)]"/>
+                <filter name="filter_unlocked" string="Unlocked" domain="[('is_locked', '=', False), ('state', '=', 'approved')]"/>
+                <separator/>
+
+                <!-- AMC validity -->
+                <filter name="filter_active" string="Active AMCs" domain="[('state', '=', 'approved'), ('amc_end_date', '&gt;=', context_today().strftime('%Y-%m-%d'))]"/>
+                <filter name="filter_expiring_soon" string="Expiring (Next 30 Days)" domain="[('state', '=', 'approved'), ('amc_end_date', '&gt;=', context_today().strftime('%Y-%m-%d')), ('amc_end_date', '&lt;=', (context_today() + relativedelta(days=30)).strftime('%Y-%m-%d'))]"/>
+                <filter name="filter_expiring_90" string="Expiring (Next 90 Days)" domain="[('state', '=', 'approved'), ('amc_end_date', '&gt;=', context_today().strftime('%Y-%m-%d')), ('amc_end_date', '&lt;=', (context_today() + relativedelta(days=90)).strftime('%Y-%m-%d'))]"/>
+                <separator/>
+
+                <!-- AMC start date -->
+                <filter name="filter_started_this_month" string="Started This Month" domain="[('amc_start_date', '&gt;=', (context_today()).strftime('%Y-%m-01')), ('amc_start_date', '&lt;', (context_today() + relativedelta(months=1)).strftime('%Y-%m-01'))]"/>
+                <filter name="filter_started_this_year" string="Started This Year" domain="[('amc_start_date', '&gt;=', (context_today()).strftime('%Y-01-01')), ('amc_start_date', '&lt;=', (context_today()).strftime('%Y-12-31'))]"/>
+                <separator/>
+
+                <!-- Billing -->
+                <filter name="filter_billing_upcoming" string="Billing Due (Next 7 Days)" domain="[('next_billing_date', '&gt;=', (context_today()).strftime('%Y-%m-%d')), ('next_billing_date', '&lt;=', (context_today() + relativedelta(days=7)).strftime('%Y-%m-%d'))]"/>
+                <filter name="filter_billing_this_month" string="Billing Due (This Month)" domain="[('next_billing_date', '&gt;=', (context_today()).strftime('%Y-%m-01')), ('next_billing_date', '&lt;', (context_today() + relativedelta(months=1)).strftime('%Y-%m-01'))]"/>
+                <separator/>
+                <filter name="filter_quarterly" string="Quarterly Billing" domain="[('billing_cycle', '=', 'quarterly')]"/>
+                <filter name="filter_half_yearly" string="Half-Yearly Billing" domain="[('billing_cycle', '=', 'half_yearly')]"/>
+                <filter name="filter_annual" string="Annual Billing" domain="[('billing_cycle', '=', 'annual')]"/>
+                <filter name="filter_one_time" string="One-Time Billing" domain="[('billing_cycle', '=', 'one_time')]"/>
+                <separator/>
+
+                <!-- Activity filters (used by the activity bell/clock popup in top bar) -->
+                <filter string="My Activities" name="activities_my"
+                    domain="[('activity_ids.user_id', '=', uid)]"/>
+                <filter string="Late Activities" name="activities_overdue"
+                    domain="[('activity_ids.date_deadline', '&lt;', context_today().strftime('%Y-%m-%d'))]"/>
+                <filter string="Today Activities" name="activities_today"
+                    domain="[('activity_ids.date_deadline', '=', context_today().strftime('%Y-%m-%d'))]"/>
+                <filter string="Future Activities" name="activities_upcoming_all"
+                    domain="[('activity_ids.date_deadline', '&gt;', context_today().strftime('%Y-%m-%d'))]"/>
+
+                <!-- Group By -->
+                <group expand="0" string="Group By">
+                    <filter name="group_by_partner_id" string="Customer" domain="[]" context="{'group_by': 'partner_id'}"/>
+                    <filter name="group_by_user_id" string="Responsible" domain="[]" context="{'group_by': 'user_id'}"/>
+                    <filter name="group_by_state" string="Status" domain="[]" context="{'group_by': 'state'}"/>
+                    <filter name="group_by_company_id" string="Company" domain="[]" context="{'group_by': 'company_id'}"/>
+                    <filter name="group_by_billing_cycle" string="Billing Cycle" domain="[]" context="{'group_by': 'billing_cycle'}"/>
+                    <filter name="group_by_locked" string="Lock Status" domain="[]" context="{'group_by': 'is_locked'}"/>
+                    <filter name="group_by_start_date" string="Start Date" domain="[]" context="{'group_by': 'amc_start_date:month'}"/>
+                    <filter name="group_by_end_date" string="End Date" domain="[]" context="{'group_by': 'amc_end_date:month'}"/>
+                    <filter name="group_by_next_billing" string="Next Billing Date" domain="[]" context="{'group_by': 'next_billing_date:month'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- AMC Order tree view -->
+    <record id="amc_order_tree" model="ir.ui.view">
+        <field name="name">amc.order.tree</field>
+        <field name="model">amc.order</field>
+        <field name="arch" type="xml">
+            <tree string="AMC Orders" decoration-muted="state == 'cancel'" sample="1">
+                <field name="name" string="Reference"/>
+                <field name="partner_id"/>
+                <field name="company_id"/>
+                <field name="user_id"/>
+                <field name="amc_start_date"/>
+                <field name="amc_end_date"/>
+                <field name="amount_total" string="AMC Value" widget="monetary"/>
+                <field name="billing_cycle" optional="show"/>
+                <field name="next_billing_date" optional="show"/>
+                <field name="is_locked" string="Lock Status" widget="boolean_toggle" readonly="1" optional="show"/>
+                <field name="state" widget="badge" decoration-danger="state in ('expired', 'cancel')" decoration-info="state == 'to_approve'" decoration-muted="state == 'draft'" decoration-success="state == 'approved'"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Top menu item -->
+    <menuitem id="menu_amc_management"
+              name="AMC Management"
+              web_icon="amc_mfx,static/description/icon.png"
+              groups="amc_mfx.amc_group_user"
+              sequence="136"/>
+
+    <menuitem id="menu_amc_root"
+              name="Orders"
+              parent="menu_amc_management"
+              sequence="1"/>
+
+    <!-- AMC Order menu item -->
+    <menuitem id="menu_amc_order"
+              name="Orders"
+              parent="menu_amc_root"
+              action="action_amc_order"
+              sequence="1"/>
+
+</odoo>

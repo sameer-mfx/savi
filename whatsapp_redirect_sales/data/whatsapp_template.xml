@@ -1,0 +1,18 @@
+<odoo>
+    <record id="param_whatsapp_sale_reminder_template" model="ir.config_parameter">
+        <field name="key">whatsapp.sale_reminder_template</field>
+        <field name="value">Dear *{partner_name}*,
+
+I hope you're doing well.
+
+Kindly share an update on the status of order *{order_name}*.
+
+If there are any technical or commercial clarifications required, please feel free to let us know.
+
+We appreciate your prompt and favorable response.
+
+Warm regards,
+*{user_name}*
+*{company_name}*</field>
+    </record>
+</odoo>

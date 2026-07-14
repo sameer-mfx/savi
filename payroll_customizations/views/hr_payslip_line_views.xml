@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="replace_hr_payslip_line_view_tree" model="ir.ui.view">
+        <field name="name">hr.payslip.line.view.tree.replace</field>
+        <field name="model">hr.payslip.line</field>
+        <field name="inherit_id" ref="hr_payroll_community.hr_payslip_line_view_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//tree" position="replace">
+                <tree string="Salary Structure" editable="bottom"> <!--decoration-info="total == 0"-->
+                    <!-- <field name="category_id"/>-->
+                    <!-- <field name="employee_id" invisible="1"/>-->
+                    <!-- <field name="designation"/>-->
+                    <field name="sequence"/>
+                    <field name="emp_name"/>
+                    <field name="emp_id"/>
+                    <field name="designation"/>
+                    <field name="department"/>
+                    <field name="emp_work_location"/>
+                    <field name="emp_bank_account_no"/>
+                    <field name="pan"/>
+                    <field name="aadhar_no"/>
+                    <field name="uan_no"/>
+                    <field name="esic_no"/>
+                    <field name="date_of_joining"/>
+                    <field name="work_days_in_month"/>
+                    <field name="days_present"/>
+                    <field name="lop_days"/>
+
+                    <!--  earnings  -->
+                    <field name="emp_basic_salary"/>
+                    <field name="emp_hra"/>
+                    <field name="emp_conveyance_allowance"/>
+                    <field name="emp_medical_allowance"/>
+                    <field name="emp_special_allowance"/>
+                    <field name="emp_other_allowance"/>
+                    <field name="emp_overtime"/>
+                    <field name="emp_incentives"/>
+                    <field name="emp_bonus"/>
+                    <field name="emp_gross"/>
+
+                    <!--deductions-->
+                    <field name="emp_pf"/>
+                    <field name="emp_esic"/>
+                    <field name="emp_prof_tax"/>
+                    <field name="emp_inc_tax"/>
+                    <field name="emp_adv_loan_deduction"/>
+                    <field name="emp_other_deductions"/>
+                    <field name="emp_total_deductions"/>
+                    <field name="emp_net_salary"/>
+                    <field name="employer_pf_contribution"/>
+                    <field name="employer_esic_contribution"/>
+                    <field name="remarks"/>
+                </tree>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="employee_form_inherit" model="ir.ui.view">
+        <field name="name">employee.form.inherit.payroll</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//sheet/group[1]/group[1]/field[@name='mobile_phone']" position="before">
+                <field name="employee_code"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="salary_computation_action" model="ir.actions.act_window">
+        <field name="res_model">hr.payslip.line</field>
+        <field name="name">Payslip Lines</field>
+        <field name="view_mode">tree</field>
+        <field name="context">{'search_default_year':1}</field>
+    </record>
+
+    <menuitem
+        id="menu_salary_computation"
+        name="Salary Computation"
+        parent="hr_payslip_monthly_report.menu_hr_payslip_reports"
+        action="salary_computation_action"
+        groups="hr_payroll_community.group_hr_payroll_community_user"
+        sequence="10"/>
+</odoo>

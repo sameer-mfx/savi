@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_payment_receipt_document_custom" inherit_id="account.report_payment_receipt_document">
+        <xpath expr="//h3/strong[@id='payment_title']" position="attributes">
+            <attribute name="style">background-color: #0076BC; color: #ffffff; padding:10px; border-radius:4px;</attribute>
+        </xpath>
+    </template>
+</odoo>

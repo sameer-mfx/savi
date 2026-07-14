@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record id="project_form_view_inherit_savi" model="ir.ui.view">
+        <field name="name">Project Form View Inherit Savi</field>
+        <field name="model">project.project</field>
+        <field name="inherit_id" ref="project.edit_project"/>
+        <field name="arch" type="xml">
+            <xpath expr="//header" position="inside">
+                <field name="is_project_done" invisible="1"/>
+                <field name="amc_id" invisible="1"/>
+                <button type="object" name="convert_project_to_amc" string="Convert to AMC" class="oe_highlight" invisible="not is_project_done or amc_id"/>
+            </xpath>
+            <xpath expr="//sheet/div[@name='button_box']" position="inside">
+                <button class="oe_stat_button" type="object" name="action_view_amcs" string="AMC" icon="fa-dollar" invisible="not amc_id"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

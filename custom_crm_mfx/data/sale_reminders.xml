@@ -1,0 +1,14 @@
+<odoo>
+
+    <record id="ir_cron_send_sale_reminder_emails" model="ir.cron">
+        <field name="name">Send Sale Reminder Emails</field>
+        <field name="model_id" ref="custom_crm_mfx.model_sale_order"/>
+        <field name="state">code</field>
+        <field name="code">model.send_sale_reminder_emails()</field>
+        <field name="interval_type">days</field>
+        <field name="interval_number">1</field>
+        <field name="numbercall">-1</field>
+        <field name="active" eval="True"/>
+    </record>
+
+</odoo>

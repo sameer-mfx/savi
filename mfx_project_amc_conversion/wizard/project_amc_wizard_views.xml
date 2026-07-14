@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record id="project_amc_wizard_form_view" model="ir.ui.view">
+        <field name="name">Project AMC Wizard Form View</field>
+        <field name="model">project.amc.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Project AMC Wizard">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="user_id" readonly="1" force_save="1"/>
+                            <field name="partner_id" required="1" readonly="1" options="{'no_create': True, 'no_create_edit': True}"/>
+                        </group>
+                        <group>
+                            <field name="amc_start_date" required="1"/>
+                            <label for="amc_duration" invisible="not amc_start_date"/>
+                            <div invisible="not amc_start_date" class="o_row">
+                                <field name="amc_duration" required="amc_start_date" class="o_col-2 me-2" style="max-width: 4rem !important;"/>
+                                <field name="amc_duration_unit" required="amc_start_date" class="o_col-2 me-2" style="max-width: 8rem !important;"/>
+                            </div>
+                            <field name="amc_end_date" invisible="not amc_end_date" required="1" readonly="1" force_save="1"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="AMC Details">
+                            <field name="amc_wizard_line_ids">
+                                <tree string="Services" editable="bottom" create="1" edit="1" delete="1">
+                                    <field name="product_id" required="1"/>
+                                    <field name="service_id" domain="[('product_id', '=', product_id)]" context="{'default_product_id': product_id}" required="1"/>
+                                    <field name="description" readonly="1" force_save="1"/>
+                                    <field name="product_identification_ids" widget="many2many_tags" context="{'default_product_id': product_id}" domain="[('product_id', '=', product_id)]"/>
+                                    <field name="location" required="1"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+                <footer>
+                    <button name="action_confirm" string="Create AMC" type="object" class="btn-primary"/>
+                    <button string="Cancel" special="cancel" class="btn-secondary"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+</odoo>

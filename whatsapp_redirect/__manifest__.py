@@ -1,0 +1,20 @@
+{
+    'name': 'Send Whatsapp Message from Odoo',
+    'version': '17.0.1.0.0',
+    'category': 'Whatsapp',
+    'description': 'This module helps you to directly send messages to your contacts through WhatsApp web.',
+    'author': 'Macrofix',
+    'maintainer': 'Macrofix',
+    'company': 'Macrofix',
+    'website': 'https://www.macrofix.com',
+    'depends': ['base', 'contacts'],
+    'data': [
+        'security/ir.model.access.csv',
+        'views/res_partner_views.xml',
+        'wizard/whatsapp_send_message_views.xml',
+    ],
+    'installable': True,
+    'auto_install': False,
+    'application': True,
+    'license': 'LGPL-3',
+}

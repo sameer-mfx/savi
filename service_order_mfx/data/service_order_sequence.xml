@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Sequence for Service Order records -->
+    <record id="sequnce_service_orders" model="ir.sequence">
+        <field name="name">Service Order</field>
+        <field name="code">service.order</field>
+        <field name="prefix">SSO/%(range_year)s/</field>
+        <field name="padding">5</field>
+    </record>
+
+    <!-- Sequence for Service Quotation records -->
+    <record id="seq_service_quotation" model="ir.sequence">
+        <field name="name">Service Quotation</field>
+        <field name="code">service.quotation</field>
+        <field name="prefix">SSQ/%(range_year)s/</field>
+        <field name="padding">5</field>
+    </record>
+
+    <!-- Sequence for Service Order records -->
+    <record id="seq_srn" model="ir.sequence">
+        <field name="name">SRN</field>
+        <field name="code">srn</field>
+        <field name="prefix">SRN/%(range_year)s/</field>
+        <field name="padding">5</field>
+    </record>
+</odoo>

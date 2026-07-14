@@ -1,0 +1,62 @@
+<odoo>
+    <data>
+
+        <record id="product_supplierinfo_tree_view_inherited" model="ir.ui.view">
+            <field name="name">Supplier Info Tree View</field>
+            <field name="model">product.supplierinfo</field>
+            <field name="inherit_id" ref="product.product_supplierinfo_tree_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//tree" position="inside">
+                    <field name="payment_terms" optional="hide"/>
+                    <field name="freight_cost" optional="hide"/>
+                    <field name="margin" optional="hide"/>
+                    <field name="multi_brands" widget="many2many_tags" optional="hide"/>
+                    <field name="categories" optional="hide"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="product_supplierinfo_form_view_inherited" model="ir.ui.view">
+            <field name="name">Supplier Info Form View</field>
+            <field name="model">product.supplierinfo</field>
+            <field name="inherit_id" ref="product.product_supplierinfo_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form/sheet/group/group[@name='vendor']" position="inside">
+                    <field name="payment_terms"/>
+                    <field name="freight_cost"/>
+                    <field name="margin"/>
+                    <field name="multi_brands" widget="many2many_tags"/>
+                    <field name="categories"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="product_template_view_inherited" model="ir.ui.view">
+            <field name="name">Product Template View</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_only_form_view"/>
+            <field name="arch" type="xml">
+                <field name="default_code" position="attributes">
+                    <attribute name="string">Model No.</attribute>
+                </field>
+                <field name="default_code" position="after">
+                    <field name="margin"/>
+                </field>
+                <field name="default_code" position="after">
+                    <label for="warranty_period" string="Warranty"/>
+                    <div class="oe_row">
+                        <span class="d-flex">
+                            <field name="warranty_period"/>
+                            <field name="warranty_type" required="warranty_period"/>
+                        </span>
+                    </div>
+                </field>
+            </field>
+        </record>
+
+        <menuitem id="menu_product_supplierinfo" name="Supplier Info" parent="stock.menu_stock_inventory_control" action="product.product_supplierinfo_type_action" sequence="20"/>
+        <menuitem id="menu_product_parent" name="Products" parent="crm.crm_menu_root" sequence="2"/>
+        <menuitem id="menu_products" name="Products" parent="custom_crm_mfx.menu_product_parent" action="stock.product_template_action_product" sequence="1"/>
+        <menuitem id="menu_products_supplierinfo" name="Supplier Info" parent="custom_crm_mfx.menu_product_parent" action="product.product_supplierinfo_type_action" sequence="2"/>
+    </data>
+</odoo>

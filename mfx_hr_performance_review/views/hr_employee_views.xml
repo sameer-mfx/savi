@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Extend Employee Form to show performance review data -->
+    <record id="view_employee_form_inherit_performance" model="ir.ui.view">
+        <field name="name">hr.employee.form.inherit.performance</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="arch" type="xml">
+            <div name="button_box" position="inside">
+                <button name="action_view_reviews" type="object"
+                        class="oe_stat_button" icon="fa-star"
+                        groups="mfx_hr_performance_review.group_performance_user">
+                    <field name="review_count" widget="statbutton"
+                           string="Reviews"/>
+                </button>
+                <button name="action_view_goals" type="object"
+                        class="oe_stat_button" icon="fa-bullseye"
+                        groups="mfx_hr_performance_review.group_performance_user">
+                    <field name="goal_count" widget="statbutton"
+                           string="Goals"/>
+                </button>
+            </div>
+        </field>
+    </record>
+
+    <!-- Add Performance tab to employee form -->
+    <record id="view_employee_form_inherit_performance_tab" model="ir.ui.view">
+        <field name="name">hr.employee.form.inherit.performance.tab</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                <page string="Performance" name="performance"
+                      groups="mfx_hr_performance_review.group_performance_manager">
+                    <group>
+                        <group>
+                            <field name="last_review_date"/>
+                            <field name="last_review_rating"/>
+                        </group>
+                        <group>
+                            <field name="average_rating"/>
+                        </group>
+                    </group>
+                    <field name="review_ids" readonly="1">
+                        <tree>
+                            <field name="name"/>
+                            <field name="cycle_id"/>
+                            <field name="date_review"/>
+                            <field name="self_rating"/>
+                            <field name="manager_rating"/>
+                            <field name="final_rating"/>
+                            <field name="final_rating_label"/>
+                            <field name="state" widget="badge"
+                                   decoration-success="state == 'done'"
+                                   decoration-warning="state in ('self_review', 'manager_review', 'hr_review')"/>
+                        </tree>
+                    </field>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="delivery_elegant_external_layout">
+        <!-- Multicompany -->
+        <t t-if="o and 'company_id' in o">
+            <t t-set="company" t-value="o.company_id"/>
+        </t>
+        <t t-if="not o or not 'company_id' in o">
+            <t t-set="company" t-value="res_company"/>
+        </t>
+        <t t-call="general_template.delivery_elegant_header"/>
+        <div class="article o_report_layout_standard" t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id" t-att-data-oe-lang="o and o.env.context.get('lang')">
+            <t t-out="0"/>
+        </div>
+        <t t-call="general_template.templates_footer"/>
+    </template>
+    <template id="delivery_elegant_header">
+        <div class="header" t-att-style="'font-family:'+o.company_id.font_id.family+';font-size:'+str(o.company_id.font_size)+'px;' ">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-7">
+                        <t t-if="o.company_id.invoice_logo">
+                            <img t-att-src="image_data_uri(o.company_id.invoice_logo)" style="height: 100px;" />
+                        </t>
+                    </div>
+                    <div class="col-5">  
+                        <p t-attf-style="font-size:35px;color: #{o.company_id and o.company_id.theme_color or '#000000'};">
+                            Delivery Note
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <p t-attf-style="border-bottom:1px solid #{theme_color}; padding:10px"/>
+            </div>
+        </div>
+        
+    </template>
+    <template id="report_delivery_elegant_main">
+        <t t-call="general_template.delivery_elegant_external_layout">
+            <t t-set="o" t-value="o.with_context({'lang':o.partner_id.lang})"/>
+            <t t-set="theme_color" t-value="o.company_id and o.company_id.theme_color"/>
+            <t t-set="theme_text_color" t-value="o.company_id and o.company_id.theme_text_color"/>
+            <t t-set="company_color" t-value="o.company_id and o.company_id.company_color"/>
+            <t t-set="company_address_color" t-value="o.company_id and o.company_id.company_address_color"/>
+            <t t-set="customer_color" t-value="o.company_id and o.company_id.customer_color"/>
+            <t t-set="customer_address_color" t-value="o.company_id and o.company_id.customer_address_color"/>
+            <t t-set="text_color" t-value="o.company_id and o.company_id.text_color"/>
+            <div class="page" t-att-style="'font-family:'+o.company_id.font_id.family+';font-size:'+str(o.company_id.font_size)+'px;'">
+                <div class="oe_structure"/>
+                <t t-call="general_template.templates_watermark"/>
+                <div  width="100%">
+                   <div class="container-fluid">
+                       <div class="row">
+                           <div class="col-6" name="div_outgoing_address">
+                                <div t-attf-style="padding-bottom:10px;border-bottom:1px solid #{theme_color or '#000000'};width:50%;">
+                                     <div t-if="o.should_print_delivery_address()">
+                                       <span t-attf-style="color: #{theme_color or '#000000'};font-weight:bold;">Delivery Address:</span>
+                                       <div t-field="o.move_ids[0].partner_id"
+                                           t-options='{"widget": "contact", "fields": ["address", "name", "phone"], "no_marker": True, "phone_icons": True}'/>
+                                   </div>
+                                   <div t-elif="o.picking_type_id.code != 'internal' and o.picking_type_id.warehouse_id.partner_id">
+                                       <span t-attf-style="color: #{theme_color or '#000000'};font-weight:bold;">Warehouse Address:</span>
+                                       <div t-field="o.picking_type_id.warehouse_id.partner_id"
+                                           t-options='{"widget": "contact", "fields": ["address", "name", "phone"], "no_marker": True, "phone_icons": True}'/>
+                                   </div>
+                                </div>
+                              
+                               
+                               <div name="div_incoming_address" style="padding-top:10px;">
+                                  <div t-if="o.picking_type_id.code=='incoming' and o.partner_id">
+                                      <span t-attf-style="color: #{theme_color or '#000000'};font-weight:bold;">Vendor Address:</span>
+                                  </div>
+                                  <div t-if="o.picking_type_id.code=='internal' and o.partner_id">
+                                      <span t-attf-style="color: #{theme_color or '#000000'};font-weight:bold;">Warehouse Address:</span>
+                                  </div>
+                                  <div t-if="o.picking_type_id.code=='outgoing' and o.partner_id">
+                                      <span t-attf-style="color: #{theme_color or '#000000'};font-weight:bold;">Customer Address:</span>
+                                  </div>
+                                  <div t-if="o.partner_id" name="partner_header">
+                                      <div t-field="o.partner_id"
+                                           t-options='{"widget": "contact", "fields": ["address", "name", "phone", "vat"], "no_marker": True, "phone_icons": True}'/>
+                                  </div>
+                               </div>
+                           </div>
+
+                           <div class="col-6">
+                               <table class="table table-borderless" border="0" cellpadding="0" cellspacing="0" t-attf-style="color: #{o.company_id and o.company_id.theme_text_color or '#000000'};font-weight:bold;margin-top:2%; background-color: #{o.company_id and o.company_id.theme_color or '#000000'};border-radius: 10px;">
+                                   <tr t-if="o.name">
+                                       <td style="padding:5px 15px;">
+                                           <b>Delivery No # :</b>
+                                       </td>
+                                       <td style="text-align:right; padding:5px 15px;">
+                                           <span t-field="o.name"/>
+                                       </td>
+                                   </tr>
+                                   <tr/>
+                                   <tr t-if="o.origin">
+                                       <td style="padding:5px 15px;">
+                                           <b>Order (Origin):</b>
+                                       </td>
+                                       <td style="text-align:right;padding:5px 15px;">
+                                           <span t-field="o.origin"/>
+                                       </td>
+                                   </tr>
+                                   <tr t-if="o.scheduled_date">
+                                       <td style="padding:5px 15px;">
+                                           <b>Scheduled Date:</b>
+                                       </td>
+                                       <td style="text-align:right; padding:5px 15px;">
+                                           <span t-field="o.scheduled_date"/>
+                                       </td>
+                                   </tr>
+                                   <tr t-if="o.carrier_id">
+                                       <td style="padding:5px 15px;">
+                                           <b>Carrier:</b>
+                                       </td>
+                                       <td style="text-align:right; padding:5px 15px;">
+                                           <span t-field="o.carrier_id"/>
+                                       </td>
+                                   </tr>
+                                   <tr t-if="o.weight">
+                                       <td style="padding:5px 15px;">
+                                           <b>Weight:</b>
+                                       </td>
+                                       <td style="text-align:right; padding:5px 15px;">
+                                           <span t-field="o.weight"/>
+                                       </td>
+                                   </tr>
+                               </table>
+                               <div>
+                                   <t t-if="o.company_id.name">
+                                       <strong>Pay to:</strong><br/>
+                                       <t t-call="general_template.templates_company_details"/>
+                                   </t>
+                               </div>
+                             
+                               
+                           </div>
+                       </div>
+                   </div>
+                    <div>
+                        <p t-attf-style="border-bottom:1px solid #{theme_color or '#ececec'}; padding:0px 0px 10px 0px; width:100%;"/>
+                    </div>
+                        <div align="left" colspan="4" style="font-weight:bold; width:100%;" valign="top">
+                            <t t-call="general_template.delivery_note_templates_order_line"/>
+                        </div>
+                        <div>
+                            <p t-attf-style="border-bottom:1px solid #{theme_color or '#ececec'}; padding:5px"/>
+                        </div>
+                    </div>
+                    <div align="center">
+                        <span t-field="o.name" t-options="{'widget':'barcode','width':190,'height':35}"/>
+                    </div>
+                <div class="oe_structure"/>
+            </div>
+        </t>
+    </template>
+    <template id="report_delivery_custom_elegant">
+        <t t-call="web.html_container">
+            <t t-as="o" t-foreach="docs">
+                <t t-set="o" t-value="o.with_context(lang=lang)" />
+                <t t-call="general_template.report_delivery_elegant_main" t-lang="lang"/>
+            </t>
+        </t>
+    </template>
+</odoo>

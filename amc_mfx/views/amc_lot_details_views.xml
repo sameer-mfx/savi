@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <!-- AMC Lot/Serial Details search view -->
+    <record id="amc_lot_details_search" model="ir.ui.view">
+        <field name="name">amc.lot.details.search</field>
+        <field name="model">amc.lot.details</field>
+        <field name="arch" type="xml">
+            <search string="Search Lot/Serial Details">
+                <!-- Search fields -->
+                <field name="lot_id" string="Serial Number"/>
+                <field name="product_id" string="Product"/>
+                <field name="amc_id" string="AMC Order"/>
+                <field name="partner_id" string="Customer"/>
+
+                <!-- Filters -->
+                <filter name="filter_approved" string="Active AMCs" domain="[('amc_state', '=', 'approved')]"/>
+                <filter name="filter_expired" string="Expired AMCs" domain="[('amc_state', '=', 'expired')]"/>
+                <separator/>
+
+                <!-- Group By -->
+                <group expand="0" string="Group By">
+                    <filter name="group_by_product" string="Product" context="{'group_by': 'product_id'}"/>
+                    <filter name="group_by_customer" string="Customer" context="{'group_by': 'partner_id'}"/>
+                    <filter name="group_by_amc" string="AMC Order" context="{'group_by': 'amc_id'}"/>
+                    <filter name="group_by_state" string="AMC Status" context="{'group_by': 'amc_state'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- This action will be called when Lot/Serial Details menu item was clicked -->
+    <record id="action_lot_serial_details_amc" model="ir.actions.act_window">
+        <field name="name">AMC Lot/Serial Details</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">amc.lot.details</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{'search_default_filter_approved': 1}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Lot/Serial Details will be shown related to AMC orders
+            </p>
+        </field>
+    </record>
+
+    <!-- AMC Lot/Serial Details form view -->
+    <record id="amc_lot_details_form" model="ir.ui.view">
+        <field name="name">amc.lot.details.form</field>
+        <field name="model">amc.lot.details</field>
+        <field name="arch" type="xml">
+            <form string="AMC Lot/Serial Details" create="0" delete="0">
+                <sheet>
+                    <group>
+                        <field name="product_id" readonly="1"/>
+                        <field name="lot_id" domain="[('product_id', '=', product_id)]"/>
+                        <field name="amc_id" readonly="1"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- AMC Lot/Serial Details tree view -->
+    <record id="amc_lot_details_tree" model="ir.ui.view">
+        <field name="name">amc.lot.details.tree</field>
+        <field name="model">amc.lot.details</field>
+        <field name="arch" type="xml">
+            <tree string="AMC Lot/Serial Details" sample="1" create="0" delete="0" editable="bottom">
+                <field name="product_id" readonly="1"/>
+                <field name="lot_id" domain="[('product_id', '=', product_id)]"/>
+                <field name="amc_id" readonly="1"/>
+                <field name="partner_id" readonly="1" optional="show"/>
+                <field name="amc_state" readonly="1" widget="badge" decoration-success="amc_state == 'approved'" decoration-danger="amc_state in ('expired', 'cancel')" decoration-muted="amc_state == 'draft'" decoration-info="amc_state == 'to_approve'" optional="show"/>
+            </tree>
+        </field>
+    </record>
+
+    <menuitem id="menu_amc_lot_details"
+              name="Lot/Serial Details"
+              parent="amc_mfx.menu_amc_root"
+              action="action_lot_serial_details_amc"
+              sequence="1"/>
+
+</odoo>

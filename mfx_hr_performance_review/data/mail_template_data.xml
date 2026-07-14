@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <!-- Email: Self-Review Notification -->
+        <record id="mail_template_self_review" model="mail.template">
+            <field name="name">Performance Review: Self-Review Request</field>
+            <field name="model_id" ref="model_hr_performance_review"/>
+            <field name="email_from">{{ (object.company_id.email or user.email) }}</field>
+            <field name="email_to">{{ object.employee_id.work_email }}</field>
+            <field name="subject">Performance Review {{ object.name }} - Self-Assessment Required</field>
+            <field name="body_html" type="html">
+<div style="margin: 0px; padding: 0px; font-size: 13px;">
+    <p style="margin: 0px; padding: 0px; font-size: 13px;">
+        Dear <t t-out="object.employee_id.name"/>,
+    </p>
+    <br/>
+    <p style="margin: 0px; padding: 0px; font-size: 13px;">
+        Your performance review (<strong><t t-out="object.name"/></strong>) has been initiated
+        for the review cycle: <strong><t t-out="object.cycle_id.name"/></strong>.
+    </p>
+    <br/>
+    <p style="margin: 0px; padding: 0px; font-size: 13px;">
+        <strong>Review Period:</strong> <t t-out="object.date_start"/> to <t t-out="object.date_end"/>
+    </p>
+    <br/>
+    <p style="margin: 0px; padding: 0px; font-size: 13px;">
+        Please complete your self-assessment by rating yourself on each evaluation criteria
+        and providing your self-assessment summary.
+    </p>
+    <br/>
+    <p style="margin: 0px; padding: 0px; font-size: 13px;">
+        Thank you,<br/>
+        HR Department
+    </p>
+</div>
+            </field>
+            <field name="auto_delete" eval="True"/>
+        </record>
+
+        <!-- Email: Manager Review Notification -->
+        <record id="mail_template_manager_review" model="mail.template">
+            <field name="name">Performance Review: Manager Review Required</field>
+            <field name="model_id" ref="model_hr_performance_review"/>
+            <field name="email_from">{{ (object.company_id.email or user.email) }}</field>
+            <field name="email_to">{{ object.manager_id.work_email }}</field>
+            <field name="subject">Performance Review {{ object.name }} - Manager Review Required for {{ object.employee_id.name }}</field>
+            <field name="body_html" type="html">
+<div style="margin: 0px; padding: 0px; font-size: 13px;">
+    <p style="margin: 0px; padding: 0px; font-size: 13px;">
+        Dear <t t-out="object.manager_id.name"/>,
+    </p>
+    <br/>
+    <p style="margin: 0px; padding: 0px; font-size: 13px;">
+        <strong><t t-out="object.employee_id.name"/></strong> has completed their self-assessment
+        for review <strong><t t-out="object.name"/></strong>.
+    </p>
+    <br/>
+    <p style="margin: 0px; padding: 0px; font-size: 13px;">
+        Please review their self-assessment and provide your manager evaluation.
+    </p>
+    <br/>
+    <p style="margin: 0px; padding: 0px; font-size: 13px;">
+        Thank you,<br/>
+        HR Department
+    </p>
+</div>
+            </field>
+            <field name="auto_delete" eval="True"/>
+        </record>
+
+        <!-- Email: Review Completed Notification -->
+        <record id="mail_template_review_completed" model="mail.template">
+            <field name="name">Performance Review: Completed</field>
+            <field name="model_id" ref="model_hr_performance_review"/>
+            <field name="email_from">{{ (object.company_id.email or user.email) }}</field>
+            <field name="email_to">{{ object.employee_id.work_email }}</field>
+            <field name="subject">Performance Review {{ object.name }} - Completed</field>
+            <field name="body_html" type="html">
+<div style="margin: 0px; padding: 0px; font-size: 13px;">
+    <p style="margin: 0px; padding: 0px; font-size: 13px;">
+        Dear <t t-out="object.employee_id.name"/>,
+    </p>
+    <br/>
+    <p style="margin: 0px; padding: 0px; font-size: 13px;">
+        Your performance review (<strong><t t-out="object.name"/></strong>) has been completed
+        and approved by HR.
+    </p>
+    <br/>
+    <p style="margin: 0px; padding: 0px; font-size: 13px;">
+        <strong>Final Rating:</strong> <t t-out="object.final_rating"/> / 5.0
+        (<t t-out="object.final_rating_label"/>)
+    </p>
+    <br/>
+    <p style="margin: 0px; padding: 0px; font-size: 13px;">
+        You can view your full review details in the Performance module.
+    </p>
+    <br/>
+    <p style="margin: 0px; padding: 0px; font-size: 13px;">
+        Thank you,<br/>
+        HR Department
+    </p>
+</div>
+            </field>
+            <field name="auto_delete" eval="True"/>
+        </record>
+
+    </data>
+</odoo>

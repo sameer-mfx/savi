@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Client Action for User Manual -->
+    <record id="action_hr_payroll_user_manual" model="ir.actions.client">
+        <field name="name">User Manual</field>
+        <field name="tag">hr_payroll_user_manual</field>
+    </record>
+
+    <!-- Menu Item under Payroll -->
+    <menuitem
+        id="menu_hr_payroll_user_manual"
+        name="User Manual"
+        action="action_hr_payroll_user_manual"
+        parent="hr_payroll_community.menu_hr_payroll_community_root"
+        sequence="99"
+        groups="hr_payroll_community.group_hr_payroll_community_user"/>
+</odoo>

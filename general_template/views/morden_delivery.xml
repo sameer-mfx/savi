@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="template_delivery_external_layout">
+        <!-- Multicompany -->
+        <t t-if="o and 'company_id' in o">
+            <t t-set="company" t-value="o.company_id"/>
+        </t>
+        <t t-if="not o or not 'company_id' in o">
+            <t t-set="company" t-value="res_company"/>
+        </t>
+        <t t-call="general_template.template_delivery_header"/>
+        <div class="article o_report_layout_standard" t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id" t-att-data-oe-lang="o and o.env.context.get('lang')">
+            <t t-out="0"/>
+        </div>
+        <t t-call="general_template.templates_footer"/>
+    </template>
+    <template id="template_delivery_header">
+        <div class="header" style="height:100px;" t-att-style="'font-family:'+o.company_id.font_id.family+';font-size:'+str(o.company_id.font_size)+'px;'">
+            <div style="float:left">
+                <t t-if="o.company_id.invoice_logo">
+                    <img t-att-src="image_data_uri(o.company_id.invoice_logo)" style="height: 100px;"/>
+                </t>
+            </div>
+            <div style="float:right;width:65%;">
+                <div t-attf-style="color: #{o.company_id and o.company_id.theme_text_color or '#000000'};font-weight:bold;width:100%">
+                    <table class="table table-borderless" t-attf-style="color: #{o.company_id and o.company_id.theme_text_color or '#000000'};background-color: #{o.company_id and o.company_id.theme_color or '#000000'};font-weight:bold;text-align:center;font-size:50px; position: relative; margin-bottom: 0;">
+                        <tr>
+                            <td t-attf-style="width: 100%;position: relative;/* z-index: -1; */left: 0">
+                               Delivery Note
+                            </td>
+                            <td class="tm_shape_bg " t-attf-style="background-color: #{o.company_id and o.company_id.theme_color or '#000000'};position: absolute;height: 100%;width: 100%; -webkit-transform: skewX(35deg); transform: skewX(35deg); top: 0px;right: -100px; overflow: hidden; left: -77px; z-index: -1;"></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="row" t-att-style="'font-family:'+o.company_id.font_id.family+';font-size:'+str(o.company_id.font_size)+'px;width:100%; padding-top:10px;margin-left: 0;float:right;'">
+                   <div class="col-12" style="padding:0;width:100%;">
+                        <table class="table table-borderless" style="position: relative;">
+                            <tr t-attf-style="color: #{o.company_id and o.company_id.theme_text_color or '#000000'};font-weight:bold; background-color: #{o.company_id and o.company_id.theme_color or '#000000'};">
+                                <td t-if="o.name">
+                                    <b>Delivery No # :</b><br/>
+                                    <span t-field="o.name"/>
+                                </td>
+                                <td t-if="o.origin">
+                                    <b>Order (Origin):</b><br/>
+                                    <span t-field="o.origin"/>
+                                </td>
+                                <td t-if="o.scheduled_date">
+                                    <b>Scheduled Date:</b><br/>
+                                    <span t-field="o.scheduled_date"/>
+                                </td>
+                                <td t-if="o.carrier_id">
+                                    <b>Carrier:</b><br/>
+                                    <span t-field="o.carrier_id"/>
+                                </td>
+                                <td t-if="o.weight">
+                                    <b>Weight:</b><br/>
+                                    <span t-field="o.weight"/>
+                                </td>
+                            </tr>
+                            <tr class="tm_shape_bg " t-attf-style="background-color: #{o.company_id and o.company_id.theme_color or '#000000'};position: absolute;height: 100%;width: 89%;-webkit-transform: skewX(35deg);transform: skewX(35deg);top: 0px;right: -97px;overflow: hidden;left: -22px;z-index: -1;"></tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+       </div>
+    </template>
+    <template id="report_delivery_custom_main">
+        <t t-call="general_template.template_delivery_external_layout">
+            <t t-set="o" t-value="o.with_context({'lang':o.partner_id.lang})"/>
+            <t t-set="theme_color" t-value="o.company_id and o.company_id.theme_color"/>
+            <t t-set="theme_text_color" t-value="o.company_id and o.company_id.theme_text_color"/>
+            <t t-set="company_color" t-value="o.company_id and o.company_id.company_color"/>
+            <t t-set="company_address_color" t-value="o.company_id and o.company_id.company_address_color"/>
+            <t t-set="customer_color" t-value="o.company_id and o.company_id.customer_color"/>
+            <t t-set="customer_address_color" t-value="o.company_id and o.company_id.customer_address_color"/>
+            <t t-set="text_color" t-value="o.company_id and o.company_id.text_color"/>
+            <div class="page" t-att-style="'font-family:'+o.company_id.font_id.family+';font-size:'+str(o.company_id.font_size)+'px;'">
+                <div class="oe_structure"/>
+                <t t-call="general_template.templates_watermark"/>
+                <div>
+                    <p t-attf-style="border-bottom:1px solid #{theme_color or '#ececec'}; padding:5px"/>
+                </div>
+                <div  width="100%" >
+                    <div class="container-fluid" style="padding:0;">
+                        <div class="row">
+                            <div class="col-5" name="div_outgoing_address">
+                                <div t-if="o.should_print_delivery_address()">
+                                    <span t-attf-style="color: #{theme_color or '#000000'};font-weight:bold;">Delivery Address:</span>
+                                    <div t-field="o.move_ids[0].partner_id"
+                                        t-options='{"widget": "contact", "fields": ["address", "name", "phone"], "no_marker": True, "phone_icons": True}'/>
+                                </div>
+                                <div t-elif="o.picking_type_id.code != 'internal' and o.picking_type_id.warehouse_id.partner_id">
+                                    <span t-attf-style="color: #{theme_color or '#000000'};font-weight:bold;">Warehouse Address:</span>
+                                    <div t-field="o.picking_type_id.warehouse_id.partner_id"
+                                        t-options='{"widget": "contact", "fields": ["address", "name", "phone"], "no_marker": True, "phone_icons": True}'/>
+                                </div>
+                            </div>
+                            <div class="col-4" name="div_incoming_address">
+                               <div t-if="o.picking_type_id.code=='incoming' and o.partner_id">
+                                   <span t-attf-style="color: #{theme_color or '#000000'};font-weight:bold;">Vendor Address:</span>
+                               </div>
+                               <div t-if="o.picking_type_id.code=='internal' and o.partner_id">
+                                   <span t-attf-style="color: #{theme_color or '#000000'};font-weight:bold;">Warehouse Address:</span>
+                               </div>
+                               <div t-if="o.picking_type_id.code=='outgoing' and o.partner_id">
+                                   <span t-attf-style="color: #{theme_color or '#000000'};font-weight:bold;">Customer Address:</span>
+                               </div>
+                               <div t-if="o.partner_id" name="partner_header">
+                                   <div t-field="o.partner_id"
+                                        t-options='{"widget": "contact", "fields": ["address", "name", "phone", "vat"], "no_marker": True, "phone_icons": True}'/>
+                               </div>
+                            </div>
+                            <div class="col-3">
+                                <span>Pay To:</span><br/>
+                                <t t-call="general_template.templates_company_details"/>
+                            </div>
+                        </div>
+                            <p t-attf-style="border-bottom:1px solid #{theme_color or '#ececec'}; padding:0px 0px 10px 0px; width:100%;"/>
+                        <div align="left" style="font-weight:bold; width:100%;" valign="top">
+                            <t t-call="general_template.delivery_note_templates_order_line"/>
+                        </div>
+                        <div>
+                            <p t-attf-style="border-bottom:1px solid #{theme_color or '#ececec'}; padding:5px"/>
+                        </div>
+                        <div align="center">
+                            <span t-field="o.name" t-options="{'widget':'barcode','width':190,'height':35}"/>
+                        </div>
+                        <div class="oe_structure"/>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+    <template id="report_delivery_custom">
+        <t t-call="web.html_container">
+            <t t-as="o" t-foreach="docs">
+                <t t-set="o" t-value="o.with_context(lang=lang)" />
+                <t t-call="general_template.report_delivery_custom_main" t-lang="lang"/>
+            </t>
+        </t>
+    </template>
+    <template id="stock.report_deliveryslip">
+        <t t-call="web.html_container">
+            <t t-set="report_name" t-value="{'report_delivery_custom': 'general_template.report_delivery_custom_main',                                         'report_delivery_custom_creative': 'general_template.report_delivery_creative_main',                                         'report_delivery_custom_elegant': 'general_template.report_delivery_elegant_main',                                         'report_delivery_custom_professional': 'general_template.report_delivery_professional_main',                                         'report_delivery_custom_exclusive': 'general_template.report_delivery_exclusive_main',                                         'report_delivery_custom_advanced': 'general_template.report_delivery_advanced_main',                 'report_delivery_custom_incredible': 'general_template.report_delivery_incredible_main',                 'report_delivery_custom_innovative': 'general_template.report_delivery_innovative_main',}"/>
+            <t t-as="o" t-foreach="docs">
+                <t t-set="lang" t-value="o.partner_id.lang"/>
+                <t t-set="r_name" t-value="o.report_template_id and o.report_template_id.report_name or o.partner_id and o.partner_id.report_delivery_template_id and o.partner_id.report_delivery_template_id.report_name or o.company_id and o.company_id.report_delivery_template_id and o.company_id.report_delivery_template_id.report_name"/>
+                <t t-set="real_name" t-value="r_name.split('.')"/>
+                <t t-if="o.report_template_id or o.partner_id and o.partner_id.report_delivery_template_id or o.company_id and o.company_id.report_delivery_template_id">
+                    <!-- <t t-call="#{report_name.get(real_name[1], 'general_template.report_delivery_custom_main')}" t-lang="o.partner_id.lang"/>-->
+                    <t t-call="general_template.report_delivery_custom_main" t-if="r_name == 'general_template.report_delivery_custom'" t-lang="lang"/>
+                    <t t-call="general_template.report_delivery_creative_main" t-if="r_name == 'general_template.report_delivery_custom_creative'" t-lang="lang"/>
+                    <t t-call="general_template.report_delivery_elegant_main" t-if="r_name == 'general_template.report_delivery_custom_elegant'" t-lang="lang"/>
+                    <t t-call="general_template.report_delivery_professional_main" t-if="r_name == 'general_template.report_delivery_custom_professional'" t-lang="lang"/>
+                    <t t-call="general_template.report_delivery_exclusive_main" t-if="r_name == 'general_template.report_delivery_custom_exclusive'" t-lang="lang"/>
+                    <t t-call="general_template.report_delivery_advanced_main" t-if="r_name == 'general_template.report_delivery_custom_advanced'" t-lang="lang"/>
+                    <t t-call="general_template.report_delivery_incredible_main" t-if="r_name == 'general_template.report_delivery_custom_incredible'" t-lang="lang"/>
+                    <t t-call="general_template.report_delivery_innovative_main" t-if="r_name == 'general_template.report_delivery_custom_innovative'" t-lang="lang"/>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

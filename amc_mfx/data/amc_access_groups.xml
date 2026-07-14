@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Module category for better UI grouping -->
+        <record id="amc_category_user_manager" model="ir.module.category">
+            <field name="name">AMC Order</field>
+            <field name="description">AMC group for users and managers</field>
+        </record>
+
+        <record id="amc_group_user" model="res.groups">
+            <field name="name">User</field>
+            <field name="category_id" ref="amc_category_user_manager"/>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="amc_group_manager" model="res.groups">
+            <field name="name">Manager</field>
+            <field name="category_id" ref="amc_category_user_manager"/>
+            <field name="implied_ids" eval="[(4, ref('amc_mfx.amc_group_user'))]"/>
+        </record>
+
+        <record id="amc_group_higher_management" model="res.groups">
+            <field name="name">Administrator</field>
+            <field name="category_id" ref="amc_category_user_manager"/>
+            <field name="implied_ids" eval="[(4, ref('amc_mfx.amc_group_manager'))]"/>
+        </record>
+
+        <!-- Add AMC Higher Management group to the Admin user -->
+        <record id="base.user_admin" model="res.users">
+            <field name="groups_id" eval="[(4, ref('amc_mfx.amc_group_higher_management'))]"/>
+        </record>
+
+        <record id="base.group_system" model="res.groups">
+            <field name="implied_ids" eval="[(4, ref('amc_mfx.amc_group_higher_management'))]"/>
+        </record>
+    </data>
+</odoo>

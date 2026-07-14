@@ -1,0 +1,17 @@
+<odoo>
+    <record id="param_whatsapp_srn_template" model="ir.config_parameter">
+        <field name="key">whatsapp.srn_template</field>
+        <field name="value">Dear *{engineer_name}*,
+
+I hope you're doing well.
+
+You have been assigned to *{order_name}* by *{assignee_name}* and the deadline to close this is *{deadline}*.
+
+If there are any technical or commercial clarifications required, please feel free to contact me.
+
+We appreciate your prompt response.
+
+Warm regards,
+*{user_name}*</field>
+    </record>
+</odoo>

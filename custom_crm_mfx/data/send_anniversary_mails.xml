@@ -1,0 +1,25 @@
+<odoo>
+
+    <record id="ir_cron_send_anniversary_emails" model="ir.cron">
+        <field name="name">Send Anniversary Emails</field>
+        <field name="model_id" ref="base.model_res_partner"/>
+        <field name="state">code</field>
+        <field name="code">model.send_anniversary_emails()</field>
+        <field name="interval_type">days</field>
+        <field name="interval_number">1</field>
+        <field name="numbercall">-1</field>
+        <field name="active" eval="True"/>
+    </record>
+
+    <record id="ir_cron_send_birthday_emails" model="ir.cron">
+        <field name="name">Send Birthday Emails</field>
+        <field name="model_id" ref="base.model_res_partner"/>
+        <field name="state">code</field>
+        <field name="code">model.send_birthday_emails()</field>
+        <field name="interval_type">days</field>
+        <field name="interval_number">1</field>
+        <field name="numbercall">-1</field>
+        <field name="active" eval="True"/>
+    </record>
+
+</odoo>

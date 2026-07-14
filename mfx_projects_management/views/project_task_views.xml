@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="project_task_form_view_inherit_savi" model="ir.ui.view">
+        <field name="name">Task view inherit for Project Management</field>
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="project.view_task_form2"/>
+        <field name="arch" type="xml">
+            <xpath expr="//header" position="inside">
+                <button name="action_export_items_summary_excel" string="Download Excel Summary" type="object" class="oe_highlight" icon="fa-file-excel-o"/>
+            </xpath>
+            <xpath expr="//notebook" position="before">
+                <field name="can_add_products" invisible="1"/>
+                <field name="control_page_visibility" invisible="1"/>
+                <notebook name="products_notebook" invisible="control_page_visibility">
+                    <page name="video_conference_product_page" string="Video Conferencing Products">
+                        <field name="video_conferencing_task_items_ids" readonly="not can_add_products">
+                            <tree editable="bottom">
+                                <field name="product_id" readonly="is_added_in_so"/>
+                                <field name="quantity"/>
+                                <field name="unit_price"/>
+                                <field name="is_tracked" column_invisible="1"/>
+                                <field name="product_identification_ids" widget="many2many_tags" domain="[('product_id', '=', product_id)]" context="{'default_product_id': product_id}" required="is_tracked" readonly="not is_tracked"/>
+                                <field name="is_added_in_so" readonly="1" optional="hide"/>
+                            </tree>
+                        </field>
+                    </page>
+                    <page name="video_product_page" string="Video Products">
+                        <field name="video_task_items_ids" readonly="not can_add_products">
+                            <tree editable="bottom">
+                                <field name="product_id" readonly="is_added_in_so"/>
+                                <field name="quantity"/>
+                                <field name="unit_price"/>
+                                <field name="is_tracked" column_invisible="1"/>
+                                <field name="product_identification_ids" widget="many2many_tags" domain="[('product_id', '=', product_id)]" context="{'default_product_id': product_id}" required="is_tracked" readonly="not is_tracked"/>
+                                <field name="is_added_in_so" readonly="1" optional="hide"/>
+                            </tree>
+                        </field>
+                    </page>
+                    <page name="audio_product_page" string="Audio Products">
+                        <field name="audio_task_items_ids" readonly="not can_add_products">
+                            <tree editable="bottom">
+                                <field name="product_id" readonly="is_added_in_so"/>
+                                <field name="quantity"/>
+                                <field name="unit_price"/>
+                                <field name="is_tracked" column_invisible="1"/>
+                                <field name="product_identification_ids" widget="many2many_tags" domain="[('product_id', '=', product_id)]" context="{'default_product_id': product_id}" required="is_tracked" readonly="not is_tracked"/>
+                                <field name="is_added_in_so" readonly="1" optional="hide"/>
+                            </tree>
+                        </field>
+                    </page>
+                    <page name="controller_product_page" string="Controller Products">
+                        <field name="controller_task_items_ids" readonly="not can_add_products">
+                            <tree editable="bottom">
+                                <field name="product_id" readonly="is_added_in_so"/>
+                                <field name="quantity"/>
+                                <field name="unit_price"/>
+                                <field name="is_tracked" column_invisible="1"/>
+                                <field name="product_identification_ids" widget="many2many_tags" domain="[('product_id', '=', product_id)]" context="{'default_product_id': product_id}" required="is_tracked" readonly="not is_tracked"/>
+                                <field name="is_added_in_so" readonly="1" optional="hide"/>
+                            </tree>
+                        </field>
+                    </page>
+                    <page name="switching_product_page" string="Switching Products">
+                        <field name="switching_task_items_ids" readonly="not can_add_products">
+                            <tree editable="bottom">
+                                <field name="product_id" readonly="is_added_in_so"/>
+                                <field name="quantity"/>
+                                <field name="unit_price"/>
+                                <field name="is_tracked" column_invisible="1"/>
+                                <field name="product_identification_ids" widget="many2many_tags" domain="[('product_id', '=', product_id)]" context="{'default_product_id': product_id}" required="is_tracked" readonly="not is_tracked"/>
+                                <field name="is_added_in_so" readonly="1" optional="hide"/>
+                            </tree>
+                        </field>
+                    </page>
+                    <page name="accessories_product_page" string="Accessories">
+                        <field name="accessories_task_items_ids" readonly="not can_add_products">
+                            <tree editable="bottom">
+                                <field name="product_id" readonly="is_added_in_so"/>
+                                <field name="quantity"/>
+                                <field name="unit_price"/>
+                                <field name="is_tracked" column_invisible="1"/>
+                                <field name="product_identification_ids" widget="many2many_tags" domain="[('product_id', '=', product_id)]" context="{'default_product_id': product_id}" required="is_tracked" readonly="not is_tracked"/>
+                                <field name="is_added_in_so" readonly="1" optional="hide"/>
+                            </tree>
+                        </field>
+                    </page>
+                    <page name="task_items_summary_page" string="Summary">
+                        <field name="task_items_summary_ids" readonly="1">
+                            <tree editable="bottom">
+                                <field name="product_id"/>
+                                <field name="quantity"/>
+                                <field name="unit_price"/>
+                                <field name="product_identification_ids" widget="many2many_tags"/>
+                                <field name="category"/>
+                            </tree>
+                        </field>
+                    </page>
+                </notebook>
+            </xpath>
+        </field>
+    </record>
+
+    <record model="ir.actions.server" id="action_create_sale_order_lines">
+        <field name="name">Add to Sale Order</field>
+        <field name="model_id" ref="mfx_projects_management.model_project_task"/>
+        <field name="binding_model_id" ref="mfx_projects_management.model_project_task"/>
+        <field name="binding_view_types">list</field>
+        <field name="sequence">10</field>
+        <field name="state">code</field>
+        <field name="code">
+            if records:
+                action = records.action_create_sale_order_lines()
+        </field>
+    </record>
+
+    <record model="ir.actions.server" id="action_export_items_summary_excel_server">
+        <field name="name">Export Items Summary to Excel</field>
+        <field name="model_id" ref="mfx_projects_management.model_project_task"/>
+        <field name="binding_model_id" ref="mfx_projects_management.model_project_task"/>
+        <field name="binding_view_types">list,form</field>
+        <field name="sequence">20</field>
+        <field name="state">code</field>
+        <field name="code">
+            if records:
+                action = records.action_export_items_summary_excel()
+        </field>
+    </record>
+</odoo>

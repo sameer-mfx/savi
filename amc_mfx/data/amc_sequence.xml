@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Sequence for AMC Order records -->
+    <record id="sequnce_amc_order" model="ir.sequence">
+        <field name="name">AMC Order</field>
+        <field name="code">amc.order</field>
+        <field name="prefix">AMC/%(range_year)s/</field>
+        <field name="padding">5</field>
+    </record>
+
+    <!-- Sequence for AMC Order records -->
+    <record id="seq_amc_visit" model="ir.sequence">
+        <field name="name">AMC Visit</field>
+        <field name="code">amc.site.visit</field>
+        <field name="prefix">AMC/VISIT/%(range_year)s/</field>
+        <field name="padding">5</field>
+    </record>
+</odoo>

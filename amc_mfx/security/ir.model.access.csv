@@ -1,0 +1,16 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_amc_order_user,access_amc_order_user,model_amc_order,amc_mfx.amc_group_user,1,1,1,0
+access_amc_order_manager,access_amc_order_manager,model_amc_order,amc_mfx.amc_group_manager,1,1,1,1
+access_amc_order_lines,access_amc_order_lines,model_amc_order_lines,,1,1,1,1
+access_amc_services,access_amc_services,model_amc_services,,1,1,1,1
+access_amc_site_visit_user,access_amc_site_visit_user,model_amc_site_visit,amc_mfx.amc_group_user,1,1,1,0
+access_amc_site_visit_manager,access_amc_site_visit_manager,model_amc_site_visit,amc_mfx.amc_group_manager,1,1,1,1
+access_amc_site_visit_line,access_amc_site_visit_line,model_amc_site_visit_line,,1,1,1,1
+access_amc_lot_details_user,access_amc_lot_details_user,model_amc_lot_details,amc_mfx.amc_group_user,1,0,0,0
+access_amc_lot_details_admin,access_amc_lot_details_admin,model_amc_lot_details,amc_mfx.amc_group_higher_management,1,1,1,1
+access_amc_visit_wizard,access_amc_visit_wizard,model_amc_visit_wizard,amc_mfx.amc_group_user,1,1,1,1
+access_amc_visit_wizard_line,access_amc_visit_wizard_line,model_amc_visit_wizard_line,amc_mfx.amc_group_user,1,1,1,1
+access_amc_replacement_user,access_amc_replacement_user,model_amc_replacement,amc_mfx.amc_group_user,1,1,1,0
+access_amc_replacement_manager,access_amc_replacement_manager,model_amc_replacement,amc_mfx.amc_group_manager,1,1,1,1
+access_amc_expense_user,access_amc_expense_user,model_amc_expense,amc_mfx.amc_group_user,1,1,1,0
+access_amc_expense_manager,access_amc_expense_manager,model_amc_expense,amc_mfx.amc_group_manager,1,1,1,1

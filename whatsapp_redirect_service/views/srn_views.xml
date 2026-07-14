@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record id="view_srn_form_custom_whatsapp" model="ir.ui.view">
+        <field name="name">srn.form.custom.whatsapp</field>
+        <field name="model">srn</field>
+        <field name="inherit_id" ref="service_order_mfx.srn_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//header/button[@name='srn_button_approve']" position="before">
+                <button name="send_whatsapp_msg" type="object" invisible="state != 'done'" string="Notify Engineer" icon="fa-whatsapp" context="{'send_srn_in_whatsapp': True}"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

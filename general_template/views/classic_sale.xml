@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="sale_incredible_external_layout">
+        <!-- Multicompany -->
+        <t t-if="o and 'company_id' in o">
+            <t t-set="company" t-value="o.company_id"/>
+        </t>
+        <t t-if="not o or not 'company_id' in o">
+            <t t-set="company" t-value="res_company"/>
+        </t>
+        <t t-call="general_template.sale_incredible_header"/>
+        <div class="article o_report_layout_standard" t-att-data-oe-id="o and o.id" t-att-data-oe-model="o and o._name" t-att-data-oe-lang="o and o.env.context.get('lang')">
+            <t t-out="0"/>
+        </div>
+        <t t-call="general_template.template_footer"/>
+    </template>
+    <template id="sale_incredible_header">
+        <div class="header container" t-att-style="'font-family:'+o.company_id.font_id.family+';font-size:'+str(o.company_id.font_size)+'px;'">
+            <div class="row">
+                <div class="col-9">
+                    <t t-if="o.company_id.invoice_logo">
+                        <img t-att-src="image_data_uri(o.company_id.invoice_logo)" style="height: 100px;"/>
+                    </t>
+                </div>
+                <div class="col-3" >
+                    <t t-call="general_template.templates_company_details"/>
+                </div>
+            </div>
+            <div>
+                <p t-attf-style="border-bottom:1px solid #{theme_color}; padding:5px"/>
+            </div>
+        </div>
+    </template>
+    <template id="report_sale_incredible_main">
+        <t t-call="general_template.sale_incredible_external_layout">
+            <t t-set="o" t-value="o.with_context({'lang':o.partner_id.lang})"/>
+            <t t-set="theme_color" t-value="o.company_id and o.company_id.theme_color"/>
+            <t t-set="theme_text_color" t-value="o.company_id and o.company_id.theme_text_color"/>
+            <t t-set="company_color" t-value="o.company_id and o.company_id.company_color"/>
+            <t t-set="company_address_color" t-value="o.company_id and o.company_id.company_address_color"/>
+            <t t-set="customer_color" t-value="o.company_id and o.company_id.customer_color"/>
+            <t t-set="customer_address_color" t-value="o.company_id and o.company_id.customer_address_color"/>
+            <t t-set="text_color" t-value="o.company_id and o.company_id.text_color"/>
+            <div class="page" t-att-style="'font-family:'+o.company_id.font_id.family+';font-size:'+str(o.company_id.font_size)+'px;'">
+                <div class="oe_structure"/>
+                <t t-call="general_template.template_watermark"/>
+                <div width="100%">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-8" valign="top">
+                                <div  t-attf-style="color: #{o.company_id and o.company_id.theme_color or '#000000'};font-size:35px;">
+                                    <t t-if="not (env.context.get('proforma', False) or is_pro_forma)">
+                                        <span t-if="o.state not in ['draft','sent']">Order # </span>
+                                        <span t-if="o.state in ['draft','sent']">Quotation # </span>
+                                    </t>
+                                    <t t-if="env.context.get('proforma', False) or is_pro_forma">
+                                        <span>Pro-Forma Invoice # </span>
+                                    </t>
+                                    <span t-field="o.name"/>
+                                </div>
+                                
+                            
+                                    <t t-call="general_template.sale_templates_invoice_customer_details"/>
+                                    <t t-call="general_template.sale_templates_invoice_customer_shipping_details"/>                                        
+                            </div>
+                            <div class="col-4" valign="top">
+                                <table class="table table-borderless" border="0" cellpadding="0" cellspacing="0" t-attf-style="color: #{o.company_id and o.company_id.theme_text_color or '#000000'};font-weight:bold; background-color: #{o.company_id and o.company_id.theme_color or '#000000'};">
+                                    <tr>
+                                        <td>
+                                            <strong t-if="o.state not in ['draft','sent']">Date Ordered:</strong>
+                                            <strong t-if="o.state in ['draft','sent']">Quotation Date:</strong>
+                                        </td>
+                                        <td>
+                                            <span t-out="o.date_order"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2" style="background-color:#f2f2f2; height:4px;"/>
+                                    </tr>
+                                    <tr t-if="o.client_order_ref">
+                                        <td>
+                                            <b>Your Reference:</b>
+                                        </td>
+                                        <td>
+                                            <span t-field="o.client_order_ref"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <b>
+                                                <span>Salesperson:</span>
+                                            </b>
+                                        </td>
+                                        <td>
+                                            <span t-field="o.user_id"/>
+                                        </td>
+                                    </tr>
+                                    <tr t-if="o.payment_term_id and o.payment_term_id.name or '' ">
+                                        <td>
+                                            <b>Payment Term:</b>
+                                        </td>
+                                        <td>
+                                            <span t-out="o.payment_term_id and o.payment_term_id.name or '' "/>
+                                        </td>
+                                    </tr>
+                                    <tr t-if="o._check_website_quote_installed() and o.validity_date">
+                                        <td>
+                                            <b>Expiration Date:</b>
+                                        </td>
+                                        <td>
+                                            <span t-out="o.validity_date"/>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <t t-call="general_template.sale_templates_customer_details"/>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div>
+                        <p  t-attf-style="padding:5px 0px 0px 0px; height:5px; border-bottom: 1px solid #{theme_color or '#000000'};"/>
+                    </div>
+                    <div align="left" style="font-weight:bold; width:100%;" valign="top">
+                        <t t-call="general_template.sale_order_lines_tem"/>
+                        <t t-call="general_template.sale_order_lines_subtotal_tem"/>
+                    </div>
+                    <div t-attf-style="border-bottom:1px solid #{'#959595'}; padding:0px">
+                        <t t-call="general_template.template_total_amount_word"/>
+                    </div>
+                    <div class="left" style="color: #{text_color or '#000000'}; padding-top:10px; ">
+                        <t t-call="general_template.sale_templates_notes"/>
+                    </div>
+                    <div t-if="o.sale_order_option_ids and o.state in ['draft', 'sent']">
+                        <t t-call="general_template.sale_templates_suggested_order_line"/>
+                    </div>
+                    <div class="container-fluid">
+                        <div class="row" style="color: #{text_color or '#000000'};">
+                            <div class="col-9">
+                            </div> 
+                            <div class="col-3">                       
+                                <t t-if="o.sale_is_show_signature == True">
+                                    <t t-call="general_template.report_sale_signature"/>
+                                </t>
+                                <t t-else="">
+                                    <t t-call="general_template.report_signature"/>
+                                </t>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="oe_structure"/>
+                    </div>
+                    <div class="oe_structure"/>
+                    <t t-call="general_template.report_barcode"/>
+                <!-- </div> -->
+            </div>
+        </t>
+    </template>
+    <template id="report_sale_order_custom_incredible">
+        <t t-call="web.html_container">
+            <t t-as="o" t-foreach="docs">
+                <t t-set="o" t-value="o.with_context(lang=lang)" />
+                <t t-call="general_template.report_sale_incredible_main" t-lang="lang"/>
+            </t>
+        </t>
+    </template>
+</odoo>

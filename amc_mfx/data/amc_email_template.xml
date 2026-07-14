@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Email Template for AMC Order (Draft / Proposal stage) -->
+        <record id="email_template_amc_order_draft" model="mail.template">
+            <field name="name">AMC Order - Proposal to Customer</field>
+            <field name="model_id" ref="model_amc_order"/>
+            <field name="subject">AMC Proposal {{ object.name }} - Annual Maintenance Contract for your review</field>
+            <field name="email_from">{{ (object.user_id.email_formatted or object.company_id.email_formatted or user.email_formatted) }}</field>
+            <field name="email_to">{{ object.partner_email or object.partner_id.email }}</field>
+            <field name="description">Sent to customer while AMC is still in Draft - shares the proposal for review and sign-off</field>
+            <field name="body_html" type="html">
+                <div style="margin: 0px; padding: 0px;">
+                    <p style="margin: 0px; padding: 0px; font-size: 13px;">
+                        <p>Dear <t t-out="object.partner_id.name or 'Valued Customer'"/>,</p>
+
+                        <p>Thank you for considering us for your Annual Maintenance Contract requirements. Please find below the summary of the proposal we have prepared for your review.</p>
+
+                        <p><strong>Proposed AMC Details:</strong></p>
+                        <ul>
+                            <li><strong>Proposal Reference:</strong> <t t-out="object.name"/></li>
+                            <li><strong>Proposed Start Date:</strong> <t t-out="format_date(object.amc_start_date, 'dd MMM yyyy')"/></li>
+                            <li><strong>Proposed End Date:</strong> <t t-out="format_date(object.amc_end_date, 'dd MMM yyyy')"/></li>
+                            <li><strong>Duration:</strong> <t t-out="object.amc_duration"/> <t t-if="object.amc_duration_unit == 'month'">Month(s)</t><t t-if="object.amc_duration_unit == 'year'">Year(s)</t></li>
+                            <li><strong>Indicative Contract Value:</strong> <t t-out="object.currency_id.symbol"/> <t t-out="'{:,.2f}'.format(object.amount_total)"/></li>
+                        </ul>
+
+                        <p>The detailed proposal document is attached to this email for your reference. It lists the covered products, the services included, and the payment terms.</p>
+
+                        <p>Kindly review the proposal and share your feedback or approval at the earliest. Once we receive your confirmation, we will proceed with formal activation of the contract and schedule the first maintenance visit.</p>
+
+                        <p>Should you have any questions, require changes to the scope, or need additional information, please do not hesitate to reach out.</p>
+
+                        <p>We look forward to partnering with you.</p>
+
+                        <p>Best regards,<br/>
+                        <t t-out="object.user_id.name or 'Sales Team'"/><br/>
+                        <t t-out="object.company_id.name or 'Savi Vision Pvt Ltd'"/><br/>
+                        <t t-if="object.user_id.mobile">Mobile: <t t-out="object.user_id.mobile"/><br/></t>
+                        <t t-if="object.user_id.email">Email: <t t-out="object.user_id.email"/></t>
+                        </p>
+                    </p>
+                </div>
+            </field>
+            <field name="report_template_ids" eval="[(4, ref('amc_mfx.action_report_amc_order'))]"/>
+            <field name="auto_delete" eval="False"/>
+            <field name="lang">{{ object.partner_id.lang }}</field>
+        </record>
+
+        <!-- Email Template for AMC Order (Approved / Active stage) -->
+        <record id="email_template_amc_order" model="mail.template">
+            <field name="name">AMC Order - Send to Customer</field>
+            <field name="model_id" ref="model_amc_order"/>
+            <field name="subject">AMC Order {{ object.name }} - Annual Maintenance Contract</field>
+            <field name="email_from">{{ (object.user_id.email_formatted or object.company_id.email_formatted or user.email_formatted) }}</field>
+            <field name="email_to">{{ object.partner_email or object.partner_id.email }}</field>
+            <field name="description">Sent to customer when AMC is approved</field>
+            <field name="body_html" type="html">
+                <div style="margin: 0px; padding: 0px;">
+                    <p style="margin: 0px; padding: 0px; font-size: 13px;">
+                        <p>Dear <t t-out="object.partner_id.name or 'Valued Customer'"/>,</p>
+
+                        <p>We are pleased to inform you that your Annual Maintenance Contract has been approved and is now active.</p>
+
+                        <p><strong>AMC Details:</strong></p>
+                        <ul>
+                            <li><strong>AMC Reference:</strong> <t t-out="object.name"/></li>
+                            <li><strong>Start Date:</strong> <t t-out="format_date(object.amc_start_date, 'dd MMM yyyy')"/></li>
+                            <li><strong>End Date:</strong> <t t-out="format_date(object.amc_end_date, 'dd MMM yyyy')"/></li>
+                            <li><strong>Duration:</strong> <t t-out="object.amc_duration"/> <t t-if="object.amc_duration_unit == 'month'">Month(s)</t><t t-if="object.amc_duration_unit == 'year'">Year(s)</t></li>
+                            <li><strong>Total Contract Value:</strong> <t t-out="object.currency_id.symbol"/> <t t-out="'{:,.2f}'.format(object.amount_total)"/></li>
+                        </ul>
+
+                        <p>Please find the detailed AMC agreement attached to this email for your reference.</p>
+
+                        <p>Our team will contact you soon to schedule the maintenance visits. If you have any questions or need clarification, please feel free to reach out to us.</p>
+
+                        <p>Thank you for choosing our services. We look forward to serving you.</p>
+
+                        <p>Best regards,<br/>
+                        <t t-out="object.user_id.name or 'Support Team'"/><br/>
+                        <t t-out="object.company_id.name or 'Savi Vision Pvt Ltd'"/><br/>
+                        <t t-if="object.user_id.mobile">Mobile: <t t-out="object.user_id.mobile"/><br/></t>
+                        <t t-if="object.user_id.email">Email: <t t-out="object.user_id.email"/></t>
+                        </p>
+                    </p>
+                </div>
+            </field>
+            <field name="report_template_ids" eval="[(4, ref('amc_mfx.action_report_amc_order'))]"/>
+            <field name="auto_delete" eval="False"/>
+            <field name="lang">{{ object.partner_id.lang }}</field>
+        </record>
+
+        <!-- Customer Satisfaction Survey - AMC Site Visit -->
+        <record id="email_template_amc_visit_satisfaction" model="mail.template">
+            <field name="name">AMC Site Visit - Customer Satisfaction Survey</field>
+            <field name="model_id" ref="model_amc_site_visit"/>
+            <field name="subject">Your feedback on AMC Visit {{ object.name }}</field>
+            <field name="email_from">{{ (object.assigned_by.email_formatted or object.company_id.email_formatted or user.email_formatted) }}</field>
+            <field name="email_to">{{ object.partner_id.email }}</field>
+            <field name="description">Sent after an AMC Site Visit is marked Done, asking the customer to rate the service.</field>
+            <field name="body_html" type="html">
+                <div style="margin: 0px; padding: 0px; font-size: 13px;">
+                    <p>Dear <t t-out="object.partner_id.name or 'Valued Customer'"/>,</p>
+
+                    <p>Thank you for allowing us to serve you on visit <strong><t t-out="object.name"/></strong><t t-if="object.date_confirm"> completed on <t t-out="format_date(object.date_confirm, 'dd MMM yyyy')"/></t>.</p>
+
+                    <p>We would really appreciate a minute of your time to share how we did. Your feedback helps us improve the service our engineers deliver on your AMC.</p>
+
+                    <p><strong>Visit summary:</strong></p>
+                    <ul>
+                        <li><strong>Visit Reference:</strong> <t t-out="object.name"/></li>
+                        <li t-if="object.amc_order_id"><strong>AMC Contract:</strong> <t t-out="object.amc_order_id.name"/></li>
+                        <li t-if="object.engineer_ids"><strong>Engineer(s):</strong> <t t-out="', '.join(object.engineer_ids.mapped('name'))"/></li>
+                        <li t-if="object.date_order"><strong>Visit Date:</strong> <t t-out="format_datetime(object.date_order, tz=user.tz, dt_format='dd MMM yyyy HH:mm')"/></li>
+                    </ul>
+
+                    <div t-if="object.visit_line_ids">
+                        <p><strong>Services performed during this visit:</strong></p>
+                        <table border="1" cellpadding="6" cellspacing="0" style="border-collapse: collapse; width: 100%; font-size: 12px;">
+                            <thead style="background-color: #f4f4f4;">
+                                <tr>
+                                    <th style="text-align: left;">#</th>
+                                    <th style="text-align: left;">Product</th>
+                                    <th style="text-align: left;">Service</th>
+                                    <th style="text-align: left;">Description</th>
+                                    <th style="text-align: left;">Location</th>
+                                    <th style="text-align: left;">Serial / Lot</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr t-foreach="object.visit_line_ids" t-as="line">
+                                    <td><t t-out="line_index + 1"/></td>
+                                    <td><t t-out="line.product_id.display_name or ''"/></td>
+                                    <td><t t-out="line.service_id.name or ''"/></td>
+                                    <td><t t-out="line.description or ''"/></td>
+                                    <td><t t-out="line.location or ''"/></td>
+                                    <td><t t-out="', '.join(line.product_identification_ids.mapped('name')) or '-'"/></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <p style="margin-top: 16px;"><strong>You can share your feedback in either way - whichever is easier for you:</strong></p>
+
+                    <p style="text-align: center; margin: 16px 0;">
+                        <a href="https://forms.gle/tZEUDXkNVUW9GEiD9"
+                           style="background-color: #00A09D; color: #ffffff; padding: 12px 24px; text-decoration: none; border-radius: 4px; font-weight: bold; display: inline-block;">
+                            Fill the Quick Feedback Form (1 minute)
+                        </a>
+                    </p>
+
+                    <p style="text-align: center; color: #888;">- or -</p>
+
+                    <p>Simply <strong>reply to this email</strong> with the following:</p>
+                    <ol>
+                        <li>Overall satisfaction with this visit - rate <strong>1 (Poor)</strong> to <strong>5 (Excellent)</strong>.</li>
+                        <li>Was the engineer punctual and professional?</li>
+                        <li>Was the reported issue fully resolved?</li>
+                        <li>Any specific comments, suggestions, or concerns?</li>
+                    </ol>
+
+                    <p>Thank you once again for your continued trust.</p>
+
+                    <p>Warm regards,<br/>
+                    <t t-out="object.assigned_by.name or 'Customer Success Team'"/><br/>
+                    <t t-out="object.company_id.name"/>
+                    </p>
+                </div>
+            </field>
+            <field name="auto_delete" eval="False"/>
+            <field name="lang">{{ object.partner_id.lang }}</field>
+        </record>
+
+    </data>
+</odoo>

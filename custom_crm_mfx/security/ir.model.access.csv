@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_visit_form,access_visit_form,model_crm_visit_form,,1,1,1,1
+access_def_tandc,access_def_tandc,model_def_tandc,,1,1,1,1
+access_product_make,access_product_make,model_product_make,,1,1,1,1

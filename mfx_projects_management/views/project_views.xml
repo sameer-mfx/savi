@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Project form view inheritance -->
+    <record id="project_project_form_view_inherit_mfx" model="ir.ui.view">
+        <field name="name">Project form view inherit for MFX Project Management</field>
+        <field name="model">project.project</field>
+        <field name="inherit_id" ref="project.edit_project"/>
+        <field name="arch" type="xml">
+            <xpath expr="//header" position="inside">
+                <button name="action_export_project_items_summary_excel" string="Download Excel Summary" type="object" class="oe_highlight" icon="fa-file-excel-o"/>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Server action for project Excel export -->
+    <record model="ir.actions.server" id="action_export_project_items_summary_excel_server">
+        <field name="name">Export Project Items Summary to Excel</field>
+        <field name="model_id" ref="project.model_project_project"/>
+        <field name="binding_model_id" ref="project.model_project_project"/>
+        <field name="binding_view_types">list,form</field>
+        <field name="sequence">10</field>
+        <field name="state">code</field>
+        <field name="code">
+            if records:
+                action = records.action_export_project_items_summary_excel()
+        </field>
+    </record>
+</odoo>

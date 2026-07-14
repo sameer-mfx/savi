@@ -1,0 +1,109 @@
+<odoo>
+    <record id="view_crm_lead_form_inherit_visit_sections" model="ir.ui.view">
+        <field name="name">crm.lead.form.inherit.visit_sections</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_lead_view_form"/>
+        <field name="arch" type="xml">
+            <field name='user_id' position="after">
+                <field name="lead_owner"/>
+                <field name="sales_coordinator"/>
+            </field>
+            <xpath expr="//form/sheet/notebook" position="inside">
+                <page name="visit_form_section_1" string="Visit Details">
+                    <field name="visit_form_ids" widget="one2many">
+                        <form>
+                            <sheet>
+                                <group>
+                                    <group string="Visit Details">
+                                        <field name="sales_person_id"/>
+                                        <field name="date_of_visit"/>
+                                        <field name="client_id" invisible="not client_id"/>
+                                        <field name="client_representative_id"/>
+                                        <field name="client_mobile" invisible="not client_mobile"/>
+                                        <field name="client_email" invisible="not client_email"/>
+                                        <field name="client_address"/>
+                                    </group>
+                                    <group string="Site Dimensions &amp; Observations">
+                                        <field name="room_name"/>
+                                        <field name="room_length" string="LENGTH (L)"/>
+                                        <field name="room_width" string="WIDTH (W)"/>
+                                        <field name="room_height" string="HEIGHT (H)"/>
+                                        <field name="ceiling_type"/>
+                                        <field name="ceiling_height"/>
+                                        <field name="wall_material"/>
+                                        <field name="floor_type"/>
+                                        <field name="mounting_surface_details"/>
+                                        <field name="ambient_light_condition"/>
+                                    </group>
+                                </group>
+                                <group>
+                                    <group string="Technical Requirements">
+                                        <field name="display_system"/>
+                                        <field name="audio_req"/>
+                                        <field name="control_system"/>
+                                        <field name="video_conferencing_system"/>
+                                        <field name="light_integration"/>
+                                        <field name="equipment_room"/>
+                                        <field name="cabling_pathways"/>
+                                        <field name="internet_facilities"/>
+                                        <field name="power_availability"/>
+                                        <field name="hvac_acoustics"/>
+                                    </group>
+                                    <group string="Media Uploads">
+                                        <field name="site_images" widget="many2many_binary" options="{'create': True}"/>
+                                        <field name="site_videos" widget="many2many_binary" options="{'create': True}"/>
+                                        <field name="floor_plan" widget="many2many_binary" options="{'create': True}"/>
+                                        <field name="client_docs" widget="many2many_binary" options="{'create': True}"/>
+                                        <p class="o_form_label" style="margin-top:8px; margin-bottom:-5px;" colspan="2"><b>ADDITIONAL COMMENTS &amp; NEXT STEPS</b></p>
+                                        <hr style="margin-top:-3px;" colspan="2"/>
+                                        <field name="client_expectations"/>
+                                        <field name="challenges_observed"/>
+                                        <field name="recommendations"/>
+                                        <field name="actions_planned"/>
+                                    </group>
+                                </group>
+                            </sheet>
+                        </form>
+                        <tree>
+                            <field name="sales_person_id"/>
+                            <field name="date_of_visit"/>
+                            <field name="client_id" readonly="0" force_save="1"/>
+                            <field name="client_representative_id"/>
+                            <field name="client_mobile" readonly="0" force_save="1"/>
+                            <field name="client_email" readonly="0" force_save="1"/>
+                            <field name="client_address"/>
+                            <field name="room_name" optional="hide"/>
+                            <field name="room_length" optional="hide"/>
+                            <field name="room_width" optional="hide"/>
+                            <field name="room_height" optional="hide"/>
+                            <field name="ceiling_type" optional="hide"/>
+                            <field name="ceiling_height" optional="hide"/>
+                            <field name="wall_material" optional="hide"/>
+                            <field name="floor_type" optional="hide"/>
+                            <field name="mounting_surface_details" optional="hide"/>
+                            <field name="ambient_light_condition" optional="hide"/>
+                            <field name="display_system" optional="hide"/>
+                            <field name="audio_req" optional="hide"/>
+                            <field name="control_system" optional="hide"/>
+                            <field name="video_conferencing_system" optional="hide"/>
+                            <field name="light_integration" optional="hide"/>
+                            <field name="equipment_room" optional="hide"/>
+                            <field name="cabling_pathways" optional="hide"/>
+                            <field name="internet_facilities" optional="hide"/>
+                            <field name="power_availability" optional="hide"/>
+                            <field name="hvac_acoustics" optional="hide"/>
+                            <field name="site_images" widget="many2many_binary" options="{'create': True}" optional="hide"/>
+                            <field name="site_videos" widget="many2many_binary" options="{'create': True}" optional="hide"/>
+                            <field name="floor_plan" widget="many2many_binary" options="{'create': True}" optional="hide"/>
+                            <field name="client_docs" widget="many2many_binary" options="{'create': True}" optional="hide"/>
+                            <field name="client_expectations" optional="hide"/>
+                            <field name="challenges_observed" optional="hide"/>
+                            <field name="recommendations" optional="hide"/>
+                            <field name="actions_planned" optional="hide"/>
+                        </tree>
+                    </field>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>
